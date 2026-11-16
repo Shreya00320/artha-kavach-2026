@@ -1,0 +1,9 @@
+{
+  "id": "KB008",
+  "title": "Phishing Links — How to Spot a Fake Website or SMS Link",
+  "publisher": "Indian Computer Emergency Response Team (CERT-In)",
+  "url": "https://www.cert-in.org.in",
+  "date_accessed": "2026-11-15",
+  "topics": ["phishing", "fake-link", "url", "website"],
+  "text": "Phishing attacks use fake websites and links that impersonate legitimate banks, government portals, or payment apps. CERT-In (India's cybersecurity agency) warns about the following signs of a phishing link: (1) Misspelled domain names: hdfcbamk.com, sbi-secure.click, paytm-verify.in, npci-lottery.com. Legitimate banks use their official domains: hdfcbank.com, sbi.co.in, paytm.com, npci.org.in. (2) URL shorteners (bit.ly, tinyurl, t.co) in banking or government SMS — official bank SMS never use URL shorteners. (3) HTTP instead of HTTPS — no padlock icon in the browser. (4) The page asks for your full debit/credit card number, CVV, expiry date, net banking password, or OTP — legitimate login pages never ask for all of these together. (5) The page looks slightly 'off' — blurry logos, spelling errors, mismatched colors. How to verify: Manually type the official URL in your browser rather than clicking any link. For government sites, look for '.gov.in' in the domain. For banks, check the official website on the back of your debit card. If you accidentally entered credentials on a phishing site, immediately change your net banking password and call your bank's fraud helpline."
+}

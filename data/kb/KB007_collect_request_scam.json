@@ -1,0 +1,9 @@
+{
+  "id": "KB007",
+  "title": "UPI Collect Request Scam — The Rs 1 Verification Trick",
+  "publisher": "National Payments Corporation of India (NPCI)",
+  "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+  "date_accessed": "2026-11-15",
+  "topics": ["collect-request", "upi", "verification", "refund-scam"],
+  "text": "One of the most deceptive UPI scams uses a 'collect request' disguised as a refund or verification. Here's how it works: A scammer contacts you saying you are owed a refund (from an e-commerce site, bank, or government scheme). They say they will 'send' the money but need to 'verify' your account first by sending Re 1. They then send you a UPI collect request — which requires you to enter your UPI PIN to approve it. When you enter your PIN to 'receive' Re 1, you actually authorize a DEBIT of a much larger amount from your account. The critical rule: You NEVER need to enter your UPI PIN to receive money. Money is received automatically; your PIN is only used when you send money. If anyone asks you to 'accept' or 'approve' a payment to receive a refund, it is a scam. Additional variants: (1) Screen-sharing scam — asking you to install a remote-access app (like AnyDesk or TeamViewer) so the 'bank agent' can help you receive the refund. Never install such apps at someone else's request. (2) Wrong-number transfer — 'I accidentally sent you money, please return it' — but the initial transfer never happened. Report collect request scams to your payment app and to cybercrime.gov.in."
+}

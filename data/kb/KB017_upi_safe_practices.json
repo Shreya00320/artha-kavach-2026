@@ -1,0 +1,9 @@
+{
+  "id": "KB017",
+  "title": "UPI Safety — Safe Practices for Daily Transactions",
+  "publisher": "National Payments Corporation of India (NPCI)",
+  "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+  "date_accessed": "2026-11-15",
+  "topics": ["upi", "safe-practices", "vpa", "transaction-safety"],
+  "text": "NPCI recommends the following safe practices for everyday UPI usage in India: (1) Always verify the recipient's name after entering their UPI ID (VPA) or scanning a QR code, before entering your PIN. The app shows the registered name — if it doesn't match who you expect, stop immediately. (2) Never save your UPI PIN on paper, notes apps, or share it in screenshots. (3) Set transaction limits within your UPI app settings to minimise potential losses. (4) Use biometric authentication (fingerprint/face) for UPI apps wherever available. (5) Regularly check your UPI transaction history in your payment app and bank statement — flag any unknown transaction immediately. (6) Be careful with QR codes: scammers replace legitimate QR codes (at shops, in classifieds) with their own. Always double-check the merchant name shown after scanning. (7) Do not use public Wi-Fi for UPI transactions. (8) If you receive a collect request from someone you do not know or did not initiate, always DECLINE it — never approve a collect request to 'receive' money. Immediate steps if money is debited fraudulently: Call your bank's fraud helpline within minutes; call 1930; file at cybercrime.gov.in."
+}

@@ -156,8 +156,13 @@ class LLMAdapter:
 
         self.api_key = api_key or os.getenv("LLM_API_KEY") or os.getenv("GEMINI_API_KEY")
 
-        # LLM_MODEL must come from environment/args and never be hardcoded
-        raw_model = model or os.getenv("LLM_MODEL")
+        # LLM_MODEL must come from environment/args and never be hardcoded.
+        # model=None means "not provided by caller, check env".
+        # model="" means "caller explicitly passed empty string, treat as missing".
+        if model is not None:
+            raw_model = model  # caller explicitly set it (even if empty)
+        else:
+            raw_model = os.getenv("LLM_MODEL", "")
         if self.provider == "gemini":
             if not raw_model or not raw_model.strip():
                 raise LLMConfigurationError(

@@ -1,0 +1,9 @@
+{
+  "id": "KB016",
+  "title": "SIM Swap Fraud — How Your Number Can Be Hijacked",
+  "publisher": "Telecom Regulatory Authority of India (TRAI) / RBI",
+  "url": "https://www.trai.gov.in",
+  "date_accessed": "2026-11-15",
+  "topics": ["sim-swap", "mobile-number", "hijack", "otp"],
+  "text": "SIM swap fraud occurs when a fraudster uses your personal information (Aadhaar number, date of birth, address) to convince a telecom retailer to issue a new SIM card for your phone number. Once they have the new SIM, they receive all your OTPs and can access your bank accounts. Warning signs of SIM swap: (1) Your phone suddenly has 'No Service' or 'No Network' for an extended period. (2) You stop receiving calls and SMS unexpectedly. (3) You receive a notification that your SIM has been deactivated or transferred. What to do immediately: (1) Call your telecom operator (Jio 198, Airtel 121, Vi 199, BSNL 1800-180-1503) using another phone. (2) Block your SIM remotely and request emergency reactivation. (3) Call your bank immediately and request a temporary block on all OTP-based transactions. (4) Change your net banking password from a secure device. Prevention: (1) Never share your Aadhaar, DOB, or address with unknown callers even if they seem to already know some details. (2) Enable SIM lock/SIM PIN if your carrier offers it. (3) Consider registering a secondary email for banking alerts in addition to SMS. Report SIM swap fraud at cybercrime.gov.in."
+}

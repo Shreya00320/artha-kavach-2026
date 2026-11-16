@@ -1,0 +1,9 @@
+{
+  "id": "KB014",
+  "title": "Screen-Sharing and Remote Access Scams",
+  "publisher": "Cyber Dost, Ministry of Home Affairs, Government of India",
+  "url": "https://cyberdost.mha.gov.in",
+  "date_accessed": "2026-11-15",
+  "topics": ["screen-share", "remote-access", "anydesk", "teamviewer", "bank-fraud"],
+  "text": "Screen-sharing and remote-access scams have become increasingly common in India. The scammer poses as a bank executive, technical support agent, or government official and convinces the victim to install remote-access software — most commonly AnyDesk, TeamViewer, QuickSupport, or similar apps — claiming they will 'help' solve a banking problem. Once the app is installed: (1) The scammer can see your phone or computer screen in real time. (2) They watch you open your banking app and enter your credentials. (3) They may ask you to open your banking app 'to verify your account'. (4) They see the OTP arrive and use it to transfer money before you can react. Some scammers also use the 'screen mirroring' feature on UPI apps (like PhonePe) to initiate transactions remotely. How to protect yourself: (1) Never install any app at the request of someone who called you unsolicited. (2) Your bank, NPCI, RBI, and no government agency will ever ask you to install a remote-access app. (3) If you have already installed such an app during a suspicious call, uninstall it immediately, change all passwords, and call your bank. (4) Report at cybercrime.gov.in or call 1930."
+}

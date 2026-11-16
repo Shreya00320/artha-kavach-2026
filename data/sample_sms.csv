@@ -1,0 +1,97 @@
+id,raw_sms,expected_amount,expected_type,expected_merchant,expected_bank,parseable,date,notes
+SMS0001,"Rs 1,250.00 debited from A/c XX4521 on 01-Nov-26 at SWIGGY. Avl Bal: Rs 12,340.50 —SBI",1250.0,debit,Swiggy,SBI,true,2026-11-01,synthetic
+SMS0002,"Rs 500.00 debited from A/c XX4521 on 02-Nov-26 at UBER. Avl Bal: Rs 11,840.50 —SBI",500.0,debit,Uber,SBI,true,2026-11-02,synthetic
+SMS0003,"Rs 8,500.00 debited from A/c XX4521 on 03-Nov-26 at AMAZON IN. Avl Bal: Rs 3,340.50 —SBI",8500.0,debit,Amazon,SBI,true,2026-11-03,synthetic
+SMS0004,"Rs 7,500.00 debited from A/c XX4521 on 05-Nov-26 at RENT-LANDLORD. Avl Bal: Rs 15,840.50 —SBI",7500.0,debit,Rent,SBI,true,2026-11-05,synthetic
+SMS0005,"Rs 1,800.00 debited from A/c XX4521 on 06-Nov-26 at MAKEMYTRIP. Avl Bal: Rs 14,040.50 —SBI",1800.0,debit,MakeMyTrip,SBI,true,2026-11-06,synthetic
+SMS0006,"Rs 60.00 debited from A/c XX4521 on 07-Nov-26 at IRCTC. Avl Bal: Rs 13,980.50 —SBI",60.0,debit,IRCTC,SBI,true,2026-11-07,synthetic
+SMS0007,"Rs 2,000.00 debited from A/c XX4521 on 08-Nov-26 at D-MART. Avl Bal: Rs 11,980.50 —SBI",2000.0,debit,D-Mart,SBI,true,2026-11-08,synthetic
+SMS0008,"ATM WDL Rs 2,000.00 from A/c XX4521 on 09-Nov-26 at SBI ATM DELHI. Avl Bal: Rs 9,980.50 —SBI",2000.0,debit,ATM,SBI,true,2026-11-09,synthetic
+SMS0009,"Rs 25,000.00 credited to A/c XX4521 on 01-Nov-26 (SALARY CORP NEFT). Avl Bal: Rs 34,980.50 —SBI",25000.0,credit,Salary,SBI,true,2026-11-01,synthetic
+SMS0010,"Rs 300.00 credited to A/c XX4521 on 10-Nov-26 (CASHBACK-AMAZON). Avl Bal: Rs 10,280.50 —SBI",300.0,credit,Amazon,SBI,true,2026-11-10,synthetic
+SMS0011,"Your HDFC Bank A/c XX8810 is debited Rs 450.00 on 02-Nov-26. Info: UBER EATS. Avl Bal Rs 22,550.00",450.0,debit,Uber Eats,HDFC,true,2026-11-02,synthetic
+SMS0012,"Your HDFC Bank A/c XX8810 is debited Rs 999.00 on 03-Nov-26. Info: NETFLIX. Avl Bal Rs 21,551.00",999.0,debit,Netflix,HDFC,true,2026-11-03,synthetic
+SMS0013,"Your HDFC Bank A/c XX8810 is debited Rs 12,000.00 on 05-Nov-26 for EMI-HDFC LOAN. Avl Bal Rs 9,551.00",12000.0,debit,EMI,HDFC,true,2026-11-05,synthetic
+SMS0014,"Your HDFC Bank A/c XX8810 is debited Rs 580.00 on 06-Nov-26. Info: MYNTRA. Avl Bal Rs 8,971.00",580.0,debit,Myntra,HDFC,true,2026-11-06,synthetic
+SMS0015,"Your HDFC Bank A/c XX8810 is debited Rs 400.00 on 07-Nov-26. Info: BOOKMYSHOW. Avl Bal Rs 8,571.00",400.0,debit,BookMyShow,HDFC,true,2026-11-07,synthetic
+SMS0016,"Rs 30,000.00 credited to your A/c XX8810 on 01-Nov-26. NEFT from ACME PVTLTD. —HDFC Bank",30000.0,credit,Salary,HDFC,true,2026-11-01,synthetic
+SMS0017,"Your HDFC Bank A/c XX8810 is debited Rs 2,500.00 on 08-Nov-26. Info: LIC PREMIUM. Avl Bal Rs 6,071.00",2500.0,debit,LIC,HDFC,true,2026-11-08,synthetic
+SMS0018,"Your credit card payment of Rs 14,350.00 received on 10-Nov-26. Due: Rs 0. —HDFC",14350.0,credit,CC Payment,HDFC,true,2026-11-10,synthetic
+SMS0019,"Your ICICI Bank A/c XX2341 is debited Rs 3,200.00 on 03-Nov-26. Info: ZOMATO. Avl Bal: Rs 7,800.00",3200.0,debit,Zomato,ICICI,true,2026-11-03,synthetic
+SMS0020,"Your ICICI Bank A/c XX2341 is debited Rs 1,250.00 on 04-Nov-26. Info: DECATHLON. Avl Bal: Rs 6,550.00",1250.0,debit,Decathlon,ICICI,true,2026-11-04,synthetic
+SMS0021,"Rs 2,000.00 credited to your ICICI Bank A/c XX2341 on 02-Nov-26. UPI Ref: 56789012. —ICICI",2000.0,credit,UPI,ICICI,true,2026-11-02,synthetic
+SMS0022,"Your ICICI Bank A/c XX2341 is debited Rs 450.00 on 05-Nov-26. Info: CROSSWORD. Avl Bal: Rs 6,100.00",450.0,debit,Crossword,ICICI,true,2026-11-05,synthetic
+SMS0023,"Rs 7,500.00 debited from A/c XX9910 on 02-Nov-26 at RENT-LANDLORD. Avl Bal: Rs 23,100.00 —Axis",7500.0,debit,Rent,Axis,true,2026-11-02,synthetic
+SMS0024,"Rs 1,100.00 debited from A/c XX9910 on 04-Nov-26 at D-MART. Avl Bal: Rs 22,000.00 —Axis",1100.0,debit,D-Mart,Axis,true,2026-11-04,synthetic
+SMS0025,"Rs 3,200.00 debited from your Kotak A/c XX3344 on 05-Nov-26 for ZOMATO. Bal: Rs 15,600.00",3200.0,debit,Zomato,Kotak,true,2026-11-05,synthetic
+SMS0026,"Rs 2,500.00 debited from your Kotak A/c XX3344 on 06-Nov-26 for LIC PREMIUM. Bal: Rs 13,100.00",2500.0,debit,LIC,Kotak,true,2026-11-06,synthetic
+SMS0027,Sent Rs 500.00 to rahul.kumar@oksbi via UPI on 02-Nov-26. UPI Ref: 123456789012. —PhonePe,500.0,debit,Transfer,PhonePe,true,2026-11-02,synthetic
+SMS0028,"Received Rs 1,000.00 from anita.sharma@paytm via UPI on 03-Nov-26. UPI Ref: 234567890123. —PhonePe",1000.0,credit,Transfer,PhonePe,true,2026-11-03,synthetic
+SMS0029,"Sent Rs 150.00 to autorickshaw@ybl via UPI on 06-Nov-26. Balance: Rs 2,800.00 —PhonePe",150.0,debit,Transport,PhonePe,true,2026-11-06,synthetic
+SMS0030,"Received Rs 15,000.00 from SALARY CORP via UPI on 01-Nov-26. UPI Ref: 345678901234. —GPay",15000.0,credit,Salary,GPay,true,2026-11-01,synthetic
+SMS0031,"Sent Rs 800.00 to plumber@paytm via UPI on 05-Nov-26. Balance: Rs 1,900.00 —Paytm",800.0,debit,Services,Paytm,true,2026-11-05,synthetic
+SMS0032,"Sent Rs 2,000.00 to mama@upi via UPI on 07-Nov-26. Ref: 456789012345. —GPay",2000.0,debit,Transfer,GPay,true,2026-11-07,synthetic
+SMS0033,"Rs 350.00 debited from A/c XX4521 on 10-Nov-26 at BLINKIT. Avl Bal: Rs 8,900.00 —SBI",350.0,debit,Blinkit,SBI,true,2026-11-10,synthetic
+SMS0034,"Rs 299.00 debited from A/c XX8810 on 11-Nov-26. Info: JIO RECHARGE. Avl Bal: Rs 5,100.00 —HDFC",299.0,debit,Jio,HDFC,true,2026-11-11,synthetic
+SMS0035,"Rs 1,999.00 debited from A/c XX2341 on 11-Nov-26. Info: SPOTIFY PREMIUM. Avl Bal: Rs 4,101.00 —ICICI",1999.0,debit,Spotify,ICICI,true,2026-11-11,synthetic
+SMS0036,"Rs 180.00 debited from A/c XX9910 on 09-Nov-26 at RAPIDO. Avl Bal: Rs 21,000.00 —Axis",180.0,debit,Rapido,Axis,true,2026-11-09,synthetic
+SMS0037,"Rs 1,500.00 debited from A/c XX4521 on 12-Nov-26 at NYKAA. Avl Bal: Rs 7,250.00 —SBI",1500.0,debit,Nykaa,SBI,true,2026-11-12,synthetic
+SMS0038,"Rs 750.00 debited from A/c XX8810 on 12-Nov-26. Info: CULT.FIT. Avl Bal Rs 4,350.00 —HDFC",750.0,debit,Cult.fit,HDFC,true,2026-11-12,synthetic
+SMS0039,"Rs 1,200.00 debited from A/c XX2341 on 13-Nov-26. Info: MEESHO. Avl Bal: Rs 2,901.00 —ICICI",1200.0,debit,Meesho,ICICI,true,2026-11-13,synthetic
+SMS0040,"Rs 500.00 debited from A/c XX9910 on 10-Nov-26 at LENSKART. Avl Bal: Rs 20,500.00 —Axis",500.0,debit,Lenskart,Axis,true,2026-11-10,synthetic
+SMS0041,"Rs 2,100.00 debited from A/c XX4521 on 13-Nov-26 at CROMA. Avl Bal: Rs 5,150.00 —SBI",2100.0,debit,Croma,SBI,true,2026-11-13,synthetic
+SMS0042,"Rs 890.00 debited from A/c XX8810 on 13-Nov-26. Info: TATA CLIQ. Avl Bal Rs 3,460.00 —HDFC",890.0,debit,Tata Cliq,HDFC,true,2026-11-13,synthetic
+SMS0043,"Rs 45,000.00 credited to A/c XX5566 on 01-Nov-26. NEFT SALARY-INFOSYS. Avl Bal: Rs 50,000.00 —SBI",45000.0,credit,Salary,SBI,true,2026-11-01,synthetic
+SMS0044,"Rs 28,000.00 credited to A/c XX4521 on 01-Nov-26 (SALARY). Avl Bal: Rs 32,000.00 —HDFC",28000.0,credit,Salary,HDFC,true,2026-11-01,synthetic
+SMS0045,"Rs 5,500.00 debited from A/c XX4521 on 05-Nov-26 at EMI-BAJAJ FINANCE. Avl Bal: Rs 26,500.00 —SBI",5500.0,debit,EMI,SBI,true,2026-11-05,synthetic
+SMS0046,"Your A/c XX8810 is debited Rs 3,200.00 on 05-Nov-26 for EMI-HDFC PERSONAL LOAN. Avl Bal Rs 15,000.00",3200.0,debit,EMI,HDFC,true,2026-11-05,synthetic
+SMS0047,"Rs 1,450.00 debited from A/c XX4521 on 03-Nov-26 at ELECTRICITY BOARD. Avl Bal: Rs 11,050.00 —SBI",1450.0,debit,Electricity,SBI,true,2026-11-03,synthetic
+SMS0048,"Rs 850.00 debited from A/c XX8810 on 04-Nov-26. Info: PIPED GAS. Avl Bal Rs 10,200.00 —HDFC",850.0,debit,Gas,HDFC,true,2026-11-04,synthetic
+SMS0049,"Rs 500.00 debited from A/c XX9910 on 02-Nov-26 at INTERNET BILL. Avl Bal: Rs 19,500.00 —Axis",500.0,debit,Internet,Axis,true,2026-11-02,synthetic
+SMS0050,"Rs 1,200.00 debited from A/c XX4521 on 08-Nov-26 at APOLLO PHARMACY. Avl Bal: Rs 9,850.00 —SBI",1200.0,debit,Healthcare,SBI,true,2026-11-08,synthetic
+SMS0051,"Rs 800.00 debited from A/c XX8810 on 09-Nov-26. Info: DR CONSULT FEE. Avl Bal Rs 8,160.00 —HDFC",800.0,debit,Healthcare,HDFC,true,2026-11-09,synthetic
+SMS0052,"Rs 2,500.00 debited from A/c XX9910 on 07-Nov-26 at UDEMY COURSE. Avl Bal: Rs 18,500.00 —Axis",2500.0,debit,Education,Axis,true,2026-11-07,synthetic
+SMS0053,"Rs 1,800.00 debited from A/c XX4521 on 11-Nov-26 at COURSERA. Avl Bal: Rs 7,350.00 —SBI",1800.0,debit,Education,SBI,true,2026-11-11,synthetic
+SMS0054,"Rs 5,000.00 debited from A/c XX4521 on 05-Nov-26 at GROWW-MF. Avl Bal: Rs 15,000.00 —SBI",5000.0,debit,Investment,SBI,true,2026-11-05,synthetic
+SMS0055,"Rs 2,000.00 debited from A/c XX8810 on 05-Nov-26. Info: ZERODHA SIP. Avl Bal Rs 12,000.00 —HDFC",2000.0,debit,Investment,HDFC,true,2026-11-05,synthetic
+SMS0056,"Rs 450.00 debited from A/c XX2341 on 09-Nov-26. Info: BIG BAZAAR. Avl Bal: Rs 5,650.00 —ICICI",450.0,debit,Shopping,ICICI,true,2026-11-09,synthetic
+SMS0057,"Rs 1,350.00 debited from A/c XX4521 on 14-Nov-26 at RELIANCE SMART. Avl Bal: Rs 5,900.00 —SBI",1350.0,debit,Shopping,SBI,true,2026-11-14,synthetic
+SMS0058,"Rs 2,200.00 debited from A/c XX9910 on 12-Nov-26 at FABINDIA. Avl Bal: Rs 18,300.00 —Axis",2200.0,debit,Shopping,Axis,true,2026-11-12,synthetic
+SMS0059,"Rs 649.00 debited from A/c XX2341 on 03-Nov-26. Info: HOTSTAR PREMIUM. Avl Bal: Rs 7,151.00 —ICICI",649.0,debit,Entertainment,ICICI,true,2026-11-03,synthetic
+SMS0060,"Rs 199.00 debited from A/c XX8810 on 04-Nov-26. Info: YOUTUBE PREMIUM. Avl Bal Rs 9,951.00 —HDFC",199.0,debit,Entertainment,HDFC,true,2026-11-04,synthetic
+SMS0061,"Rs 220.00 debited from A/c XX4521 on 06-Nov-26 at CHAI POINT. Avl Bal: Rs 13,760.50 —SBI",220.0,debit,Food,SBI,true,2026-11-06,synthetic
+SMS0062,"Rs 480.00 debited from A/c XX8810 on 07-Nov-26. Info: DOMINOS. Avl Bal Rs 7,591.00 —HDFC",480.0,debit,Food,HDFC,true,2026-11-07,synthetic
+SMS0063,"Rs 310.00 debited from A/c XX2341 on 08-Nov-26. Info: BOX8. Avl Bal: Rs 5,790.00 —ICICI",310.0,debit,Food,ICICI,true,2026-11-08,synthetic
+SMS0064,"Rs 250.00 debited from A/c XX9910 on 09-Nov-26 at OLA. Avl Bal: Rs 20,750.00 —Axis",250.0,debit,Transport,Axis,true,2026-11-09,synthetic
+SMS0065,"Rs 100.00 debited from A/c XX4521 on 11-Nov-26 at METRO CARD RECHARGE. Avl Bal: Rs 7,150.50 —SBI",100.0,debit,Transport,SBI,true,2026-11-11,synthetic
+SMS0066,"Rs 180.00 debited from A/c XX8810 on 12-Nov-26. Info: RAPIDO. Avl Bal Rs 7,391.00 —HDFC",180.0,debit,Transport,HDFC,true,2026-11-12,synthetic
+SMS0067,"Rs 7,500.00 debited from A/c XX4521 on 01-Oct-26 at RENT-LANDLORD. Avl Bal: Rs 42,340.50 —SBI",7500.0,debit,Rent,SBI,true,2026-10-01,synthetic
+SMS0068,"Rs 12,000.00 debited from A/c XX8810 on 05-Oct-26 for EMI-HDFC LOAN. Avl Bal Rs 30,551.00",12000.0,debit,EMI,HDFC,true,2026-10-05,synthetic
+SMS0069,"Rs 999.00 debited from A/c XX8810 on 03-Oct-26. Info: NETFLIX. Avl Bal Rs 29,552.00",999.0,debit,Netflix,HDFC,true,2026-10-03,synthetic
+SMS0070,"Hi, please check your bank statement for a discrepancy noted on your account.",,,,,false,2026-11-14,synthetic
+SMS0071,Bank maintenance scheduled tonight. Services may be intermittently unavailable. —SBI,,,,,false,2026-11-14,synthetic
+SMS0072,Your account nomination update is complete. Nominee: Rahul Kumar. —HDFC,,,,,false,2026-11-14,synthetic
+SMS0073,Reminder: submit Form 15G/15H to avoid TDS on FD interest. Contact your branch. —SBI,,,,,false,2026-11-14,synthetic
+SMS0074,Mobile banking transaction successful. —Axis Bank,,,,,false,2026-11-14,synthetic
+SMS0075,"Sent Rs 9,999.00 to unknown-collect@fakebank via UPI on 10-Nov-26. —PhonePe",9999.0,debit,Unknown,PhonePe,true,2026-11-10,synthetic
+SMS0076,"Rs 500.00 debited from A/c XX4521 on 10-Nov-26 at PROCESSING FEE-LOAN. Avl Bal: Rs 6,750.50 —SBI",500.0,debit,Unknown,SBI,true,2026-11-10,synthetic
+SMS0077,"Rs 650.00 debited from A/c XX4521 on 04-Nov-26 at HALDIRAMS. Avl Bal: Rs 13,390.50 —SBI",650.0,debit,Food,SBI,true,2026-11-04,synthetic
+SMS0078,"Rs 280.00 debited from A/c XX8810 on 05-Nov-26. Info: CAFE COFFEE DAY. Avl Bal Rs 20,671.00 —HDFC",280.0,debit,Food,HDFC,true,2026-11-05,synthetic
+SMS0079,"Rs 1,600.00 debited from A/c XX2341 on 06-Nov-26. Info: VIJAY SALES. Avl Bal: Rs 4,950.00 —ICICI",1600.0,debit,Shopping,ICICI,true,2026-11-06,synthetic
+SMS0080,"Rs 390.00 debited from A/c XX9910 on 07-Nov-26 at PHARMACY NEAR. Avl Bal: Rs 20,110.00 —Axis",390.0,debit,Healthcare,Axis,true,2026-11-07,synthetic
+SMS0081,"Rs 240.00 debited from A/c XX4521 on 08-Nov-26 at PETROL PUMP. Avl Bal: Rs 9,610.50 —SBI",240.0,debit,Transport,SBI,true,2026-11-08,synthetic
+SMS0082,"Rs 3,500.00 debited from A/c XX8810 on 09-Nov-26. Info: DENTIST FEE. Avl Bal Rs 7,160.00 —HDFC",3500.0,debit,Healthcare,HDFC,true,2026-11-09,synthetic
+SMS0083,"Rs 2,800.00 debited from A/c XX2341 on 10-Nov-26. Info: TUITION FEES. Avl Bal: Rs 2,101.00 —ICICI",2800.0,debit,Education,ICICI,true,2026-11-10,synthetic
+SMS0084,"Rs 5,000.00 transferred to A/c XX5566 on 11-Nov-26 via NEFT. Ref: NEFT2411XX. —SBI",5000.0,debit,Transfer,SBI,true,2026-11-11,synthetic
+SMS0085,"Rs 100.00 debited from A/c XX9910 on 12-Nov-26 at NEWSPAPERS. Avl Bal: Rs 20,400.00 —Axis",100.0,debit,Entertainment,Axis,true,2026-11-12,synthetic
+SMS0086,"Rs 4,500.00 debited from A/c XX4521 on 13-Nov-26 at FURNITURE SHOP. Avl Bal: Rs 650.50 —SBI",4500.0,debit,Shopping,SBI,true,2026-11-13,synthetic
+SMS0087,"Rs 1,000.00 debited from A/c XX8810 on 14-Nov-26. Info: MOBILE REPAIR. Avl Bal Rs 2,460.00 —HDFC",1000.0,debit,Shopping,HDFC,true,2026-11-14,synthetic
+SMS0088,"Rs 300.00 debited from A/c XX2341 on 02-Nov-26. Info: PARKING FEE. Avl Bal: Rs 7,951.00 —ICICI",300.0,debit,Transport,ICICI,true,2026-11-02,synthetic
+SMS0089,"Rs 1,700.00 debited from A/c XX9910 on 03-Nov-26 at HOTEL STAY. Avl Bal: Rs 19,800.00 —Axis",1700.0,debit,Entertainment,Axis,true,2026-11-03,synthetic
+SMS0090,"Rs 600.00 debited from A/c XX4521 on 06-Nov-26 at GYM MEMBERSHIP. Avl Bal: Rs 13,440.50 —SBI",600.0,debit,Healthcare,SBI,true,2026-11-06,synthetic
+SMS0091,"Rs 2,000.00 credited to A/c XX4521 on 10-Nov-26 (FREELANCE PAYMENT). Avl Bal: Rs 11,440.50 —SBI",2000.0,credit,Salary,SBI,true,2026-11-10,synthetic
+SMS0092,"Rs 500.00 debited from A/c XX8810 on 11-Nov-26. Info: WEDDING GIFT UPI. Avl Bal Rs 6,660.00 —HDFC",500.0,debit,Transfer,HDFC,true,2026-11-11,synthetic
+SMS0093,"Rs 1,200.00 debited from A/c XX2341 on 12-Nov-26. Info: AMAZON SUBSCRIBE. Avl Bal: Rs 901.00 —ICICI",1200.0,debit,Shopping,ICICI,true,2026-11-12,synthetic
+SMS0094,"Rs 750.00 debited from A/c XX9910 on 13-Nov-26 at BARBER SHOP. Avl Bal: Rs 19,650.00 —Axis",750.0,debit,Shopping,Axis,true,2026-11-13,synthetic
+SMS0095,"Rs 3,000.00 debited from A/c XX4521 on 14-Nov-26 at CLOTHING STORE. Avl Bal: Rs 2,650.50 —SBI",3000.0,debit,Shopping,SBI,true,2026-11-14,synthetic
+SMS0096,"Rs 50.00 debited from A/c XX8810 on 14-Nov-26. Info: NEWSPAPER DIGITAL. Avl Bal Rs 2,410.00 —HDFC",50.0,debit,Entertainment,HDFC,true,2026-11-14,synthetic

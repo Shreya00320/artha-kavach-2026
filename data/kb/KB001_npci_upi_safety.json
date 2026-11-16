@@ -1,0 +1,9 @@
+{
+  "id": "KB001",
+  "title": "UPI Safety Guidelines — Never Share OTP or PIN",
+  "publisher": "National Payments Corporation of India (NPCI)",
+  "url": "https://www.npci.org.in/what-we-do/upi/product-overview",
+  "date_accessed": "2026-11-15",
+  "topics": ["upi", "otp", "pin", "safety"],
+  "text": "NPCI's UPI safety guidelines state that your UPI PIN is equivalent to your ATM PIN and must never be shared with anyone — not with bank representatives, government officials, payment app support staff, or any third party. A UPI PIN is only required to SEND money, never to RECEIVE it. If someone asks for your UPI PIN to send you a refund or prize money, it is a scam. Similarly, your OTP (One Time Password) is a secret authentication code — no legitimate bank, payment app, or government body will ever ask you to share it over a call, SMS, or chat. Sharing your OTP immediately grants the other person full access to your account. NPCI also warns against UPI collect requests: a collect request asks you to approve a debit from your account. Legitimate refunds and prizes are credited automatically — they never require you to 'approve' or 'accept' a collect request. Never approve a collect request from an unknown UPI ID. If you receive a suspicious collect request, decline it and report it to your bank immediately."
+}

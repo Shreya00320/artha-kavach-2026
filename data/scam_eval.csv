@@ -1,0 +1,156 @@
+id,label,text,language,hinglish,split,notes
+SE0001,suspicious,Your order is on the way. Track here: short-url/track123. Delivery today before 6 PM.,en,false,train,synthetic
+SE0002,safe,Your OTP for UPI PIN setup on PhonePe is 456123. Never share this with anyone. —NPCI,en,false,train,synthetic
+SE0003,safe,"Rs 300.00 credited to your A/c XX9900 on 07-Nov-26 (CASHBACK-HDFC-CC). Avl Bal: Rs 4,350.00",en,false,test,synthetic
+SE0004,safe,"Your ICICI Bank A/c XX2341 is debited Rs 450.00 on 14-Nov-26. Info: UBER. Avl Bal: Rs 5,672.00",en,false,train,synthetic
+SE0005,scam,TRAI: Your mobile number will be suspended in 2 hours for illegal usage. Call 198 to verify.,en,false,test,synthetic
+SE0006,suspicious,Kuch log bol rahe hain ki government Rs 2000 de rahi hai. Confirm karna chahiye pehle.,hi,true,train,synthetic
+SE0007,suspicious,"Ek app hai jo data entry karwata hai aur paisa deta hai. Genuine lagta hai, par sure nahi.",hi,true,train,synthetic
+SE0008,scam,"Income Tax refund Rs 7,340 approved. Click http://itrefund.in and enter net banking details.",en,false,train,synthetic
+SE0009,safe,"Rs 1,250.00 debited from A/c XX9012 on 07-Nov-26 at DECATHLON. Avl Bal: Rs 5,100.00 —Axis",en,false,train,synthetic
+SE0010,safe,Your Jio prepaid recharge of Rs 239.00 is successful. Validity 28 days. —Jio,en,false,train,synthetic
+SE0011,safe,"Rs 60.00 debited from A/c XX3456 on 14-Nov-26 at IRCTC. Avl Bal: Rs 5,480.00 —SBI",en,false,train,synthetic
+SE0012,safe,"Yaar salary aa gayi account mein Rs 25,000. NEFT se aaya hai company se.",hi,true,train,synthetic
+SE0013,suspicious,Online survey: Earn Rs 200 Amazon voucher. 5 mins only. No personal info required.,en,false,test,synthetic
+SE0014,suspicious,Reminder: KYC update pending on your account. Visit your nearest branch or call us.,en,false,train,synthetic
+SE0015,suspicious,Congratulations! You have won a gift voucher from Amazon. Click here to claim.,en,false,train,synthetic
+SE0016,scam,Send Rs 500 on UPI: fraud-collect@fakebank to unlock your frozen account.,en,false,train,synthetic
+SE0017,safe,"Rs 200.00 credited to A/c XX7890 on 09-Nov-26 (UPI REFUND-ZOMATO). Avl Bal: Rs 6,350.00",en,false,train,synthetic
+SE0018,suspicious,Yaar ek mutual fund scheme hai jo zyada return deta hai apparently. Dekh ek baar details.,hi,true,train,synthetic
+SE0019,suspicious,"Job opening: Data entry. Rs 15,000/month. No experience needed. Email your CV to hr@jobsite.com",en,false,test,synthetic
+SE0020,suspicious,Aapka account mein kuch problem hai. Please bank branch mein jaiye ya helpline call karein.,hi,false,train,synthetic
+SE0021,safe,Teri Netflix payment cut gayi Rs 649. HDFC account mein balance check kar.,hi,true,train,synthetic
+SE0022,scam,Yaar government ka Rs 6000 PM Kisan bonus aa raha hai. Aadhaar + OTP daal de form mein!,hi,true,test,synthetic
+SE0023,scam,"Fake refund: Rs 1 UPI collect sent to verify account. Accept and your Rs 10,000 refund is processed.",en,false,train,synthetic
+SE0024,scam,Mutual fund scheme: 40% guaranteed returns in 6 months. Invest now. Limited slots. Call now!,en,false,test,synthetic
+SE0025,safe,"Your A/c XX6712 is debited Rs 12,000.00 on 05-Nov-26 for EMI-HDFC LOAN. Avl Bal: Rs 4,320.00 —HDFC",en,false,test,synthetic
+SE0026,safe,"Your standing instruction of Rs 5,000 for PPF has been executed. Ref: 2345678. —SBI",en,false,train,synthetic
+SE0027,scam,Your Jio recharge failed. Account will deactivate in 24 hours. Recharge via our link urgently.,en,false,train,synthetic
+SE0028,scam,Yaar lottery jeeta tune! Rs 1 lakh! Bas Rs 500 fee bhej de UPI pe: lotterywinner@collect,hi,true,train,synthetic
+SE0029,scam,"Flipkart Big Billion Day refund Rs 3,200 pending for order cancelled. Enter UPI PIN to receive.",en,false,test,synthetic
+SE0030,scam,Tera HDFC account mein problem aa gayi hai. Jaldi se is link pe ja: hdfc-fix.ml aur verify kar.,hi,true,train,synthetic
+SE0031,scam,You are selected for SBI special credit card. No documents needed. Pay Rs 750 courier fee.,en,false,test,synthetic
+SE0032,safe,"Aaj UPI se Rs 1,000 mama ko bhej diya. PhonePe se gaya, ref no. 9988XX",hi,true,train,synthetic
+SE0033,scam,Aapka PhonePe wallet mein Rs 500 cashback pending hai. Sirf OTP dijiye claim karne ke liye.,hi,false,train,synthetic
+SE0034,safe,"Rs 3,200.00 debited from A/c XX3344 on 11-Nov-26 at ZOMATO. Avl Bal: Rs 15,600.00 —Kotak",en,false,test,synthetic
+SE0035,safe,"Rs 1,800.00 debited from A/c XX1234 on 06-Nov-26 at MakeMyTrip. Avl Bal: Rs 11,200.00 —SBI",en,false,test,synthetic
+SE0036,scam,Tera electricity bill overdue hai! 2 ghante mein katega connection. Pay kar: 9988001122,hi,true,train,synthetic
+SE0037,safe,Sent Rs 500.00 to rahul.kumar@oksbi via UPI on 13-Nov-26. UPI Ref: 123456789012. —PhonePe,en,false,test,synthetic
+SE0038,suspicious,Flipkart Big Sale starts midnight. Add items to cart. Genuine offer from official Flipkart.,en,false,train,synthetic
+SE0039,safe,Low balance alert: Avl Bal in A/c XX9900 is Rs 234.50. Consider topping up. —HDFC,en,false,test,synthetic
+SE0040,suspicious,New offer on your credit card: 20% cashback at partner restaurants this weekend only.,en,false,train,synthetic
+SE0041,suspicious,"Bhai is link pe click mat kar abhi, pehle verify kar ki genuine hai ya nahi.",hi,true,test,synthetic
+SE0042,safe,"Rs 580.00 debited from A/c XX8901 on 08-Nov-26 at MYNTRA. Avl Bal: Rs 12,780.00 —ICICI",en,false,train,synthetic
+SE0043,scam,URGENT: Aapka SBI account block hone wala hai. OTP share karein: 1234 abhi!,hi,false,test,synthetic
+SE0044,scam,PM Awas Yojana ka paise milne wala hai. Aadhaar aur OTP dijiye: http://pmay-gov.xyz,hi,false,test,synthetic
+SE0045,scam,URGENT: Your SBI account will be blocked in 2 hours. Share OTP to verify: 7382.,en,false,test,synthetic
+SE0046,safe,"Received Rs 2,500.00 from friends.name@paytm via UPI. Available Bal: Rs 9,870.00 —Paytm",en,false,train,synthetic
+SE0047,scam,Free insurance policy! Just pay Rs 299 stamp duty. Limited offer expires midnight. Click to claim.,en,false,test,synthetic
+SE0048,scam,Send money Rs 500 urgently. I am stuck at hospital. This is Rahul. New number 9900112233.,en,false,train,synthetic
+SE0049,scam,Your Netflix subscription cancelled due to payment failure. Update card: netflix-india-pay.com,en,false,train,synthetic
+SE0050,scam,"Congratulations! You won Rs 5,00,000 in NPCI lucky draw. Send Rs 2500 processing fee to claim.",en,false,train,synthetic
+SE0051,scam,"IIT internship offered! Rs 25,000 stipend. Apply fee Rs 500 only. Last date today!",en,false,test,synthetic
+SE0052,scam,Yaar tera account block hone wala hai bhai. OTP share kar abhi warna sab kuch close ho jayega!,hi,true,train,synthetic
+SE0053,scam,"Income tax refund Rs 4,500 aapke khate mein bheja ja raha hai. Net banking details dijiye.",hi,false,test,synthetic
+SE0054,scam,"RBI monetary policy: extra Rs 10,000 COVID relief to your bank. Share bank details to receive.",en,false,train,synthetic
+SE0055,safe,"Passbook: 10 transactions this month. Net debit: Rs 14,500. Net credit: Rs 25,000. —HDFC",en,false,train,synthetic
+SE0056,scam,Your Aadhaar linked mobile no. will be deactivated. Call 1800-XXX to verify OTP immediately.,en,false,test,synthetic
+SE0057,suspicious,Aapka recharge successful hua. 1 GB data mile hain. Balance: Rs 45. — Jio,hi,false,train,synthetic
+SE0058,scam,"Credit card outstanding Rs 23,450 overdue. Pay now to avoid CIBIL score drop: cc-pay-now.in",en,false,train,synthetic
+SE0059,safe,Aapka UPI payment Rs 300 Rahul ko bheja gaya. Reference: 1234567890. —PhonePe,hi,false,train,synthetic
+SE0060,safe,"Rs 400.00 debited from A/c XX5679 on 11-Nov-26 at BOOKMYSHOW. Avl Bal: Rs 7,600.00 —HDFC",en,false,test,synthetic
+SE0061,scam,Free COVID insurance! Register now. Enter Aadhaar and DOB on this form: covidinsure.in,en,false,train,synthetic
+SE0062,scam,Loan approved Rs 2 lakh! Zero interest. Pay Rs 999 processing fee to disburse. Call 9988776655,en,false,train,synthetic
+SE0063,safe,IMPS transfer of Rs 500 from XX1234 to XX5678 successful. Ref: IMPS20241114. —SBI,en,false,train,synthetic
+SE0064,scam,Your electricity connection will be cut in 2 hours due to outstanding bill. Pay now: 9876543210,en,false,test,synthetic
+SE0065,suspicious,You have been shortlisted for a part-time online job. Reply for more details. No fee mentioned.,en,false,test,synthetic
+SE0066,scam,"Your EPF withdrawal of Rs 45,000 is on hold. Share KYC on WhatsApp to process within 1 hour.",en,false,train,synthetic
+SE0067,scam,Bhai teri job confirm ho gayi WFH mein. Sirf Rs 999 registration fee pay kar abhi!,hi,true,test,synthetic
+SE0068,safe,"Rs 2,000 ATM se nikale. Baaki bakiya: Rs 8,000. —SBI ATM Jaipur",hi,false,train,synthetic
+SE0069,safe,"Aapke khate mein Rs 15,000 salary credit hui hai. —HDFC Bank",hi,false,train,synthetic
+SE0070,safe,"Rs 450.00 debited from A/c XX0123 on 06-Nov-26 at CROSSWORD. Avl Bal: Rs 3,650.00 —SBI",en,false,test,synthetic
+SE0071,scam,Your Swiggy delivery person needs to collect Rs 50 extra for parking. Pay on UPI: swiggy-extra@upi,en,false,train,synthetic
+SE0072,scam,RBI has approved Rs 1.5 lakh loan for you. Paperwork done. Pay stamp duty Rs 1250 to disburse.,en,false,train,synthetic
+SE0073,suspicious,WhatsApp: Missed call from +91-9900XXXXXX. Number not in contacts. Possibly unknown caller.,en,false,train,synthetic
+SE0074,scam,Fake screen-share scam: Our tech team will remote access your phone to fix your UPI problem.,en,false,train,synthetic
+SE0075,scam,Update PAN card linked to your bank account or face penalty. Visit: http://pancardupdate.xyz,en,false,train,synthetic
+SE0076,safe,"Rs 999.00 debited from A/c XX7788 on 08-Nov-26 at NETFLIX. Avl Bal: Rs 6,120.00 —HDFC",en,false,train,synthetic
+SE0077,scam,Aapka bijli connection 1 ghante mein katega. Turant bhugtan karein: 9123456789,hi,false,test,synthetic
+SE0078,scam,"Job offer: Earn Rs 50,000/month from home! Pay Rs 1,500 registration fee to start today.",en,false,test,synthetic
+SE0079,scam,Train ticket refund Rs 820 approved. Enter your UPI ID and PIN at irctc-refund.site to receive.,en,false,train,synthetic
+SE0080,safe,"Your nominee has been updated for your SBI account. If not done by you, contact branch. —SBI",en,false,train,synthetic
+SE0081,safe,"Sent Rs 150.00 to autorickshaw@ybl via UPI on 13-Nov-26. Balance: Rs 2,800.00 —PhonePe",en,false,train,synthetic
+SE0082,scam,Free upgrade to 5G! Click this link in next 10 minutes or miss your free sim swap offer.,en,false,train,synthetic
+SE0083,scam,Aapka KYC khatam ho raha hai. Abhi link par click karein warna account band ho jayega: bit.ly/kyc99,hi,false,train,synthetic
+SE0084,safe,"Credit card payment of Rs 8,000 received. Outstanding: Rs 2,350. Due date: 20-Nov. —HDFC",en,false,test,synthetic
+SE0085,suspicious,Ek nayi banking suvidha launch hui hai. Jankari ke liye bank ki website dekhein ya branch jayein.,hi,false,train,synthetic
+SE0086,scam,"You have a pending refund of Rs 8,500 from Amazon. Enter PIN at http://amzn-refund.in to receive.",en,false,train,synthetic
+SE0087,scam,Your Aadhaar card has been used for a SIM swap. File complaint: Call 9988XXXXXX immediately.,en,false,test,synthetic
+SE0088,safe,"Rs 1,250.00 debited from A/c XX4521 on 14-Nov-26 at SWIGGY. Avl Bal: Rs 12,340.50 —SBI",en,false,train,synthetic
+SE0089,scam,"Your health insurance claim Rs 12,000 approved! Pay Rs 299 processing charge to get it credited.",en,false,train,synthetic
+SE0090,safe,Reminder: File your ITR before 31 July to avoid penalty. Visit incometax.gov.in for details.,en,false,train,synthetic
+SE0091,suspicious,Refer a friend to our app and earn Rs 100 cashback for each successful referral. T&C apply.,en,false,train,synthetic
+SE0092,scam,Paytm se message aaya hai kya? Rs 5000 cashback pending hai. OTP daal de jaldi!,hi,true,train,synthetic
+SE0093,suspicious,Your CIBIL score has dropped. Click to view free report: cibil-free.in. No fee required.,en,false,test,synthetic
+SE0094,safe,"Rs 5,000.00 transferred to A/c XX5566 (ICICI) on 09-Nov-26 via NEFT. Ref: ICIC0000012. —SBI",en,false,train,synthetic
+SE0095,scam,ALERT: 2 failed login attempts on your Paytm. Verify your PIN now: 0000. Reply STOP to cancel.,en,false,test,synthetic
+SE0096,scam,Your car insurance expired. Renew now for Rs 999 (normally Rs 7000). Offer ends tonight!,en,false,train,synthetic
+SE0097,safe,"Sent Rs 800.00 to plumber.helper@paytm via UPI on 12-Nov-26. Bal: Rs 1,900.00 —Paytm",en,false,train,synthetic
+SE0098,safe,"Rs 2,500.00 debited from A/c XX4567 on 03-Nov-26 at LIC PREMIUM. Avl Bal: Rs 9,000.00 —Kotak",en,false,test,synthetic
+SE0099,safe,"Rs 1,100.00 debited from A/c XX6789 on 10-Nov-26 at D-MART. Avl Bal: Rs 4,200.00 —SBI",en,false,train,synthetic
+SE0100,suspicious,Update your registered mobile number to continue receiving SMS alerts from your bank.,en,false,train,synthetic
+SE0101,safe,KYC completed successfully for A/c XX3344. No further action needed. —Axis Bank,en,false,train,synthetic
+SE0102,safe,"Reminder: Your auto-pay of Rs 3,500 for HDFC home loan EMI is scheduled for 05-Dec.",en,false,train,synthetic
+SE0103,scam,Your net banking password will expire tonight. Reset via http://sbi-secure.click to avoid lockout.,en,false,train,synthetic
+SE0104,scam,Your UPI collect request of Rs 9999 from FAKE_BANK_REFUND pending. Approve now.,en,false,train,synthetic
+SE0105,scam,"Collect request aaya hai Rs 1 ka sirf verify ke liye. Accept kar, uske baad Rs 10,000 milenge.",hi,true,train,synthetic
+SE0106,safe,"Aapke account se Rs 1,500 EMI kata. Baaki bakiya: Rs 4,500. —Kotak Bank",hi,false,test,synthetic
+SE0107,scam,WhatsApp call recording: someone is monitoring your phone. Install this security app immediately.,en,false,train,synthetic
+SE0108,scam,"Badhai ho! Aapne Rs 2,00,000 jeete. Claim karne ke liye Rs 500 registration fee bhejein.",hi,false,train,synthetic
+SE0109,safe,"Your cheque No. 002345 for Rs 3,000 has been cleared. Avl Bal: Rs 7,890. —Kotak",en,false,test,synthetic
+SE0110,suspicious,"Mutual fund SIP reminder: Rs 2,000 auto-debit scheduled for 5th. Ensure sufficient balance.",en,false,test,synthetic
+SE0111,scam,"Free job offer! Ghar se kaam karein aur Rs 40,000 mahine kamayein. Rs 1000 registration fee.",hi,false,train,synthetic
+SE0112,safe,"Transaction alert: A debit of Rs 9,999 at APPLE STORE was made. If not done by you, call 1800XX.",en,false,train,synthetic
+SE0113,scam,Aadhaar OTP: 283847. Do NOT share with anyone. — UIDAI [this is a fake forward],en,false,train,synthetic
+SE0114,scam,KYC update karo bhai warna tera Paytm band ho jayega aaj raat ko. Click: paytm-verify.xyz,hi,true,train,synthetic
+SE0115,scam,Send a small Rs 1 to UPI: test-collect@icici to verify your account for cashback eligibility.,en,false,train,synthetic
+SE0116,scam,Your Google Pay account flagged. Share screen with our agent to verify: Call 8800112233,en,false,train,synthetic
+SE0117,suspicious,Unknown number se message aya hai job ke baare mein. Apply karein ya nahi?,hi,true,test,synthetic
+SE0118,safe,"Dekh tera rent auto-debit hua Rs 7,500. Landlord account mein chala gaya.",hi,true,test,synthetic
+SE0119,scam,WhatsApp: your account expires tomorrow unless you share this message to 10 friends.,en,false,train,synthetic
+SE0120,scam,"Online part time job: Rs 500/task, 10 tasks/day. Register Rs 200. 100% trusted. DM for details.",en,false,test,synthetic
+SE0121,scam,Tax saving FD: 15% interest! Senior citizen? Extra 2%. Book before 31st. Click: taxfd-special.com,en,false,train,synthetic
+SE0122,safe,"Rs 2,000 credited to your A/c XX8810 on 13-Nov-26. UPI Ref: 423891234567. —HDFC Bank",en,false,train,synthetic
+SE0123,suspicious,Free credit card offer for salaried individuals. No annual fee. Apply now. Income proof needed.,en,false,train,synthetic
+SE0124,scam,Amazon delivery issue with your package. Verify your address + payment: amzn-verify.in,en,false,train,synthetic
+SE0125,scam,"Government crypto scheme: invest Rs 5000, get Rs 50,000 in 7 days. PM endorsed. Limited offer.",en,false,test,synthetic
+SE0126,scam,"URGENT PM Kisan Yojana bonus Rs 6,000. Enter Aadhaar + OTP at http://pmkisan-gov.in.site to receive.",en,false,train,synthetic
+SE0127,scam,"Bhai free mein Rs 10,000 mil rahe hain government se. Bas ek baar OTP batao claim ke liye!",hi,true,train,synthetic
+SE0128,suspicious,Urgent: Your account shows unusual activity. Please verify transactions by calling 1800-XXX-1234.,en,false,test,synthetic
+SE0129,safe,"Your HDFC credit card bill of Rs 14,350.00 is due on 20-Nov. Pay to avoid late charges.",en,false,train,synthetic
+SE0130,safe,"Rs 7,500.00 debited from A/c XX2222 on 02-Nov-26 at RENT-LANDLORD. Avl Bal: Rs 3,250.00 —Axis",en,false,train,synthetic
+SE0131,scam,Lottery jeeti Rs 5 lakh! Processing fee Rs 2000 UPI par bhejein: prize@fakeclaim,hi,false,test,synthetic
+SE0132,safe,"Your EPF passbook updated. Total balance Rs 1,23,456. View at epfindia.gov.in. —EPFO",en,false,train,synthetic
+SE0133,safe,Bhai payment ho gayi Rs 500 Zomato pe. Balance abhi 2800 hai account mein.,hi,true,train,synthetic
+SE0134,suspicious,"Koi bol raha tha lottery jeeti hai humne, par mujhe nahi pata real hai ya scam.",hi,true,train,synthetic
+SE0135,safe,Rs 1 debited from A/c XX1234 as UPI verification charge. It will be refunded in 2 days. —SBI,en,false,train,synthetic
+SE0136,scam,Your KYC is expiring today. Click http://bit.ly/upd8kyc to avoid account block.,en,false,train,synthetic
+SE0137,scam,WhatsApp Gold: get extra features! Upgrade now: wa-gold.app. Only for select users like you.,en,false,train,synthetic
+SE0138,scam,Cyber Crime Branch: your phone used in fraud. Call officer Sharma 9988XX0011 to avoid arrest.,en,false,train,synthetic
+SE0139,safe,HDFC Bank: OTP for your net banking login is 783921. Valid 10 minutes. Do not share with anyone.,en,false,train,synthetic
+SE0140,safe,"Rs 8,500.00 debited from A/c XX9910 on 10-Nov-26 at AMAZON IN. Avl Bal: Rs 23,100.00 —Axis",en,false,train,synthetic
+SE0141,suspicious,Re: Your complaint #45678: Our team is investigating. Resolution in 48 hours.,en,false,train,synthetic
+SE0142,scam,"Dear customer, your HDFC account KYC incomplete. Update immediately: http://hdfckyc-update.ml",en,false,train,synthetic
+SE0143,safe,"Rs 350.00 debited from A/c XX5678 on 04-Nov-26 at BLINKIT. Avl Bal: Rs 8,900.00 —ICICI",en,false,train,synthetic
+SE0144,suspicious,Claim your reward points before they expire. 5000 points = Rs 50 voucher. Redeem in app.,en,false,train,synthetic
+SE0145,suspicious,"Your loan EMI of Rs 4,500 is due on 15th. Set reminder or auto-pay to avoid late fee.",en,false,train,synthetic
+SE0146,safe,Your account XX5678 is linked to Aadhaar. This is an automated confirmation. —SBI,en,false,test,synthetic
+SE0147,scam,NPCI lottery: Rs 10 lakh prize. Your UPI ID selected. Send Rs 1000 GST charge to claim prize.,en,false,train,synthetic
+SE0148,safe,"Received Rs 15,000.00 from SALARY CORP via UPI on 01-Nov-26. UPI Ref: 234567890123. —GPay",en,false,test,synthetic
+SE0149,safe,"ATM WDL Rs 2,000.00 from A/c XX1122 on 12-Nov-26 at SBI ATM DELHI. Avl Bal: Rs 7,890.00 —SBI",en,false,test,synthetic
+SE0150,suspicious,Auto insurance renewal reminder. Your policy expires on 20 Nov. Renew via official app.,en,false,test,synthetic
+SE0151,scam,Aapka PhonePe account verify karna hai. OTP batayein warna band ho jayega: 7654.,hi,false,train,synthetic
+SE0152,safe,"Your SIP of Rs 2,000.00 has been placed for AXIS BLUECHIP FUND on 05-Nov-26. —Groww",en,false,train,synthetic
+SE0153,suspicious,"Is offer mein no catch nahi hai apparently, par 100% sure nahi hoon — official website check karo.",en,false,train,synthetic
+SE0154,safe,"Aapke khate se Rs 500 kat gaye hain SWIGGY ke liye. Baaki bakiya: Rs 3,200. —SBI",hi,false,test,synthetic
+SE0155,suspicious,New UPI feature: pay with sound. Download beta app from Play Store link given here.,en,false,train,synthetic

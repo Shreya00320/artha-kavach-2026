@@ -130,29 +130,12 @@ Advisory passages:
 MESSAGE:
 {message}
 
-OUTPUT SCHEMA:
-{
-  "verdict": "scam",
-  "confidence": 0.95,
-  "red_flags": [
-    {
-      "flag": "Urgency pressure",
-      "quote_from_message": "account will be blocked in 2 hours",
-      "why_it_matters": "Scammers create artificial urgency to prevent you from thinking clearly."
-    }
-  ],
-  "what_to_do": [
-    "Do not share any OTP or PIN.",
-    "Report at cybercrime.gov.in or call 1930.",
-    "Contact your bank directly using the number on the back of your card."
-  ],
-  "claims": [
-    {
-      "text": "Legitimate banks never ask for OTP via SMS.",
-      "source_id": "KB001"
-    }
-  ]
-}
+OUTPUT SCHEMA (return JSON in this exact structure):
+verdict: "scam" | "suspicious" | "safe"
+confidence: 0.0 to 1.0
+red_flags: list of objects with flag, quote_from_message, why_it_matters
+what_to_do: list of action strings
+claims: list of objects with text and source_id
 """
 
 CLAIM_VERIFY_PROMPT_V1 = """You are a fact-checker. For each claim below, check if it is \
@@ -165,17 +148,8 @@ RULES:
 - Do NOT use outside knowledge — only the passage text.
 - Be strict: partial or vague support → verified: false.
 
-OUTPUT SCHEMA:
-{
-  "results": [
-    {
-      "claim_text": "Legitimate banks never ask for OTP via SMS.",
-      "source_id": "KB001",
-      "verified": true,
-      "evidence_quote": "RBI guidelines state banks will never ask customers to share OTP..."
-    }
-  ]
-}
+OUTPUT SCHEMA (return JSON in this exact structure):
+results: list of objects with claim_text, source_id, verified (bool), evidence_quote
 
 CLAIMS AND PASSAGES:
 {claims_and_passages}

@@ -1,0 +1,10 @@
+{
+  "total": 96,
+  "regex_success": 63,
+  "regex_success_pct": 65.6,
+  "failed": 33,
+  "failed_pct": 34.4,
+  "amount_accuracy_pct": 100.0,
+  "type_accuracy_pct": 100.0,
+  "note": "LLM fallback not benchmarked offline. Failed messages are intentionally unparseable (non-bank) entries in sample_sms.csv."
+}

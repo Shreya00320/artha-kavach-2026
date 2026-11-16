@@ -1,0 +1,48 @@
+id,label,text,language,hinglish,pred_rules,pred_clf,pred_pipeline
+SE0003,safe,"Rs 300.00 credited to your A/c XX9900 on 07-Nov-26 (CASHBACK-HDFC-CC). Avl Bal: Rs 4,350.00",en,False,safe,safe,safe
+SE0005,scam,TRAI: Your mobile number will be suspended in 2 hours for illegal usage. Call 198 to verify.,en,False,scam,scam,scam
+SE0013,suspicious,Online survey: Earn Rs 200 Amazon voucher. 5 mins only. No personal info required.,en,False,safe,suspicious,safe
+SE0019,suspicious,"Job opening: Data entry. Rs 15,000/month. No experience needed. Email your CV to hr@jobsite.com",en,False,safe,scam,safe
+SE0022,scam,Yaar government ka Rs 6000 PM Kisan bonus aa raha hai. Aadhaar + OTP daal de form mein!,hi,True,safe,scam,safe
+SE0024,scam,Mutual fund scheme: 40% guaranteed returns in 6 months. Invest now. Limited slots. Call now!,en,False,safe,suspicious,safe
+SE0025,safe,"Your A/c XX6712 is debited Rs 12,000.00 on 05-Nov-26 for EMI-HDFC LOAN. Avl Bal: Rs 4,320.00 —HDFC",en,False,safe,safe,safe
+SE0029,scam,"Flipkart Big Billion Day refund Rs 3,200 pending for order cancelled. Enter UPI PIN to receive.",en,False,scam,scam,scam
+SE0031,scam,You are selected for SBI special credit card. No documents needed. Pay Rs 750 courier fee.,en,False,safe,scam,safe
+SE0034,safe,"Rs 3,200.00 debited from A/c XX3344 on 11-Nov-26 at ZOMATO. Avl Bal: Rs 15,600.00 —Kotak",en,False,safe,safe,safe
+SE0035,safe,"Rs 1,800.00 debited from A/c XX1234 on 06-Nov-26 at MakeMyTrip. Avl Bal: Rs 11,200.00 —SBI",en,False,safe,safe,safe
+SE0037,safe,Sent Rs 500.00 to rahul.kumar@oksbi via UPI on 13-Nov-26. UPI Ref: 123456789012. —PhonePe,en,False,safe,safe,safe
+SE0039,safe,Low balance alert: Avl Bal in A/c XX9900 is Rs 234.50. Consider topping up. —HDFC,en,False,safe,safe,safe
+SE0041,suspicious,"Bhai is link pe click mat kar abhi, pehle verify kar ki genuine hai ya nahi.",hi,True,safe,scam,safe
+SE0043,scam,URGENT: Aapka SBI account block hone wala hai. OTP share karein: 1234 abhi!,hi,False,suspicious,scam,suspicious
+SE0044,scam,PM Awas Yojana ka paise milne wala hai. Aadhaar aur OTP dijiye: http://pmay-gov.xyz,hi,False,scam,scam,scam
+SE0045,scam,URGENT: Your SBI account will be blocked in 2 hours. Share OTP to verify: 7382.,en,False,scam,scam,scam
+SE0047,scam,Free insurance policy! Just pay Rs 299 stamp duty. Limited offer expires midnight. Click to claim.,en,False,safe,scam,safe
+SE0051,scam,"IIT internship offered! Rs 25,000 stipend. Apply fee Rs 500 only. Last date today!",en,False,safe,safe,safe
+SE0053,scam,"Income tax refund Rs 4,500 aapke khate mein bheja ja raha hai. Net banking details dijiye.",hi,False,safe,scam,safe
+SE0056,scam,Your Aadhaar linked mobile no. will be deactivated. Call 1800-XXX to verify OTP immediately.,en,False,scam,scam,scam
+SE0060,safe,"Rs 400.00 debited from A/c XX5679 on 11-Nov-26 at BOOKMYSHOW. Avl Bal: Rs 7,600.00 —HDFC",en,False,safe,safe,safe
+SE0064,scam,Your electricity connection will be cut in 2 hours due to outstanding bill. Pay now: 9876543210,en,False,scam,scam,scam
+SE0065,suspicious,You have been shortlisted for a part-time online job. Reply for more details. No fee mentioned.,en,False,safe,scam,safe
+SE0067,scam,Bhai teri job confirm ho gayi WFH mein. Sirf Rs 999 registration fee pay kar abhi!,hi,True,scam,scam,scam
+SE0070,safe,"Rs 450.00 debited from A/c XX0123 on 06-Nov-26 at CROSSWORD. Avl Bal: Rs 3,650.00 —SBI",en,False,safe,safe,safe
+SE0077,scam,Aapka bijli connection 1 ghante mein katega. Turant bhugtan karein: 9123456789,hi,False,suspicious,scam,suspicious
+SE0078,scam,"Job offer: Earn Rs 50,000/month from home! Pay Rs 1,500 registration fee to start today.",en,False,scam,scam,scam
+SE0084,safe,"Credit card payment of Rs 8,000 received. Outstanding: Rs 2,350. Due date: 20-Nov. —HDFC",en,False,safe,safe,safe
+SE0087,scam,Your Aadhaar card has been used for a SIM swap. File complaint: Call 9988XXXXXX immediately.,en,False,suspicious,scam,suspicious
+SE0093,suspicious,Your CIBIL score has dropped. Click to view free report: cibil-free.in. No fee required.,en,False,safe,scam,safe
+SE0095,scam,ALERT: 2 failed login attempts on your Paytm. Verify your PIN now: 0000. Reply STOP to cancel.,en,False,safe,scam,safe
+SE0098,safe,"Rs 2,500.00 debited from A/c XX4567 on 03-Nov-26 at LIC PREMIUM. Avl Bal: Rs 9,000.00 —Kotak",en,False,safe,safe,safe
+SE0106,safe,"Aapke account se Rs 1,500 EMI kata. Baaki bakiya: Rs 4,500. —Kotak Bank",hi,False,safe,safe,safe
+SE0109,safe,"Your cheque No. 002345 for Rs 3,000 has been cleared. Avl Bal: Rs 7,890. —Kotak",en,False,safe,safe,safe
+SE0110,suspicious,"Mutual fund SIP reminder: Rs 2,000 auto-debit scheduled for 5th. Ensure sufficient balance.",en,False,safe,safe,safe
+SE0117,suspicious,Unknown number se message aya hai job ke baare mein. Apply karein ya nahi?,hi,True,safe,suspicious,safe
+SE0118,safe,"Dekh tera rent auto-debit hua Rs 7,500. Landlord account mein chala gaya.",hi,True,safe,safe,safe
+SE0120,scam,"Online part time job: Rs 500/task, 10 tasks/day. Register Rs 200. 100% trusted. DM for details.",en,False,safe,safe,safe
+SE0125,scam,"Government crypto scheme: invest Rs 5000, get Rs 50,000 in 7 days. PM endorsed. Limited offer.",en,False,safe,scam,safe
+SE0128,suspicious,Urgent: Your account shows unusual activity. Please verify transactions by calling 1800-XXX-1234.,en,False,suspicious,scam,suspicious
+SE0131,scam,Lottery jeeti Rs 5 lakh! Processing fee Rs 2000 UPI par bhejein: prize@fakeclaim,hi,False,scam,scam,scam
+SE0146,safe,Your account XX5678 is linked to Aadhaar. This is an automated confirmation. —SBI,en,False,safe,scam,safe
+SE0148,safe,"Received Rs 15,000.00 from SALARY CORP via UPI on 01-Nov-26. UPI Ref: 234567890123. —GPay",en,False,safe,safe,safe
+SE0149,safe,"ATM WDL Rs 2,000.00 from A/c XX1122 on 12-Nov-26 at SBI ATM DELHI. Avl Bal: Rs 7,890.00 —SBI",en,False,safe,safe,safe
+SE0150,suspicious,Auto insurance renewal reminder. Your policy expires on 20 Nov. Renew via official app.,en,False,safe,suspicious,safe
+SE0154,safe,"Aapke khate se Rs 500 kat gaye hain SWIGGY ke liye. Baaki bakiya: Rs 3,200. —SBI",hi,False,safe,safe,safe

@@ -1,0 +1,350 @@
+{
+  "rules": {
+    "report": {
+      "scam": {
+        "precision": 1.0,
+        "recall": 0.42857142857142855,
+        "f1-score": 0.6,
+        "support": 21.0
+      },
+      "suspicious": {
+        "precision": 0.25,
+        "recall": 0.1111111111111111,
+        "f1-score": 0.15384615384615385,
+        "support": 9.0
+      },
+      "safe": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 17.0
+      },
+      "accuracy": 0.574468085106383,
+      "macro avg": {
+        "precision": 0.5833333333333334,
+        "recall": 0.5132275132275131,
+        "f1-score": 0.47350427350427343,
+        "support": 47.0
+      },
+      "weighted avg": {
+        "precision": 0.675531914893617,
+        "recall": 0.574468085106383,
+        "f1-score": 0.5386797599563556,
+        "support": 47.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9,
+        3,
+        9
+      ],
+      [
+        0,
+        1,
+        8
+      ],
+      [
+        0,
+        0,
+        17
+      ]
+    ],
+    "labels": [
+      "scam",
+      "suspicious",
+      "safe"
+    ]
+  },
+  "clf": {
+    "report": {
+      "scam": {
+        "precision": 0.75,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.8,
+        "support": 21.0
+      },
+      "suspicious": {
+        "precision": 0.75,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.46153846153846156,
+        "support": 9.0
+      },
+      "safe": {
+        "precision": 0.8421052631578947,
+        "recall": 0.9411764705882353,
+        "f1-score": 0.8888888888888888,
+        "support": 17.0
+      },
+      "accuracy": 0.7872340425531915,
+      "macro avg": {
+        "precision": 0.7807017543859649,
+        "recall": 0.7105508870214753,
+        "f1-score": 0.7168091168091167,
+        "support": 47.0
+      },
+      "weighted avg": {
+        "precision": 0.7833146696528555,
+        "recall": 0.7872340425531915,
+        "f1-score": 0.7673395162756865,
+        "support": 47.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        18,
+        1,
+        2
+      ],
+      [
+        5,
+        3,
+        1
+      ],
+      [
+        1,
+        0,
+        16
+      ]
+    ],
+    "labels": [
+      "scam",
+      "suspicious",
+      "safe"
+    ]
+  },
+  "pipeline": {
+    "report": {
+      "scam": {
+        "precision": 1.0,
+        "recall": 0.42857142857142855,
+        "f1-score": 0.6,
+        "support": 21.0
+      },
+      "suspicious": {
+        "precision": 0.25,
+        "recall": 0.1111111111111111,
+        "f1-score": 0.15384615384615385,
+        "support": 9.0
+      },
+      "safe": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 17.0
+      },
+      "accuracy": 0.574468085106383,
+      "macro avg": {
+        "precision": 0.5833333333333334,
+        "recall": 0.5132275132275131,
+        "f1-score": 0.47350427350427343,
+        "support": 47.0
+      },
+      "weighted avg": {
+        "precision": 0.675531914893617,
+        "recall": 0.574468085106383,
+        "f1-score": 0.5386797599563556,
+        "support": 47.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9,
+        3,
+        9
+      ],
+      [
+        0,
+        1,
+        8
+      ],
+      [
+        0,
+        0,
+        17
+      ]
+    ],
+    "labels": [
+      "scam",
+      "suspicious",
+      "safe"
+    ]
+  },
+  "hinglish": {
+    "rules": {
+      "report": {
+        "scam": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "suspicious": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 2.0
+        },
+        "safe": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1-score": 0.4,
+          "support": 1.0
+        },
+        "accuracy": 0.4,
+        "macro avg": {
+          "precision": 0.4166666666666667,
+          "recall": 0.5,
+          "f1-score": 0.35555555555555557,
+          "support": 5.0
+        },
+        "weighted avg": {
+          "precision": 0.45,
+          "recall": 0.4,
+          "f1-score": 0.3466666666666667,
+          "support": 5.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "labels": [
+        "scam",
+        "suspicious",
+        "safe"
+      ]
+    },
+    "clf": {
+      "report": {
+        "scam": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 2.0
+        },
+        "suspicious": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "safe": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.8888888888888888,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.8222222222222223,
+          "support": 5.0
+        },
+        "weighted avg": {
+          "precision": 0.8666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7866666666666667,
+          "support": 5.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "labels": [
+        "scam",
+        "suspicious",
+        "safe"
+      ]
+    },
+    "pipeline": {
+      "report": {
+        "scam": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "suspicious": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 2.0
+        },
+        "safe": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1-score": 0.4,
+          "support": 1.0
+        },
+        "accuracy": 0.4,
+        "macro avg": {
+          "precision": 0.4166666666666667,
+          "recall": 0.5,
+          "f1-score": 0.35555555555555557,
+          "support": 5.0
+        },
+        "weighted avg": {
+          "precision": 0.45,
+          "recall": 0.4,
+          "f1-score": 0.3466666666666667,
+          "support": 5.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "labels": [
+        "scam",
+        "suspicious",
+        "safe"
+      ]
+    }
+  },
+  "n_test": 47,
+  "n_test_hinglish": 5,
+  "llm_used": false,
+  "limitations": "Small synthetic test set (47 examples). Hinglish subset has only 5 examples \u2014 treat those numbers as directional only. Model trained and tested on synthetic data; real-world performance may differ."
+}

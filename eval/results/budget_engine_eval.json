@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "income >= 0": {
+      "pass": true,
+      "detail": "= 70300.00"
+    },
+    "expense >= 0": {
+      "pass": true,
+      "detail": "= 112818.00"
+    },
+    "net = income - expense": {
+      "pass": true,
+      "detail": "net=-42518.00 income=70300.00 exp=112818.00"
+    },
+    "savings_rate = net/income*100": {
+      "pass": true,
+      "detail": "-60.5% vs expected -60.48%"
+    },
+    "needs_target = 50% of income": {
+      "pass": true,
+      "detail": "35150.00"
+    },
+    "wants_target = 30% of income": {
+      "pass": true,
+      "detail": "21090.00"
+    },
+    "savings_target = 20% of income": {
+      "pass": true,
+      "detail": "14060.00"
+    },
+    "needs_delta = needs_total - needs_target": {
+      "pass": true,
+      "detail": ""
+    },
+    "wants_delta = wants_total - wants_target": {
+      "pass": true,
+      "detail": ""
+    },
+    "all category totals >= 0": {
+      "pass": true,
+      "detail": ""
+    },
+    "sum(by_category) <= total_expense": {
+      "pass": true,
+      "detail": "cat_sum=112818.00 total_exp=112818.00"
+    },
+    "flat plan: monthly = income * rate": {
+      "pass": true,
+      "detail": "first=10000.0"
+    },
+    "flat plan: cumulative[-1] = sum(monthly)": {
+      "pass": true,
+      "detail": "cum=120000.0 sum=120000.0"
+    },
+    "step-up: rate increases at month 7": {
+      "pass": true,
+      "detail": "m6=5000.0 m7=5500.0"
+    },
+    "step-up saves more than flat over 12m": {
+      "pass": true,
+      "detail": ""
+    },
+    "All nudge numbers sourced from engine": {
+      "pass": true,
+      "detail": ""
+    }
+  },
+  "failures": [],
+  "n_pass": 16,
+  "n_total": 16,
+  "summary_stats": {
+    "total_income": 70300.0,
+    "total_expense": 112818.0,
+    "net": -42518.0,
+    "savings_rate": -60.5,
+    "n_transactions": 96,
+    "n_parsed": 63,
+    "n_failed": 33
+  }
+}

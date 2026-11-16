@@ -1,7 +1,23 @@
+# Python
 .venv/
-.env
 __pycache__/
 *.pyc
-data/private/
+*.pyo
+*.pyd
+
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Cache & build artifacts
 .cache/
 .pytest_cache/
+eval/results/*.png
+*.egg-info/
+
+# Private data
+data/private/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -39,7 +39,7 @@ st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
 def _get_adapter():
     """Return a live LLMAdapter, or None if no API key is set."""
     provider = os.getenv("LLM_PROVIDER", "gemini")
-    api_key  = os.getenv("GEMINI_API_KEY", "")
+    api_key  = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key and provider == "gemini":
         return None
     try:
@@ -53,7 +53,7 @@ def _get_adapter():
 @st.cache_resource(show_spinner="Loading knowledge base…")
 def _get_retriever():
     """Return a Retriever from the saved FAISS index, or None."""
-    api_key = os.getenv("GEMINI_API_KEY", "")
+    api_key = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key:
         return None
     try:
@@ -120,7 +120,7 @@ with st.sidebar:
 
     if not adapter:
         st.info(
-            "Set `GEMINI_API_KEY` in `.env` to enable the LLM judge.  \n"
+            "Set `LLM_API_KEY` (or `GEMINI_API_KEY`) in `.env` or Streamlit Secrets to enable the LLM judge.  \n"
             "The app works offline using rules + ML only."
         )
 

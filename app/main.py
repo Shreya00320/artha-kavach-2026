@@ -55,15 +55,39 @@ def _get_adapter():
 
 @st.cache_resource(show_spinner="Loading knowledge base…")
 def _get_retriever():
-    """Return a Retriever from the saved FAISS index, or None."""
+    """Return a Retriever from the saved FAISS index.
+
+    If the index has not been built yet (e.g. fresh Streamlit Cloud deploy),
+    build it automatically from data/kb/ before returning.
+    Returns None if no API key is set or if FAISS is unavailable.
+    """
     api_key = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key:
         return None
     try:
         from google import genai
-        from rag.retrieve import build_retriever
+        from rag.ingest import build_index, load_index
+        from rag.retrieve import Retriever
+
         client = genai.Client(api_key=api_key)
-        return build_retriever(".cache", client)
+        cache_dir = ".cache"
+
+        # Try loading an existing index first (fast path)
+        try:
+            index = load_index(cache_dir)
+            logging.info("FAISS index loaded from cache (%d docs).", index.index.ntotal)
+        except FileNotFoundError:
+            # Index not built yet — build it now (runs once per deploy)
+            logging.info("FAISS index not found — building from data/kb/ …")
+            with st.spinner("🔨 Building knowledge base index (one-time, ~30 s)…"):
+                index = build_index(
+                    kb_dir="data/kb",
+                    cache_dir=cache_dir,
+                    client=client,
+                )
+            logging.info("FAISS index built (%d docs).", index.index.ntotal)
+
+        return Retriever(index, client)
     except Exception as exc:
         logging.warning("Retriever init failed: %s", exc)
         return None
@@ -114,7 +138,7 @@ with st.sidebar:
     )
     st.markdown(
         f"{'✅' if retriever  else '⚠️'} **Knowledge base** — "
-        f"{'Loaded' if retriever else 'Not loaded (no embeddings)'}"
+        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not loaded (building on first run…)'}"
     )
     st.markdown(
         f"{'✅' if classifier else '⚠️'} **ML Classifier** — "

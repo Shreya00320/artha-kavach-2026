@@ -19,7 +19,7 @@ def render_goals_tab() -> None:
         sip_future_value, sip_required, years_months, months_to_goal, rule_of_72,
     )
 
-    st.markdown("## 🎯 Goals & Planner")
+    st.markdown("## 🎯 Goals & Tax")
     summary, _, _ = get_budget_state()
     income = float(summary.total_income) if summary and summary.total_income else 0.0
     needs = float(summary.needs_total) if summary and summary.needs_total else 0.0
@@ -27,9 +27,13 @@ def render_goals_tab() -> None:
     if summary is None:
         st.info("Tip: load your SMS in 💰 Smart Budget first — this tab then pre-fills from your real numbers.")
 
-    t_ef, t_goals, t_sip, t_emi, t_step = st.tabs(
-        ["🛟 Emergency fund", "🎯 My goals", "📈 SIP calculator", "🏦 Loan / EMI", "🪜 Step-up saving"]
+    t_ef, t_goals, t_tax, t_sip, t_emi, t_step = st.tabs(
+        ["🛟 Emergency fund", "🎯 My goals", "🧾 Tax: old vs new", "📈 SIP calculator", "🏦 Loan / EMI", "🪜 Step-up saving"]
     )
+
+    with t_tax:
+        from app.tax_ui import render_tax_tab
+        render_tax_tab()
 
     with t_ef:
         c1, c2, c3 = st.columns(3)

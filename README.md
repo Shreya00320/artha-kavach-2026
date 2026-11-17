@@ -16,8 +16,8 @@ UPI fraud, "where did my salary go?", saving for goals, and tax-regime confusion
 |-----|-----------------|
 | 🛡️ **Scam Shield** | **Check a message** (SMS / WhatsApp / UPI collect request, English · Hindi · Hinglish) → Scam / Suspicious / Safe with highlighted red flags and a cited Trust Receipt · **Check a link** offline (lookalike bank domains, shorteners, APKs — the link is never opened) · **Scan many messages** at once · **🆘 I've been scammed**: golden-hour action plan (1930, bank block, RBI zero-liability window) + a ready-to-paste cybercrime.gov.in complaint |
 | 💰 **Smart Budget** | Paste bank SMS or upload a CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** |
-| 🎯 **Goals & Planner** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan — pre-filled from your budget |
-| 🧾 **Tax** | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
+| 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · tax regime comparison — pre-filled from your budget |
+| ↳ 🧾 **Tax** (inside Goals & Tax) | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
 | 💬 **Ask Artha** | Chat about your money ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Answers use engine-computed numbers only; an AI reply containing any other number is rejected |
 | 🔍 **Trust Receipt** | Every AI output carries its evidence: sources, verified claims, code-computed numbers, and which detectors agreed |
 
@@ -123,6 +123,7 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full technical diagram.
 ## 📊 Evaluation results
 
 > Run yourself: `python -m eval.quick_eval` (needs only scikit-learn) or `python -m eval.run_eval` (full report, needs pandas/matplotlib; add `--llm` with an API key)
+> On your own real messages: put a CSV with `text,label` columns in `data/private/` (git-ignored) and run `python -m eval.real_eval data/private/real_sms.csv` (add `--llm` to include the AI judge)
 
 ### Scam detection — 47-message held-out test set (offline, no LLM)
 
@@ -160,7 +161,7 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full technical diagram.
 ```
 artha-kavach-2026/
 ├── app/                  ← Streamlit UI
-│   ├── main.py           ← Entry point, caching, 6-tab layout, privacy controls
+│   ├── main.py           ← Entry point, caching, 5-tab layout, demo story, privacy controls
 │   ├── scam_ui.py        ← Scam Shield: message · link · bulk scan · I've been scammed
 │   ├── budget_ui.py      ← Smart Budget: overview · alerts · subscriptions · transactions · tax hints
 │   ├── goals_ui.py       ← Emergency fund · goals · SIP · EMI · step-up saving
@@ -207,7 +208,7 @@ artha-kavach-2026/
 │   ├── run_eval.py       ← Full evaluation suite with charts
 │   └── results/          ← JSON + CSV + PNG outputs
 │
-├── tests/                ← 150 tests incl. headless end-to-end UI tests
+├── tests/                ← 151 tests incl. headless end-to-end UI tests
 ├── .env.example
 ├── requirements.txt
 ├── ARCHITECTURE.md
@@ -217,7 +218,7 @@ artha-kavach-2026/
 ## 🧪 Running tests
 
 ```bash
-# Everything (150 tests: unit + headless Streamlit UI tests; no API key needed)
+# Everything (151 tests: unit + headless Streamlit UI tests; no API key needed)
 python -m pytest tests/ -v
 
 # Just the new features (tax, goals, insights, assistant, link checker, rules, parser formats)

@@ -35,7 +35,7 @@ def _no_errors(at):
 
 def test_app_loads_all_tabs(app):
     labels = [t.label for t in app.tabs]
-    for expected in ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Planner", "🧾 Tax", "💬 Ask Artha", "📖 About"]:
+    for expected in ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Tax", "🧾 Tax: old vs new", "💬 Ask Artha", "📖 About"]:
         assert expected in labels
 
 
@@ -76,6 +76,18 @@ def test_budget_then_goals_tax_chat(app):
     app.button(key="chat_suggest_0").click().run()
     _no_errors(app)
     assert any("₹" in m.value for m in app.markdown)
+
+
+def test_demo_story(app):
+    next(b for b in app.sidebar.button if b.label == "Load demo story").click().run()
+    _no_errors(app)
+    assert "digital arrest" in app.text_area(key="scam_textarea").value
+    next(b for b in app.button if b.label == "🔍 Analyse message").click().run()
+    _no_errors(app)
+    page = " ".join(m.value for m in app.markdown)
+    assert "SCAM" in page
+    # the ₹25,000 payment to an unknown UPI ID shows up as a high alert
+    assert any("25,000" in e.value for e in app.error)
 
 
 def test_clear_data(app):

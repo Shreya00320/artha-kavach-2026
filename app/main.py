@@ -115,17 +115,20 @@ def _get_classifier():
 # Header
 # ---------------------------------------------------------------------------
 
-col_logo, col_title = st.columns([1, 10])
-with col_logo:
-    st.markdown("# 🛡️")
-with col_title:
-    st.markdown("# Artha Kavach")
-    st.caption(
-        "Your one-stop money coach for India · stops UPI scams · budgets from bank SMS · "
-        "goals, tax & a money chat · never says a number it can't prove"
-    )
-
-st.divider()
+st.markdown(
+    """
+<div class="hero">
+  <div class="hero-title">🛡️ Artha Kavach</div>
+  <div class="hero-tag">The money coach that stops UPI scams, budgets from your bank SMS —
+  and <b>never says a number it can't prove</b>.</div>
+  <div class="hero-chips">
+    <span>🚨 Scam check in seconds</span><span>🆘 Scammed? Golden-hour plan</span>
+    <span>💰 Budget from SMS</span><span>🎯 Goals &amp; tax</span><span>🔒 Works offline · data stays with you</span>
+  </div>
+</div>
+""",
+    unsafe_allow_html=True,
+)
 
 # ---------------------------------------------------------------------------
 # Status sidebar
@@ -157,6 +160,15 @@ with st.sidebar:
         )
 
     st.divider()
+    st.markdown("### 🎬 Demo story")
+    st.caption("One click loads a 'digital arrest' scam message and a month of bank SMS "
+               "that includes the ₹25,000 the victim already paid.")
+    if st.button("Load demo story", width="stretch", key="btn_demo_story"):
+        from app.demo import load_demo_story
+        load_demo_story()
+        st.success("Loaded — start in 🛡️ Scam Shield, then 💰 Smart Budget, then 💬 Ask Artha.")
+
+    st.divider()
     st.markdown("### 🔒 Your privacy")
     st.caption(
         "Messages you paste are processed in this session only and are not stored by the app. "
@@ -176,8 +188,8 @@ with st.sidebar:
 # Main tabs (Smart Budget renders before Goals/Tax/Ask so they see fresh data)
 # ---------------------------------------------------------------------------
 
-tab_scam, tab_budget, tab_goals, tab_tax, tab_chat, tab_about = st.tabs(
-    ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Planner", "🧾 Tax", "💬 Ask Artha", "📖 About"]
+tab_scam, tab_budget, tab_goals, tab_chat, tab_about = st.tabs(
+    ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Tax", "💬 Ask Artha", "📖 About"]
 )
 
 with tab_scam:
@@ -191,10 +203,6 @@ with tab_budget:
 with tab_goals:
     from app.goals_ui import render_goals_tab
     render_goals_tab()
-
-with tab_tax:
-    from app.tax_ui import render_tax_tab
-    render_tax_tab()
 
 with tab_chat:
     from app.chat_ui import render_chat_tab

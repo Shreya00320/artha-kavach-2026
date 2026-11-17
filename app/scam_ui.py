@@ -52,6 +52,18 @@ SAMPLE_MESSAGES = {
         "Dear Customer, You have won Rs 5,00,000 in NPCI lucky draw. "
         "Pay processing fee Rs 500 to claim. Call 9999988888."
     ),
+    "🧠 Needs AI: 'papa' on a new number (Hinglish)": (
+        "Beta papa bol raha hu, purana phone kharab ho gaya. Ye naya number save kar lo. "
+        "Hospital mein ek dost ke liye 18000 chahiye, abhi is UPI pe bhej do, ghar aake samjhata hu."
+    ),
+    "🧠 Needs AI: polite 'HR' message, no trigger words": (
+        "Hello! Your profile was shortlisted by our hiring team for a remote Amazon support role. "
+        "Please message our recruiter on WhatsApp to complete onboarding and confirm your slot today."
+    ),
+    "🧠 Needs AI: fake electricity officer": (
+        "Dear consumer, your previous month bill update is not reflected in our system. "
+        "Kindly contact our officer Mr. Sharma on 9123456780 tonight to avoid inconvenience."
+    ),
     "✅ Legitimate bank debit": (
         "Rs 1,250.00 debited from A/c XX4521 on 14-Nov-26 at SWIGGY. "
         "Avl Bal: Rs 12,340.50 —SBI"
@@ -78,6 +90,26 @@ def render_link_reports(reports, heading: str = "🔗 Links in this message") ->
         st.markdown(f"{LINK_ICON[r.verdict]} `{r.url}` — **{r.verdict.upper()}**{org}")
         for why in r.reasons:
             st.caption(f"• {why}")
+
+
+def _render_detector_strip(result) -> None:
+    """Show how each detector voted, so the AI's contribution is visible."""
+    score = result.rule_result.score
+    rules_v = "scam" if score >= 0.55 else "suspicious" if score >= 0.25 else "safe"
+    votes = [("📏 Rules", rules_v, f"{score * 100:.0f}% score")]
+    if result.classifier_proba:
+        clf_v = max(result.classifier_proba, key=result.classifier_proba.get)
+        votes.append(("🤖 ML model", clf_v, f"{result.classifier_proba[clf_v] * 100:.0f}% sure"))
+    final_label = "🧠 AI judge (final)" if result.llm_used else "⚖️ Combined (final)"
+    votes.append((final_label, result.verdict, f"{result.confidence * 100:.0f}% confidence"))
+    for col, (name, v, detail) in zip(st.columns(len(votes)), votes):
+        col.metric(name, f"{VERDICT_EMOJI.get(v, '')} {v}", detail, delta_color="off")
+    if result.llm_used and result.verdict != rules_v:
+        st.info(f"🧠 **The AI judge changed the verdict:** the rules alone said *{rules_v}*, "
+                f"but reading the whole message the AI judged it *{result.verdict}*. "
+                "Its reasons are quoted below and checked in the Trust Receipt.")
+    elif not result.llm_used and rules_v == "safe" and result.verdict != "safe":
+        st.info("🤖 No rule fired, but the ML model recognised the pattern from training examples.")
 
 
 # ---------------------------------------------------------------------------
@@ -138,6 +170,7 @@ def _render_check_message(adapter, retriever, classifier) -> None:
         modes.append("KB retrieval")
     modes.append("Rules engine")
     st.caption(f"⚡ Analysed in {result.elapsed_ms:.0f} ms  ·  Pipeline: {', '.join(modes)}")
+    _render_detector_strip(result)
 
     if result.verdict == "scam":
         st.error(

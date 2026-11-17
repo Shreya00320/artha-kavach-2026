@@ -1,173 +1,107 @@
-# 🎬 Artha Kavach — 4-Minute Demo Script
+# 🎬 Artha Kavach — 3-Minute Demo Script + Judge Q&A
 ## Arthaton 2026 · AI for Finance
 
 ---
 
-## PRE-DEMO CHECKLIST (5 min before)
+## Pre-demo checklist (10 min before)
 
-- [ ] App open at the live URL (or `streamlit run app/main.py` running locally)
-- [ ] Sidebar shows: ✅ LLM — Live (Gemini) | ✅ KB — Loaded | ✅ ML Classifier — Trained
-- [ ] Tab 1 (Scam Shield) is active
-- [ ] Browser font size bumped up (~125%) so text is readable on screen
-- [ ] `.env` has valid `GEMINI_API_KEY`
+- [ ] Live app opens **without sign-in** (Streamlit Cloud → Settings → Sharing → public)
+- [ ] Sidebar shows ✅ LLM — Live (Gemini) · ✅ Knowledge base — Loaded · ✅ ML Classifier — Trained
+- [ ] Secrets use `LLM_MODEL=gemini-3.8-flash` and `EMBEDDING_MODEL=gemini-embedding-001`
+- [ ] Ran the 🧠 "papa on a new number" sample once today (warms the LLM cache, confirms the key works)
+- [ ] Browser zoom ~125%; close other tabs; phone on silent
+- [ ] Backup: `streamlit run app/main.py` on a laptop — the app works **without internet** (rules + ML)
 
----
-
-## SCRIPT
-
-### ⏱️ 0:00–0:30 — Hook (30 sec)
-
-> "India processed over 14 billion UPI transactions last year. And scammers know this.
-> Every 10 minutes, someone in India loses money to a fake collect request or a phishing SMS.
->
-> The problem isn't that people are careless — it's that **they can't tell when the AI is wrong**.
-> Most apps just say 'this looks suspicious'. No source. No explanation. Just vibes.
->
-> We built Artha Kavach — an AI money coach that **protects you from UPI scams, builds your budget from bank SMS, and never says anything it can't prove**."
+> ⚠️ Only quote statistics you can source on a slide (e.g. NPCI monthly UPI volumes, I4C/MHA fraud
+> figures). An unsourced number undermines a product whose pitch is "never says what it can't prove".
 
 ---
 
-### ⏱️ 0:30–1:45 — Scam Shield demo (75 sec)
+## The story (3:00)
 
-**[Click "📋 Load a sample message" → select "🚨 OTP phishing (Hinglish)"]**
+### 0:00–0:25 — Hook
+> "Meet Priya, 22, first job. Yesterday a 'Mumbai Cyber Crime inspector' video-called her: a parcel in
+> her name had drugs, she was under 'digital arrest', and she had to transfer ₹25,000 to 'verify her funds'.
+> She paid. Today she wants to know: was it a scam, what now, and can she still pay rent?
+> Artha Kavach answers all three — and never says a number it can't prove."
 
-> "Let's start with something real. This is a Hinglish scam SMS — the kind millions of people get every day."
+**[Sidebar → 🎬 Load demo story]**
 
-**[Click "Load sample"]**  
-Message appears:
-> *"Aapka SBI account block ho jayega. Abhi apna OTP 7382 share karo ya yahan click karo: http://sbi-kyc.update.click/verify"*
+### 0:25–1:10 — Scam Shield
+**[🛡️ Scam Shield → 🔍 Analyse message]**
+> "Red verdict in under a second. Look at the strip: rules, ML model and the AI judge each voted —
+> you see who said what. Red flags are quoted word-for-word from the message, and the UPI ID and links are
+> checked without ever opening them."
 
-**[Click "🔍 Analyse message"]**
+**[Open 🔍 Trust Receipt]**
+> "Every claim the AI makes cites an official source — I4C, RBI — and a second AI call verifies the
+> claim against that source. Unverified claims are dropped. The AI can't bluff."
 
-> "Three things are running in parallel right now:
-> a rules engine checking for OTP requests and phishing links,
-> a machine-learning classifier trained on 155 labelled SMS messages,
-> and a Gemini-powered judge that reads official RBI and NPCI advisories to build its case."
+### 1:10–1:40 — 🆘 I've been scammed
+**[Click 🆘 I've been scammed]**
+> "Priya already paid. Step one: call 1930 — inside the golden hour the money can still be frozen.
+> Then her bank — under RBI's 2017 rules, reporting within 3 working days matters.
+> She fills five fields and gets a complaint ready to paste into cybercrime.gov.in."
 
-🚨 **SCAM badge appears**
+### 1:40–2:20 — Smart Budget
+**[💰 Smart Budget → 🔔 Alerts]**
+> "Her month, built from bank SMS — no bank login, nothing stored. The ₹25,000 to an unknown UPI ID is flagged.
+> Money to friends isn't counted as spending, refunds are netted, subscriptions add up to a yearly figure.
+> Every number here is plain Python — the AI never does arithmetic."
 
-> "Scam — 85% confidence. But look at what's different about this."
+### 2:20–2:45 — Ask Artha
+**[💬 Ask Artha → type "Can I afford ₹9,000 for rent?"]**
+> "She can just ask. The AI phrases the answer, but if it writes any number our code didn't compute,
+> the reply is thrown away and replaced. That's our rule everywhere: never say a number you can't prove."
 
-**[Point to the highlighted text in the message]**
-> "The exact suspicious words are highlighted right inside the original message. No vague summary."
+### 2:45–3:00 — Close
+> "Scam check, a plan when it's too late, and a budget that tells the truth — in English, Hindi and Hinglish,
+> working even offline. Artha Kavach."
 
-**[Scroll down — point to "What to do"]**
-> "Plain-English advice — in the same language as the message."
-
-**[Click "🔍 Trust Receipt"]**
-> "And here's what makes Artha Kavach different from every other scam detector.
-> This is the **Trust Receipt**. It shows:
-> - which three detectors agreed — rules, ML, and LLM all voted scam
-> - the exact RBI and NPCI advisory passages it used as evidence
-> - each claim the AI made — individually verified against those passages.
->
-> The AI literally cannot bluff its sources. We check."
-
----
-
-### ⏱️ 1:45–2:45 — Smart Budget demo (60 sec)
-
-**[Click "💰 Smart Budget" tab]**  
-**[Click "🎲 Sample data" → "▶ Load sample dataset"]**
-
-> "Now let's flip to the budget side. I'm loading 120 synthetic bank SMS messages — SBI, HDFC, ICICI, Paytm — all from one month."
-
-*Spinner runs → results appear*
-
-> "In under two seconds: ₹70,300 income, ₹1,12,818 expenses — yes, this person is overspending, which is exactly the kind of insight a first-job earner needs."
-
-**[Point to 50/30/20 chart]**
-> "The 50/30/20 breakdown shows Wants are ₹15,000 over budget."
-
-**[Point to nudges]**
-> "These nudges were written by Gemini — but every single number in them came from Python code. The AI is not allowed to do arithmetic. We post-check every nudge and reject it if it invents a number. Trust, by design."
-
-**[Scroll to savings planner]**
-> "And a savings planner — flat savings versus the Save More Tomorrow strategy from behavioural finance research. Clearly labelled as an illustration, not a guarantee."
+**If time allows:** 🛡️ → 🧠 "papa on a new number" sample — rules say *safe*, the AI judge catches it.
 
 ---
 
-### ⏱️ 2:45–3:30 — Architecture & numbers (45 sec)
+## Judge Q&A — every team member should be able to answer
 
-**[Click "📖 About" tab, or switch to a slide]**
+**Q: Where is the AI? Isn't this mostly rules?**
+Three layers on purpose: rules (fast, explainable, offline), an ML classifier (TF-IDF word + character
+n-grams + logistic regression — catches patterns rules miss, handles Hinglish spelling), and an LLM judge
+with retrieval over 21 official advisories for messages that need understanding (the "papa" example).
+A second LLM call verifies each claim. We use the LLM only where language understanding is needed.
 
-> "Here's the design principle we're proud of:
->
-> **Code where code is reliable. Small ML for fast verdicts. LLM only for language.**
->
-> Every budget number is computed by Python — auditable, deterministic, zero hallucination risk.
-> Every scam verdict carries a Trust Receipt — sources, verified claims, detector votes.
->
-> The numbers:"
+**Q: How do you combine the detectors?**
+Rules use noisy-OR: score = 1 − ∏(1 − weightᵢ), so independent weak signals add up. Offline, the more severe
+of the rules verdict and the classifier verdict wins — missing a scam costs far more than a false alarm.
+With an API key, the LLM judge sees the message, the rule hits, the classifier probabilities and the
+retrieved advisories, and gives the final verdict.
 
-| | |
-|--|--|
-| ML Classifier macro-F1 | **0.72** |
-| Scam class F1 | **0.80** |
-| Hinglish ML score | **0.82** |
-| Parser amount accuracy | **100%** |
-| Unit tests passing | **72 / 72** |
+**Q: How do you stop the AI from hallucinating numbers?**
+All arithmetic is Python. The LLM only receives computed facts, and a post-check extracts every number in
+its reply; any number not in the facts (±1% rounding) rejects the reply and we fall back to a rules answer.
+Same for budget nudges.
 
-> "And critically — the app never breaks. No API key? It falls back to rules plus ML.
-> LLM fails mid-demo? The fallback kicks in silently. The judges will always see a working product."
+**Q: How accurate is it?**
+On our 47-message held-out test set (synthetic): offline macro F1 0.82; rules alone flag no safe messages.
+The SMS parser reads all 91 transaction SMS in our sample. Caveat: synthetic data — [add your real-SMS result
+here: `python -m eval.real_eval data/private/real_sms.csv`].
 
----
+**Q: Would anyone really paste SMS?**
+Today: paste or CSV, so no bank credentials and no SMS permission. Roadmap: Android on-device SMS reading
+(iOS doesn't allow it) and bank-statement import. Privacy is the reason we didn't start with bank linking.
 
-### ⏱️ 3:30–4:00 — Close (30 sec)
+**Q: Privacy?**
+Data lives in the session only; a sidebar button wipes it. Offline mode sends nothing anywhere. With a key,
+message text goes to the LLM provider for analysis — we say so in the app.
 
-> "Artha Kavach is live at [URL] — no account, no setup. Load sample data, paste a scam, see the Trust Receipt.
->
-> The judges from Google, Perplexity, Bernstein, and Mistral care about two things:
-> does it work end to end, and does it have real impact.
->
-> We have both. Working app, real eval numbers, honest caveats, and a design that explains itself.
->
-> Thank you."
+**Q: What if a scam uses a new pattern?**
+The classifier and LLM generalise beyond rules; the link checker catches lookalike domains by edit distance.
+New rules and advisories are one-line additions, and every verdict says which detector fired.
 
----
+**Q: Is the tax calculator correct?**
+FY 2026-27 slabs (unchanged by Budget 2026), 87A rebate with marginal relief, deduction caps — unit-tested
+against hand calculations. It states what it doesn't cover (surcharge, capital gains, senior slabs).
 
-## BACKUP — if live URL fails
-
-```bash
-cd C:\Users\DELL\Documents\AI-FINANCE
-.venv\Scripts\streamlit.exe run app/main.py
-# Opens at http://localhost:8501
-```
-
-## BACKUP — if LLM is down
-
-The app automatically falls back to rules + ML. The verdict badge still appears.
-Say: *"The LLM is offline but the demo keeps running — that's the graceful degradation we built in."*
-
-## BACKUP SCAM MESSAGES (paste manually if sample data fails)
-
-**Strong scam (all detectors agree):**
-```
-URGENT: Your KYC is expiring! Share OTP 7382 now or account blocked in 2 hours. Click: http://sbi-kyc.update.click/verify
-```
-
-**Safe bank SMS (should score low):**
-```
-Rs 1,250.00 debited from A/c XX4521 on 14-Nov-26 at SWIGGY. Avl Bal: Rs 12,340.50 —SBI
-```
-
-**Hinglish scam:**
-```
-Aapka SBI account block ho jayega. Abhi apna OTP 7382 share karo ya yahan click karo: http://sbi-kyc.update.click/verify
-```
-
----
-
-## LIKELY JUDGE QUESTIONS
-
-**Q: What if someone submits a totally new type of scam the model hasn't seen?**
-> "The rules engine and classifier will likely miss it — that's exactly why the LLM judge exists. It reads the message fresh with KB context, not from a lookup table. And the Trust Receipt shows the confidence level, so the user knows when to be extra careful."
-
-**Q: Why not just use an LLM for everything?**
-> "Three reasons: cost, latency, and reliability. The rules engine and classifier handle 80% of cases instantly, offline, for free. The LLM adds value at the edges. And for budget numbers, letting an LLM do arithmetic is a known failure mode — we proved this matters by running the nudge number-check."
-
-**Q: The dataset is synthetic — does it generalise?**
-> "Honestly, we don't know yet — that's in the README. The eval numbers are directional. The real validation would be a field study with actual SMS data from consenting users. We designed the pipeline so each component (rules, ML, LLM) can be improved independently as more data arrives."
-
-**Q: What's the business model?**
-> "Free tier covers offline rules + ML. Premium unlocks the LLM judge and KB retrieval — pay-as-you-go on API cost, with disk caching to minimise spend. Target: partner with NPCI or a fintech for data and distribution."
+**Q: Business model / next steps?**
+Free for individuals; partnerships with banks/colleges for financial-literacy and fraud-awareness programmes;
+an on-device Android version; Hindi UI; real-world labelled data from opted-in users.

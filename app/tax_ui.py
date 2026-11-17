@@ -13,7 +13,7 @@ def render_tax_tab() -> None:
     from core.tax import TAX_YEAR, Deductions, compare_regimes
     from core.insights import tax_tags
 
-    st.markdown("## 🧾 Tax: old vs new regime")
+    st.markdown("### 🧾 Tax: old vs new regime")
     st.caption(f"{TAX_YEAR} rates · salaried individuals under 60 · estimate only, not tax advice.")
 
     summary, txns, _ = get_budget_state()

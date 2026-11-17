@@ -10,6 +10,13 @@ from app.styles import VERDICT_COLOUR, VERDICT_EMOJI, NUDGE_ICON
 # Scam Shield components
 # ---------------------------------------------------------------------------
 
+_VERDICT_SUB = {
+    "scam": "Do not reply, click, pay or share any OTP/PIN.",
+    "suspicious": "Don't act on it yet — verify through your bank's official app or number.",
+    "safe": "No scam signs found. Still never share OTP/PIN with anyone.",
+}
+
+
 def render_verdict_badge(verdict: str, confidence: float) -> None:
     """Large coloured verdict badge with confidence."""
     colour = VERDICT_COLOUR.get(verdict, "#888")
@@ -19,6 +26,7 @@ def render_verdict_badge(verdict: str, confidence: float) -> None:
     st.markdown(
         f'<div class="verdict-badge" style="background:{colour}">'
         f'{emoji} {label} &nbsp;·&nbsp; {conf_pct}% confidence'
+        f'<span class="verdict-sub">{_VERDICT_SUB.get(verdict, "")}</span>'
         f'</div>',
         unsafe_allow_html=True,
     )

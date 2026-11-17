@@ -27,17 +27,28 @@ GLOBAL_CSS = """
 [data-testid="stSidebar"]          { background: #161B22; }
 h1, h2, h3, h4                     { font-family: 'Segoe UI', sans-serif; }
 
+/* ---- hero ---- */
+.hero { padding: 18px 22px; border-radius: 14px; margin-bottom: 8px;
+        background: linear-gradient(135deg, #12263F 0%, #0F1117 70%); border: 1px solid #30363D; }
+.hero-title { font-size: 2.1rem; font-weight: 800; color: #F0F6FC; line-height: 1.2; }
+.hero-tag { font-size: 1.05rem; color: #C9D1D9; margin-top: 6px; max-width: 60rem; }
+.hero-chips { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-chips span { background: #161B22; border: 1px solid #30363D; border-radius: 999px;
+                   padding: 4px 12px; font-size: .85rem; color: #C9D1D9; }
+
 /* ---- verdict badge ---- */
 .verdict-badge {
-    display: inline-block;
-    padding: 10px 28px;
-    border-radius: 999px;
-    font-size: 1.5rem;
+    display: block;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: .03em;
     color: #fff;
     margin-bottom: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.35);
 }
+.verdict-badge .verdict-sub { display: block; font-size: 1rem; font-weight: 600; opacity: .92; margin-top: 4px; }
 
 /* ---- Trust Receipt card ---- */
 .trust-card {

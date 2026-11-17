@@ -1,5 +1,7 @@
 """app/components.py – Reusable Streamlit UI components for Artha Kavach."""
 
+import html
+
 import streamlit as st
 from app.styles import VERDICT_COLOUR, VERDICT_EMOJI, NUDGE_ICON
 
@@ -28,10 +30,12 @@ def render_red_flags(message: str, red_flags: list) -> None:
         st.info("No specific red flags were extracted from this message.")
         return
 
-    # Build highlighted version of original message
-    highlighted = message
+    # Build highlighted version of original message.
+    # Escape user/LLM text before wrapping it in HTML so pasted markup
+    # (e.g. <img onerror=...>) is shown as text, not rendered.
+    highlighted = html.escape(message)
     for rf in red_flags:
-        q = rf.quote_from_message
+        q = html.escape(rf.quote_from_message or "")
         if q and q in highlighted:
             highlighted = highlighted.replace(
                 q, f'<mark class="rf">{q}</mark>', 1

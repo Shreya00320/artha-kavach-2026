@@ -34,8 +34,8 @@ def _make_kb_doc(id="KB001", title="Test Doc", text="Sample text about UPI scams
 
 
 def _make_faiss_index(docs: list[KBDocument], dim: int = 4) -> FAISSIndex:
-    """Build a tiny real FAISS index for testing."""
-    import faiss
+    """Build a tiny index for testing (FAISS if available, else the numpy fallback)."""
+    from rag.ingest import new_flat_index
     embeddings = []
     for i, doc in enumerate(docs):
         # Deterministic synthetic embedding: one-hot-ish
@@ -44,7 +44,7 @@ def _make_faiss_index(docs: list[KBDocument], dim: int = 4) -> FAISSIndex:
         doc.embedding = vec.tolist()
         embeddings.append(vec)
     matrix = np.array(embeddings, dtype=np.float32)
-    index = faiss.IndexFlatL2(dim)
+    index = new_flat_index(dim)
     index.add(matrix)
     return FAISSIndex(index=index, documents=docs, embedding_model="test-model", dim=dim)
 
@@ -176,10 +176,10 @@ class TestRetriever:
 
     def test_empty_result_when_no_docs(self):
         """Retriever with 0 documents returns empty results (top_k clamped to 0)."""
-        import faiss
+        from rag.ingest import new_flat_index
         from rag.retrieve import Retriever
 
-        empty_index = faiss.IndexFlatL2(4)
+        empty_index = new_flat_index(4)
         faiss_idx = FAISSIndex(index=empty_index, documents=[], embedding_model="test", dim=4)
         mock_client = MagicMock()
         retriever = Retriever(faiss_idx, mock_client, embedding_model="test")
@@ -189,3 +189,23 @@ class TestRetriever:
             results = retriever.retrieve("anything", top_k=3)
 
         assert results == []
+
+
+class TestNumpyFallback:
+    """The numpy index must rank exactly like FAISS IndexFlatL2."""
+
+    def test_search_orders_by_l2(self):
+        from rag.ingest import NumpyFlatL2
+        idx = NumpyFlatL2(2)
+        idx.add(np.array([[0, 0], [3, 4], [1, 0]], dtype=np.float32))
+        dist, ids = idx.search(np.array([[0.9, 0]], dtype=np.float32), 2)
+        assert ids[0].tolist() == [2, 0]
+        assert dist[0][0] == pytest.approx(0.01, abs=1e-5)  # squared L2
+        assert idx.ntotal == 3
+
+    def test_pads_when_k_exceeds_n(self):
+        from rag.ingest import NumpyFlatL2
+        idx = NumpyFlatL2(2)
+        idx.add(np.array([[1, 1]], dtype=np.float32))
+        _, ids = idx.search(np.array([[0, 0]], dtype=np.float32), 3)
+        assert ids[0].tolist() == [0, -1, -1]

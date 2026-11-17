@@ -35,8 +35,8 @@ One-click sample data is built in — no account needed to explore.
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/artha-kavach.git
-cd artha-kavach
+git clone https://github.com/Shreya00320/artha-kavach-2026.git
+cd artha-kavach-2026
 
 # 2. Create a virtual environment
 python -m venv .venv
@@ -68,7 +68,7 @@ Copy `.env.example` to `.env` and fill in:
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `GEMINI_API_KEY` | Optional | Google AI Studio API key — enables LLM features |
+| `GEMINI_API_KEY` | Optional | Google AI Studio API key — enables LLM features (`LLM_API_KEY` is also accepted) |
 | `LLM_PROVIDER` | Optional | `gemini` (default) or `mock` |
 | `LLM_MODEL` | Optional | e.g. `gemini-2.0-flash` |
 | `EMBEDDING_MODEL` | Optional | e.g. `models/text-embedding-004` |
@@ -124,7 +124,9 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full technical diagram.
 |----------|----------|---------|---------|
 | Rules baseline | 0.47 | 0.60 | 0.67 |
 | **ML Classifier** | **0.72** | **0.80** | **0.89** |
-| Combined pipeline (offline) | 0.47 | — | — |
+| Combined pipeline (offline) | ~0.72† | — | — |
+
+†*Estimated from saved per-detector predictions after the verdict-combination fix (the more severe of the rules and classifier verdicts wins). Re-run `python -m eval.run_eval` to refresh. Previously 0.47 because the classifier could not raise a verdict to "scam" on its own.*
 
 - Rules engine: **100% precision on scam** — zero false positives for safe messages
 - ML classifier (Hinglish subset, 5 msgs): F1 = **0.82** vs rules 0.36
@@ -140,7 +142,7 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full technical diagram.
 *\*LLM fallback estimated; requires API key to benchmark.*
 
 ### Budget engine invariant checks
-**15 / 16 checks pass** — all arithmetic is mathematically verified.
+**16 / 16 checks pass** — all arithmetic is mathematically verified.
 
 **Honest caveats:**
 - Test set is synthetic (155 labelled examples). Real-world performance may differ.
@@ -152,7 +154,7 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full technical diagram.
 ## 🗂️ Project structure
 
 ```
-artha-kavach/
+artha-kavach-2026/
 ├── app/                  ← Streamlit UI
 │   ├── main.py           ← Entry point, caching, 3-tab layout
 │   ├── scam_ui.py        ← Scam Shield tab

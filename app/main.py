@@ -115,15 +115,20 @@ def _get_classifier():
 # Header
 # ---------------------------------------------------------------------------
 
+from app.i18n import t
+
+with st.sidebar:
+    _lang_label = st.radio("Language / भाषा", ["English", "हिन्दी"], horizontal=True, key="lang_choice")
+LANG = "hi" if _lang_label == "हिन्दी" else "en"
+
 st.markdown(
-    """
+    f"""
 <div class="hero">
   <div class="hero-title">🛡️ Artha Kavach</div>
-  <div class="hero-tag">The money coach that stops UPI scams, budgets from your bank SMS —
-  and <b>never says a number it can't prove</b>.</div>
+  <div class="hero-tag">{t("tag", LANG)}</div>
   <div class="hero-chips">
-    <span>🚨 Scam check in seconds</span><span>🆘 Scammed? Golden-hour plan</span>
-    <span>💰 Budget from SMS</span><span>🎯 Goals &amp; tax</span><span>🔒 Works offline · data stays with you</span>
+    <span>{t("chip1", LANG)}</span><span>{t("chip2", LANG)}</span>
+    <span>{t("chip3", LANG)}</span><span>{t("chip4", LANG)}</span><span>{t("chip5", LANG)}</span>
   </div>
 </div>
 """,
@@ -135,7 +140,7 @@ st.markdown(
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
-    st.markdown("### ⚙️ System status")
+    st.markdown(f"### {t('status', LANG)}")
     adapter    = _get_adapter()
     retriever  = _get_retriever()
     classifier = _get_classifier()
@@ -160,7 +165,7 @@ with st.sidebar:
         )
 
     st.divider()
-    st.markdown("### 🎬 Demo story")
+    st.markdown(f"### {t('demo', LANG)}")
     st.caption("One click loads a 'digital arrest' scam message and a month of bank SMS "
                "that includes the ₹25,000 the victim already paid.")
     if st.button("Load demo story", width="stretch", key="btn_demo_story"):
@@ -169,27 +174,28 @@ with st.sidebar:
         st.success("Loaded — start in 🛡️ Scam Shield, then 💰 Smart Budget, then 💬 Ask Artha.")
 
     st.divider()
-    st.markdown("### 🔒 Your privacy")
+    st.markdown(f"### {t('privacy', LANG)}")
     st.caption(
         "Messages you paste are processed in this session only and are not stored by the app. "
         "With an API key set, text is sent to the LLM provider for analysis; without one, "
         "everything runs locally."
     )
-    if st.button("🗑️ Clear all my data", width="stretch"):
+    if st.button(t("clear", LANG), width="stretch"):
         for k in list(st.session_state.keys()):
-            del st.session_state[k]
+            if k != "lang_choice":
+                del st.session_state[k]
         st.rerun()
 
     st.divider()
     st.markdown("**Arthaton 2026** — AI for Finance")
-    st.caption("⚖️ Educational tool. Not financial advice.")
+    st.caption(t("disclaimer", LANG))
 
 # ---------------------------------------------------------------------------
 # Main tabs (Smart Budget renders before Goals/Tax/Ask so they see fresh data)
 # ---------------------------------------------------------------------------
 
 tab_scam, tab_budget, tab_goals, tab_chat, tab_about = st.tabs(
-    ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Tax", "💬 Ask Artha", "📖 About"]
+    [t("tab_scam", LANG), t("tab_budget", LANG), t("tab_goals", LANG), t("tab_chat", LANG), t("tab_about", LANG)]
 )
 
 with tab_scam:

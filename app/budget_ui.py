@@ -116,14 +116,19 @@ def render_budget_tab(adapter=None) -> None:
 
     with src_tab_csv:
         uploaded = st.file_uploader(
-            "CSV with a 'raw_sms' or 'message' column (or a single column, no header)",
+            "Bank statement CSV (Date, Narration, Withdrawal, Deposit…) or an SMS CSV with a 'raw_sms'/'message' column",
             type=["csv"], key="budget_csv",
         )
         if uploaded and st.button("Analyse CSV", key="btn_csv"):
             import csv, io
             text = uploaded.getvalue().decode("utf-8-sig", errors="replace")
-            rows = list(csv.reader(io.StringIO(text)))
-            if rows:
+            from core.statement import statement_to_sms
+            stmt = statement_to_sms(text)
+            rows = [] if stmt else list(csv.reader(io.StringIO(text)))
+            if stmt:
+                raw_messages = stmt
+                st.success(f"Detected a bank statement — imported {len(stmt)} transactions.")
+            elif rows:
                 header = [h.strip().lower() for h in rows[0]]
                 col = next((header.index(c) for c in ("raw_sms", "message", "sms", "text") if c in header), None)
                 body = rows[1:] if col is not None else rows

@@ -409,3 +409,27 @@ class TestNewRules:
     def test_safe_messages_stay_low(self, msg):
         from scam.rules import run_rules
         assert run_rules(msg).score < 0.55
+
+
+class TestStatementImport:
+    CSV = (
+        "Account Statement,,,,\n"
+        "Date,Narration,Withdrawal Amt.,Deposit Amt.,Closing Balance\n"
+        "01/11/2026,NEFT-ACME PVT LTD-SALARY,,45000.00,50000.00\n"
+        "02/11/2026,UPI/123456789/SWIGGY/okaxis/Payment,450.50,,49549.50\n"
+        "not a date,junk,1,,\n"
+    )
+
+    def test_statement_converted_and_parsed(self):
+        from core.statement import statement_to_sms
+        from core.parser import parse_messages
+        sms = statement_to_sms(self.CSV)
+        assert len(sms) == 2
+        parsed = parse_messages(sms)
+        assert parsed[0].amount == 45000.0 and parsed[0].transaction_type == "credit"
+        assert parsed[1].amount == 450.5 and parsed[1].transaction_type == "debit"
+        assert "SWIGGY" in sms[1]
+
+    def test_non_statement_returns_empty(self):
+        from core.statement import statement_to_sms
+        assert statement_to_sms("raw_sms\nRs 5 debited\n") == []

@@ -275,3 +275,30 @@ RAG robustness
 
 All new arithmetic is plain Python and unit-tested (`tests/test_features.py`);
 `tests/test_app_smoke.py` runs the whole Streamlit app headlessly.
+
+## One-page diagram (for slides)
+
+```mermaid
+flowchart LR
+    U([User]) --> UI[Streamlit UI<br/>EN / हिन्दी]
+    UI --> SS[Scam Shield]
+    UI --> SB[Smart Budget]
+    UI --> GT[Goals & Tax]
+    UI --> AA[Ask Artha]
+
+    SS --> R[1 Rules<br/>noisy-OR] --> C[2 ML classifier<br/>TF-IDF + LR] --> J[3 LLM judge<br/>Gemini] --> V[4 Verifier<br/>cited claims only]
+    V --> TR[(Trust Receipt)]
+
+    SB --> IN{{Input}}
+    IN -->|SMS paste / sample| P[Parser]
+    IN -->|Bank statement CSV| ST[statement.py] --> P
+    P --> CAT[Categoriser] --> BE[Budget engine<br/>plain Python math] --> TR
+    BE --> GT
+    BE --> AA
+    AA --> NC[Number check<br/>reject unproven numbers]
+
+    J -. offline = skipped .-> OFF[Rules + ML only]
+```
+
+**Key idea:** every number is computed in plain Python (`core/`); the LLM only explains,
+and any reply containing a number we did not compute is rejected.

@@ -14,12 +14,14 @@ UPI fraud, "where did my salary go?", saving for goals, and tax-regime confusion
 
 | Tab | What you can do |
 |-----|-----------------|
-| 🛡️ **Scam Shield** | **Check a message** (SMS / WhatsApp / UPI collect request, English · Hindi · Hinglish) → Scam / Suspicious / Safe with highlighted red flags and a cited Trust Receipt · **Check a link** offline (lookalike bank domains, shorteners, APKs — the link is never opened) · **Scan many messages** at once · **🆘 I've been scammed**: golden-hour action plan (1930, bank block, RBI zero-liability window) + a ready-to-paste cybercrime.gov.in complaint |
-| 💰 **Smart Budget** | Paste bank SMS or upload a CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** |
-| 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · tax regime comparison — pre-filled from your budget |
+| 🛡️ **Scam Shield** | **Check a message** (SMS / WhatsApp / UPI collect request, English · Hindi · Hinglish) → Scam / Suspicious / Safe with highlighted red flags and a cited Trust Receipt · **Check a link** offline (lookalike bank domains, shorteners, APKs — the link is never opened) · **Scan many messages** at once · **🧠 names the manipulation tactic** (fake authority, urgency, greed, trust hijack) · **🆘 I've been scammed**: golden-hour action plan (1930, bank block, RBI zero-liability window) + a ready-to-paste cybercrime.gov.in complaint |
+| 💰 **Smart Budget** | Paste bank SMS, or upload a **bank-statement CSV** or SMS CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** |
+| 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · **🌱 first-salary guide** (what to do, in order) · **🏠 Home**: affordability + rent-vs-buy · tax regime comparison — pre-filled from your budget |
 | ↳ 🧾 **Tax** (inside Goals & Tax) | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
 | 💬 **Ask Artha** | Chat about your money ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Answers use engine-computed numbers only; an AI reply containing any other number is rejected |
 | 🔍 **Trust Receipt** | Every AI output carries its evidence: sources, verified claims, code-computed numbers, and which detectors agreed |
+
+**Bilingual shell** — English / हिन्दी toggle for headings and tabs. **Behavioural nudges** — spending shown as hours of your work; pay-yourself-first on salary day.
 
 **Works offline** — without an API key, everything except the LLM judge, claim verifier and AI phrasing still works.
 **Private by design** — data lives only in your session; a sidebar button clears it.
@@ -208,7 +210,7 @@ artha-kavach-2026/
 │   ├── run_eval.py       ← Full evaluation suite with charts
 │   └── results/          ← JSON + CSV + PNG outputs
 │
-├── tests/                ← 151 tests incl. headless end-to-end UI tests
+├── tests/                ← 159 tests incl. headless end-to-end UI tests
 ├── .env.example
 ├── requirements.txt
 ├── ARCHITECTURE.md
@@ -218,7 +220,7 @@ artha-kavach-2026/
 ## 🧪 Running tests
 
 ```bash
-# Everything (151 tests: unit + headless Streamlit UI tests; no API key needed)
+# Everything (159 tests: unit + headless Streamlit UI tests; no API key needed)
 python -m pytest tests/ -v
 
 # Just the new features (tax, goals, insights, assistant, link checker, rules, parser formats)

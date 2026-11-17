@@ -47,12 +47,14 @@ def render_about_tab() -> None:
 
 | Tab | What you can do |
 |---|---|
-| 🛡️ **Scam Shield** | Check a message · check a link (never opened) · scan a whole inbox · 🆘 "I've been scammed" plan + complaint draft |
-| 💰 **Smart Budget** | Budget from bank SMS · transfers & refunds handled · salary-cycle months · subscriptions · unusual-payment alerts · fix categories · CSV export |
-| 🎯 **Goals & Planner** | Emergency fund · multi-goal plan · SIP & EMI calculators · loan prepayment · step-up saving |
+| 🛡️ **Scam Shield** | Check a message · names the manipulation tactic · check a link (never opened) · scan a whole inbox · 🆘 "I've been scammed" plan + complaint draft |
+| 💰 **Smart Budget** | Budget from bank SMS · transfers & refunds handled · salary-cycle months · subscriptions · unusual-payment alerts · fix categories · bank-statement import · CSV export |
+| 🎯 **Goals & Planner** | 🌱 First-salary guide · emergency fund · multi-goal plan · SIP & EMI calculators · loan prepayment · step-up saving · 🏠 Home affordability & rent-vs-buy |
 | 🧾 **Tax** | Old vs new regime (FY 2026-27) with deductions pre-filled from your payments |
 | 💬 **Ask Artha** | Chat about your money — every number in a reply is checked against the engine |
 | 📖 **About** | How it works, sources and limits |
+
+**Ideas we borrowed (credited, not quoted):** *Influence* (Cialdini) and *Thinking, Fast and Slow* (Kahneman) for naming scam tactics; *Nudge* (Thaler & Sunstein) for pay-yourself-first; *Your Money or Your Life* (Dominguez & Robin) for spending as hours of work; *Weapons of Math Destruction* (O'Neil) for why every output carries a Trust Receipt.
         """
     )
 

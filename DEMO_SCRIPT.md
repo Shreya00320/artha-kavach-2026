@@ -41,13 +41,14 @@
 **[Click 🆘 I've been scammed]**
 > "Priya already paid. Step one: call 1930 — inside the golden hour the money can still be frozen.
 > Then her bank — under RBI's 2017 rules, reporting within 3 working days matters.
-> She fills five fields and gets a complaint ready to paste into cybercrime.gov.in."
+> She fills five fields and gets a complaint ready to paste into cybercrime.gov.in.
+> (If asked: Scam Shield also names the tactic used, like 'fake authority', so users learn to spot it.)"
 
 ### 1:40–2:20 — Smart Budget
 **[💰 Smart Budget → 🔔 Alerts]**
 > "Her month, built from bank SMS — no bank login, nothing stored. The ₹25,000 to an unknown UPI ID is flagged.
 > Money to friends isn't counted as spending, refunds are netted, subscriptions add up to a yearly figure.
-> Every number here is plain Python — the AI never does arithmetic."
+> Every number here is plain Python — the AI never does arithmetic. It even shows her biggest 'want' as hours of work."
 
 ### 2:20–2:45 — Ask Artha
 **[💬 Ask Artha → type "Can I afford ₹9,000 for rent?"]**
@@ -88,7 +89,7 @@ here: `python -m eval.real_eval data/private/real_sms.csv`].
 
 **Q: Would anyone really paste SMS?**
 Today: paste or CSV, so no bank credentials and no SMS permission. Roadmap: Android on-device SMS reading
-(iOS doesn't allow it) and bank-statement import. Privacy is the reason we didn't start with bank linking.
+(iOS doesn't allow it). Bank-statement CSV import already works today. Privacy is the reason we didn't start with bank linking.
 
 **Q: Privacy?**
 Data lives in the session only; a sidebar button wipes it. Offline mode sends nothing anywhere. With a key,

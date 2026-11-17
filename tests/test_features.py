@@ -433,3 +433,28 @@ class TestStatementImport:
     def test_non_statement_returns_empty(self):
         from core.statement import statement_to_sms
         assert statement_to_sms("raw_sms\nRs 5 debited\n") == []
+
+
+class TestBehaviour:
+    def test_hours_of_work(self):
+        from core.behaviour import hours_of_work
+        assert hours_of_work(1000, 16000) == 10.0
+        assert hours_of_work(1000, 0) is None
+
+    def test_tactics_for_digital_arrest(self):
+        from scam.rules import run_rules
+        from scam.tactics import tactics_for
+        r = run_rules("This is CBI. You are under digital arrest. Pay immediately or be arrested within 2 hours")
+        names = {t["tactic"] for t in tactics_for(r)}
+        assert "Fake authority" in names
+
+    def test_behavioural_nudges_from_sample(self):
+        import csv
+        from core.parser import parse_messages
+        from core.categoriser import categorise_transactions
+        from core.budget_engine import compute_budget
+        from core.behaviour import behavioural_nudges
+        sms = [r["raw_sms"] for r in csv.DictReader(open("data/sample_sms.csv", encoding="utf-8")) if r["raw_sms"]]
+        s = compute_budget(categorise_transactions(parse_messages(sms)))
+        texts = " ".join(n["text"] for n in behavioural_nudges(s))
+        assert "hours of your work" in texts

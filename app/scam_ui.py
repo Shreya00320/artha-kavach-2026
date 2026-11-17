@@ -181,6 +181,12 @@ def _render_check_message(adapter, retriever, classifier) -> None:
     st.divider()
     left, right = st.columns([3, 2])
     with left:
+        from scam.tactics import tactics_for
+        _tac = tactics_for(result.rule_result)
+        if _tac:
+            st.markdown("**🧠 Manipulation tactics used**")
+            for _t in _tac:
+                st.markdown(f"- **{_t['tactic']}** — {_t['why']}  \n  🛡️ *{_t['defence']}*")
         render_red_flags(result.message, result.red_flags)
         from scam.link_check import check_text
         render_link_reports(check_text(result.message))

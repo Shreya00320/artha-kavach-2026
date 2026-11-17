@@ -211,7 +211,8 @@ def render_budget_tab(adapter=None) -> None:
         render_502030_chart(summary)
         st.markdown("### Spending by category")
         render_category_breakdown(summary)
-        render_nudges(nudges)
+        from core.behaviour import behavioural_nudges
+        render_nudges(nudges + behavioural_nudges(summary))
 
         from core.insights import small_spend_summary, weekly_spend
         small = small_spend_summary(view)

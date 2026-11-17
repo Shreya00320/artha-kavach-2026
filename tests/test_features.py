@@ -458,3 +458,25 @@ class TestBehaviour:
         s = compute_budget(categorise_transactions(parse_messages(sms)))
         texts = " ".join(n["text"] for n in behavioural_nudges(s))
         assert "hours of your work" in texts
+
+
+class TestRealEstate:
+    def test_affordability_roundtrip(self):
+        from core.realestate import affordability
+        from core.goals import emi
+        a = affordability(100000, 0, 8.5, 20, 20, 40)
+        assert a["max_emi"] == 40000
+        assert abs(emi(a["max_loan"], 8.5, 240) - 40000) < 5
+        assert a["max_price"] > a["max_loan"]
+
+    def test_existing_emi_reduces_capacity(self):
+        from core.realestate import affordability
+        assert affordability(100000, 15000, 8.5, 20, 20)["max_emi"] == 25000
+
+    def test_rent_vs_buy_sanity(self):
+        from core.realestate import rent_vs_buy
+        r = rent_vs_buy(6_000_000, 20, 8.5, 15, 18000)
+        assert len(r["yearly"]) == 15 and r["winner"] in ("buy", "rent")
+        hi = rent_vs_buy(6_000_000, 20, 8.5, 15, 18000, price_growth_pct=12, invest_return_pct=4)
+        lo = rent_vs_buy(6_000_000, 20, 8.5, 15, 18000, price_growth_pct=0, invest_return_pct=10)
+        assert hi["winner"] == "buy" and lo["winner"] == "rent"

@@ -27,9 +27,18 @@ def render_goals_tab() -> None:
     if summary is None:
         st.info("Tip: load your SMS in 💰 Smart Budget first — this tab then pre-fills from your real numbers.")
 
-    t_ef, t_goals, t_tax, t_sip, t_emi, t_step = st.tabs(
-        ["🛟 Emergency fund", "🎯 My goals", "🧾 Tax: old vs new", "📈 SIP calculator", "🏦 Loan / EMI", "🪜 Step-up saving"]
+    t_first, t_ef, t_goals, t_tax, t_sip, t_emi, t_step, t_home = st.tabs(
+        ["🌱 First salary", "🛟 Emergency fund", "🎯 My goals", "🧾 Tax: old vs new", "📈 SIP calculator",
+         "🏦 Loan / EMI", "🪜 Step-up saving", "🏠 Home"]
     )
+
+    with t_first:
+        from app.starter_ui import render_first_salary_guide
+        render_first_salary_guide(income, needs)
+
+    with t_home:
+        from app.starter_ui import render_home_tab
+        render_home_tab(income)
 
     with t_tax:
         from app.tax_ui import render_tax_tab

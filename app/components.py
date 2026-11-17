@@ -191,7 +191,7 @@ def render_502030_chart(summary) -> None:
         .properties(width=460, height=50)
         .resolve_scale(y="independent")
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width="stretch")
 
 
 def render_category_breakdown(summary) -> None:
@@ -226,13 +226,13 @@ def render_category_breakdown(summary) -> None:
 
     col_chart, col_table = st.columns([1, 1])
     with col_chart:
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
     with col_table:
         df["Amount (₹)"] = df["Amount"].map(lambda x: f"₹{x:,.0f}")
         st.dataframe(
             df[["Category", "Amount (₹)"]].reset_index(drop=True),
             hide_index=True,
-            use_container_width=True,
+            width="stretch",
         )
 
 
@@ -290,7 +290,7 @@ def render_savings_chart(compare: dict) -> None:
     )
     st.altair_chart(
         (lines + goal_line).properties(height=300),
-        use_container_width=True,
+        width="stretch",
     )
 
     adv = compare.get("stepup_advantage_inr", 0)

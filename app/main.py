@@ -75,7 +75,12 @@ def _get_retriever():
         # Try loading an existing index first (fast path)
         try:
             index = load_index(cache_dir)
-            logging.info("FAISS index loaded from cache (%d docs).", index.index.ntotal)
+            wanted = os.getenv("EMBEDDING_MODEL", "")
+            if wanted and index.embedding_model != wanted:
+                # Index was embedded with another (possibly retired) model: query
+                # vectors would not match, so rebuild with the configured model.
+                raise FileNotFoundError(f"index model {index.embedding_model} != {wanted}")
+            logging.info("Vector index loaded from cache (%d docs).", index.index.ntotal)
         except FileNotFoundError:
             # Index not built yet — build it now (runs once per deploy)
             logging.info("FAISS index not found — building from data/kb/ …")
@@ -116,8 +121,8 @@ with col_logo:
 with col_title:
     st.markdown("# Artha Kavach")
     st.caption(
-        "AI money coach for India · protects from UPI scams · builds your budget · "
-        "never says anything it can't prove"
+        "Your one-stop money coach for India · stops UPI scams · budgets from bank SMS · "
+        "goals, tax & a money chat · never says a number it can't prove"
     )
 
 st.divider()
@@ -152,15 +157,27 @@ with st.sidebar:
         )
 
     st.divider()
+    st.markdown("### 🔒 Your privacy")
+    st.caption(
+        "Messages you paste are processed in this session only and are not stored by the app. "
+        "With an API key set, text is sent to the LLM provider for analysis; without one, "
+        "everything runs locally."
+    )
+    if st.button("🗑️ Clear all my data", width="stretch"):
+        for k in list(st.session_state.keys()):
+            del st.session_state[k]
+        st.rerun()
+
+    st.divider()
     st.markdown("**Arthaton 2026** — AI for Finance")
     st.caption("⚖️ Educational tool. Not financial advice.")
 
 # ---------------------------------------------------------------------------
-# Main tabs
+# Main tabs (Smart Budget renders before Goals/Tax/Ask so they see fresh data)
 # ---------------------------------------------------------------------------
 
-tab_scam, tab_budget, tab_about = st.tabs(
-    ["🛡️ Scam Shield", "💰 Smart Budget", "📖 About"]
+tab_scam, tab_budget, tab_goals, tab_tax, tab_chat, tab_about = st.tabs(
+    ["🛡️ Scam Shield", "💰 Smart Budget", "🎯 Goals & Planner", "🧾 Tax", "💬 Ask Artha", "📖 About"]
 )
 
 with tab_scam:
@@ -170,6 +187,18 @@ with tab_scam:
 with tab_budget:
     from app.budget_ui import render_budget_tab
     render_budget_tab(adapter=adapter)
+
+with tab_goals:
+    from app.goals_ui import render_goals_tab
+    render_goals_tab()
+
+with tab_tax:
+    from app.tax_ui import render_tax_tab
+    render_tax_tab()
+
+with tab_chat:
+    from app.chat_ui import render_chat_tab
+    render_chat_tab(adapter=adapter)
 
 with tab_about:
     from app.about_ui import render_about_tab

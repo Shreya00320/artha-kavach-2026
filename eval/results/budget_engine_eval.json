@@ -2,31 +2,31 @@
   "checks": {
     "income >= 0": {
       "pass": true,
-      "detail": "= 70300.00"
+      "detail": "= 115300.00"
     },
     "expense >= 0": {
       "pass": true,
-      "detail": "= 112818.00"
+      "detail": "= 162303.00"
     },
     "net = income - expense": {
       "pass": true,
-      "detail": "net=-42518.00 income=70300.00 exp=112818.00"
+      "detail": "net=-47003.00 income=115300.00 exp=162303.00"
     },
     "savings_rate = net/income*100": {
       "pass": true,
-      "detail": "-60.5% vs expected -60.48%"
+      "detail": "-40.8% vs expected -40.77%"
     },
     "needs_target = 50% of income": {
       "pass": true,
-      "detail": "35150.00"
+      "detail": "57650.00"
     },
     "wants_target = 30% of income": {
       "pass": true,
-      "detail": "21090.00"
+      "detail": "34590.00"
     },
     "savings_target = 20% of income": {
       "pass": true,
-      "detail": "14060.00"
+      "detail": "23060.00"
     },
     "needs_delta = needs_total - needs_target": {
       "pass": true,
@@ -42,7 +42,7 @@
     },
     "sum(by_category) <= total_expense": {
       "pass": true,
-      "detail": "cat_sum=112818.00 total_exp=112818.00"
+      "detail": "cat_sum=162303.00 total_exp=162303.00"
     },
     "flat plan: monthly = income * rate": {
       "pass": true,
@@ -69,12 +69,12 @@
   "n_pass": 16,
   "n_total": 16,
   "summary_stats": {
-    "total_income": 70300.0,
-    "total_expense": 112818.0,
-    "net": -42518.0,
-    "savings_rate": -60.5,
+    "total_income": 115300.0,
+    "total_expense": 162303.0,
+    "net": -47003.0,
+    "savings_rate": -40.8,
     "n_transactions": 96,
-    "n_parsed": 63,
-    "n_failed": 33
+    "n_parsed": 91,
+    "n_failed": 5
   }
 }

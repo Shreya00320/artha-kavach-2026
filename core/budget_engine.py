@@ -28,8 +28,11 @@ logger = logging.getLogger(__name__)
 NEEDS_CATEGORIES = {"Rent", "EMI_Loan", "Utilities", "Healthcare", "Education", "Food"}
 SAVINGS_CATEGORIES = {"Savings_Investment"}
 WANTS_CATEGORIES = {
-    "Transport", "Shopping", "Entertainment", "Transfer", "ATM", "Other"
+    "Transport", "Shopping", "Entertainment", "Transfer", "ATM", "Other", "Refund"
 }
+# "Refund" holds a NEGATIVE amount (money back from purchases) and nets off Wants.
+# "Transfer" (money to people / own accounts / card bills) is excluded from spending
+# by default and reported separately as transfers_out.
 # Salary/income is not a spend category
 
 # ---------------------------------------------------------------------------
@@ -92,6 +95,11 @@ class BudgetSummary:
     n_parsed: int = 0
     n_failed: int = 0
 
+    # Money moved that is not category spending
+    transfers_out: float = 0.0     # P2P / own-account / card-bill payments (excluded from expense)
+    transfers_in: float = 0.0      # money received from people (not counted as income)
+    refunds_total: float = 0.0     # refunds/reversals netted off spending
+
 
 # ---------------------------------------------------------------------------
 # Core computation
@@ -117,12 +125,16 @@ def _median(values: list[float]) -> float:
 def compute_budget(
     txns: list[CategorisedTransaction],
     income: Optional[float] = None,
+    exclude_transfers: bool = True,
 ) -> BudgetSummary:
     """Compute complete budget summary from categorised transactions.
 
     Args:
         txns: List of categorised transactions.
         income: Override income figure (INR). If None, sum credits in Salary category.
+        exclude_transfers: If True (default), debits categorised "Transfer" (money sent
+            to people, own accounts, credit-card bill payments) are reported as
+            transfers_out instead of being counted as spending.
 
     Returns:
         BudgetSummary with all computed fields.
@@ -151,6 +163,7 @@ def compute_budget(
     by_category: dict[str, float] = defaultdict(float)
     total_income_detected = 0.0
     total_expense = 0.0
+    transfers_out = transfers_in = refunds_total = 0.0
     n_failed = 0
     n_parsed = 0
 
@@ -163,8 +176,18 @@ def compute_budget(
         if t.transaction_type == "credit":
             if t.category == "Salary":
                 total_income_detected += amt
+            elif t.category == "Refund":
+                # money back from a purchase: reduces spending, is not income
+                refunds_total += amt
+                by_category["Refund"] = by_category.get("Refund", 0.0) - amt
+                total_expense -= amt
+            elif t.category == "Transfer":
+                transfers_in += amt
         elif t.transaction_type == "debit":
             cat = t.category or "Other"
+            if exclude_transfers and cat == "Transfer":
+                transfers_out += amt
+                continue
             by_category[cat] = by_category.get(cat, 0.0) + amt
             total_expense += amt
 
@@ -217,6 +240,9 @@ def compute_budget(
         n_transactions=len(txns),
         n_parsed=n_parsed,
         n_failed=n_failed,
+        transfers_out=round(transfers_out, 2),
+        transfers_in=round(transfers_in, 2),
+        refunds_total=round(refunds_total, 2),
     )
 
 
@@ -277,7 +303,12 @@ def compute_pace(
       current_month_spend, days_elapsed, days_in_month,
       projected_month_spend, daily_rate, top_categories_pace
     """
-    today = today or date.today()
+    if today is None:
+        today = date.today()
+        txn_dates = [_parse_date(t.date) for t in txns if t.date and t.parse_method != "failed"]
+        txn_dates = [d for d in txn_dates if d]
+        if txn_dates and max(txn_dates).strftime("%Y-%m") != today.strftime("%Y-%m"):
+            today = max(txn_dates)   # analyse the latest month in the data
     current_month = today.strftime("%Y-%m")
     days_in_month = _days_in_month(today.year, today.month)
     days_elapsed = today.day
@@ -289,6 +320,7 @@ def compute_pace(
         and t.date
         and t.date.startswith(current_month)
         and t.parse_method != "failed"
+        and t.category != "Transfer"
     ]
 
     total_this_month = sum(t.amount or 0 for t in month_txns)
@@ -316,6 +348,7 @@ def compute_pace(
         "days_in_month": days_in_month,
         "daily_rate": round(daily_rate, 2),
         "projected_month_spend": projected,
+        "reference_date": today.isoformat(),
         "top_categories_pace": top_categories_pace,
     }
 

@@ -1,0 +1,15 @@
+{
+  "id": "KB019",
+  "title": "Limiting Customer Liability in Unauthorised Electronic Banking Transactions",
+  "publisher": "Reserve Bank of India (RBI/2017-18/15, 6 July 2017)",
+  "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+  "date_accessed": "2026-11-17",
+  "topics": [
+    "zero-liability",
+    "unauthorised-transaction",
+    "report-fraud",
+    "bank-dispute",
+    "refund"
+  ],
+  "text": "RBI's circular on limiting the liability of customers in unauthorised electronic banking transactions says a customer has zero liability when the fraud is due to the bank's contributory fraud, negligence or deficiency, whether or not the customer reports it, and also when a third-party breach happens (the fault lies neither with the bank nor the customer but elsewhere in the system) and the customer notifies the bank within three working days of receiving the bank's communication about the transaction. If the customer reports a third-party breach within four to seven working days, liability is limited to the transaction value or a fixed cap, whichever is lower: Rs 5,000 for basic savings (BSBD) accounts, Rs 10,000 for most other savings accounts and credit cards up to Rs 5 lakh limit, and Rs 25,000 for other current, cash-credit and overdraft accounts and higher-limit credit cards. Beyond seven working days, liability follows the bank's Board-approved policy. Where the loss is due to the customer's negligence, such as sharing payment credentials like OTP or PIN, the customer bears the loss until it is reported to the bank. Banks must credit (shadow-reverse) the disputed amount within 10 working days of notification and resolve the complaint within a maximum of 90 days. Customers should therefore report any unauthorised transaction to their bank immediately; if the bank does not resolve it, they can complain to the RBI Ombudsman at cms.rbi.org.in."
+}

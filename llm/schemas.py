@@ -106,3 +106,13 @@ class ClaimVerifyItem(BaseModel):
 class ClaimVerifyResult(BaseModel):
     """Full claim verification output."""
     results: list[ClaimVerifyItem] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
+# Ask Artha (assistant)
+# ---------------------------------------------------------------------------
+
+class AssistantAnswerLLM(BaseModel):
+    """LLM output for the grounded money chat."""
+    answer: str = Field(description="2-4 sentence answer using only the provided facts")
+    facts_used: list[str] = Field(default_factory=list, description="Names of facts relied on")

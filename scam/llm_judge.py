@@ -95,6 +95,7 @@ def _category_explanation(category: str) -> str:
         "impersonation": "RBI, NPCI, and police do not contact people via SMS to demand payments.",
         "remote_access": "Never install remote-access apps at the request of an unsolicited caller.",
         "fee_to_receive": "Legitimate refunds and prizes are never conditional on paying a fee first.",
+        "property_scam": "Never pay a token or advance for a property you have not seen, or to an owner you cannot meet. No genuine property offers guaranteed returns.",
         "suspicious_vpa": "Scammers use UPI IDs with words like 'refund', 'prize', or 'claim'.",
     }
     return explanations.get(category, "This pattern is commonly seen in financial scams.")

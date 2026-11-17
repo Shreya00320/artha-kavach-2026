@@ -20,13 +20,13 @@ TACTICS = {
     "Greed & scarcity": (
         "Dangles a prize, a guaranteed return or a limited-time offer.",
         "If it sounds too good to be true it is. You never pay a fee to receive money.",
-        {"lottery_scam", "investment_scam", "job_scam", "task_scam", "fee_to_receive"},
+        {"lottery_scam", "investment_scam", "job_scam", "task_scam", "fee_to_receive", "property_scam"},
     ),
     "Trust hijack": (
         "Uses a familiar-looking link, app or payment request to borrow trust.",
         "Never tap unknown links, install remote-access apps, or approve a collect request to 'receive' money.",
         {"phishing_link", "malicious_app", "remote_access", "collect_request",
-         "qr_scam", "suspicious_vpa", "mistaken_transfer"},
+         "qr_scam", "suspicious_vpa", "mistaken_transfer", "property_scam"},
     ),
 }
 

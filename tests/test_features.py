@@ -480,3 +480,43 @@ class TestRealEstate:
         hi = rent_vs_buy(6_000_000, 20, 8.5, 15, 18000, price_growth_pct=12, invest_return_pct=4)
         lo = rent_vs_buy(6_000_000, 20, 8.5, 15, 18000, price_growth_pct=0, invest_return_pct=10)
         assert hi["winner"] == "buy" and lo["winner"] == "rent"
+
+
+class TestPropertyScamAndSampleStatement:
+    SCAMS = [
+        "Owner is abroad, please pay token amount before visit to hold the flat",
+        "Pay advance today to block this 2BHK, I am in the army and cannot meet",
+        "Buy plot in our project, guaranteed monthly rental income of 2%",
+    ]
+    SAFE = [
+        "Your rent receipt for November is attached. Thanks, regards",
+        "Home loan EMI of Rs 5200 debited from your account on 05-Nov-26",
+    ]
+
+    def test_property_scams_flagged(self):
+        from scam.rules import run_rules
+        for t in self.SCAMS:
+            r = run_rules(t)
+            assert any(m.category == "property_scam" for m in r.matches), t
+            assert r.score >= 0.6, t
+
+    def test_legit_property_text_not_flagged(self):
+        from scam.rules import run_rules
+        for t in self.SAFE:
+            assert not any(m.category == "property_scam" for m in run_rules(t).matches), t
+
+    def test_sample_statement_parses_fully(self):
+        from core.statement import statement_to_sms
+        from core.parser import parse_messages
+        sms = statement_to_sms(open("data/sample_statement.csv", encoding="utf-8").read())
+        assert len(sms) == 21
+        assert all(p.parse_method != "failed" for p in parse_messages(sms))
+
+    def test_sample_statement_has_salary_income(self):
+        from core.statement import statement_to_sms
+        from core.parser import parse_messages
+        from core.categoriser import categorise_transactions
+        from core.budget_engine import compute_budget
+        sms = statement_to_sms(open("data/sample_statement.csv", encoding="utf-8").read())
+        s = compute_budget(categorise_transactions(parse_messages(sms)))
+        assert s.total_income == 45000.0

@@ -53,7 +53,9 @@ def _clean_narration(n: str) -> str:
     """UPI/123456/SWIGGY/okaxis/Payment -> SWIGGY ; keeps the readable merchant part."""
     n = re.sub(r"\s+", " ", (n or "").strip())
     parts = [p for p in re.split(r"[/\-]", n) if p.strip()]
-    if parts and parts[0].upper() in ("UPI", "POS", "NEFT", "IMPS", "ACH", "ATM"):
+    if parts and parts[0].upper() in ("NEFT", "IMPS", "ACH", "ATM") and len(parts) > 1:
+        return " ".join(p.strip() for p in parts[1:]).upper()[:40]   # keep e.g. 'ACME PVT LTD SALARY'
+    if parts and parts[0].upper() in ("UPI", "POS"):
         for p in parts[1:]:
             p = p.strip()
             if p and not p.isdigit() and "@" not in p and p.lower() not in ("payment", "upi", "okaxis", "okicici", "oksbi", "ybl"):

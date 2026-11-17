@@ -115,6 +115,11 @@ def render_budget_tab(adapter=None) -> None:
                 st.warning("Please paste at least one message.")
 
     with src_tab_csv:
+        if st.button("▶ Try a sample bank statement", key="btn_sample_stmt"):
+            from core.statement import statement_to_sms
+            with open("data/sample_statement.csv", encoding="utf-8") as _f:
+                raw_messages = statement_to_sms(_f.read())
+            st.success(f"Loaded a sample bank statement — {len(raw_messages)} transactions.")
         uploaded = st.file_uploader(
             "Bank statement CSV (Date, Narration, Withdrawal, Deposit…) or an SMS CSV with a 'raw_sms'/'message' column",
             type=["csv"], key="budget_csv",

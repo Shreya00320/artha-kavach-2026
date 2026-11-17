@@ -237,12 +237,27 @@ HINGLISH_RULES: list[Rule] = [
          _p(r"\b(net\s*banking|card|cvv|pin|password|bank)\s*(details?|number)?\b.{0,20}\b(dijiye|bhejiye|batayein|share\s*karein|bhejo|batao)\b"), 0.85),
 ]
 
+PROPERTY_SCAM_RULES: list[Rule] = [
+    Rule("R180", "Token/advance before seeing the property", "property_scam",
+         _p(r"\b(token|advance|booking)\s*(amount|money|deposit|payment)?\b.{0,40}\b(before|without)\b.{0,15}\b(visit|viewing|seeing|site\s*visit|agreement|registry)\b"), 0.8),
+    Rule("R181", "Pay advance now to hold the flat/room", "property_scam",
+         _p(r"\b(pay|send|transfer)\b.{0,30}\b(advance|token|booking)\b.{0,40}\b(today|now|immediately|asap|hold|block|reserve|lock)\b"), 0.7),
+    Rule("R182", "Owner abroad / in the forces, cannot meet", "property_scam",
+         _p(r"\b(owner|landlord)\b.{0,30}\b(abroad|overseas|army|navy|air\s*force|crpf|cisf|out\s*of\s*(town|station|country))\b"), 0.6),
+    Rule("R183", "Guaranteed returns on property", "property_scam",
+         _p(r"\b(guaranteed|assured|fixed)\s*(monthly\s*)?(return|rental|income|appreciation)s?\b.{0,60}\b(flat|plot|property|villa|apartment|land|builder|project)\b"), 0.75),
+    Rule("R184", "Property project with guaranteed returns (reverse order)", "property_scam",
+         _p(r"\b(flat|plot|property|villa|apartment|builder|project)\b.{0,60}\b(guaranteed|assured)\s*(monthly\s*)?(return|rental|income|appreciation)s?\b"), 0.75),
+    Rule("R185", "Pre-launch / few units left pressure to pay", "property_scam",
+         _p(r"\b(pre[-\s]?launch|only\s*\d+\s*(flats?|plots?|units?)\s*left)\b.{0,60}\b(pay|book|token|advance)\b"), 0.6),
+]
+
 ALL_RULES: list[Rule] = (
     OTP_PIN_RULES + COLLECT_REQUEST_RULES + URGENCY_RULES + KYC_RULES +
     PHISHING_RULES + LOTTERY_RULES + JOB_SCAM_RULES + IMPERSONATION_RULES +
     REMOTE_ACCESS_RULES + FEE_TO_RECEIVE_RULES + SUSPICIOUS_VPA_RULES +
     DIGITAL_ARREST_RULES + MALICIOUS_APP_RULES + QR_RULES + INVESTMENT_TASK_RULES +
-    MISTAKEN_TRANSFER_RULES + HINGLISH_RULES
+    MISTAKEN_TRANSFER_RULES + HINGLISH_RULES + PROPERTY_SCAM_RULES
 )
 
 

@@ -11,12 +11,12 @@ SMS0009,regex,True,True,SALARY CORP NEFT,Salary,"Rs 25,000.00 credited to A/c XX
 SMS0010,regex,True,True,CASHBACK-AMAZON,Amazon,Rs 300.00 credited to A/c XX4521 on 10-Nov-26 (CASHBACK-AMAZ
 SMS0011,regex,True,True,UBER EATS,Uber Eats,Your HDFC Bank A/c XX8810 is debited Rs 450.00 on 02-Nov-26.
 SMS0012,regex,True,True,NETFLIX,Netflix,Your HDFC Bank A/c XX8810 is debited Rs 999.00 on 03-Nov-26.
-SMS0013,failed,False,False,,EMI,"Your HDFC Bank A/c XX8810 is debited Rs 12,000.00 on 05-Nov-"
+SMS0013,regex,True,True,EMI-HDFC LOAN,EMI,"Your HDFC Bank A/c XX8810 is debited Rs 12,000.00 on 05-Nov-"
 SMS0014,regex,True,True,MYNTRA,Myntra,Your HDFC Bank A/c XX8810 is debited Rs 580.00 on 06-Nov-26.
 SMS0015,regex,True,True,BOOKMYSHOW,BookMyShow,Your HDFC Bank A/c XX8810 is debited Rs 400.00 on 07-Nov-26.
 SMS0016,regex,True,True,,Salary,"Rs 30,000.00 credited to your A/c XX8810 on 01-Nov-26. NEFT "
 SMS0017,regex,True,True,LIC PREMIUM,LIC,"Your HDFC Bank A/c XX8810 is debited Rs 2,500.00 on 08-Nov-2"
-SMS0018,failed,False,False,,CC Payment,"Your credit card payment of Rs 14,350.00 received on 10-Nov-"
+SMS0018,regex,True,True,CC Payment,CC Payment,"Your credit card payment of Rs 14,350.00 received on 10-Nov-"
 SMS0019,regex,True,True,ZOMATO,Zomato,"Your ICICI Bank A/c XX2341 is debited Rs 3,200.00 on 03-Nov-"
 SMS0020,regex,True,True,DECATHLON,Decathlon,"Your ICICI Bank A/c XX2341 is debited Rs 1,250.00 on 04-Nov-"
 SMS0021,regex,True,True,,UPI,"Rs 2,000.00 credited to your ICICI Bank A/c XX2341 on 02-Nov"
@@ -32,42 +32,42 @@ SMS0030,regex,True,True,SALARY CORP,Salary,"Received Rs 15,000.00 from SALARY CO
 SMS0031,regex,True,True,plumber,Services,Sent Rs 800.00 to plumber@paytm via UPI on 05-Nov-26. Balanc
 SMS0032,regex,True,True,mama,Transfer,"Sent Rs 2,000.00 to mama@upi via UPI on 07-Nov-26. Ref: 4567"
 SMS0033,regex,True,True,BLINKIT,Blinkit,Rs 350.00 debited from A/c XX4521 on 10-Nov-26 at BLINKIT. A
-SMS0034,failed,False,False,,Jio,Rs 299.00 debited from A/c XX8810 on 11-Nov-26. Info: JIO RE
-SMS0035,failed,False,False,,Spotify,"Rs 1,999.00 debited from A/c XX2341 on 11-Nov-26. Info: SPOT"
+SMS0034,regex,True,True,JIO RECHARGE,Jio,Rs 299.00 debited from A/c XX8810 on 11-Nov-26. Info: JIO RE
+SMS0035,regex,True,True,SPOTIFY PREMIUM,Spotify,"Rs 1,999.00 debited from A/c XX2341 on 11-Nov-26. Info: SPOT"
 SMS0036,regex,True,True,RAPIDO,Rapido,Rs 180.00 debited from A/c XX9910 on 09-Nov-26 at RAPIDO. Av
 SMS0037,regex,True,True,NYKAA,Nykaa,"Rs 1,500.00 debited from A/c XX4521 on 12-Nov-26 at NYKAA. A"
-SMS0038,failed,False,False,,Cult.fit,Rs 750.00 debited from A/c XX8810 on 12-Nov-26. Info: CULT.F
-SMS0039,failed,False,False,,Meesho,"Rs 1,200.00 debited from A/c XX2341 on 13-Nov-26. Info: MEES"
+SMS0038,regex,True,True,CULT.FIT,Cult.fit,Rs 750.00 debited from A/c XX8810 on 12-Nov-26. Info: CULT.F
+SMS0039,regex,True,True,MEESHO,Meesho,"Rs 1,200.00 debited from A/c XX2341 on 13-Nov-26. Info: MEES"
 SMS0040,regex,True,True,LENSKART,Lenskart,Rs 500.00 debited from A/c XX9910 on 10-Nov-26 at LENSKART. 
 SMS0041,regex,True,True,CROMA,Croma,"Rs 2,100.00 debited from A/c XX4521 on 13-Nov-26 at CROMA. A"
-SMS0042,failed,False,False,,Tata Cliq,Rs 890.00 debited from A/c XX8810 on 13-Nov-26. Info: TATA C
+SMS0042,regex,True,True,TATA CLIQ,Tata Cliq,Rs 890.00 debited from A/c XX8810 on 13-Nov-26. Info: TATA C
 SMS0043,regex,True,True,,Salary,"Rs 45,000.00 credited to A/c XX5566 on 01-Nov-26. NEFT SALAR"
 SMS0044,regex,True,True,SALARY,Salary,"Rs 28,000.00 credited to A/c XX4521 on 01-Nov-26 (SALARY). A"
 SMS0045,regex,True,True,EMI-BAJAJ FINANCE,EMI,"Rs 5,500.00 debited from A/c XX4521 on 05-Nov-26 at EMI-BAJA"
-SMS0046,failed,False,False,,EMI,"Your A/c XX8810 is debited Rs 3,200.00 on 05-Nov-26 for EMI-"
+SMS0046,regex,True,True,EMI-HDFC PERSONAL LOAN,EMI,"Your A/c XX8810 is debited Rs 3,200.00 on 05-Nov-26 for EMI-"
 SMS0047,regex,True,True,ELECTRICITY BOARD,Electricity,"Rs 1,450.00 debited from A/c XX4521 on 03-Nov-26 at ELECTRIC"
-SMS0048,failed,False,False,,Gas,Rs 850.00 debited from A/c XX8810 on 04-Nov-26. Info: PIPED 
+SMS0048,regex,True,True,PIPED GAS,Gas,Rs 850.00 debited from A/c XX8810 on 04-Nov-26. Info: PIPED 
 SMS0049,regex,True,True,INTERNET BILL,Internet,Rs 500.00 debited from A/c XX9910 on 02-Nov-26 at INTERNET B
 SMS0050,regex,True,True,APOLLO PHARMACY,Healthcare,"Rs 1,200.00 debited from A/c XX4521 on 08-Nov-26 at APOLLO P"
-SMS0051,failed,False,False,,Healthcare,Rs 800.00 debited from A/c XX8810 on 09-Nov-26. Info: DR CON
+SMS0051,regex,True,True,DR CONSULT FEE,Healthcare,Rs 800.00 debited from A/c XX8810 on 09-Nov-26. Info: DR CON
 SMS0052,regex,True,True,UDEMY COURSE,Education,"Rs 2,500.00 debited from A/c XX9910 on 07-Nov-26 at UDEMY CO"
 SMS0053,regex,True,True,COURSERA,Education,"Rs 1,800.00 debited from A/c XX4521 on 11-Nov-26 at COURSERA"
 SMS0054,regex,True,True,GROWW-MF,Investment,"Rs 5,000.00 debited from A/c XX4521 on 05-Nov-26 at GROWW-MF"
-SMS0055,failed,False,False,,Investment,"Rs 2,000.00 debited from A/c XX8810 on 05-Nov-26. Info: ZERO"
-SMS0056,failed,False,False,,Shopping,Rs 450.00 debited from A/c XX2341 on 09-Nov-26. Info: BIG BA
+SMS0055,regex,True,True,ZERODHA SIP,Investment,"Rs 2,000.00 debited from A/c XX8810 on 05-Nov-26. Info: ZERO"
+SMS0056,regex,True,True,BIG BAZAAR,Shopping,Rs 450.00 debited from A/c XX2341 on 09-Nov-26. Info: BIG BA
 SMS0057,regex,True,True,RELIANCE SMART,Shopping,"Rs 1,350.00 debited from A/c XX4521 on 14-Nov-26 at RELIANCE"
 SMS0058,regex,True,True,FABINDIA,Shopping,"Rs 2,200.00 debited from A/c XX9910 on 12-Nov-26 at FABINDIA"
-SMS0059,failed,False,False,,Entertainment,Rs 649.00 debited from A/c XX2341 on 03-Nov-26. Info: HOTSTA
-SMS0060,failed,False,False,,Entertainment,Rs 199.00 debited from A/c XX8810 on 04-Nov-26. Info: YOUTUB
+SMS0059,regex,True,True,HOTSTAR PREMIUM,Entertainment,Rs 649.00 debited from A/c XX2341 on 03-Nov-26. Info: HOTSTA
+SMS0060,regex,True,True,YOUTUBE PREMIUM,Entertainment,Rs 199.00 debited from A/c XX8810 on 04-Nov-26. Info: YOUTUB
 SMS0061,regex,True,True,CHAI POINT,Food,Rs 220.00 debited from A/c XX4521 on 06-Nov-26 at CHAI POINT
-SMS0062,failed,False,False,,Food,Rs 480.00 debited from A/c XX8810 on 07-Nov-26. Info: DOMINO
-SMS0063,failed,False,False,,Food,Rs 310.00 debited from A/c XX2341 on 08-Nov-26. Info: BOX8. 
+SMS0062,regex,True,True,DOMINOS,Food,Rs 480.00 debited from A/c XX8810 on 07-Nov-26. Info: DOMINO
+SMS0063,regex,True,True,BOX8,Food,Rs 310.00 debited from A/c XX2341 on 08-Nov-26. Info: BOX8. 
 SMS0064,regex,True,True,OLA,Transport,Rs 250.00 debited from A/c XX9910 on 09-Nov-26 at OLA. Avl B
 SMS0065,regex,True,True,METRO CARD RECHARGE,Transport,Rs 100.00 debited from A/c XX4521 on 11-Nov-26 at METRO CARD
-SMS0066,failed,False,False,,Transport,Rs 180.00 debited from A/c XX8810 on 12-Nov-26. Info: RAPIDO
+SMS0066,regex,True,True,RAPIDO,Transport,Rs 180.00 debited from A/c XX8810 on 12-Nov-26. Info: RAPIDO
 SMS0067,regex,True,True,RENT-LANDLORD,Rent,"Rs 7,500.00 debited from A/c XX4521 on 01-Oct-26 at RENT-LAN"
-SMS0068,failed,False,False,,EMI,"Rs 12,000.00 debited from A/c XX8810 on 05-Oct-26 for EMI-HD"
-SMS0069,failed,False,False,,Netflix,Rs 999.00 debited from A/c XX8810 on 03-Oct-26. Info: NETFLI
+SMS0068,regex,True,True,EMI-HDFC LOAN,EMI,"Rs 12,000.00 debited from A/c XX8810 on 05-Oct-26 for EMI-HD"
+SMS0069,regex,True,True,NETFLIX,Netflix,Rs 999.00 debited from A/c XX8810 on 03-Oct-26. Info: NETFLI
 SMS0070,failed,False,False,,,"Hi, please check your bank statement for a discrepancy noted"
 SMS0071,failed,False,False,,,Bank maintenance scheduled tonight. Services may be intermit
 SMS0072,failed,False,False,,,Your account nomination update is complete. Nominee: Rahul K
@@ -76,22 +76,22 @@ SMS0074,failed,False,False,,,Mobile banking transaction successful. —Axis Bank
 SMS0075,regex,True,True,unknown-collect,Unknown,"Sent Rs 9,999.00 to unknown-collect@fakebank via UPI on 10-N"
 SMS0076,regex,True,True,PROCESSING FEE-LOAN,Unknown,Rs 500.00 debited from A/c XX4521 on 10-Nov-26 at PROCESSING
 SMS0077,regex,True,True,HALDIRAMS,Food,Rs 650.00 debited from A/c XX4521 on 04-Nov-26 at HALDIRAMS.
-SMS0078,failed,False,False,,Food,Rs 280.00 debited from A/c XX8810 on 05-Nov-26. Info: CAFE C
-SMS0079,failed,False,False,,Shopping,"Rs 1,600.00 debited from A/c XX2341 on 06-Nov-26. Info: VIJA"
+SMS0078,regex,True,True,CAFE COFFEE DAY,Food,Rs 280.00 debited from A/c XX8810 on 05-Nov-26. Info: CAFE C
+SMS0079,regex,True,True,VIJAY SALES,Shopping,"Rs 1,600.00 debited from A/c XX2341 on 06-Nov-26. Info: VIJA"
 SMS0080,regex,True,True,PHARMACY NEAR,Healthcare,Rs 390.00 debited from A/c XX9910 on 07-Nov-26 at PHARMACY N
 SMS0081,regex,True,True,PETROL PUMP,Transport,Rs 240.00 debited from A/c XX4521 on 08-Nov-26 at PETROL PUM
-SMS0082,failed,False,False,,Healthcare,"Rs 3,500.00 debited from A/c XX8810 on 09-Nov-26. Info: DENT"
-SMS0083,failed,False,False,,Education,"Rs 2,800.00 debited from A/c XX2341 on 10-Nov-26. Info: TUIT"
+SMS0082,regex,True,True,DENTIST FEE,Healthcare,"Rs 3,500.00 debited from A/c XX8810 on 09-Nov-26. Info: DENT"
+SMS0083,regex,True,True,TUITION FEES,Education,"Rs 2,800.00 debited from A/c XX2341 on 10-Nov-26. Info: TUIT"
 SMS0084,regex,True,True,,Transfer,"Rs 5,000.00 transferred to A/c XX5566 on 11-Nov-26 via NEFT."
 SMS0085,regex,True,True,NEWSPAPERS,Entertainment,Rs 100.00 debited from A/c XX9910 on 12-Nov-26 at NEWSPAPERS
 SMS0086,regex,True,True,FURNITURE SHOP,Shopping,"Rs 4,500.00 debited from A/c XX4521 on 13-Nov-26 at FURNITUR"
-SMS0087,failed,False,False,,Shopping,"Rs 1,000.00 debited from A/c XX8810 on 14-Nov-26. Info: MOBI"
-SMS0088,failed,False,False,,Transport,Rs 300.00 debited from A/c XX2341 on 02-Nov-26. Info: PARKIN
+SMS0087,regex,True,True,MOBILE REPAIR,Shopping,"Rs 1,000.00 debited from A/c XX8810 on 14-Nov-26. Info: MOBI"
+SMS0088,regex,True,True,PARKING FEE,Transport,Rs 300.00 debited from A/c XX2341 on 02-Nov-26. Info: PARKIN
 SMS0089,regex,True,True,HOTEL STAY,Entertainment,"Rs 1,700.00 debited from A/c XX9910 on 03-Nov-26 at HOTEL ST"
 SMS0090,regex,True,True,GYM MEMBERSHIP,Healthcare,Rs 600.00 debited from A/c XX4521 on 06-Nov-26 at GYM MEMBER
 SMS0091,regex,True,True,FREELANCE PAYMENT,Salary,"Rs 2,000.00 credited to A/c XX4521 on 10-Nov-26 (FREELANCE P"
-SMS0092,failed,False,False,,Transfer,Rs 500.00 debited from A/c XX8810 on 11-Nov-26. Info: WEDDIN
-SMS0093,failed,False,False,,Shopping,"Rs 1,200.00 debited from A/c XX2341 on 12-Nov-26. Info: AMAZ"
+SMS0092,regex,True,True,WEDDING GIFT UPI,Transfer,Rs 500.00 debited from A/c XX8810 on 11-Nov-26. Info: WEDDIN
+SMS0093,regex,True,True,AMAZON SUBSCRIBE,Shopping,"Rs 1,200.00 debited from A/c XX2341 on 12-Nov-26. Info: AMAZ"
 SMS0094,regex,True,True,BARBER SHOP,Shopping,Rs 750.00 debited from A/c XX9910 on 13-Nov-26 at BARBER SHO
 SMS0095,regex,True,True,CLOTHING STORE,Shopping,"Rs 3,000.00 debited from A/c XX4521 on 14-Nov-26 at CLOTHING"
-SMS0096,failed,False,False,,Entertainment,Rs 50.00 debited from A/c XX8810 on 14-Nov-26. Info: NEWSPAP
+SMS0096,regex,True,True,NEWSPAPER DIGITAL,Entertainment,Rs 50.00 debited from A/c XX8810 on 14-Nov-26. Info: NEWSPAP

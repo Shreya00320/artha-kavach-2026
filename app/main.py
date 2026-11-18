@@ -75,7 +75,12 @@ def _get_retriever():
         # Try loading an existing index first (fast path)
         try:
             index = load_index(cache_dir)
-            logging.info("FAISS index loaded from cache (%d docs).", index.index.ntotal)
+            wanted = os.getenv("EMBEDDING_MODEL", "")
+            if wanted and index.embedding_model != wanted:
+                # Index was embedded with another (possibly retired) model: query
+                # vectors would not match, so rebuild with the configured model.
+                raise FileNotFoundError(f"index model {index.embedding_model} != {wanted}")
+            logging.info("Vector index loaded from cache (%d docs).", index.index.ntotal)
         except FileNotFoundError:
             # Index not built yet — build it now (runs once per deploy)
             logging.info("FAISS index not found — building from data/kb/ …")
@@ -110,24 +115,32 @@ def _get_classifier():
 # Header
 # ---------------------------------------------------------------------------
 
-col_logo, col_title = st.columns([1, 10])
-with col_logo:
-    st.markdown("# 🛡️")
-with col_title:
-    st.markdown("# Artha Kavach")
-    st.caption(
-        "AI money coach for India · protects from UPI scams · builds your budget · "
-        "never says anything it can't prove"
-    )
+from app.i18n import t
 
-st.divider()
+with st.sidebar:
+    _lang_label = st.radio("Language / भाषा", ["English", "हिन्दी"], horizontal=True, key="lang_choice")
+LANG = "hi" if _lang_label == "हिन्दी" else "en"
+
+st.markdown(
+    f"""
+<div class="hero">
+  <div class="hero-title">🛡️ Artha Kavach</div>
+  <div class="hero-tag">{t("tag", LANG)}</div>
+  <div class="hero-chips">
+    <span>{t("chip1", LANG)}</span><span>{t("chip2", LANG)}</span>
+    <span>{t("chip3", LANG)}</span><span>{t("chip4", LANG)}</span><span>{t("chip5", LANG)}</span>
+  </div>
+</div>
+""",
+    unsafe_allow_html=True,
+)
 
 # ---------------------------------------------------------------------------
 # Status sidebar
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
-    st.markdown("### ⚙️ System status")
+    st.markdown(f"### {t('status', LANG)}")
     adapter    = _get_adapter()
     retriever  = _get_retriever()
     classifier = _get_classifier()
@@ -152,15 +165,37 @@ with st.sidebar:
         )
 
     st.divider()
+    st.markdown(f"### {t('demo', LANG)}")
+    st.caption("One click loads a 'digital arrest' scam message and a month of bank SMS "
+               "that includes the ₹25,000 the victim already paid.")
+    if st.button("Load demo story", width="stretch", key="btn_demo_story"):
+        from app.demo import load_demo_story
+        load_demo_story()
+        st.success("Loaded — start in 🛡️ Scam Shield, then 💰 Smart Budget, then 💬 Ask Artha.")
+
+    st.divider()
+    st.markdown(f"### {t('privacy', LANG)}")
+    st.caption(
+        "Messages you paste are processed in this session only and are not stored by the app. "
+        "With an API key set, text is sent to the LLM provider for analysis; without one, "
+        "everything runs locally."
+    )
+    if st.button(t("clear", LANG), width="stretch"):
+        for k in list(st.session_state.keys()):
+            if k != "lang_choice":
+                del st.session_state[k]
+        st.rerun()
+
+    st.divider()
     st.markdown("**Arthaton 2026** — AI for Finance")
-    st.caption("⚖️ Educational tool. Not financial advice.")
+    st.caption(t("disclaimer", LANG))
 
 # ---------------------------------------------------------------------------
-# Main tabs
+# Main tabs (Smart Budget renders before Goals/Tax/Ask so they see fresh data)
 # ---------------------------------------------------------------------------
 
-tab_scam, tab_budget, tab_about = st.tabs(
-    ["🛡️ Scam Shield", "💰 Smart Budget", "📖 About"]
+tab_scam, tab_budget, tab_goals, tab_chat, tab_about = st.tabs(
+    [t("tab_scam", LANG), t("tab_budget", LANG), t("tab_goals", LANG), t("tab_chat", LANG), t("tab_about", LANG)]
 )
 
 with tab_scam:
@@ -170,6 +205,14 @@ with tab_scam:
 with tab_budget:
     from app.budget_ui import render_budget_tab
     render_budget_tab(adapter=adapter)
+
+with tab_goals:
+    from app.goals_ui import render_goals_tab
+    render_goals_tab()
+
+with tab_chat:
+    from app.chat_ui import render_chat_tab
+    render_chat_tab(adapter=adapter)
 
 with tab_about:
     from app.about_ui import render_about_tab

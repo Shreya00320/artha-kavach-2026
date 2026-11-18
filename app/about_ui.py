@@ -41,6 +41,22 @@ def render_about_tab() -> None:
         "> **\"An AI money coach that protects you from UPI scams, builds your budget "
         "from bank SMS, and never says anything it can't prove.\"**"
     )
+    st.markdown(
+        """
+**One app, six jobs:**
+
+| Tab | What you can do |
+|---|---|
+| 🛡️ **Scam Shield** | Check a message · names the manipulation tactic · check a link (never opened) · scan a whole inbox · 🆘 "I've been scammed" plan + complaint draft |
+| 💰 **Smart Budget** | Budget from bank SMS · transfers & refunds handled · salary-cycle months · subscriptions · unusual-payment alerts · fix categories · bank-statement import · CSV export |
+| 🎯 **Goals & Planner** | 🌱 First-salary guide · emergency fund · multi-goal plan · SIP & EMI calculators · loan prepayment · step-up saving · 🏠 Home affordability & rent-vs-buy |
+| 🧾 **Tax** | Old vs new regime (FY 2026-27) with deductions pre-filled from your payments |
+| 💬 **Ask Artha** | Chat about your money — every number in a reply is checked against the engine |
+| 📖 **About** | How it works, sources and limits |
+
+**Ideas we borrowed (credited, not quoted):** *Influence* (Cialdini) and *Thinking, Fast and Slow* (Kahneman) for naming scam tactics; *Nudge* (Thaler & Sunstein) for pay-yourself-first; *Your Money or Your Life* (Dominguez & Robin) for spending as hours of work; *Weapons of Math Destruction* (O'Neil) for why every output carries a Trust Receipt.
+        """
+    )
 
     st.divider()
 
@@ -81,18 +97,24 @@ Target users: **students and first-job earners in India** using UPI, bank SMS, a
     st.markdown("### 🛡️ How Scam Shield works")
     steps = [
         ("1. Rules engine",
-         "Regex + keyword checks for OTP requests, collect-request scams, urgency language, "
-         "phishing links, KYC threats, lottery/prize, job-fee scams. Fast and fully offline."),
+         "50+ regex/keyword checks for OTP/PIN requests, collect-request scams, urgency language, "
+         "phishing links, KYC threats, lottery/prize, job-fee scams, 'digital arrest', parcel/courier "
+         "threats, APK installs, QR-to-receive, task/trading-group scams and Hinglish variants. "
+         "Fast and fully offline."),
         ("2. ML Classifier",
-         "TF-IDF vectoriser + Logistic Regression trained on ~150 labelled messages (English, "
-         "Hindi, Hinglish). Returns a 3-class probability: scam / suspicious / safe."),
+         "TF-IDF (word 1-2 grams + character 2-5 grams, which handle Hinglish spellings) + Logistic "
+         "Regression trained on ~108 labelled messages. Returns scam / suspicious / safe probabilities. "
+         "Offline, the more severe of the rules and classifier verdicts wins."),
         ("3. LLM Judge",
          "Receives the message, rule hits, classifier probability, and top-3 KB advisory passages. "
          "Returns strict JSON: verdict, confidence, red flags with exact quoted text, and verifiable claims."),
         ("4. Claim Verifier",
          "A second LLM call checks each claim against the cited KB passage. "
          "Unsupported claims are dropped or flagged — the LLM cannot bluff its sources."),
-        ("5. Trust Receipt",
+        ("5. Link checker",
+         "Every URL in the message is inspected offline (never opened): official bank/government "
+         "domains, look-alike and misspelled domains, shorteners, raw IPs, punycode, risky TLDs, .apk downloads."),
+        ("6. Trust Receipt",
          "Assembles sources, verified claims, and all detector votes into a transparent panel "
          "shown below every verdict."),
     ]
@@ -106,15 +128,19 @@ Target users: **students and first-job earners in India** using UPI, bank SMS, a
     st.markdown("### 💰 How Smart Budget works")
     b_steps = [
         ("1. Hybrid SMS parser",
-         "Regex templates for SBI, HDFC, ICICI, Axis, Kotak, UPI/PhonePe/GPay formats. "
+         "Regex templates for SBI, HDFC, ICICI, Axis, Kotak, UPI/PhonePe/GPay/Paytm formats plus "
+         "generic bank templates and several date formats. "
          "LLM fallback (with JSON-schema output) for messages the regex cannot parse. "
          "Every message is logged as 'regex' | 'llm' | 'failed'."),
         ("2. Categoriser",
-         "Merchant lookup table first (Swiggy, Zomato, Uber, Amazon, rent, etc.). "
-         "LLM fallback for unknown merchants; results cached to avoid re-calling."),
+         "Merchant lookup (whole-word matching, 200+ merchants), brand names recovered from UPI IDs, "
+         "person-to-person UPI detected as transfers, refunds detected. LLM fallback for unknown "
+         "merchants. You can correct any category and the budget recomputes."),
         ("3. Budget engine (pure Python)",
          "Monthly totals by category, 50/30/20 comparison, savings rate, recurring-payment detection, "
-         "and pace projection. All arithmetic is code — zero LLM involvement."),
+         "pace projection, subscriptions, unusual-payment alerts, small-spend bucket and salary-cycle "
+         "months. Transfers to people are kept out of spending; refunds are netted off. "
+         "All arithmetic is code — zero LLM involvement."),
         ("4. Nudge writer",
          "The LLM receives ONLY code-computed numbers and writes 2–3 short, kind nudges. "
          "A post-check rejects any nudge that contains a number not present in the engine output."),
@@ -154,7 +180,9 @@ The RAG knowledge base (`data/kb/`) contains advisory documents from:
 - **RBI** — UPI safety guidelines, OTP/PIN warnings
 - **NPCI** — Collect-request awareness
 - **MeitY / Cyber Dost** — Phishing, KYC fraud, job-scam warnings
-- **cybercrime.gov.in** — How to report
+- **cybercrime.gov.in / I4C** — How to report; 'digital arrest', task and investment scams
+- **RBI 2017 circular** — zero liability for unauthorised electronic transactions reported quickly
+- **DoT Sanchar Saathi (Chakshu)** — reporting fraud calls and messages
 - **Financial literacy portals** — Budgeting and savings guidance
 
 All documents are real public sources. See `data/kb/TODO_manual_verification.md` for the full list.
@@ -169,6 +197,7 @@ All documents are real public sources. See `data/kb/TODO_manual_verification.md`
         """
 - **Scam detection is not perfect.** New scam patterns not covered by rules or training data may be missed.
 - **Classifier trained on synthetic data.** Real-world performance may differ; treat confidence scores as indicative.
+- **Tax and planning tools are estimates.** Tax uses FY 2026-27 slabs for salaried people under 60 and skips surcharge and capital gains; returns in calculators are assumptions, not predictions.
 - **Parser covers common formats.** Unusual or bank-specific SMS formats may fall through to LLM or fail entirely.
 - **LLM calls cost money and have latency.** The app degrades gracefully to rules-only when no API key is set.
 - **Not a substitute for professional advice.** Always verify with your bank or the [cybercrime.gov.in](https://cybercrime.gov.in) portal.
@@ -181,8 +210,8 @@ All documents are real public sources. See `data/kb/TODO_manual_verification.md`
         """
 | File | Description |
 |---|---|
-| `data/scam_eval.csv` | ~150 labelled messages (synthetic, English/Hindi/Hinglish). 70/30 train/test split, seed=42. |
-| `data/sample_sms.csv` | ~120 synthetic bank/UPI SMS across one month. Marked **SYNTHETIC** in README. |
+| `data/scam_eval.csv` | 155 labelled messages (synthetic, English/Hindi/Hinglish). 70/30 train/test split, seed=42. |
+| `data/sample_sms.csv` | 96 synthetic bank/UPI SMS across two months. Marked **SYNTHETIC** in README. |
         """
     )
 

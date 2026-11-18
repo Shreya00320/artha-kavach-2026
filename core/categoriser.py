@@ -13,7 +13,8 @@ Public API:
 """
 
 import logging
-from dataclasses import dataclass
+import re
+from dataclasses import dataclass, replace
 from typing import Optional
 
 from core.parser import ParsedTransaction
@@ -28,6 +29,7 @@ VALID_CATEGORIES = {
     "Food", "Transport", "Shopping", "Entertainment", "Utilities",
     "Healthcare", "Education", "Rent", "EMI_Loan", "Savings_Investment",
     "Salary", "Transfer", "ATM", "Other",
+    "Refund",   # credits that reverse a purchase — netted off spending, never income
 }
 
 # ---------------------------------------------------------------------------
@@ -195,6 +197,137 @@ MERCHANT_LOOKUP: dict[str, str] = {
     "max bupa": "Savings_Investment",
 }
 
+MERCHANT_LOOKUP.update({
+    # Food / groceries / quick commerce
+    "instamart": "Food", "swiggy instamart": "Food", "bb daily": "Food", "jiomart": "Food",
+    "licious": "Food", "eatsure": "Food", "chaayos": "Food", "burger king": "Food",
+    "subway": "Food", "canteen": "Food", "mess": "Food", "tiffin": "Food",
+    "milk": "Food", "dairy": "Food", "kirana": "Food", "grocery": "Food",
+    # Transport
+    "namma yatri": "Transport", "blusmart": "Transport", "indigo": "Transport",
+    "air india": "Transport", "fastag": "Transport", "parking fee": "Transport",
+    "parking": "Transport", "hp petrol": "Transport", "indian oil": "Transport",
+    "bharat petroleum": "Transport", "yulu": "Transport", "auto": "Transport",
+    # Shopping
+    "amazon pay": "Shopping", "reliance digital": "Shopping", "nykaa fashion": "Shopping",
+    "snapdeal": "Shopping", "firstcry": "Shopping", "zudio": "Shopping", "westside": "Shopping",
+    # Entertainment / subscriptions
+    "jiocinema": "Entertainment", "jiohotstar": "Entertainment", "sonyliv": "Entertainment",
+    "zee5": "Entertainment", "prime video": "Entertainment", "apple.com/bill": "Entertainment",
+    "apple music": "Entertainment", "google play": "Entertainment", "gaana": "Entertainment",
+    "steam": "Entertainment", "dream11": "Entertainment", "amazon subscribe": "Entertainment",
+    "chatgpt": "Entertainment", "openai": "Entertainment", "linkedin premium": "Entertainment",
+    # Utilities and household services
+    "bescom": "Utilities", "tata power": "Utilities", "adani electricity": "Utilities",
+    "mseb": "Utilities", "act fibernet": "Utilities", "broadband": "Utilities",
+    "dth": "Utilities", "tata play": "Utilities", "recharge": "Utilities",
+    "plumber": "Utilities", "electrician": "Utilities", "maid": "Utilities",
+    "society maintenance": "Utilities", "maintenance": "Utilities", "laundry": "Utilities",
+    # Healthcare / fitness
+    "pharmeasy": "Healthcare", "tata 1mg": "Healthcare", "lab test": "Healthcare",
+    "clinic": "Healthcare", "cultfit": "Healthcare", "gym": "Healthcare",
+    # Education
+    "physics wallah": "Education", "upgrad": "Education", "great learning": "Education",
+    "exam fee": "Education", "books": "Education",
+    # Savings / investment / insurance
+    "kuvera": "Savings_Investment", "coin by zerodha": "Savings_Investment",
+    "paytm money": "Savings_Investment", "indmoney": "Savings_Investment",
+    "elss": "Savings_Investment", "recurring deposit": "Savings_Investment",
+    "sukanya": "Savings_Investment", "digital gold": "Savings_Investment",
+    "care health": "Savings_Investment", "niva bupa": "Savings_Investment",
+    "hdfc ergo": "Savings_Investment", "acko": "Savings_Investment",
+    "term insurance": "Savings_Investment",
+    # Credit card bills are transfers (the spend was already counted on the card)
+    "credit card bill": "Transfer", "cred": "Transfer",
+    # Pay-later = borrowing
+    "bnpl": "EMI_Loan", "simpl": "EMI_Loan", "lazypay": "EMI_Loan", "slice": "EMI_Loan",
+    # Income-like
+    "interest credit": "Salary", "int.pd": "Salary", "stipend": "Salary",
+})
+
+# Subscription merchants (used by the subscription tracker)
+SUBSCRIPTION_MERCHANTS = {
+    "netflix", "hotstar", "jiohotstar", "jiocinema", "youtube premium", "spotify",
+    "amazon prime", "prime video", "sonyliv", "zee5", "apple music", "apple.com/bill",
+    "google play", "gaana", "linkedin premium", "chatgpt", "openai", "cult.fit",
+    "cultfit", "gym membership", "newspaper digital", "amazon subscribe", "tata play",
+    "act fibernet", "broadband", "jio recharge", "airtel",
+}
+
+# Brand names commonly embedded in merchant UPI handles ("swiggy.stores@axb").
+_VPA_BRAND_HINTS = [
+    "swiggy", "zomato", "zepto", "blinkit", "bigbasket", "uber", "ola", "rapido",
+    "irctc", "amazon", "flipkart", "myntra", "meesho", "nykaa", "ajio", "netflix",
+    "spotify", "hotstar", "bookmyshow", "jio", "airtel", "bescom", "zerodha",
+    "groww", "kuvera", "apollo", "pharmeasy", "1mg", "dominos", "mcdonalds",
+    "starbucks", "dmart", "makemytrip", "redbus", "cred", "lic",
+]
+
+# Payment-gateway / aggregator handles: the real brand is not in the VPA.
+_GATEWAY_HINTS = ("razorpay", "payu", "cashfree", "billdesk", "ccavenue", "paytmqr",
+                  "bharatpe", "pinelabs", "juspay")
+
+
+def resolve_merchant(merchant: Optional[str], vpa: Optional[str]) -> Optional[str]:
+    """Turn a raw UPI handle into a readable merchant name when possible.
+
+    "swiggy.stores@axb" -> "Swiggy";  "razorpay.xyz@icici" -> "Razorpay merchant".
+    Returns the original merchant if nothing better is known.
+    """
+    handle = (vpa or "").lower()
+    if not handle and merchant and "@" in merchant:
+        handle = merchant.lower()
+    if not handle:
+        return merchant
+    local = handle.split("@")[0]
+    for brand in _VPA_BRAND_HINTS:
+        if re.search(rf"(^|[^a-z]){re.escape(brand)}([^a-z]|$)", local):
+            return brand.upper() if brand in ("irctc", "lic") else brand.capitalize()
+    for g in _GATEWAY_HINTS:
+        if g in local:
+            return f"{g.capitalize()} merchant"
+    return merchant
+
+
+_PHONE_VPA = re.compile(r"^(\+?91)?[6-9]\d{9}(-\d+)?$")
+_PERSON_VPA = re.compile(r"^[a-z]{2,}[._][a-z]{2,}\d{0,4}$")
+_BUSINESS_WORDS = ("store", "shop", "mart", "pay", "bill", "merchant", "pvt", "ltd",
+                   "services", "enterprise", "traders", "foods", "cafe", "hotel")
+
+
+def looks_like_person(merchant: Optional[str], vpa: Optional[str]) -> bool:
+    """Heuristic P2P detector: phone-number VPAs and firstname.lastname VPAs.
+
+    Money sent to friends and family is a transfer, not category spending —
+    counting it as "Wants" is a common complaint about UPI expense trackers.
+    """
+    local = (vpa or "").split("@")[0].lower() if vpa else ""
+    if not local and merchant:
+        local = merchant.lower().strip()
+    if not local:
+        return False
+    if _PHONE_VPA.match(local):
+        return True
+    if _PERSON_VPA.match(local):
+        return not any(b in local for b in _VPA_BRAND_HINTS) and not any(
+            w in local for w in _BUSINESS_WORDS
+        )
+    return False
+
+
+_REFUND_RE = re.compile(r"\b(refund(ed)?|reversal|reversed|failed\s+txn|chargeback)\b", re.I)
+
+
+_SALARY_RE = re.compile(r"\b(salary|sal\s*cr|payroll|stipend)\b", re.I)
+
+
+def is_refund(txn: ParsedTransaction) -> bool:
+    """A credit that returns money from a purchase (refund/reversal), not income."""
+    if txn.transaction_type != "credit":
+        return False
+    return bool(_REFUND_RE.search(f"{txn.merchant or ''} {txn.raw_message or ''}"))
+
+
 # In-memory cache: merchant_name_lower -> (category, method, confidence)
 _CACHE: dict[str, tuple[str, str, float]] = {}
 
@@ -253,16 +386,21 @@ class CategorisedTransaction:
 # Lookup logic
 # ---------------------------------------------------------------------------
 
+_KEYS_LONGEST_FIRST: list[str] = []
+
+
 def _lookup(merchant: str) -> Optional[str]:
     """Check merchant against lookup table. Returns category or None."""
-    key = merchant.strip().lower()
-    # Exact match
+    key = re.sub(r"\s+", " ", merchant.strip().lower())
     if key in MERCHANT_LOOKUP:
         return MERCHANT_LOOKUP[key]
-    # Partial match (merchant contains a known key or vice versa)
-    for known, cat in MERCHANT_LOOKUP.items():
-        if known in key or key in known:
-            return cat
+    # Whole-word match, longest known name first: "HOTSTAR PREMIUM" -> hotstar,
+    # while "ACKO PREMIUM" no longer matches "emi" and "parent" no longer matches "rent".
+    if len(_KEYS_LONGEST_FIRST) != len(MERCHANT_LOOKUP):
+        _KEYS_LONGEST_FIRST[:] = sorted(MERCHANT_LOOKUP, key=len, reverse=True)
+    for known in _KEYS_LONGEST_FIRST:
+        if re.search(rf"(?<![a-z0-9]){re.escape(known)}(?![a-z0-9])", key):
+            return MERCHANT_LOOKUP[known]
     return None
 
 
@@ -305,9 +443,25 @@ def categorise(txn: ParsedTransaction, adapter=None) -> CategorisedTransaction:
     Returns:
         CategorisedTransaction with category and category_method.
     """
+    # Refunds/reversals are credits that cancel a purchase — never income
+    if is_refund(txn):
+        return CategorisedTransaction.from_parsed(txn, "Refund", "rule", 0.9)
+
+    resolved = resolve_merchant(txn.merchant, txn.vpa)
+    if resolved and resolved != txn.merchant:
+        txn = replace(txn, merchant=resolved)
     merchant = (txn.merchant or "").strip()
 
-    # Special case: credit == salary if merchant looks like it
+    # Person-to-person UPI (phone-number or firstname.lastname handle) = transfer
+    if merchant and _lookup(merchant) is None and looks_like_person(merchant, txn.vpa):
+        return CategorisedTransaction.from_parsed(txn, "Transfer", "p2p", 0.8)
+
+    # Credits that mention salary/payroll anywhere in the SMS are income,
+    # even when the bank template has no merchant field ("NEFT SALARY-INFOSYS").
+    if txn.transaction_type == "credit" and _SALARY_RE.search(txn.raw_message or ""):
+        return CategorisedTransaction.from_parsed(txn, "Salary", "rule", 0.9)
+
+    # Special case: credit with no merchant at all
     if txn.transaction_type == "credit" and not merchant:
         return CategorisedTransaction.from_parsed(txn, "Transfer", "default", 0.5)
 

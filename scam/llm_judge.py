@@ -21,6 +21,8 @@ from scam.rules import RulesResult
 
 logger = logging.getLogger(__name__)
 
+_SEVERITY = {"safe": 0, "suspicious": 1, "scam": 2}
+
 
 # ---------------------------------------------------------------------------
 # Fallback: rules-only verdict (no LLM)
@@ -36,17 +38,27 @@ def rules_only_verdict(
     Confidence is capped at 0.80 since there is no LLM reasoning.
     """
     score = rule_result.score
-    clf_scam = (classifier_proba or {}).get("scam", 0.0)
 
-    # Combine: weighted average of rule score and classifier scam probability
-    combined = score * 0.6 + clf_scam * 0.4
-
-    if combined >= 0.55:
-        verdict = "scam"
-    elif combined >= 0.30:
-        verdict = "suspicious"
+    # Rules verdict (same thresholds as eval/run_eval.py and the Trust Receipt)
+    if score >= 0.55:
+        rules_verdict = "scam"
+    elif score >= 0.25:
+        rules_verdict = "suspicious"
     else:
-        verdict = "safe"
+        rules_verdict = "safe"
+
+    # Each detector votes independently; the more severe verdict wins.
+    # (A weighted average capped the classifier's influence at 0.4, so it could
+    # never produce a "scam" verdict on its own when no rule matched.)
+    verdict = rules_verdict
+    combined = score if rules_verdict != "safe" else 1.0 - score
+    if classifier_proba:
+        clf_verdict = max(_SEVERITY, key=lambda c: classifier_proba.get(c, 0.0))
+        clf_conf = classifier_proba.get(clf_verdict, 0.0)
+        if _SEVERITY[clf_verdict] > _SEVERITY[rules_verdict]:
+            verdict, combined = clf_verdict, clf_conf
+        elif clf_verdict == rules_verdict:
+            combined = max(combined, clf_conf)
 
     # Build simple red flags from rule matches (no LLM quoting)
     red_flags = []
@@ -83,6 +95,7 @@ def _category_explanation(category: str) -> str:
         "impersonation": "RBI, NPCI, and police do not contact people via SMS to demand payments.",
         "remote_access": "Never install remote-access apps at the request of an unsolicited caller.",
         "fee_to_receive": "Legitimate refunds and prizes are never conditional on paying a fee first.",
+        "property_scam": "Never pay a token or advance for a property you have not seen, or to an owner you cannot meet. No genuine property offers guaranteed returns.",
         "suspicious_vpa": "Scammers use UPI IDs with words like 'refund', 'prize', or 'claim'.",
     }
     return explanations.get(category, "This pattern is commonly seen in financial scams.")

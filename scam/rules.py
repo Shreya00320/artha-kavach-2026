@@ -182,10 +182,82 @@ SUSPICIOUS_VPA_RULES: list[Rule] = [
          _p(r"\b(prize|reward|refund|cashback)[\w]*@(okaxis|oksbi|okhdfcbank|okicici|ybl|ibl)\b"), 0.75),
 ]
 
+# Digital arrest / courier-parcel impersonation — weight 0.85–0.9
+# (I4C/MHA advisories: police, CBI, ED or customs never "arrest" anyone over a video call)
+DIGITAL_ARREST_RULES: list[Rule] = [
+    Rule("R110", "Digital arrest threat", "digital_arrest",
+         _p(r"\b(digital(ly)?\s*arrest|video\s*call\b.{0,40}\b(arrest|investigation|statement|police|cbi|customs)|"
+            r"(arrest|investigation)\b.{0,40}\bvideo\s*call)"), 0.9),
+    Rule("R111", "Parcel with illegal items", "digital_arrest",
+         _p(r"\b(parcel|package|courier|consignment|fedex|dhl)\b.{0,60}\b(drugs?|narcotic|mdma|illegal|seized|contraband|passports?)\b"), 0.85),
+    Rule("R112", "Money laundering / Aadhaar misuse accusation", "digital_arrest",
+         _p(r"\b(money\s*laundering|hawala|aadhaar\b.{0,30}\b(misuse|used|linked)\b.{0,40}\b(crime|case|laundering|illegal|fraud|account))"), 0.8),
+]
+
+# Malicious app install (APK) — weight 0.85
+MALICIOUS_APP_RULES: list[Rule] = [
+    Rule("R120", "APK file / app outside Play Store", "malicious_app",
+         _p(r"(\.apk\b|\bapk\s*(file|download|link)\b)"), 0.85),
+    # Weaker on its own: legitimate apps also say "download our app"
+    Rule("R121", "Install an app from a link", "malicious_app",
+         _p(r"\b(install|download)\b.{0,30}\b(this|our|the)?\s*app\b.{0,30}\b(link|whatsapp|below|here)\b"), 0.45),
+]
+
+# QR-code-to-receive trick — weight 0.9
+QR_RULES: list[Rule] = [
+    Rule("R130", "Scan QR to receive money", "qr_scam",
+         _p(r"\bscan\b.{0,30}\bqr\b.{0,40}\b(receive|get|claim|refund|payment\s*will|credit)"), 0.9),
+]
+
+# Task / investment group scams — weight 0.6–0.85
+INVESTMENT_TASK_RULES: list[Rule] = [
+    Rule("R140", "Paid tasks (like/review/rate) for money", "task_scam",
+         _p(r"\b(like|subscribe|rate|review|follow)\b.{0,30}\b(videos?|hotels?|products?|channels?|posts?)\b.{0,50}\b(earn|paid|rs|₹|income|commission)"), 0.8),
+    Rule("R141", "Guaranteed / unrealistic returns", "investment_scam",
+         _p(r"\b(guaranteed|assured|fixed)\b.{0,20}\b(returns?|profit|income)\b|\b(double|triple)\s+(your\s+)?money\b|\b\d{2,3}\s*%\s*(returns?|profit)\b.{0,30}\b(month|week|days?)"), 0.8),
+    Rule("R142", "Stock tips / trading group invite", "investment_scam",
+         _p(r"\b(stock|share|ipo|trading|crypto)\b.{0,40}\b(tips?|group|vip|signals?)\b.{0,40}\b(join|whatsapp|telegram|link)"), 0.65),
+]
+
+# "Sent by mistake" / fake payment refund trick — weight 0.7
+MISTAKEN_TRANSFER_RULES: list[Rule] = [
+    Rule("R150", "Money 'sent by mistake' — return request", "mistaken_transfer",
+         _p(r"\b(sent|transferred|credited|galti\s*se)\b.{0,40}\b(by\s*mistake|wrongly|galti|accidentally)\b.{0,60}\b(return|send\s*back|wapas|refund)"), 0.7),
+]
+
+# Hinglish variants of the strongest signals
+HINGLISH_RULES: list[Rule] = [
+    Rule("R160", "OTP share karne ko kehna (Hinglish)", "otp_request",
+         _p(r"\botp\b.{0,25}\b(bata|batao|bhej|bhejo|bhejein|daal|daalo|dijiye|share\s*kar|de\s*do|dein)\b"), 0.9),
+    Rule("R161", "Account band hone ki dhamki (Hinglish)", "urgency",
+         _p(r"\b(khata|account|sim)\b.{0,30}\b(band|block)\b.{0,20}\b(ho\s*jayega|hone\s*wala|kar\s*diya\s*jayega)"), 0.7),
+    Rule("R162", "Inaam / lottery jeetna (Hinglish)", "lottery_scam",
+         _p(r"\b(inaam|inam|lottery)\b.{0,40}\b(jeet|jeeta|jeeti|jeete|mila|laga)"), 0.5),
+    Rule("R163", "Bank details maangna (Hinglish)", "otp_request",
+         _p(r"\b(net\s*banking|card|cvv|pin|password|bank)\s*(details?|number)?\b.{0,20}\b(dijiye|bhejiye|batayein|share\s*karein|bhejo|batao)\b"), 0.85),
+]
+
+PROPERTY_SCAM_RULES: list[Rule] = [
+    Rule("R180", "Token/advance before seeing the property", "property_scam",
+         _p(r"\b(token|advance|booking)\s*(amount|money|deposit|payment)?\b.{0,40}\b(before|without)\b.{0,15}\b(visit|viewing|seeing|site\s*visit|agreement|registry)\b"), 0.8),
+    Rule("R181", "Pay advance now to hold the flat/room", "property_scam",
+         _p(r"\b(pay|send|transfer)\b.{0,30}\b(advance|token|booking)\b.{0,40}\b(today|now|immediately|asap|hold|block|reserve|lock)\b"), 0.7),
+    Rule("R182", "Owner abroad / in the forces, cannot meet", "property_scam",
+         _p(r"\b(owner|landlord)\b.{0,30}\b(abroad|overseas|army|navy|air\s*force|crpf|cisf|out\s*of\s*(town|station|country))\b"), 0.6),
+    Rule("R183", "Guaranteed returns on property", "property_scam",
+         _p(r"\b(guaranteed|assured|fixed)\s*(monthly\s*)?(return|rental|income|appreciation)s?\b.{0,60}\b(flat|plot|property|villa|apartment|land|builder|project)\b"), 0.75),
+    Rule("R184", "Property project with guaranteed returns (reverse order)", "property_scam",
+         _p(r"\b(flat|plot|property|villa|apartment|builder|project)\b.{0,60}\b(guaranteed|assured)\s*(monthly\s*)?(return|rental|income|appreciation)s?\b"), 0.75),
+    Rule("R185", "Pre-launch / few units left pressure to pay", "property_scam",
+         _p(r"\b(pre[-\s]?launch|only\s*\d+\s*(flats?|plots?|units?)\s*left)\b.{0,60}\b(pay|book|token|advance)\b"), 0.6),
+]
+
 ALL_RULES: list[Rule] = (
     OTP_PIN_RULES + COLLECT_REQUEST_RULES + URGENCY_RULES + KYC_RULES +
     PHISHING_RULES + LOTTERY_RULES + JOB_SCAM_RULES + IMPERSONATION_RULES +
-    REMOTE_ACCESS_RULES + FEE_TO_RECEIVE_RULES + SUSPICIOUS_VPA_RULES
+    REMOTE_ACCESS_RULES + FEE_TO_RECEIVE_RULES + SUSPICIOUS_VPA_RULES +
+    DIGITAL_ARREST_RULES + MALICIOUS_APP_RULES + QR_RULES + INVESTMENT_TASK_RULES +
+    MISTAKEN_TRANSFER_RULES + HINGLISH_RULES + PROPERTY_SCAM_RULES
 )
 
 

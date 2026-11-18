@@ -148,6 +148,51 @@ def _load_or_compute_embedding(
 # Index build / save / load
 # ---------------------------------------------------------------------------
 
+class NumpyFlatL2:
+    """Minimal drop-in for faiss.IndexFlatL2 (exact L2 search with numpy).
+
+    Used automatically when FAISS cannot be imported — e.g. Windows machines where
+    the FAISS DLL is blocked. With ~20 KB documents exact search is instant.
+    """
+
+    def __init__(self, dim: int):
+        self.d = dim
+        self._xb = np.zeros((0, dim), dtype=np.float32)
+
+    @property
+    def ntotal(self) -> int:
+        return int(self._xb.shape[0])
+
+    def add(self, x) -> None:
+        x = np.asarray(x, dtype=np.float32).reshape(-1, self.d)
+        self._xb = np.vstack([self._xb, x])
+
+    def search(self, q, k: int):
+        q = np.asarray(q, dtype=np.float32).reshape(-1, self.d)
+        n = self.ntotal
+        dist = np.full((q.shape[0], k), np.inf, dtype=np.float32)
+        idx = np.full((q.shape[0], k), -1, dtype=np.int64)
+        if n == 0:
+            return dist, idx
+        # squared L2, same metric FAISS IndexFlatL2 reports
+        d2 = ((q[:, None, :] - self._xb[None, :, :]) ** 2).sum(axis=2)
+        kk = min(k, n)
+        order = np.argsort(d2, axis=1)[:, :kk]
+        idx[:, :kk] = order
+        dist[:, :kk] = np.take_along_axis(d2, order, axis=1)
+        return dist, idx
+
+
+def new_flat_index(dim: int):
+    """Return a faiss.IndexFlatL2 if FAISS loads, else a NumpyFlatL2."""
+    try:
+        import faiss
+        return faiss.IndexFlatL2(dim)
+    except Exception as exc:  # ImportError or blocked DLL (OSError)
+        logger.info("FAISS unavailable (%s) — using numpy exact search.", exc)
+        return NumpyFlatL2(dim)
+
+
 def build_index(
     kb_dir: str | Path,
     cache_dir: str | Path,
@@ -165,8 +210,6 @@ def build_index(
     Returns:
         FAISSIndex ready for retrieval.
     """
-    import faiss  # only imported here so the module loads without faiss installed
-
     model = embedding_model or os.environ.get("EMBEDDING_MODEL", "")
     if not model:
         raise ValueError("EMBEDDING_MODEL env var is not set and no model override provided.")
@@ -185,14 +228,18 @@ def build_index(
     matrix = np.array(embeddings, dtype=np.float32)
     dim = matrix.shape[1]
 
-    index = faiss.IndexFlatL2(dim)
+    index = new_flat_index(dim)
     index.add(matrix)
-    logger.info("FAISS index built: %d vectors, dim=%d", index.ntotal, dim)
+    logger.info("Vector index built (%s): %d vectors, dim=%d", type(index).__name__, index.ntotal, dim)
 
     # Save
     index_dir = cache_dir / "faiss"
     index_dir.mkdir(parents=True, exist_ok=True)
-    faiss.write_index(index, str(index_dir / "kb.index"))
+    if isinstance(index, NumpyFlatL2):
+        np.save(index_dir / "kb.npy", matrix)
+    else:
+        import faiss
+        faiss.write_index(index, str(index_dir / "kb.index"))
     with open(index_dir / "metadata.pkl", "wb") as f:
         # Strip embedding arrays from metadata (already on disk per-doc)
         meta_docs = []
@@ -215,21 +262,33 @@ def load_index(cache_dir: str | Path) -> FAISSIndex:
     Raises:
         FileNotFoundError if the index has not been built yet.
     """
-    import faiss
-
     cache_dir = Path(cache_dir)
     index_dir = cache_dir / "faiss"
     index_path = index_dir / "kb.index"
+    npy_path = index_dir / "kb.npy"
     meta_path = index_dir / "metadata.pkl"
 
-    if not index_path.exists() or not meta_path.exists():
+    if not meta_path.exists() or not (index_path.exists() or npy_path.exists()):
         raise FileNotFoundError(
-            f"FAISS index not found at {index_dir}. Run rag/ingest.py first."
+            f"Vector index not found at {index_dir}. Run rag/ingest.py first."
         )
 
-    index = faiss.read_index(str(index_path))
     with open(meta_path, "rb") as f:
         meta = pickle.load(f)
+
+    index = None
+    if index_path.exists():
+        try:
+            import faiss
+            index = faiss.read_index(str(index_path))
+        except Exception as exc:
+            logger.info("Cannot load FAISS index (%s).", exc)
+    if index is None:
+        if not npy_path.exists():
+            # FAISS-built index on a machine without FAISS: rebuild needed
+            raise FileNotFoundError(f"{index_path} needs FAISS; no numpy copy at {npy_path}.")
+        index = NumpyFlatL2(meta["dim"])
+        index.add(np.load(npy_path))
 
     logger.info("Loaded FAISS index: %d vectors, dim=%d", index.ntotal, meta["dim"])
     return FAISSIndex(

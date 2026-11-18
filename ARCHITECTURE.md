@@ -55,13 +55,13 @@ Input SMS
    │      → RulesResult(score, matches[])                             │
    │                                                                  │
    ├─► 2. classifier.py ──────────────────────────────────────────────┤
-   │      TF-IDF vectoriser (char + word n-grams, 1-2)                │
+   │      TF-IDF: word 1-2 grams + char_wb 2-5 grams (FeatureUnion)   │
    │      Logistic Regression C=1, max_iter=1000                      │
    │      Trained on 108 messages (70% of scam_eval.csv, seed=42)     │
    │      → {scam: p₁, suspicious: p₂, safe: p₃}                     │
    │                                                                  │
    ├─► 3. rag/retrieve.py (if retriever available) ──────────────────┤
-   │      Embed query → Gemini text-embedding-004                     │
+   │      Embed query → Gemini gemini-embedding-001                   │
    │      FAISS flat-L2 search → top-3 KB documents                  │
    │      → advisory_context (formatted passages)                     │
    │                                                                  │
@@ -173,12 +173,12 @@ LLMAdapter.generate(prompt, response_schema, temperature)
 ```
 Build (one-time, run rag/ingest.py):
   data/kb/*.md  →  KBDocument(id, title, publisher, url, text)
-                →  Gemini text-embedding-004  →  768-dim vector
+                →  Gemini gemini-embedding-001 →  3072-dim vector
                 →  FAISS IndexFlatL2          →  .cache/faiss.index
                 →  .cache/documents.pkl
 
 Retrieve (per request):
-  query string  →  Gemini text-embedding-004  →  768-dim query vector
+  query string  →  Gemini gemini-embedding-001 →  3072-dim query vector
                →  FAISS.search(top_k=3)
                →  list[RetrievalResult(rank, score, document)]
                →  retrieve_as_context() → formatted string for prompt
@@ -234,3 +234,71 @@ Results saved to eval/results/:
   scam_predictions.csv, parser_results.csv
   scam_performance.png
 ```
+
+---
+
+## One-stop modules (added Nov 2026)
+
+```
+Scam Shield
+  scam/rules.py        +digital arrest, parcel, APK, QR-to-receive, task/investment,
+                        "sent by mistake", Hinglish variants (R110–R163)
+  scam/llm_judge.py    offline verdict = more severe of rules verdict and classifier argmax
+  scam/link_check.py   offline URL inspection: official-domain allowlist, brand-token and
+                        edit-distance lookalikes, shorteners, IPs, punycode, risky TLDs, .apk
+  scam/emergency.py    action_plan() + complaint_draft()  (1930, cybercrime.gov.in, Chakshu, RBI CMS)
+
+Smart Budget
+  core/categoriser.py  whole-word lookup (longest first) · resolve_merchant(vpa) · looks_like_person()
+                        → "Transfer" · is_refund() → "Refund" · salary keyword rule
+  core/budget_engine   Transfer debits → transfers_out (excluded from spending)
+                        Refund credits  → negative "Refund" category (nets off Wants)
+                        compute_pace() defaults to the latest month present in the data
+  core/insights.py     detect_subscriptions · detect_anomalies · small_spend_summary ·
+                        weekly_spend · cycle_bounds/filter_salary_cycle · tax_tags · CSV export
+
+Planning
+  core/goals.py        sip_required/sip_future_value · emi/loan_summary/prepayment_impact ·
+                        emergency_fund · plan_goals (priority-ordered funding)
+  core/tax.py          FY 2026-27 slabs, std deduction, 87A rebate + marginal relief, cess,
+                        old-regime caps, compare_regimes(), breakeven_deductions() (bisection)
+
+Ask Artha
+  core/assistant.py    build_facts(summary) → rules_answer() ─┬─ no adapter → answer
+                                                              └─ LLM phrases from facts
+                        verify_numbers(): any number not in facts/question → fall back to rules
+
+RAG robustness
+  rag/ingest.py        new_flat_index(): faiss.IndexFlatL2, or NumpyFlatL2 (exact search) when
+                        FAISS can't load; index rebuilt if EMBEDDING_MODEL changes
+```
+
+All new arithmetic is plain Python and unit-tested (`tests/test_features.py`);
+`tests/test_app_smoke.py` runs the whole Streamlit app headlessly.
+
+## One-page diagram (for slides)
+
+```mermaid
+flowchart LR
+    U([User]) --> UI[Streamlit UI<br/>EN / हिन्दी]
+    UI --> SS[Scam Shield]
+    UI --> SB[Smart Budget]
+    UI --> GT[Goals & Tax]
+    UI --> AA[Ask Artha]
+
+    SS --> R[1 Rules<br/>noisy-OR] --> C[2 ML classifier<br/>TF-IDF + LR] --> J[3 LLM judge<br/>Gemini] --> V[4 Verifier<br/>cited claims only]
+    V --> TR[(Trust Receipt)]
+
+    SB --> IN{{Input}}
+    IN -->|SMS paste / sample| P[Parser]
+    IN -->|Bank statement CSV| ST[statement.py] --> P
+    P --> CAT[Categoriser] --> BE[Budget engine<br/>plain Python math] --> TR
+    BE --> GT
+    BE --> AA
+    AA --> NC[Number check<br/>reject unproven numbers]
+
+    J -. offline = skipped .-> OFF[Rules + ML only]
+```
+
+**Key idea:** every number is computed in plain Python (`core/`); the LLM only explains,
+and any reply containing a number we did not compute is rejected.

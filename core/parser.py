@@ -51,18 +51,30 @@ def _clean_amount(raw: str) -> float:
 
 
 def _normalise_date(raw: str) -> Optional[str]:
-    """Convert dd-Mon-yy or dd-Mon-yyyy to YYYY-MM-DD."""
+    """Convert common Indian bank SMS date formats to YYYY-MM-DD.
+
+    Handles: 14-Nov-26, 14-Nov-2026, 14Nov26, 14 Nov 2026, 14-11-2026, 14/11/26.
+    """
     month_map = {
         "jan": "01", "feb": "02", "mar": "03", "apr": "04",
         "may": "05", "jun": "06", "jul": "07", "aug": "08",
         "sep": "09", "oct": "10", "nov": "11", "dec": "12",
     }
-    m = re.match(r"(\d{1,2})-([A-Za-z]{3})-(\d{2,4})", raw.strip())
-    if not m:
-        return None
-    day, mon, yr = m.group(1), m.group(2).lower(), m.group(3)
-    month = month_map.get(mon)
-    if not month:
+    raw = raw.strip()
+    m = re.match(r"(\d{1,2})[-\s]?([A-Za-z]{3})[A-Za-z]*[-\s,]*(\d{2,4})$", raw)
+    if m:
+        day, mon, yr = m.group(1), m.group(2).lower(), m.group(3)
+        month = month_map.get(mon)
+        if not month:
+            return None
+    else:
+        m = re.match(r"(\d{1,2})[-/.](\d{1,2})[-/.](\d{2,4})$", raw)
+        if not m:
+            return None
+        day, month, yr = m.group(1), f"{int(m.group(2)):02d}", m.group(3)
+        if not 1 <= int(month) <= 12:
+            return None
+    if not 1 <= int(day) <= 31:
         return None
     year = f"20{yr}" if len(yr) == 2 else yr
     return f"{year}-{month}-{int(day):02d}"
@@ -158,6 +170,54 @@ PATTERNS: list[tuple[str, dict]] = [
     ),
 ]
 
+# Generic fallbacks (tried after the bank-specific templates above).
+# "type_word" groups resolve to debit/credit from the verb in the message.
+_GAMT = r"(?:Rs\.?|INR|₹)\s*([\d,]+(?:\.\d{1,2})?)"
+_GDATE = r"(\d{1,2}[-\s]?[A-Za-z]{3}[A-Za-z]*[-\s,]*\d{2,4}|\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})"
+_GBAL = r"(?:Avl\.?\s*|Available\s*)?Bal(?:ance)?\.?:?\s*(?:is\s*)?" + _GAMT
+
+PATTERNS += [
+    # Rs X debited/credited from/to [your] [Bank] A/c XXnnnn on DATE. Info:/for/at MERCHANT. Avl Bal Rs Y
+    (
+        _GAMT + r"\s+(debited|credited)\s+(?:from|to|in)\s+(?:your\s+)?(?:[A-Za-z]+\s+)?(?:Bank\s+)?A/c\s+(?:No\.?\s*)?[X*]*(\d{3,4})\s+on\s+"
+        + _GDATE + r"\.?\s*(?:Info:?|for|at|towards|by|from)\s*(.+?)\.\s*" + _GBAL,
+        {"generic": True,
+         "groups": {"amount": 1, "type_word": 2, "account_last4": 3, "date": 4, "merchant": 5, "balance": 6}}
+    ),
+    # [Your] [Bank] A/c XXnnnn is debited/credited [with|for] Rs X on DATE [for|Info:] MERCHANT. Avl Bal Rs Y
+    (
+        r"(?:Your\s+)?(?:[A-Za-z]+\s+)?(?:Bank\s+)?A/c\s+(?:No\.?\s*)?[X*]*(\d{3,4})\s+is\s+(debited|credited)\s+(?:with\s+|for\s+|by\s+)?"
+        + _GAMT + r"\s+on\s+" + _GDATE + r"\.?\s*(?:Info:?|for|at|towards|by|from)\s*(.+?)\.\s*" + _GBAL,
+        {"generic": True,
+         "groups": {"account_last4": 1, "type_word": 2, "amount": 3, "date": 4, "merchant": 5, "balance": 6}}
+    ),
+    # SBI-style UPI: A/C XXnnnn debited by Rs X on date 14Nov26 trf to SWIGGY Refno 123
+    (
+        r"A/c\s+[X*]*(\d{3,4})\s+(debited|credited)\s+by\s+" + _GAMT + r"\s+on\s+(?:date\s+)?" + _GDATE
+        + r"\s+(?:trf\s+to|transfer\s+from|to|from)\s+(.+?)\s+Ref",
+        {"generic": True,
+         "groups": {"account_last4": 1, "type_word": 2, "amount": 3, "date": 4, "merchant": 5}}
+    ),
+    # Paid Rs X to MERCHANT [via UPI] on DATE
+    (
+        r"Paid\s+" + _GAMT + r"\s+to\s+([\w.\-@ &]+?)\s+(?:via\s+\w+\s+)?on\s+" + _GDATE,
+        {"transaction_type": "debit",
+         "groups": {"amount": 1, "vpa_or_merchant": 2, "date": 3}}
+    ),
+    # Credit-card bill payment acknowledgement
+    (
+        r"credit\s+card\s+payment\s+of\s+" + _GAMT + r"\s+(?:has\s+been\s+|is\s+)?received\s+on\s+" + _GDATE,
+        {"transaction_type": "credit", "merchant": "CC Payment",
+         "groups": {"amount": 1, "date": 2}}
+    ),
+    # Last resort: amount + debited/credited + date, merchant unknown (lower confidence)
+    (
+        _GAMT + r"\s+(?:has\s+been\s+|is\s+)?(debited|credited).{0,80}?on\s+" + _GDATE,
+        {"generic": True, "confidence": 0.6,
+         "groups": {"amount": 1, "type_word": 2, "date": 3}}
+    ),
+]
+
 # Compiled patterns
 _COMPILED_PATTERNS = [(re.compile(pat, re.IGNORECASE), meta) for pat, meta in PATTERNS]
 
@@ -250,6 +310,8 @@ def _try_regex(text: str, txn_id: str) -> Optional[ParsedTransaction]:
                 account_last4 = raw
             elif field_name == "bank":
                 bank = raw.upper()
+            elif field_name == "type_word":
+                transaction_type = "debit" if raw.lower().startswith("debit") else "credit"
             elif field_name == "atm_loc":
                 merchant = "ATM"  # already set by meta but keep override
 
@@ -267,7 +329,7 @@ def _try_regex(text: str, txn_id: str) -> Optional[ParsedTransaction]:
             balance=balance,
             bank=bank,
             parse_method="regex",
-            confidence=0.9,
+            confidence=meta.get("confidence", 0.85 if meta.get("generic") else 0.9),
         )
 
     return None

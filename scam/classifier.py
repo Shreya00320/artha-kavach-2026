@@ -19,7 +19,8 @@ import pickle
 from pathlib import Path
 from typing import Optional
 
-import pandas as pd
+import csv
+from collections import Counter
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +36,16 @@ class ScamClassifier:
 
     CLASSES = ["safe", "suspicious", "scam"]
 
-    def __init__(self):
+    def __init__(self, features: str = "word+char"):
+        """
+        Args:
+            features: "word" (word 1-2 grams) or "word+char" (word 1-2 grams plus
+                character 2-5 grams, which copes better with Hinglish spelling
+                variants such as "bhejo"/"bhejein").
+        """
+        if features not in ("word", "word+char"):
+            raise ValueError(f"Unknown features {features!r}")
+        self.features = features
         self._pipeline = None   # sklearn Pipeline
 
     def train(self, csv_path: str | Path) -> None:
@@ -46,19 +56,16 @@ class ScamClassifier:
         """
         from sklearn.feature_extraction.text import TfidfVectorizer
         from sklearn.linear_model import LogisticRegression
-        from sklearn.pipeline import Pipeline
+        from sklearn.pipeline import FeatureUnion, Pipeline
 
-        df = pd.read_csv(csv_path)
-        train_df = df[df["split"] == "train"].copy()
-
-        if train_df.empty:
+        train_rows = load_split(csv_path, "train")
+        if not train_rows:
             raise ValueError(f"No training rows found in {csv_path}. Check 'split' column.")
 
-        X = train_df["text"].fillna("").tolist()
-        y = train_df["label"].tolist()
+        X = [r["text"] for r in train_rows]
+        y = [r["label"] for r in train_rows]
 
-        # TF-IDF with word + character n-grams (helps with Hinglish)
-        tfidf = TfidfVectorizer(
+        word_tfidf = TfidfVectorizer(
             analyzer="word",
             ngram_range=(1, 2),
             min_df=1,
@@ -66,6 +73,19 @@ class ScamClassifier:
             sublinear_tf=True,
             strip_accents="unicode",
         )
+        if self.features == "word+char":
+            # Character n-grams inside word boundaries help with Hinglish spellings
+            char_tfidf = TfidfVectorizer(
+                analyzer="char_wb",
+                ngram_range=(2, 5),
+                min_df=1,
+                max_features=20000,
+                sublinear_tf=True,
+                strip_accents="unicode",
+            )
+            tfidf = FeatureUnion([("word", word_tfidf), ("char", char_tfidf)])
+        else:
+            tfidf = word_tfidf
 
         lr = LogisticRegression(
             class_weight="balanced",
@@ -78,7 +98,7 @@ class ScamClassifier:
         self._pipeline = Pipeline([("tfidf", tfidf), ("lr", lr)])
         self._pipeline.fit(X, y)
 
-        label_counts = pd.Series(y).value_counts().to_dict()
+        label_counts = dict(Counter(y))
         logger.info("Classifier trained on %d samples: %s", len(X), label_counts)
 
     def save(self, path: str | Path = MODEL_CACHE_PATH) -> None:
@@ -117,23 +137,22 @@ class ScamClassifier:
         """Evaluate on the test split and return a metrics dict."""
         from sklearn.metrics import classification_report, confusion_matrix
 
-        df = pd.read_csv(csv_path)
-        test_df = df[df["split"] == "test"].copy()
-        if test_df.empty:
+        test_rows = load_split(csv_path, "test")
+        if not test_rows:
             raise ValueError("No test rows found.")
 
-        X_test = test_df["text"].fillna("").tolist()
-        y_test = test_df["label"].tolist()
+        X_test = [r["text"] for r in test_rows]
+        y_test = [r["label"] for r in test_rows]
         y_pred = [self.predict(x) for x in X_test]
 
         report = classification_report(y_test, y_pred, output_dict=True)
         cm = confusion_matrix(y_test, y_pred, labels=self.CLASSES)
 
         # Hinglish subset
-        hinglish_df = test_df[test_df["hinglish"] == True]
-        if not hinglish_df.empty:
-            xh = hinglish_df["text"].fillna("").tolist()
-            yh = hinglish_df["label"].tolist()
+        hinglish_rows = [r for r in test_rows if r["hinglish"]]
+        if hinglish_rows:
+            xh = [r["text"] for r in hinglish_rows]
+            yh = [r["label"] for r in hinglish_rows]
             ph = [self.predict(x) for x in xh]
             hinglish_report = classification_report(yh, ph, output_dict=True, zero_division=0)
         else:
@@ -143,13 +162,33 @@ class ScamClassifier:
             "n_test": len(X_test),
             "classification_report": report,
             "confusion_matrix": cm.tolist(),
-            "hinglish_n": len(hinglish_df),
+            "hinglish_n": len(hinglish_rows),
             "hinglish_report": hinglish_report,
         }
 
     @property
     def is_trained(self) -> bool:
         return self._pipeline is not None
+
+
+# ---------------------------------------------------------------------------
+# Data loading (stdlib only — no pandas needed to train or run the classifier)
+# ---------------------------------------------------------------------------
+
+def load_split(csv_path: str | Path, split: Optional[str] = None) -> list[dict]:
+    """Read scam_eval.csv rows as dicts, optionally filtered by the 'split' column.
+
+    Each row has: id, label, text, hinglish (bool), split, plus any other columns.
+    """
+    rows = []
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if split is not None and row.get("split") != split:
+                continue
+            row["text"] = (row.get("text") or "").strip()
+            row["hinglish"] = str(row.get("hinglish", "")).strip().lower() == "true"
+            rows.append(row)
+    return rows
 
 
 # ---------------------------------------------------------------------------

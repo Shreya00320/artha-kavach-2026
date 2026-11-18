@@ -1,5 +1,7 @@
 """app/components.py – Reusable Streamlit UI components for Artha Kavach."""
 
+import html
+
 import streamlit as st
 from app.styles import VERDICT_COLOUR, VERDICT_EMOJI, NUDGE_ICON
 
@@ -7,6 +9,13 @@ from app.styles import VERDICT_COLOUR, VERDICT_EMOJI, NUDGE_ICON
 # ---------------------------------------------------------------------------
 # Scam Shield components
 # ---------------------------------------------------------------------------
+
+_VERDICT_SUB = {
+    "scam": "Do not reply, click, pay or share any OTP/PIN.",
+    "suspicious": "Don't act on it yet — verify through your bank's official app or number.",
+    "safe": "No scam signs found. Still never share OTP/PIN with anyone.",
+}
+
 
 def render_verdict_badge(verdict: str, confidence: float) -> None:
     """Large coloured verdict badge with confidence."""
@@ -17,6 +26,7 @@ def render_verdict_badge(verdict: str, confidence: float) -> None:
     st.markdown(
         f'<div class="verdict-badge" style="background:{colour}">'
         f'{emoji} {label} &nbsp;·&nbsp; {conf_pct}% confidence'
+        f'<span class="verdict-sub">{_VERDICT_SUB.get(verdict, "")}</span>'
         f'</div>',
         unsafe_allow_html=True,
     )
@@ -28,10 +38,12 @@ def render_red_flags(message: str, red_flags: list) -> None:
         st.info("No specific red flags were extracted from this message.")
         return
 
-    # Build highlighted version of original message
-    highlighted = message
+    # Build highlighted version of original message.
+    # Escape user/LLM text before wrapping it in HTML so pasted markup
+    # (e.g. <img onerror=...>) is shown as text, not rendered.
+    highlighted = html.escape(message)
     for rf in red_flags:
-        q = rf.quote_from_message
+        q = html.escape(rf.quote_from_message or "")
         if q and q in highlighted:
             highlighted = highlighted.replace(
                 q, f'<mark class="rf">{q}</mark>', 1
@@ -187,7 +199,7 @@ def render_502030_chart(summary) -> None:
         .properties(width=460, height=50)
         .resolve_scale(y="independent")
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width="stretch")
 
 
 def render_category_breakdown(summary) -> None:
@@ -222,13 +234,13 @@ def render_category_breakdown(summary) -> None:
 
     col_chart, col_table = st.columns([1, 1])
     with col_chart:
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
     with col_table:
         df["Amount (₹)"] = df["Amount"].map(lambda x: f"₹{x:,.0f}")
         st.dataframe(
             df[["Category", "Amount (₹)"]].reset_index(drop=True),
             hide_index=True,
-            use_container_width=True,
+            width="stretch",
         )
 
 
@@ -286,7 +298,7 @@ def render_savings_chart(compare: dict) -> None:
     )
     st.altair_chart(
         (lines + goal_line).properties(height=300),
-        use_container_width=True,
+        width="stretch",
     )
 
     adv = compare.get("stepup_advantage_inr", 0)

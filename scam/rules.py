@@ -284,6 +284,24 @@ def _aggregate_score(matches: list[RuleMatch]) -> float:
 # Public API
 # ---------------------------------------------------------------------------
 
+# Genuine bank / app OTP messages *warn* "Do not share this OTP". Those verbs must not trigger the
+# "share OTP/PIN" rules. The negation has to sit directly before the verb, so a scammer's
+# "do not hesitate to share your OTP" still matches.
+_NEGATABLE_RULES = {"R001", "R002"}
+_NEGATION_BEFORE = re.compile(r"(?:\bdo not|\bdon'?t|\bdont|\bnever|\bnot|\bmat|\bnahi|\bcannot|\bcan'?t)"
+                              r"\W+(?:ever\W+|be\W+)?$", re.I)
+
+
+def _search_unnegated(rule: "Rule", text: str):
+    """First match of `rule` that is not directly preceded by a negation (for negatable rules)."""
+    if rule.rule_id not in _NEGATABLE_RULES:
+        return rule.pattern.search(text)
+    for m in rule.pattern.finditer(text):
+        if not _NEGATION_BEFORE.search(text[max(0, m.start() - 20):m.start()]):
+            return m
+    return None
+
+
 def run_rules(text: str) -> RulesResult:
     """Run all scam detection rules against a message.
 
@@ -295,7 +313,7 @@ def run_rules(text: str) -> RulesResult:
     """
     matches: list[RuleMatch] = []
     for rule in ALL_RULES:
-        m = rule.pattern.search(text)
+        m = _search_unnegated(rule, text)
         if m:
             matches.append(RuleMatch(
                 rule_id=rule.rule_id,

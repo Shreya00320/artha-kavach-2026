@@ -1,0 +1,39 @@
+id,label,text,language,hinglish,split,notes
+SH001,scam,ALERT: Your SBI YONO account has been suspended. Reactivate now by verifying your details at sbi-yono-secure.in/login,en,false,test,handwritten-heldout
+SH002,scam,"Dear Customer, your bank KYC will expire today. Click https://kyc-bank-update.co/verify and enter your debit card PIN to continue.",en,false,test,handwritten-heldout
+SH003,scam,"You are the lucky winner of the Jio Anniversary lottery worth Rs 25 lakh! To receive the prize deposit Rs 3,500 as tax at the number below.",en,false,test,handwritten-heldout
+SH004,scam,Officer Rajesh Kumar from Delhi Police: illegal items were found in a courier sent using your Aadhaar. Do not end this video call. You must pay a security deposit to avoid arrest.,en,false,test,handwritten-heldout
+SH005,scam,"Hello! We are hiring for a simple online task job. Earn Rs 800-5000 daily. Add us on WhatsApp now, limited seats.",en,false,test,handwritten-heldout
+SH006,scam,Your electricity will be cut off tonight as last month's bill is unpaid. Contact our officer immediately on 98XXXXXX10.,en,false,test,handwritten-heldout
+SH007,scam,"Your account shows an unclaimed income tax refund of Rs 18,420. Submit your card details here to receive it: itd-refund.in",en,false,test,handwritten-heldout
+SH008,scam,"Sir I sent money by mistake to your PhonePe, please return Rs 15000 urgently, I have an emergency.",en,false,test,handwritten-heldout
+SH009,scam,Please download the QuickSupport app and tell us the code so that our agent can process your refund.,en,false,test,handwritten-heldout
+SH010,scam,"Invest Rs 10,000 in our crypto pool and get Rs 40,000 in 7 days, 100% guaranteed. Join the Telegram group before slots close.",en,false,test,handwritten-heldout
+SH011,scam,Your Aadhaar is linked to illegal SIM cards. Your number will be blocked in 2 hours. Press 1 to talk to the TRAI officer.,en,false,test,handwritten-heldout
+SH012,scam,"Dear user your HDFC credit card reward points of Rs 9,800 will expire today. Download the HDFC Rewards app from this link to redeem: hdfc-rewards.apk-download.in",en,false,test,handwritten-heldout
+SH013,scam,"Get an instant loan of Rs 2 lakh without documents! Pay Rs 2,999 insurance fee in advance and the money will be credited in 10 minutes.",en,false,test,handwritten-heldout
+SH014,scam,"Congratulations, your number won a Samsung Galaxy in the Flipkart Big Billion lucky draw. Pay the delivery fee of Rs 999 now.",en,false,test,handwritten-heldout
+SH015,scam,I am calling from the cyber crime department. A case has been filed against your mobile number. Transfer your funds to the RBI safe account to clear it.,en,false,test,handwritten-heldout
+SH016,scam,Your Netflix account is on hold. Update your payment info within 12 hours at netflix-billing-update.com to avoid cancellation.,en,false,test,handwritten-heldout
+SH017,scam,Your PAN will be deactivated today. Click here to update your PAN with Aadhaar immediately: pan-link-update.in/verify,en,false,test,handwritten-heldout
+SH018,scam,Work from home! Rate hotels on Google Maps and earn Rs 100 per rating. Message 'JOIN' on Telegram to start earning today.,en,false,test,handwritten-heldout
+SH019,scam,"Dear sir your parcel is stuck at Mumbai customs. Pay Rs 4,200 clearance fee today or the shipment will be destroyed.",en,false,test,handwritten-heldout
+SH020,scam,"To receive your money, please accept the collect request and enter your UPI PIN.",en,false,test,handwritten-heldout
+SH021,scam,"FINAL WARNING: your electricity meter will be disconnected, pay Rs 10 at the link to update KYC: bses-kyc.in/pay",en,false,test,handwritten-heldout
+SH022,scam,"Hi, I'm from Amazon customer care. You were charged Rs 49,999 by mistake. Install AnyDesk so we can reverse it.",en,false,test,handwritten-heldout
+SH023,scam,"Earn 3% daily returns with our AI trading bot. Minimum deposit Rs 5,000. Withdraw anytime. Join today!",en,false,test,handwritten-heldout
+SH024,scam,Your WhatsApp account is expiring. Forward this message to 10 contacts and share the OTP you get to keep it active.,en,false,test,handwritten-heldout
+SH025,scam,Bank of Baroda: your debit card is blocked. To unblock call 9XXXXXXXXX and share the OTP sent to your phone.,en,false,test,handwritten-heldout
+SH026,scam,"Government scheme: get Rs 5,000 monthly under PM Yojana. Register with your Aadhaar and bank PIN here: pm-yojana-apply.in",en,false,test,handwritten-heldout
+SH027,scam,"Your son has been in an accident and is at the hospital. Send Rs 30,000 urgently to this UPI ID for the surgery.",en,false,test,handwritten-heldout
+SH028,scam,"Dear customer, your gas connection will be cancelled. Verify KYC immediately by sharing the OTP with our delivery agent.",en,false,test,handwritten-heldout
+SH029,scam,"You have an unpaid traffic challan of Rs 2,000. Pay now at echallan-pay.in or face legal action tomorrow.",en,false,test,handwritten-heldout
+SH030,scam,"Hello, you've been shortlisted for a Rs 70,000/month job at Amazon. Pay Rs 1,500 registration fee to confirm your interview slot.",en,false,test,handwritten-heldout
+SH031,suspicious,Your parcel couldn't be delivered. Re-schedule delivery at http://bit.ly/ship-update,en,false,test,handwritten-heldout
+SH032,suspicious,Mega offer! 90% off on branded watches today only. Click to shop: http://tinyurl.com/watch-deal,en,false,test,handwritten-heldout
+SH033,suspicious,"Hey, this is Anita from XYZ Consultants. We have a high-paying WFH opportunity for you. Interested?",en,false,test,handwritten-heldout
+SH034,suspicious,You are eligible for a pre-approved credit card with zero fee. Apply in 2 minutes: http://short.link/cardnow,en,false,test,handwritten-heldout
+SH035,suspicious,Participate in our survey and win exciting gifts. Tap here: http://rb.gy/surveyprize,en,false,test,handwritten-heldout
+SH036,suspicious,Unusual sign-in detected on your account. Review activity: http://is.gd/account-review,en,false,test,handwritten-heldout
+SH037,suspicious,Last day to claim your cashback! Offer ends at midnight: http://cutt.ly/claimnow,en,false,test,handwritten-heldout
+SH038,suspicious,Join our trading webinar and learn how others make daily profits from home. Register: http://t.ly/webinar,en,false,test,handwritten-heldout

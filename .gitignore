@@ -21,3 +21,6 @@ data/private/
 # OS
 .DS_Store
 Thumbs.db
+
+# Third-party data (re-download via data/fetch_sms_ham.py)
+data/external/

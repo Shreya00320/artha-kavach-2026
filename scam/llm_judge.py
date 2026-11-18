@@ -23,6 +23,14 @@ logger = logging.getLogger(__name__)
 
 _SEVERITY = {"safe": 0, "suspicious": 1, "scam": 2}
 
+# Classifier -> verdict thresholds (rules thresholds 0.55 / 0.25 are unchanged).
+#   scam       when P(scam) >= CLF_SCAM_MIN
+#   suspicious when P(suspicious)+P(scam) >= CLF_FLAG_MIN (and beats P(safe))
+# Tuned on data/ordinary_text_eval.csv + data/scam_heldout.csv and checked on data/scam_eval.csv (test) and
+# the UCI ham test split. Raising CLF_FLAG_MIN further trims false alarms but starts missing real scams.
+CLF_SCAM_MIN = 0.50
+CLF_FLAG_MIN = 0.85
+
 
 # ---------------------------------------------------------------------------
 # Fallback: rules-only verdict (no LLM)
@@ -53,8 +61,17 @@ def rules_only_verdict(
     verdict = rules_verdict
     combined = score if rules_verdict != "safe" else 1.0 - score
     if classifier_proba:
-        clf_verdict = max(_SEVERITY, key=lambda c: classifier_proba.get(c, 0.0))
-        clf_conf = classifier_proba.get(clf_verdict, 0.0)
+        p_scam = classifier_proba.get("scam", 0.0)
+        p_flag = p_scam + classifier_proba.get("suspicious", 0.0)
+        # The model may only RAISE a verdict above the rules, and only when it is confident
+        # (thresholds tuned on hand-written held-out data; see scam/train_deep.py and the
+        # README). Plain argmax flagged ~8% of ordinary messages as suspicious.
+        if p_scam >= CLF_SCAM_MIN:
+            clf_verdict, clf_conf = "scam", p_scam
+        elif p_flag >= CLF_FLAG_MIN and p_flag > classifier_proba.get("safe", 0.0):
+            clf_verdict, clf_conf = "suspicious", p_flag
+        else:
+            clf_verdict, clf_conf = "safe", classifier_proba.get("safe", 0.0)
         if _SEVERITY[clf_verdict] > _SEVERITY[rules_verdict]:
             verdict, combined = clf_verdict, clf_conf
         elif clf_verdict == rules_verdict:

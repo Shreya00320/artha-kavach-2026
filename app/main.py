@@ -98,9 +98,16 @@ def _get_retriever():
         return None
 
 
-@st.cache_resource(show_spinner="Training classifier…")
+@st.cache_resource(show_spinner="Loading scam model…")
 def _get_classifier():
-    """Return a trained ScamClassifier, or None."""
+    """Return the deep scam model (shipped weights, numpy inference); fall back to TF-IDF + LR."""
+    try:
+        from scam.deep_model import load_default
+        clf = load_default()
+        if clf is not None:
+            return clf
+    except Exception as exc:
+        logging.warning("Deep model init failed: %s", exc)
     try:
         from scam.classifier import ScamClassifier
         clf = ScamClassifier()
@@ -154,7 +161,7 @@ with st.sidebar:
         f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not loaded (building on first run…)'}"
     )
     st.markdown(
-        f"{'✅' if classifier else '⚠️'} **ML Classifier** — "
+        f"{'✅' if classifier else '⚠️'} **Deep scam model** — "
         f"{'Trained' if classifier else 'Not available'}"
     )
 

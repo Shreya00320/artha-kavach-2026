@@ -273,3 +273,14 @@ Artha Kavach is an educational demonstration tool built for a hackathon. It does
 ## 👥 Team
 
 Built for Arthaton 2026 — *"AI for Finance"* — submission deadline 22 Nov 2026.
+
+## Scam Shield deep model
+
+`scam/deep_model.py` is a small neural network (hashed word + character n-gram embeddings → two hidden
+layers → safe / suspicious / scam). It is trained with PyTorch (`python -m scam.train_deep`) and the
+weights ship in `models/scam_dl.npz`; the running app uses **NumPy only** (no torch needed).
+
+Training data: `data/scam_eval.csv` (train split), generated messages (`data/build_scam_train.py`), and
+~2,000 real everyday texts from the UCI *SMS Spam Collection* ham messages
+(Almeida & Hidalgo, 2011, CC BY 4.0 — re-download with `data/fetch_sms_ham.py`; not committed).
+Hand-written held-out sets (`data/ordinary_text_eval.csv`, `data/scam_heldout.csv`) are never trained on.

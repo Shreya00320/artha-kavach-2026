@@ -1,0 +1,1281 @@
+id,label,text,language,hinglish,split,notes
+TX0001,scam,"Congratulations! You have won ₹5,00,000 in the Flipkart lucky draw. Pay a processing fee of ₹1,999 to claim your prize: http://goo.su/xT9aL",en,false,train,synthetic
+TX0002,safe,Aapka OTP 554762 hai. Ise kisi ke saath share na karein. —Canara Bank,hinglish,true,train,synthetic-service
+TX0003,safe,Aapka recharge ₹80 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0004,scam,Your courier is held at customs. Pay ₹500 clearance charges immediately to release the parcel: http://t.ly/9fGh,en,false,train,synthetic
+TX0005,safe,"i'm running late, stuck in traffic. will reach the metro by 5:45 see you",en,false,train,synthetic-chat
+TX0006,scam,Aapka PNB account band ho jayega. KYC abhi update karein: http://goo.su/xT9aL,hinglish,true,train,synthetic
+TX0007,suspicious,"Hi, I'm Priya from a recruitment agency. We have a work-from-home opportunity, interested? Message me.",en,false,train,synthetic
+TX0008,safe,you owe me Rs 900 for groceries 😂 no rush!!,en,false,train,synthetic-chat
+TX0009,scam,"Invest ₹4,500 in our AI trading bot and earn 15% daily returns. Withdraw anytime. Join now: http://t.ly/9fGh",en,false,train,synthetic
+TX0010,suspicious,Your parcel could not be delivered. Reschedule here: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0011,scam,"Hello, I'm Karan from Microsoft HR. You are selected for a work-from-home role paying ₹2,500 weekly. To begin, pay a refundable deposit of ₹1,999.",en,false,train,synthetic
+TX0012,safe,"i'm running late, stuck in traffic. will reach the canteen by 9 am!!",en,false,train,synthetic-chat
+TX0013,safe,you owe me Rs 350 for biryani 😂 no rush lol,en,false,train,synthetic-chat
+TX0014,scam,"Aapne ₹25,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹4,500 bhejein.",hinglish,true,train,synthetic
+TX0015,scam,Your SBI debit card has been deactivated. Call 9476352595 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0016,safe,Aapka recharge ₹500 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0017,safe,"let's split the cab fare, it came to Rs 900 so ₹2,000 each!!",en,false,train,synthetic-chat
+TX0018,scam,"Customs has held a gift sent by Karan from abroad. Pay ₹1,999 duty to receive it: http://goo.su/xT9aL",en,false,train,synthetic
+TX0019,scam,URGENT: Your ICICI Bank KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0020,safe,"i'm running late, stuck in traffic. will reach your place by 10:30 :)",en,false,train,synthetic-chat
+TX0021,scam,You have won a free iPhone! Pay only ₹250 shipping to claim: http://t.ly/9fGh,en,false,train,synthetic
+TX0022,safe,Nani: don't forget your umbrella :),en,false,train,synthetic-chat
+TX0023,safe,"i'll pay you back for snacks, it was Rs 350, sending it at 6",en,false,train,synthetic-chat
+TX0024,safe,Your train ticket is confirmed. PNR 859669. Departure 3 Jan 5:45 from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0025,scam,"Win ₹25,000 cash daily playing online rummy! Download the app http://goo.su/xT9aL.apk and deposit ₹15,000 to start.",en,false,train,synthetic
+TX0026,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://is.gd/k92Lz,en,false,train,synthetic
+TX0027,safe,"The meeting has been moved to 5:45, same room as before!!",en,false,train,synthetic-chat
+TX0028,safe,Reminder: your appointment with Dr. Dev is on 12 Dec at 5:45. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0029,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://rb.gy/p4kz1,en,false,train,synthetic
+TX0030,suspicious,"Hi Amit, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://is.gd/k92Lz",en,false,train,synthetic
+TX0031,scam,"This is TRAI. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹9,800 for verification.",en,false,train,synthetic
+TX0032,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://short.link/offer,en,false,train,synthetic
+TX0033,suspicious,Your package is waiting. Confirm your address within 24 hours: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0034,suspicious,Unusual activity noticed on your account. Please review here: http://t.ly/9fGh,en,false,train,synthetic
+TX0035,scam,"Loan waiver! Your pending EMI of ₹2,500 has been waived. Share the OTP to confirm the waiver.",en,false,train,synthetic
+TX0036,safe,"sorry i missed your call, was in a class. can we talk later today?!!",en,false,train,synthetic-chat
+TX0037,safe,Your PhonePe order is out for delivery and will arrive by 3:15. Track it in the app.,en,false,train,synthetic-service
+TX0038,safe,"happy birthday Rohit! hope you have an amazing day, party at 8 pm? 😂",en,false,train,synthetic-chat
+TX0039,scam,"Part-time job offer: earn ₹25,000 per day by liking videos. Join our Telegram channel now: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0040,safe,Aapka Paytm order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0041,scam,"This is the cyber crime branch. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹4,500 for verification.",en,false,train,synthetic
+TX0042,safe,"happy birthday Nikhil! hope you have an amazing day, party this weekend? see you",en,false,train,synthetic-chat
+TX0043,safe,192249 is your OTP for logging in to Flipkart. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0044,safe,"i'll pay you back for movie tickets, it was ₹450, sending it after work",en,false,train,synthetic-chat
+TX0045,safe,"i'll pay you back for movie tickets, it was Rs 900, sending it tomorrow please",en,false,train,synthetic-chat
+TX0046,scam,Your SBI debit card has been deactivated. Call 9204846084 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0047,safe,Payment of Rs 640 received for your electricity bill. Thank you. Receipt no. 823013.,en,false,train,synthetic-service
+TX0048,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹250 GST to release it. http://is.gd/k92Lz",en,false,train,synthetic
+TX0049,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0050,scam,"Customs has held a gift sent by Sneha from abroad. Pay ₹9,800 duty to receive it: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0051,scam,"Task complete karo aur roz ₹50,000 kamao. Pehle ₹1,999 registration fee jama karein.",hinglish,true,train,synthetic
+TX0052,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹250 GST to release it. http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0053,safe,"i'm running late, stuck in traffic. will reach the canteen by 10:30",en,false,train,synthetic-chat
+TX0054,suspicious,Pre-approved offer just for you! Get a personal loan in minutes. Apply: http://t.ly/9fGh,en,false,train,synthetic
+TX0055,suspicious,Pre-approved offer just for you! Get a personal loan in minutes. Apply: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0056,safe,Your order from Ola has been delivered. We hope you enjoyed it. Rate your experience in the app.,en,false,train,synthetic-service
+TX0057,suspicious,Your package is waiting. Confirm your address within 24 hours: http://t.ly/9fGh,en,false,train,synthetic
+TX0058,scam,Your FASTag is blocked. Recharge now via http://t.ly/9fGh to avoid a penalty.,en,false,train,synthetic
+TX0059,scam,"Your Axis Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://t.ly/9fGh",en,false,train,synthetic
+TX0060,safe,"sorry i missed your call, was in a class. can we talk on Sunday? :)",en,false,train,synthetic-chat
+TX0061,suspicious,Get a free demo class today! Limited seats for the coaching batch. Reserve yours: http://is.gd/k92Lz,en,false,train,synthetic
+TX0062,safe,you owe me ₹500 for momos 😂 no rush,en,false,train,synthetic-chat
+TX0063,safe,you owe me Rs 640 for the bill 😂 no rush 😂,en,false,train,synthetic-chat
+TX0064,safe,"Let's split the cab fare, it came to ₹2,000 so ₹500 each 😂",en,false,train,synthetic-chat
+TX0065,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9810650669 and share your card details.,en,false,train,synthetic
+TX0066,safe,"Aapke account se Rs 640 kata. Baaki balance Rs 83,088.00. —Kotak Bank",hinglish,true,train,synthetic-service
+TX0067,scam,Your FASTag is blocked. Recharge now via http://bit.ly/3xKd9 to avoid a penalty.,en,false,train,synthetic
+TX0068,scam,"Earn ₹2,500 every day just by rating products online. No investment needed. WhatsApp 9427316465 to join.",en,false,train,synthetic
+TX0069,safe,"I'll pay you back for chai, it was rs 640, sending it after work 🙂",en,false,train,synthetic-chat
+TX0070,safe,Your cab Divya is arriving in 3 minutes. Vehicle number MH12AB5340. Share OTP 791641 with the driver only at pickup.,en,false,train,synthetic-service
+TX0071,safe,"happy birthday Priya! hope you have an amazing day, party tomorrow morning? 🙂",en,false,train,synthetic-chat
+TX0072,scam,"Your Kotak Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0073,scam,"Customs has held a gift sent by Divya from abroad. Pay ₹4,500 duty to receive it: http://short.link/offer",en,false,train,synthetic
+TX0074,safe,Your OTP for login is 685243. Do not share it with anyone.,en,false,train,synthetic-service
+TX0075,safe,"Aapke account se Rs 900 kata. Baaki balance Rs 70,302.00. —PNB",hinglish,true,train,synthetic-service
+TX0076,safe,"Aapke account mein ₹450 aaye. Baaki balance Rs 47,737.00. —Bank of Baroda",hinglish,true,train,synthetic-service
+TX0077,safe,467242 is your OTP for logging in to BookMyShow. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0078,safe,"Pooja says the exam is on thursday, did you start preparing?",en,false,train,synthetic-chat
+TX0079,suspicious,Ghar baithe paise kamane ka mauka. Details ke liye reply karein.,hinglish,true,train,synthetic
+TX0080,suspicious,Aapke liye special loan offer! Turant apply karein: http://short.link/offer,hinglish,true,train,synthetic
+TX0081,safe,"let's split the cab fare, it came to Rs 350 so Rs 350 each",en,false,train,synthetic-chat
+TX0082,safe,"Do not share your OTP, PIN or password with anyone. HDFC Bank will never call to ask for them.",en,false,train,synthetic-service
+TX0083,safe,Library notice: the book you reserved is available for pickup until Wednesday.,en,false,train,synthetic-service
+TX0084,safe,"OTP for your Canara Bank net banking login is 260819. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0085,scam,Your SBI debit card has been deactivated. Call 9950426908 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0086,safe,690383 is your BookMyShow security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0087,scam,"Income tax refund ₹2,500 ka aaya hai. Card details daal kar claim karein: http://is.gd/k92Lz",hinglish,true,train,synthetic
+TX0088,safe,Your OTP for login is 912057. Do not share it with anyone.,en,false,train,synthetic-service
+TX0089,suspicious,"Dear user, claim your cashback before it expires: http://is.gd/k92Lz",en,false,train,synthetic
+TX0090,safe,Your OTP for card ending 1548 transaction of ₹450 at Zomato is 804171. Do not share it. -Kotak Bank,en,false,train,synthetic-service
+TX0091,safe,"OTP for your HDFC Bank net banking login is 140697. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0092,suspicious,"Earn extra income from home, no experience needed. Details: http://short.link/offer",en,false,train,synthetic
+TX0093,scam,"Invest ₹15,000 in our AI trading bot and earn 45% daily returns. Withdraw anytime. Join now: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0094,safe,"i'll pay you back for dinner, it was ₹250, sending it tonight please",en,false,train,synthetic-chat
+TX0095,safe,Your train ticket is confirmed. PNR 169547. Departure Tuesday 5:45 from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0096,scam,"Your Reliance order of ₹25,000 has been placed. If this wasn't you, call 9849045178 now to cancel it.",en,false,train,synthetic
+TX0097,scam,"Your Meesho order of ₹5,00,000 has been placed. If this wasn't you, call 9863877400 now to cancel it.",en,false,train,synthetic
+TX0098,safe,"i'll pay you back for movie tickets, it was Rs 640, sending it on Friday please",en,false,train,synthetic-chat
+TX0099,scam,"Pay the pending traffic challan of ₹9,800 now at http://bit.ly/3xKd9 to avoid court proceedings.",en,false,train,synthetic
+TX0100,safe,"Let's split the cab fare, it came to ₹450 so ₹500 each :)",en,false,train,synthetic-chat
+TX0101,scam,"Your child has met with an accident. Transfer ₹9,800 to this account immediately for treatment.",en,false,train,synthetic
+TX0102,suspicious,Your package is waiting. Confirm your address within 24 hours: http://goo.su/xT9aL,en,false,train,synthetic
+TX0103,scam,This is Microsoft support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX0104,scam,"Your Canara Bank credit card reward points worth ₹5,00,000 expire today. Download the app to redeem: http://cutt.ly/Qw3dE.apk",en,false,train,synthetic
+TX0105,scam,Aapka SIM 2 ghante mein band ho jayega. Aadhaar verify karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0106,safe,"submitted the report, please check and let me know if anything is missing!!",en,false,train,synthetic-chat
+TX0107,safe,Your cab Priya is arriving in 3 minutes. Vehicle number MH12AB1930. Share OTP 396364 with the driver only at pickup.,en,false,train,synthetic-service
+TX0108,safe,"OTP for your PNB net banking login is 357817. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0109,safe,"the meeting has been moved to 10:30, same room as before :)",en,false,train,synthetic-chat
+TX0110,safe,"Aapke account mein Rs 350 aaye. Baaki balance Rs 69,296.00. —HDFC Bank",hinglish,true,train,synthetic-service
+TX0111,safe,"Isha says the exam is on Monday, did you start preparing? thanks!",en,false,train,synthetic-chat
+TX0112,scam,"Income tax refund of ₹25,000 is pending. Verify your bank details here to receive it: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0113,safe,Your monthly statement for A/c XX5915 is ready. Log in to the official app to view it. —Canara Bank,en,false,train,synthetic-service
+TX0114,safe,"i'm running late, stuck in traffic. will reach your place by 6:30 pm please",en,false,train,synthetic-chat
+TX0115,safe,Reminder: your appointment with Dr. Sneha is on Tuesday at 7 pm. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0116,safe,Your cab Isha is arriving in 3 minutes. Vehicle number MH12AB3123. Share OTP 950261 with the driver only at pickup.,en,false,train,synthetic-service
+TX0117,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://is.gd/k92Lz,hinglish,true,train,synthetic
+TX0118,scam,"Guaranteed 15% returns every month on crypto trading. Invest ₹1,999 today, limited slots: http://short.link/offer",en,false,train,synthetic
+TX0119,scam,"Aapne ₹50,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹500 bhejein.",hinglish,true,train,synthetic
+TX0120,scam,"Task complete karo aur roz ₹25,000 kamao. Pehle ₹250 registration fee jama karein.",hinglish,true,train,synthetic
+TX0121,safe,Reminder: your appointment with Dr. Rohit is on Thursday at 4 pm. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0122,scam,Aapka Kotak Bank account band ho jayega. KYC abhi update karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0123,safe,"let's split the cab fare, it came to Rs 900 so ₹1,200 each",en,false,train,synthetic-chat
+TX0124,safe,"i'm running late, stuck in traffic. will reach the cafe by 9 am please",en,false,train,synthetic-chat
+TX0125,safe,928183 is your OTP for logging in to Swiggy. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0126,scam,"Hello, I'm Divya from Google HR. You are selected for a work-from-home role paying ₹25,000 weekly. To begin, pay a refundable deposit of ₹250.",en,false,train,synthetic
+TX0127,scam,"Dear customer, your SBI account will be blocked today as your KYC has expired. Update immediately: http://goo.su/xT9aL",en,false,train,synthetic
+TX0128,safe,145504 is your Swiggy security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0129,scam,"Congratulations, you are shortlisted for a ₹25,000/month job. Pay a ₹1,999 registration fee to confirm your interview.",en,false,train,synthetic
+TX0130,safe,"thanks bhai, tune bahut help ki",hinglish,true,train,synthetic-chat
+TX0131,safe,"let's split the cab fare, it came to ₹450 so ₹1,200 each 😂",en,false,train,synthetic-chat
+TX0132,scam,This is Reliance support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX0133,scam,"Your loan of ₹50,000 is approved! Pay ₹9,800 processing fee first to receive the amount today: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0134,safe,kal milte hain canteen mein,hinglish,true,train,synthetic-chat
+TX0135,scam,VIP stock tips group: 300% returns assured in 10 days. Deposit ₹500 to join. Telegram: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0136,safe,Reminder: your appointment with Dr. Pooja is on Wednesday at 7 pm. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0137,safe,Your order from PhonePe has been delivered. We hope you enjoyed it. Rate your experience in the app.,en,false,train,synthetic-service
+TX0138,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9634038668,hinglish,true,train,synthetic
+TX0139,scam,"Your PNB account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://rb.gy/p4kz1",en,false,train,synthetic
+TX0140,suspicious,Your package is waiting. Confirm your address within 24 hours: http://short.link/offer,en,false,train,synthetic
+TX0141,safe,"Do not share your OTP, PIN or password with anyone. Canara Bank will never call to ask for them.",en,false,train,synthetic-service
+TX0142,scam,"Invest ₹1,999 in our AI trading bot and earn 15% daily returns. Withdraw anytime. Join now: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0143,suspicious,"Hi Vikram, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://t.ly/9fGh",en,false,train,synthetic
+TX0144,safe,"The meeting has been moved to 10:30, same room as before 🙂",en,false,train,synthetic-chat
+TX0145,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0146,scam,"Guaranteed 30% returns every month on crypto trading. Invest ₹1,999 today, limited slots: http://t.ly/9fGh",en,false,train,synthetic
+TX0147,scam,This is Flipkart support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX0148,safe,Your OTP for card ending 3932 transaction of ₹500 at Uber is 836777. Do not share it. -HDFC Bank,en,false,train,synthetic-service
+TX0149,scam,"Earn ₹25,000 every day just by rating products online. No investment needed. WhatsApp 9404514782 to join.",en,false,train,synthetic
+TX0150,safe,Your flight to Delhi is on time. Check-in opens Saturday 11 am. Have a great trip! —Zomato,en,false,train,synthetic-service
+TX0151,scam,"Your child has met with an accident. Transfer ₹15,000 to this account immediately for treatment.",en,false,train,synthetic
+TX0152,safe,"I'll pay you back for dinner, it was rs 640, sending it tomorrow morning 🙂",en,false,train,synthetic-chat
+TX0153,safe,aaj ka lecture bahut boring tha,hinglish,true,train,synthetic-chat
+TX0154,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9252925333 and share your card details.,en,false,train,synthetic
+TX0155,safe,dude are we still on for the trip at 6? lol,en,false,train,synthetic-chat
+TX0156,scam,"Income tax refund ₹50,000 ka aaya hai. Card details daal kar claim karein: http://short.link/offer",hinglish,true,train,synthetic
+TX0157,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9855780657,hinglish,true,train,synthetic
+TX0158,scam,"Loan approve ho gaya hai! Processing fee ₹250 pehle bhejein, paisa 10 minute mein aa jayega.",hinglish,true,train,synthetic
+TX0159,safe,Your OTP for card ending 2455 transaction of ₹500 at Paytm is 378296. Do not share it. -Canara Bank,en,false,train,synthetic-service
+TX0160,safe,"Your OTP for the transaction of Rs 640 at Paytm is 229257. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0161,safe,"Aapke account mein Rs 900 aaye. Baaki balance Rs 49,380.00. —PNB",hinglish,true,train,synthetic-service
+TX0162,scam,"Invest ₹4,500 in our AI trading bot and earn 20% daily returns. Withdraw anytime. Join now: http://short.link/offer",en,false,train,synthetic
+TX0163,scam,"Guaranteed 30% returns every month on crypto trading. Invest ₹15,000 today, limited slots: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0164,safe,"Sorry i missed your call, was in a class. can we talk after class? lol",en,false,train,synthetic-chat
+TX0165,scam,"Your loan of ₹1,00,000 is approved! Pay ₹1,999 processing fee first to receive the amount today: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0166,safe,"₹1,200 credited to your A/c XX3262 on 27-Nov-26 by NEFT from Dev. Avl Bal: Rs 24,109.00. —ICICI Bank",en,false,train,synthetic-service
+TX0167,scam,"Part-time job offer: earn ₹50,000 per day by liking videos. Join our Telegram channel now: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0168,safe,"Your OTP for the transaction of ₹80 at Swiggy is 677492. Never share this OTP with anyone, including bank staff. —PNB",en,false,train,synthetic-service
+TX0169,scam,This is the CBI. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹500 for verification.,en,false,train,synthetic
+TX0170,safe,"let's split the cab fare, it came to ₹1,200 so ₹1,200 each see you",en,false,train,synthetic-chat
+TX0171,scam,"Your PNB credit card reward points worth ₹25,000 expire today. Download the app to redeem: http://t.ly/9fGh.apk",en,false,train,synthetic
+TX0172,safe,"the meeting has been moved to 9 am, same room as before thanks!",en,false,train,synthetic-chat
+TX0173,safe,"bhaiya, chai pe aa jao",hinglish,true,train,synthetic-chat
+TX0174,safe,You owe me rs 120 for snacks 😂 no rush lol,en,false,train,synthetic-chat
+TX0175,safe,"₹2,000 credited to your A/c XX1983 on 24-Nov-26 by NEFT from Arjun. Avl Bal: Rs 89,163.00. —HDFC Bank",en,false,train,synthetic-service
+TX0176,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://is.gd/k92Lz,hinglish,true,train,synthetic
+TX0177,scam,"Your PNB account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://is.gd/k92Lz",en,false,train,synthetic
+TX0178,safe,Your OTP for card ending 6526 transaction of ₹250 at Amazon is 724211. Do not share it. -HDFC Bank,en,false,train,synthetic-service
+TX0179,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9792055114 and share your card details.,en,false,train,synthetic
+TX0180,safe,Your Amazon order is out for delivery and will arrive by 5:45. Track it in the app.,en,false,train,synthetic-service
+TX0181,safe,"Your verification code is 554789. Don't share this code with anyone. If you didn't request it, ignore this message.",en,false,train,synthetic-service
+TX0182,scam,Customs has held a gift sent by Ananya from abroad. Pay ₹500 duty to receive it: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0183,safe,Didi: pick up the parcel from the neighbour haha,en,false,train,synthetic-chat
+TX0184,scam,"Part time job: ghar baithe ₹50,000 roz kamayein. Telegram join karein: http://cutt.ly/Qw3dE",hinglish,true,train,synthetic
+TX0185,safe,Aapka Swiggy order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0186,scam,Invest ₹500 in our AI trading bot and earn 30% daily returns. Withdraw anytime. Join now: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0187,scam,"Hello, I'm Neha from Paytm HR. You are selected for a work-from-home role paying ₹50,000 weekly. To begin, pay a refundable deposit of ₹9,800.",en,false,train,synthetic
+TX0188,suspicious,"Flash sale! 60% off on everything, today only. Shop now: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0189,safe,"Your verification code is 147873. Don't share this code with anyone. If you didn't request it, ignore this message.",en,false,train,synthetic-service
+TX0190,safe,"Dear user, 592694 is your one time password for Uber. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0191,scam,"I am Vikram, an army officer being transferred, selling my bike for ₹1,00,000. Pay ₹4,500 advance to get it delivered.",en,false,train,synthetic
+TX0192,suspicious,You have been selected for a free survey. Complete it and get a ₹500 voucher: http://short.link/offer,en,false,train,synthetic
+TX0193,safe,Use OTP 251863 to verify your mobile number on Ola. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0194,scam,VIP stock tips group: 300% returns assured in 10 days. Deposit ₹250 to join. Telegram: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0195,safe,Your OTP for login is 727003. Do not share it with anyone.,en,false,train,synthetic-service
+TX0196,suspicious,"Flash sale! 60% off on everything, today only. Shop now: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0197,safe,You owe me ₹250 for dinner 😂 no rush,en,false,train,synthetic-chat
+TX0198,scam,We detected a login to your Kotak Bank account from another city. Share the OTP to block the unauthorised user.,en,false,train,synthetic
+TX0199,safe,"let's split the cab fare, it came to ₹1,200 so Rs 900 each :)",en,false,train,synthetic-chat
+TX0200,scam,"Aapke parcel mein drugs mile hain. Police case se bachne ke liye ₹1,999 transfer karein.",hinglish,true,train,synthetic
+TX0201,scam,"Your ICICI Bank credit card reward points worth ₹5,00,000 expire today. Download the app to redeem: http://rb.gy/p4kz1.apk",en,false,train,synthetic
+TX0202,scam,"Hello, I'm Riya from Meesho HR. You are selected for a work-from-home role paying ₹2,500 weekly. To begin, pay a refundable deposit of ₹250.",en,false,train,synthetic
+TX0203,suspicious,Book your insurance renewal now and save big. Click: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0204,scam,"Your loan of ₹50,000 is approved! Pay ₹4,500 processing fee first to receive the amount today: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0205,safe,"Your mobile recharge of ₹2,000 was successful. Validity 28 days. Thanks for choosing us.",en,false,train,synthetic-service
+TX0206,safe,"i'll pay you back for movie tickets, it was Rs 350, sending it at 6",en,false,train,synthetic-chat
+TX0207,safe,Chacha: bring milk on your way home!!,en,false,train,synthetic-chat
+TX0208,safe,Aapka BookMyShow order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0209,scam,"Dear HDFC Bank user, your net banking has been locked. Login here to unlock: http://short.link/offer",en,false,train,synthetic
+TX0210,scam,"Aapne ₹2,500 ki lottery jeeti hai! Claim karne ke liye pehle ₹9,800 bhejein.",hinglish,true,train,synthetic
+TX0211,safe,"let's split the cab fare, it came to Rs 120 so ₹250 each!!",en,false,train,synthetic-chat
+TX0212,safe,Your order from Myntra has been delivered. We hope you enjoyed it. Rate your experience in the app.,en,false,train,synthetic-service
+TX0213,scam,Aapka Kotak Bank account band ho jayega. KYC abhi update karein: http://short.link/offer,hinglish,true,train,synthetic
+TX0214,safe,did you watch the match last night? totally worth it 😂,en,false,train,synthetic-chat
+TX0215,safe,"Dear user, 842093 is your one time password for PhonePe. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0216,scam,"Pay the pending traffic challan of ₹4,500 now at http://rb.gy/p4kz1 to avoid court proceedings.",en,false,train,synthetic
+TX0217,safe,"the meeting has been moved to 11 am, same room as before haha",en,false,train,synthetic-chat
+TX0218,safe,Your train ticket is confirmed. PNR 436821. Departure 12 Dec 9 am from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0219,safe,"submitted the invoice, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX0220,scam,"Task complete karo aur roz ₹25,000 kamao. Pehle ₹1,999 registration fee jama karein.",hinglish,true,train,synthetic
+TX0221,safe,"let's split the cab fare, it came to Rs 640 so ₹1,200 each see you",en,false,train,synthetic-chat
+TX0222,scam,"Income tax refund of ₹1,00,000 is pending. Verify your bank details here to receive it: http://short.link/offer",en,false,train,synthetic
+TX0223,suspicious,New message from an unknown contact. View it here: http://t.ly/9fGh,en,false,train,synthetic
+TX0224,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://short.link/offer,en,false,train,synthetic
+TX0225,safe,"Your OTP for the transaction of Rs 350 at PhonePe is 903409. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0226,safe,"Rs 120 credited to your A/c XX3559 on 7-Nov-26 by NEFT from Dev. Avl Bal: Rs 19,198.00. —SBI",en,false,train,synthetic-service
+TX0227,scam,"Your loan of ₹25,000 is approved! Pay ₹15,000 processing fee first to receive the amount today: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0228,scam,"Earn ₹2,500 every day just by rating products online. No investment needed. WhatsApp 9580799764 to join.",en,false,train,synthetic
+TX0229,safe,808017 is the OTP for your Amazon login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0230,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0231,scam,"Income tax refund ₹50,000 ka aaya hai. Card details daal kar claim karein: http://goo.su/xT9aL",hinglish,true,train,synthetic
+TX0232,scam,Apna OTP share karein warna aapka Canara Bank card block ho jayega.,hinglish,true,train,synthetic
+TX0233,safe,Reminder: kal aapki EMI Rs 350 auto-debit hogi. Balance rakhein. —SBI,hinglish,true,train,synthetic-service
+TX0234,safe,Did you watch the match last night? so good see you,en,false,train,synthetic-chat
+TX0235,safe,"i'm running late, stuck in traffic. will reach the airport by 11 am lol",en,false,train,synthetic-chat
+TX0236,scam,"Dear customer, your ICICI Bank account will be blocked today as your KYC has expired. Update immediately: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0237,safe,Your flight to Delhi is on time. Check-in opens 21 Nov 9 am. Have a great trip! —Swiggy,en,false,train,synthetic-service
+TX0238,safe,can you send me the syllabus from the meeting? thanks!,en,false,train,synthetic-chat
+TX0239,suspicious,Your parcel could not be delivered. Reschedule here: http://is.gd/k92Lz,en,false,train,synthetic
+TX0240,safe,"office se nikal gaya hoon, 20 minute mein pahunchta hoon",hinglish,true,train,synthetic-chat
+TX0241,safe,"submitted the slides, please check and let me know if anything is missing thanks!",en,false,train,synthetic-chat
+TX0242,suspicious,Exclusive invite: join our trading community and learn how members earn daily. http://is.gd/k92Lz,en,false,train,synthetic
+TX0243,scam,"Part time job: ghar baithe ₹25,000 roz kamayein. Telegram join karein: http://cutt.ly/Qw3dE",hinglish,true,train,synthetic
+TX0244,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0245,safe,you owe me ₹500 for movie tickets 😂 no rush,en,false,train,synthetic-chat
+TX0246,scam,Your ICICI Bank debit card has been deactivated. Call 9370207798 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0247,scam,An FIR has been registered against you. Pay ₹500 immediately or you will be arrested within 2 hours.,en,false,train,synthetic
+TX0248,safe,"The meeting has been moved to 7 pm, same room as before see you",en,false,train,synthetic-chat
+TX0249,scam,"Win ₹2,500 cash daily playing online rummy! Download the app http://tinyurl.com/a8Rt2.apk and deposit ₹1,999 to start.",en,false,train,synthetic
+TX0250,suspicious,"Dear user, claim your cashback before it expires: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0251,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹9,800 GST to release it. http://bit.ly/3xKd9",en,false,train,synthetic
+TX0252,safe,Your OTP for card ending 7175 transaction of ₹80 at Amazon is 266956. Do not share it. -Bank of Baroda,en,false,train,synthetic-service
+TX0253,suspicious,Get a free demo class today! Limited seats for the coaching batch. Reserve yours: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0254,safe,dude are we still on for the study session later today? haha,en,false,train,synthetic-chat
+TX0255,safe,"Your OTP for the transaction of Rs 350 at Amazon is 731395. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0256,scam,URGENT: Your SBI KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0257,scam,"I am Riya, an army officer being transferred, selling my bike for ₹25,000. Pay ₹500 advance to get it delivered.",en,false,train,synthetic
+TX0258,suspicious,Aapke liye special loan offer! Turant apply karein: http://is.gd/k92Lz,hinglish,true,train,synthetic
+TX0259,scam,"Income tax refund of ₹25,000 is pending. Verify your bank details here to receive it: http://is.gd/k92Lz",en,false,train,synthetic
+TX0260,safe,"the meeting has been moved to 6:30 pm, same room as before!!",en,false,train,synthetic-chat
+TX0261,safe,Your OTP for login is 935241. Do not share it with anyone.,en,false,train,synthetic-service
+TX0262,safe,"Your OTP for the transaction of Rs 350 at Amazon is 944292. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0263,scam,You have won a free iPhone! Pay only ₹250 shipping to claim: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0264,safe,"The meeting has been moved to 6:30 pm, same room as before 😂",en,false,train,synthetic-chat
+TX0265,safe,"let's split the cab fare, it came to ₹2,000 so Rs 900 each thanks!",en,false,train,synthetic-chat
+TX0266,safe,"Dear user, 333380 is your one time password for Amazon. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0267,safe,"Let's split the cab fare, it came to rs 640 so ₹1,200 each :)",en,false,train,synthetic-chat
+TX0268,scam,Aapka HDFC Bank account band ho jayega. KYC abhi update karein: http://bit.ly/3xKd9,hinglish,true,train,synthetic
+TX0269,scam,VIP stock tips group: 300% returns assured in 10 days. Deposit ₹500 to join. Telegram: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0270,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9256326741,hinglish,true,train,synthetic
+TX0271,safe,"The meeting has been moved to noon, same room as before",en,false,train,synthetic-chat
+TX0272,safe,"i'm running late, stuck in traffic. will reach home by 4 pm please",en,false,train,synthetic-chat
+TX0273,safe,"Aapke account se ₹1,200 kata. Baaki balance Rs 79,324.00. —ICICI Bank",hinglish,true,train,synthetic-service
+TX0274,scam,"Part time job: ghar baithe ₹2,500 roz kamayein. Telegram join karein: http://bit.ly/3xKd9",hinglish,true,train,synthetic
+TX0275,safe,did you watch the match last night? it was insane thanks!,en,false,train,synthetic-chat
+TX0276,safe,Use OTP 478465 to verify your mobile number on Uber. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0277,safe,did you watch that movie last night? totally worth it please,en,false,train,synthetic-chat
+TX0278,safe,"let's split the cab fare, it came to ₹80 so ₹80 each!!",en,false,train,synthetic-chat
+TX0279,safe,"Your OTP for the transaction of Rs 350 at Uber is 604084. Never share this OTP with anyone, including bank staff. —SBI",en,false,train,synthetic-service
+TX0280,scam,"Your loan of ₹5,00,000 is approved! Pay ₹500 processing fee first to receive the amount today: http://t.ly/9fGh",en,false,train,synthetic
+TX0281,suspicious,Last chance! Your subscription expires today. Renew now at http://is.gd/k92Lz,en,false,train,synthetic
+TX0282,safe,Your OTP for card ending 8424 transaction of Rs 120 at Amazon is 466200. Do not share it. -SBI,en,false,train,synthetic-service
+TX0283,scam,"Congratulations, you are shortlisted for a ₹5,00,000/month job. Pay a ₹500 registration fee to confirm your interview.",en,false,train,synthetic
+TX0284,safe,"Aman says the exam is on tuesday, did you start preparing? thanks!",en,false,train,synthetic-chat
+TX0285,safe,Reminder: kal aapki EMI ₹450 auto-debit hogi. Balance rakhein. —ICICI Bank,hinglish,true,train,synthetic-service
+TX0286,safe,Your train ticket is confirmed. PNR 660131. Departure Monday noon from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0287,safe,852252 is the OTP for your BookMyShow login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0288,safe,"Your mobile recharge of ₹1,200 was successful. Validity 28 days. Thanks for choosing us.",en,false,train,synthetic-service
+TX0289,scam,"Pay the pending traffic challan of ₹15,000 now at http://cutt.ly/Qw3dE to avoid court proceedings.",en,false,train,synthetic
+TX0290,safe,"thanks for helping with the résumé, really appreciate it Isha see you",en,false,train,synthetic-chat
+TX0291,safe,Aapki bijli ka bill ₹450 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0292,safe,"Aapke account mein Rs 900 aaye. Baaki balance Rs 71,997.00. —Canara Bank",hinglish,true,train,synthetic-service
+TX0293,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9605691980 immediately.,en,false,train,synthetic
+TX0294,safe,"Dear user, 869397 is your one time password for Paytm. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0295,suspicious,Aapke liye special loan offer! Turant apply karein: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX0296,safe,did you watch the match last night? totally worth it see you,en,false,train,synthetic-chat
+TX0297,safe,Your package from Zomato was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0298,suspicious,Book your insurance renewal now and save big. Click: http://t.ly/9fGh,en,false,train,synthetic
+TX0299,safe,Dude are we still on for the party next week?,en,false,train,synthetic-chat
+TX0300,scam,"You have won a free iPhone! Pay only ₹4,500 shipping to claim: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0301,safe,You owe me ₹80 for movie tickets 😂 no rush,en,false,train,synthetic-chat
+TX0302,suspicious,Unusual activity noticed on your account. Please review here: http://is.gd/k92Lz,en,false,train,synthetic
+TX0303,scam,"Part-time job offer: earn ₹2,500 per day by liking videos. Join our Telegram channel now: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0304,safe,Aapka PhonePe order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0305,scam,"Win ₹1,00,000 cash daily playing online rummy! Download the app http://tinyurl.com/a8Rt2.apk and deposit ₹250 to start.",en,false,train,synthetic
+TX0306,safe,Bhaiya: take your medicine see you,en,false,train,synthetic-chat
+TX0307,scam,Nikhil has sent you a collect request of ₹500. Enter your UPI PIN to receive the money.,en,false,train,synthetic
+TX0308,scam,"Congratulations! You have won ₹2,500 in the Jio lucky draw. Pay a processing fee of ₹9,800 to claim your prize: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0309,scam,"Part time job: ghar baithe ₹2,500 roz kamayein. Telegram join karein: http://goo.su/xT9aL",hinglish,true,train,synthetic
+TX0310,safe,"I'll pay you back for momos, it was ₹80, sending it after work",en,false,train,synthetic-chat
+TX0311,safe,941127 is your OTP for logging in to Amazon. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0312,scam,Customs has held a gift sent by Karan from abroad. Pay ₹250 duty to receive it: http://goo.su/xT9aL,en,false,train,synthetic
+TX0313,suspicious,"Earn extra income from home, no experience needed. Details: http://is.gd/k92Lz",en,false,train,synthetic
+TX0314,safe,"₹2,000 credited to your A/c XX2249 on 12-Nov-26 by NEFT from Neha. Avl Bal: Rs 87,419.00. —PNB",en,false,train,synthetic-service
+TX0315,scam,"Your courier is held at customs. Pay ₹9,800 clearance charges immediately to release the parcel: http://goo.su/xT9aL",en,false,train,synthetic
+TX0316,suspicious,"Flash sale! 90% off on everything, today only. Shop now: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0317,safe,"Thanks for helping with the presentation, really appreciate it priya please",en,false,train,synthetic-chat
+TX0318,safe,"I'll pay you back for the cab, it was ₹450, sending it tomorrow!!",en,false,train,synthetic-chat
+TX0319,safe,Your OTP for card ending 8143 transaction of Rs 900 at Uber is 623861. Do not share it. -Axis Bank,en,false,train,synthetic-service
+TX0320,safe,"Your OTP for the transaction of ₹2,000 at Ola is 747841. Never share this OTP with anyone, including bank staff. —Kotak Bank",en,false,train,synthetic-service
+TX0321,safe,Did you watch the new episode last night? not as good as the first one,en,false,train,synthetic-chat
+TX0322,scam,"Sir mujhse galti se ₹500 aapke account mein chale gaye, please wapas bhej dijiye jaldi.",hinglish,true,train,synthetic
+TX0323,scam,"Part time job: ghar baithe ₹2,500 roz kamayein. Telegram join karein: http://rb.gy/p4kz1",hinglish,true,train,synthetic
+TX0324,safe,"Submitted the slides, please check and let me know if anything is missing 🙂",en,false,train,synthetic-chat
+TX0325,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://t.ly/9fGh,en,false,train,synthetic
+TX0326,scam,"You have won a free iPhone! Pay only ₹9,800 shipping to claim: http://t.ly/9fGh",en,false,train,synthetic
+TX0327,safe,"Submitted the notes, please check and let me know if anything is missing 😂",en,false,train,synthetic-chat
+TX0328,safe,can you send me the project file from last week?!!,en,false,train,synthetic-chat
+TX0329,scam,"Dear ICICI Bank user, your net banking has been locked. Login here to unlock: http://t.ly/9fGh",en,false,train,synthetic
+TX0330,safe,can you send me the lecture recording from the lecture?!!,en,false,train,synthetic-chat
+TX0331,scam,"Your child has met with an accident. Transfer ₹1,999 to this account immediately for treatment.",en,false,train,synthetic
+TX0332,safe,You owe me ₹500 for snacks 😂 no rush :),en,false,train,synthetic-chat
+TX0333,safe,Aapka OTP 881505 hai. Ise kisi ke saath share na karein. —SBI,hinglish,true,train,synthetic-service
+TX0334,scam,"Hello, I'm Amit from Microsoft HR. You are selected for a work-from-home role paying ₹25,000 weekly. To begin, pay a refundable deposit of ₹500.",en,false,train,synthetic
+TX0335,suspicious,Pre-approved offer just for you! Get a personal loan in minutes. Apply: http://goo.su/xT9aL,en,false,train,synthetic
+TX0336,safe,Your train ticket is confirmed. PNR 495312. Departure Saturday noon from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0337,suspicious,"Flash sale! 50% off on everything, today only. Shop now: http://is.gd/k92Lz",en,false,train,synthetic
+TX0338,safe,"I'll pay you back for snacks, it was rs 900, sending it after class",en,false,train,synthetic-chat
+TX0339,safe,Aapka recharge ₹450 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0340,safe,"submitted the notes, please check and let me know if anything is missing lol",en,false,train,synthetic-chat
+TX0341,scam,"Your insurance policy bonus of ₹2,500 is ready. Share your Aadhaar and OTP to claim it today.",en,false,train,synthetic
+TX0342,scam,Urgent: your UPI ID will be blocked. Scan this QR code to verify your account and avoid suspension.,en,false,train,synthetic
+TX0343,safe,did you watch the finale last night? i cried lol lol,en,false,train,synthetic-chat
+TX0344,safe,Your mobile recharge of ₹80 was successful. Validity 28 days. Thanks for choosing us.,en,false,train,synthetic-service
+TX0345,scam,"Earn ₹50,000 every day just by rating products online. No investment needed. WhatsApp 9166202533 to join.",en,false,train,synthetic
+TX0346,safe,hey there are we still on for brunch this weekend? lol,en,false,train,synthetic-chat
+TX0347,safe,"Let's split the cab fare, it came to rs 640 so ₹2,000 each lol",en,false,train,synthetic-chat
+TX0348,safe,"The meeting has been moved to 7 pm, same room as before 😂",en,false,train,synthetic-chat
+TX0349,safe,"Rs 350 credited to your A/c XX7555 on 13-Nov-26 by NEFT from Nikhil. Avl Bal: Rs 67,620.00. —HDFC Bank",en,false,train,synthetic-service
+TX0350,scam,"Income tax refund of ₹25,000 is pending. Verify your bank details here to receive it: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0351,safe,Reminder: your appointment with Dr. Vikram is on Wednesday at 4 pm. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0352,safe,"Sorry i missed your call, was in a class. can we talk tomorrow? please",en,false,train,synthetic-chat
+TX0353,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹500 GST to release it. http://short.link/offer",en,false,train,synthetic
+TX0354,scam,"An FIR has been registered against you. Pay ₹4,500 immediately or you will be arrested within 2 hours.",en,false,train,synthetic
+TX0355,safe,did you watch that movie last night? what a finish 🙂,en,false,train,synthetic-chat
+TX0356,safe,Can you send me the project file from the lecture?,en,false,train,synthetic-chat
+TX0357,scam,"Dear HDFC Bank user, your net banking has been locked. Login here to unlock: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0358,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9421337741 immediately.,en,false,train,synthetic
+TX0359,suspicious,New message from an unknown contact. View it here: http://goo.su/xT9aL,en,false,train,synthetic
+TX0360,safe,"Tanvi says the exam is on the 15th, did you start preparing?",en,false,train,synthetic-chat
+TX0361,safe,"you owe me ₹2,000 for biryani 😂 no rush lol",en,false,train,synthetic-chat
+TX0362,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX0363,safe,Mummy: bring milk on your way home,en,false,train,synthetic-chat
+TX0364,scam,Your FASTag is blocked. Recharge now via http://cutt.ly/Qw3dE to avoid a penalty.,en,false,train,synthetic
+TX0365,safe,"the meeting has been moved to noon, same room as before see you",en,false,train,synthetic-chat
+TX0366,suspicious,Your package is waiting. Confirm your address within 24 hours: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0367,scam,This is Meesho support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX0368,safe,Your flight to Delhi is on time. Check-in opens Thursday 7 pm. Have a great trip! —Uber,en,false,train,synthetic-service
+TX0369,scam,This is TRAI. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹250 for verification.,en,false,train,synthetic
+TX0370,safe,"Sorry i missed your call, was in a class. can we talk later today? haha",en,false,train,synthetic-chat
+TX0371,safe,Your cab Pooja is arriving in 3 minutes. Vehicle number MH12AB8105. Share OTP 205386 with the driver only at pickup.,en,false,train,synthetic-service
+TX0372,scam,"Aapke parcel mein drugs mile hain. Police case se bachne ke liye ₹4,500 transfer karein.",hinglish,true,train,synthetic
+TX0373,safe,"Dear user, 296775 is your one time password for Myntra. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0374,safe,"Happy birthday meera! hope you have an amazing day, party next week?",en,false,train,synthetic-chat
+TX0375,safe,"submitted the draft, please check and let me know if anything is missing :)",en,false,train,synthetic-chat
+TX0376,scam,Aapka PNB account band ho jayega. KYC abhi update karein: http://t.ly/9fGh,hinglish,true,train,synthetic
+TX0377,scam,"Hello, I'm Riya from Flipkart HR. You are selected for a work-from-home role paying ₹50,000 weekly. To begin, pay a refundable deposit of ₹9,800.",en,false,train,synthetic
+TX0378,suspicious,"Flash sale! 70% off on everything, today only. Shop now: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0379,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0380,scam,"Income tax refund ₹25,000 ka aaya hai. Card details daal kar claim karein: http://tinyurl.com/a8Rt2",hinglish,true,train,synthetic
+TX0381,safe,Can you send me the photos from the trip from last week? lol,en,false,train,synthetic-chat
+TX0382,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9839386138 and share your card details.,en,false,train,synthetic
+TX0383,scam,Aapke parcel mein drugs mile hain. Police case se bachne ke liye ₹250 transfer karein.,hinglish,true,train,synthetic
+TX0384,safe,"let's split the cab fare, it came to Rs 120 so ₹1,200 each haha",en,false,train,synthetic-chat
+TX0385,safe,"Aapke account se ₹450 kata. Baaki balance Rs 89,344.00. —PNB",hinglish,true,train,synthetic-service
+TX0386,safe,608289 is your Flipkart security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0387,scam,"Dear customer, your HDFC Bank account will be blocked today as your KYC has expired. Update immediately: http://t.ly/9fGh",en,false,train,synthetic
+TX0388,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9448788553,hinglish,true,train,synthetic
+TX0389,safe,"happy birthday Rohit! hope you have an amazing day, party at 8 pm?",en,false,train,synthetic-chat
+TX0390,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://goo.su/xT9aL,hinglish,true,train,synthetic
+TX0391,scam,"Click http://cutt.ly/Qw3dE to track your parcel and pay a ₹1,999 redelivery fee.",en,false,train,synthetic
+TX0392,safe,"I'll pay you back for the bill, it was rs 120, sending it next week!!",en,false,train,synthetic-chat
+TX0393,scam,"Hello, I'm Amit from Paytm HR. You are selected for a work-from-home role paying ₹1,00,000 weekly. To begin, pay a refundable deposit of ₹1,999.",en,false,train,synthetic
+TX0394,scam,"Dev has sent you a collect request of ₹4,500. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX0395,safe,"thanks for helping with the lecture recording, really appreciate it Sneha 🙂",en,false,train,synthetic-chat
+TX0396,safe,"happy birthday Nikhil! hope you have an amazing day, party at 6? 😂",en,false,train,synthetic-chat
+TX0397,safe,Did you watch the finale last night? what a finish,en,false,train,synthetic-chat
+TX0398,safe,Papa: pick up the parcel from the neighbour!!,en,false,train,synthetic-chat
+TX0399,safe,"Riya says the exam is on Thursday, did you start preparing? see you",en,false,train,synthetic-chat
+TX0400,safe,"submitted the spreadsheet, please check and let me know if anything is missing 🙂",en,false,train,synthetic-chat
+TX0401,safe,965538 is the OTP for your Uber login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0402,safe,441883 is your Ola security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0403,scam,"Task complete karo aur roz ₹5,00,000 kamao. Pehle ₹9,800 registration fee jama karein.",hinglish,true,train,synthetic
+TX0404,safe,Your order from Swiggy has been delivered. We hope you enjoyed it. Rate your experience in the app.,en,false,train,synthetic-service
+TX0405,safe,471815 is your Ola security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0406,scam,"Our records show you overpaid your electricity bill. Click http://goo.su/xT9aL to claim a refund of ₹5,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0407,suspicious,Your parcel could not be delivered. Reschedule here: http://short.link/offer,en,false,train,synthetic
+TX0408,scam,Aapka ICICI Bank account band ho jayega. KYC abhi update karein: http://short.link/offer,hinglish,true,train,synthetic
+TX0409,scam,"Our records show you overpaid your electricity bill. Click http://is.gd/k92Lz to claim a refund of ₹5,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0410,safe,721065 is your OTP for logging in to Paytm. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0411,safe,"sorry i missed your call, was in a class. can we talk on Friday?!!",en,false,train,synthetic-chat
+TX0412,suspicious,Pre-approved offer just for you! Get a personal loan in minutes. Apply: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0413,safe,mummy ne bola ghar jaldi aana,hinglish,true,train,synthetic-chat
+TX0414,suspicious,"Flash sale! 70% off on everything, today only. Shop now: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0415,scam,"Task complete karo aur roz ₹2,500 kamao. Pehle ₹500 registration fee jama karein.",hinglish,true,train,synthetic
+TX0416,scam,We detected a login to your SBI account from another city. Share the OTP to block the unauthorised user.,en,false,train,synthetic
+TX0417,scam,Rohit has sent you a collect request of ₹250. Enter your UPI PIN to receive the money.,en,false,train,synthetic
+TX0418,safe,Aapki bijli ka bill Rs 350 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0419,safe,did you watch the new episode last night? so good,en,false,train,synthetic-chat
+TX0420,scam,URGENT: Your Kotak Bank KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0421,safe,"Rs 350 credited to your A/c XX8366 on 11-Nov-26 by NEFT from Meera. Avl Bal: Rs 63,007.00. —Axis Bank",en,false,train,synthetic-service
+TX0422,suspicious,"Hi Rohit, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://goo.su/xT9aL",en,false,train,synthetic
+TX0423,safe,Your OTP for login is 656280. Do not share it with anyone.,en,false,train,synthetic-service
+TX0424,safe,825216 is your OTP for logging in to Paytm. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0425,safe,"Arjun says the exam is on the 15th, did you start preparing? haha",en,false,train,synthetic-chat
+TX0426,scam,"Congratulations! You have won ₹5,00,000 in the Flipkart lucky draw. Pay a processing fee of ₹4,500 to claim your prize: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0427,scam,"Task complete karo aur roz ₹25,000 kamao. Pehle ₹500 registration fee jama karein.",hinglish,true,train,synthetic
+TX0428,safe,881149 is the OTP for your BookMyShow login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0429,safe,110523 is your Zomato security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0430,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9387123116,hinglish,true,train,synthetic
+TX0431,safe,"Aapka recharge ₹1,200 ka safal raha. Validity 28 din. Dhanyavaad.",hinglish,true,train,synthetic-service
+TX0432,safe,Your monthly statement for A/c XX8609 is ready. Log in to the official app to view it. —Axis Bank,en,false,train,synthetic-service
+TX0433,scam,"Pay the pending traffic challan of ₹15,000 now at http://rb.gy/p4kz1 to avoid court proceedings.",en,false,train,synthetic
+TX0434,scam,"Your courier is held at customs. Pay ₹15,000 clearance charges immediately to release the parcel: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0435,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0436,safe,683638 is your Amazon security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0437,scam,"This is the CBI. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹9,800 for verification.",en,false,train,synthetic
+TX0438,safe,"Thanks for helping with the slides, really appreciate it karan haha",en,false,train,synthetic-chat
+TX0439,scam,"VIP stock tips group: 300% returns assured in 10 days. Deposit ₹9,800 to join. Telegram: http://short.link/offer",en,false,train,synthetic
+TX0440,safe,"Sorry i missed your call, was in a class. can we talk tonight? thanks!",en,false,train,synthetic-chat
+TX0441,safe,"Let's split the cab fare, it came to ₹250 so ₹250 each lol",en,false,train,synthetic-chat
+TX0442,scam,"Part time job: ghar baithe ₹2,500 roz kamayein. Telegram join karein: http://tinyurl.com/a8Rt2",hinglish,true,train,synthetic
+TX0443,safe,Aapka OTP 455800 hai. Ise kisi ke saath share na karein. —Canara Bank,hinglish,true,train,synthetic-service
+TX0444,scam,"Your PNB credit card reward points worth ₹1,00,000 expire today. Download the app to redeem: http://rb.gy/p4kz1.apk",en,false,train,synthetic
+TX0445,safe,"Submitted the spreadsheet, please check and let me know if anything is missing please",en,false,train,synthetic-chat
+TX0446,scam,Your courier is held at customs. Pay ₹250 clearance charges immediately to release the parcel: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0447,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9036283655,hinglish,true,train,synthetic
+TX0448,safe,Aapka OTP 322825 hai. Ise kisi ke saath share na karein. —ICICI Bank,hinglish,true,train,synthetic-service
+TX0449,safe,"let's split the cab fare, it came to ₹1,200 so ₹250 each 🙂",en,false,train,synthetic-chat
+TX0450,scam,"Earn ₹5,00,000 every day just by rating products online. No investment needed. WhatsApp 9588822525 to join.",en,false,train,synthetic
+TX0451,safe,Your monthly statement for A/c XX5091 is ready. Log in to the official app to view it. —Kotak Bank,en,false,train,synthetic-service
+TX0452,safe,did you watch the finale last night? not as good as the first one,en,false,train,synthetic-chat
+TX0453,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹500 GST to release it. http://short.link/offer",en,false,train,synthetic
+TX0454,scam,"Hello, I'm Vikram from Microsoft HR. You are selected for a work-from-home role paying ₹50,000 weekly. To begin, pay a refundable deposit of ₹500.",en,false,train,synthetic
+TX0455,scam,"Your Canara Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://bit.ly/3xKd9",en,false,train,synthetic
+TX0456,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9413719826,hinglish,true,train,synthetic
+TX0457,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9392335933 immediately.,en,false,train,synthetic
+TX0458,scam,"Win ₹25,000 cash daily playing online rummy! Download the app http://tinyurl.com/a8Rt2.apk and deposit ₹500 to start.",en,false,train,synthetic
+TX0459,scam,"Part-time job offer: earn ₹5,00,000 per day by liking videos. Join our Telegram channel now: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0460,scam,Aapka Bank of Baroda account band ho jayega. KYC abhi update karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX0461,safe,Use OTP 945922 to verify your mobile number on BookMyShow. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0462,safe,Can you send me the notes from yesterday?!!,en,false,train,synthetic-chat
+TX0463,safe,"I'll pay you back for pizza, it was ₹250, sending it on sunday haha",en,false,train,synthetic-chat
+TX0464,safe,"Let's split the cab fare, it came to ₹250 so ₹80 each haha",en,false,train,synthetic-chat
+TX0465,scam,"Part-time job offer: earn ₹50,000 per day by liking videos. Join our Telegram channel now: http://goo.su/xT9aL",en,false,train,synthetic
+TX0466,scam,"Dear Bank of Baroda user, your net banking has been locked. Login here to unlock: http://t.ly/9fGh",en,false,train,synthetic
+TX0467,scam,"Invest ₹1,999 in our AI trading bot and earn 15% daily returns. Withdraw anytime. Join now: http://is.gd/k92Lz",en,false,train,synthetic
+TX0468,suspicious,Exclusive invite: join our trading community and learn how members earn daily. http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0469,safe,"I'm running late, stuck in traffic. will reach the mall by 4 pm thanks!",en,false,train,synthetic-chat
+TX0470,safe,did you watch that movie last night? you have to watch it :),en,false,train,synthetic-chat
+TX0471,safe,"happy birthday Ananya! hope you have an amazing day, party tomorrow morning? :)",en,false,train,synthetic-chat
+TX0472,safe,"Meera says the exam is on monday, did you start preparing?!!",en,false,train,synthetic-chat
+TX0473,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://goo.su/xT9aL,en,false,train,synthetic
+TX0474,scam,"Government subsidy: ₹50,000 is waiting in your account. Pay ₹4,500 GST to release it. http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0475,safe,"movie ke tickets book kar diye hain, 7 baje ka show hai",hinglish,true,train,synthetic-chat
+TX0476,safe,Your OTP for login is 377503. Do not share it with anyone.,en,false,train,synthetic-service
+TX0477,scam,"Income tax refund of ₹2,500 is pending. Verify your bank details here to receive it: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0478,scam,"Guaranteed 30% returns every month on crypto trading. Invest ₹9,800 today, limited slots: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0479,safe,can you send me the invoice from yesterday?,en,false,train,synthetic-chat
+TX0480,safe,"Let's split the cab fare, it came to ₹500 so ₹1,200 each 🙂",en,false,train,synthetic-chat
+TX0481,safe,"Do not share your OTP, PIN or password with anyone. ICICI Bank will never call to ask for them.",en,false,train,synthetic-service
+TX0482,safe,Your package from BookMyShow was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0483,scam,"VIP stock tips group: 300% returns assured in 10 days. Deposit ₹1,999 to join. Telegram: http://short.link/offer",en,false,train,synthetic
+TX0484,safe,you owe me Rs 900 for chai 😂 no rush 🙂,en,false,train,synthetic-chat
+TX0485,safe,"i'm running late, stuck in traffic. will reach the mall by 9 am 🙂",en,false,train,synthetic-chat
+TX0486,safe,"i'll pay you back for the bill, it was ₹500, sending it tomorrow morning thanks!",en,false,train,synthetic-chat
+TX0487,safe,"sorry i missed your call, was in a class. can we talk tonight?",en,false,train,synthetic-chat
+TX0488,safe,"you owe me ₹1,200 for movie tickets 😂 no rush see you",en,false,train,synthetic-chat
+TX0489,safe,"Let's split the cab fare, it came to rs 900 so ₹500 each 🙂",en,false,train,synthetic-chat
+TX0490,safe,Use OTP 871745 to verify your mobile number on Paytm. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0491,safe,"Rs 640 credited to your A/c XX9440 on 4-Nov-26 by NEFT from Sam. Avl Bal: Rs 60,791.00. —HDFC Bank",en,false,train,synthetic-service
+TX0492,scam,"Income tax refund ₹5,00,000 ka aaya hai. Card details daal kar claim karein: http://cutt.ly/Qw3dE",hinglish,true,train,synthetic
+TX0493,safe,Your OTP for login is 724442. Do not share it with anyone.,en,false,train,synthetic-service
+TX0494,suspicious,Your package is waiting. Confirm your address within 24 hours: http://is.gd/k92Lz,en,false,train,synthetic
+TX0495,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9939059584,hinglish,true,train,synthetic
+TX0496,scam,Click http://goo.su/xT9aL to track your parcel and pay a ₹250 redelivery fee.,en,false,train,synthetic
+TX0497,safe,Your monthly statement for A/c XX1387 is ready. Log in to the official app to view it. —Bank of Baroda,en,false,train,synthetic-service
+TX0498,scam,"Your loan of ₹25,000 is approved! Pay ₹1,999 processing fee first to receive the amount today: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0499,safe,"Rs 120 credited to your A/c XX4117 on 17-Nov-26 by NEFT from Neha. Avl Bal: Rs 1,289.00. —PNB",en,false,train,synthetic-service
+TX0500,scam,"Congratulations! You have won ₹2,500 in the Flipkart lucky draw. Pay a processing fee of ₹4,500 to claim your prize: http://t.ly/9fGh",en,false,train,synthetic
+TX0501,scam,"I am Rohit, an army officer being transferred, selling my bike for ₹2,500. Pay ₹1,999 advance to get it delivered.",en,false,train,synthetic
+TX0502,scam,"Aapne ₹25,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹1,999 bhejein.",hinglish,true,train,synthetic
+TX0503,safe,Your cab Sam is arriving in 3 minutes. Vehicle number MH12AB9889. Share OTP 634977 with the driver only at pickup.,en,false,train,synthetic-service
+TX0504,scam,"Your loan of ₹1,00,000 is approved! Pay ₹500 processing fee first to receive the amount today: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0505,scam,"Dear customer, your PNB account will be blocked today as your KYC has expired. Update immediately: http://goo.su/xT9aL",en,false,train,synthetic
+TX0506,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0507,safe,"I'll pay you back for dinner, it was ₹250, sending it this weekend 🙂",en,false,train,synthetic-chat
+TX0508,suspicious,Book your insurance renewal now and save big. Click: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0509,scam,"Dear customer, your Canara Bank account will be blocked today as your KYC has expired. Update immediately: http://t.ly/9fGh",en,false,train,synthetic
+TX0510,safe,"submitted the project file, please check and let me know if anything is missing please",en,false,train,synthetic-chat
+TX0511,safe,Your train ticket is confirmed. PNR 761985. Departure Friday 3:15 from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0512,safe,Your package from Ola was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0513,scam,"Aapne ₹50,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹1,999 bhejein.",hinglish,true,train,synthetic
+TX0514,safe,you owe me Rs 350 for chai 😂 no rush,en,false,train,synthetic-chat
+TX0515,scam,"Your Infosys order of ₹5,00,000 has been placed. If this wasn't you, call 9999549357 now to cancel it.",en,false,train,synthetic
+TX0516,scam,"Your Axis Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0517,safe,Your train ticket is confirmed. PNR 220283. Departure Thursday 7 pm from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0518,safe,"Thanks for helping with the report, really appreciate it rahul see you",en,false,train,synthetic-chat
+TX0519,scam,"Customs has held a gift sent by Arjun from abroad. Pay ₹4,500 duty to receive it: http://goo.su/xT9aL",en,false,train,synthetic
+TX0520,safe,Payment of Rs 900 received for your electricity bill. Thank you. Receipt no. 310609.,en,false,train,synthetic-service
+TX0521,safe,"Dear user, 109883 is your one time password for PhonePe. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0522,scam,"Your SBI account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0523,suspicious,"Dear user, claim your cashback before it expires: http://short.link/offer",en,false,train,synthetic
+TX0524,safe,Payment of Rs 900 received for your electricity bill. Thank you. Receipt no. 426020.,en,false,train,synthetic-service
+TX0525,scam,"Win ₹2,500 cash daily playing online rummy! Download the app http://bit.ly/3xKd9.apk and deposit ₹500 to start.",en,false,train,synthetic
+TX0526,safe,can you send me the résumé from the lecture? lol,en,false,train,synthetic-chat
+TX0527,safe,Can you send me the lab manual from the meeting? haha,en,false,train,synthetic-chat
+TX0528,safe,"thoda late ho jaunga, traffic bahut hai",hinglish,true,train,synthetic-chat
+TX0529,safe,337625 is your OTP for logging in to Swiggy. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0530,safe,Your train ticket is confirmed. PNR 492111. Departure 21 Nov 6:30 pm from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0531,scam,Aapka SIM 2 ghante mein band ho jayega. Aadhaar verify karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX0532,safe,hey are we still on for lunch tomorrow? please,en,false,train,synthetic-chat
+TX0533,scam,Your ICICI Bank debit card has been deactivated. Call 9612370671 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0534,safe,"OTP for your ICICI Bank net banking login is 714675. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0535,safe,Your cab Sam is arriving in 3 minutes. Vehicle number MH12AB4627. Share OTP 364207 with the driver only at pickup.,en,false,train,synthetic-service
+TX0536,suspicious,Your credit limit has been increased. See your new limit: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0537,safe,"i'll pay you back for the bill, it was ₹1,200, sending it next week!!",en,false,train,synthetic-chat
+TX0538,safe,"Submitted the notes, please check and let me know if anything is missing see you",en,false,train,synthetic-chat
+TX0539,safe,Mom: pick up the parcel from the neighbour 🙂,en,false,train,synthetic-chat
+TX0540,safe,"i'm running late, stuck in traffic. will reach campus by 6:30 pm :)",en,false,train,synthetic-chat
+TX0541,safe,Your OTP for card ending 1797 transaction of ₹250 at Swiggy is 198353. Do not share it. -Canara Bank,en,false,train,synthetic-service
+TX0542,scam,"Congratulations, you are shortlisted for a ₹2,500/month job. Pay a ₹4,500 registration fee to confirm your interview.",en,false,train,synthetic
+TX0543,scam,"Hello, I'm Tanvi from Meesho HR. You are selected for a work-from-home role paying ₹25,000 weekly. To begin, pay a refundable deposit of ₹250.",en,false,train,synthetic
+TX0544,scam,"Part time job: ghar baithe ₹5,00,000 roz kamayein. Telegram join karein: http://bit.ly/3xKd9",hinglish,true,train,synthetic
+TX0545,safe,"₹2,000 debited from A/c XX3472 on 12-Nov-26 at Flipkart. Avl Bal: Rs 22,443.00. If not done by you, call the number on the back of your card. —PNB",en,false,train,synthetic-service
+TX0546,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0547,safe,"happy birthday Riya! hope you have an amazing day, party at 8 pm? lol",en,false,train,synthetic-chat
+TX0548,safe,Your package from Swiggy was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0549,safe,Your OTP for login is 196220. Do not share it with anyone.,en,false,train,synthetic-service
+TX0550,scam,"Pay the pending traffic challan of ₹9,800 now at http://short.link/offer to avoid court proceedings.",en,false,train,synthetic
+TX0551,safe,you owe me ₹80 for chai 😂 no rush see you,en,false,train,synthetic-chat
+TX0552,safe,Payment of Rs 900 received for your electricity bill. Thank you. Receipt no. 472644.,en,false,train,synthetic-service
+TX0553,safe,"OTP for your SBI net banking login is 477216. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0554,safe,Aapki bijli ka bill Rs 640 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0555,safe,Did you watch the finale last night? it was insane,en,false,train,synthetic-chat
+TX0556,safe,Your BookMyShow order is out for delivery and will arrive by 11 am. Track it in the app.,en,false,train,synthetic-service
+TX0557,scam,Your HDFC Bank debit card has been deactivated. Call 9636026985 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0558,scam,"Earn ₹2,500 every day just by rating products online. No investment needed. WhatsApp 9538118025 to join.",en,false,train,synthetic
+TX0559,safe,"Chacha: eat something, you skipped lunch 😂",en,false,train,synthetic-chat
+TX0560,safe,Aapka OTP 677089 hai. Ise kisi ke saath share na karein. —HDFC Bank,hinglish,true,train,synthetic-service
+TX0561,scam,"Sir mujhse galti se ₹1,999 aapke account mein chale gaye, please wapas bhej dijiye jaldi.",hinglish,true,train,synthetic
+TX0562,scam,Your ICICI Bank debit card has been deactivated. Call 9170516772 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX0563,safe,bro are we still on for the concert after work? haha,en,false,train,synthetic-chat
+TX0564,safe,Your mobile recharge of Rs 640 was successful. Validity 28 days. Thanks for choosing us.,en,false,train,synthetic-service
+TX0565,safe,"Aapke account mein ₹80 aaye. Baaki balance Rs 72,079.00. —PNB",hinglish,true,train,synthetic-service
+TX0566,scam,"Customs has held a gift sent by Rohit from abroad. Pay ₹9,800 duty to receive it: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0567,safe,Your BookMyShow order is out for delivery and will arrive by noon. Track it in the app.,en,false,train,synthetic-service
+TX0568,scam,"Customs has held a gift sent by Tanvi from abroad. Pay ₹4,500 duty to receive it: http://short.link/offer",en,false,train,synthetic
+TX0569,suspicious,Offer! ₹250 ka cashback paane ke liye click karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX0570,safe,Payment of ₹500 received for your electricity bill. Thank you. Receipt no. 967582.,en,false,train,synthetic-service
+TX0571,safe,"Dear user, 106207 is your one time password for PhonePe. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0572,scam,"Sir mujhse galti se ₹9,800 aapke account mein chale gaye, please wapas bhej dijiye jaldi.",hinglish,true,train,synthetic
+TX0573,safe,Use OTP 403006 to verify your mobile number on PhonePe. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0574,scam,"Customs has held a gift sent by Rahul from abroad. Pay ₹9,800 duty to receive it: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0575,safe,Payment of ₹80 received for your electricity bill. Thank you. Receipt no. 437445.,en,false,train,synthetic-service
+TX0576,scam,"Loan approve ho gaya hai! Processing fee ₹4,500 pehle bhejein, paisa 10 minute mein aa jayega.",hinglish,true,train,synthetic
+TX0577,safe,844714 is your Flipkart security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0578,safe,Mummy: pick up the parcel from the neighbour lol,en,false,train,synthetic-chat
+TX0579,safe,Your monthly statement for A/c XX8666 is ready. Log in to the official app to view it. —ICICI Bank,en,false,train,synthetic-service
+TX0580,safe,can you send me the lab manual from the lecture? lol,en,false,train,synthetic-chat
+TX0581,safe,yo are we still on for coffee later today? 😂,en,false,train,synthetic-chat
+TX0582,suspicious,You have been selected for a free survey. Complete it and get a ₹500 voucher: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0583,safe,"Aapke account mein ₹500 aaye. Baaki balance Rs 52,701.00. —PNB",hinglish,true,train,synthetic-service
+TX0584,safe,Your Ola order is out for delivery and will arrive by 4 pm. Track it in the app.,en,false,train,synthetic-service
+TX0585,safe,Library notice: the book you reserved is available for pickup until Thursday.,en,false,train,synthetic-service
+TX0586,safe,Your Flipkart order is out for delivery and will arrive by 7 pm. Track it in the app.,en,false,train,synthetic-service
+TX0587,safe,"sorry i missed your call, was in a class. can we talk in the evening? thanks!",en,false,train,synthetic-chat
+TX0588,safe,Mom: bring milk on your way home 😂,en,false,train,synthetic-chat
+TX0589,safe,"Your OTP for card ending 3388 transaction of ₹1,200 at Paytm is 806584. Do not share it. -ICICI Bank",en,false,train,synthetic-service
+TX0590,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0591,safe,"Your OTP for the transaction of ₹500 at Swiggy is 778974. Never share this OTP with anyone, including bank staff. —Kotak Bank",en,false,train,synthetic-service
+TX0592,suspicious,"Earn extra income from home, no experience needed. Details: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0593,safe,Didi: don't forget your umbrella,en,false,train,synthetic-chat
+TX0594,scam,"Your SBI account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://rb.gy/p4kz1",en,false,train,synthetic
+TX0595,safe,"submitted the notes, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX0596,scam,"Dear customer, your Kotak Bank account will be blocked today as your KYC has expired. Update immediately: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0597,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://is.gd/k92Lz,en,false,train,synthetic
+TX0598,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://short.link/offer,hinglish,true,train,synthetic
+TX0599,safe,Your OTP for login is 182684. Do not share it with anyone.,en,false,train,synthetic-service
+TX0600,safe,hii are we still on for dinner later today?,en,false,train,synthetic-chat
+TX0601,suspicious,"Dear user, claim your cashback before it expires: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0602,safe,Didi: dinner is ready,en,false,train,synthetic-chat
+TX0603,scam,"Income tax refund ₹50,000 ka aaya hai. Card details daal kar claim karein: http://tinyurl.com/a8Rt2",hinglish,true,train,synthetic
+TX0604,safe,Your cab Aman is arriving in 3 minutes. Vehicle number MH12AB9987. Share OTP 828586 with the driver only at pickup.,en,false,train,synthetic-service
+TX0605,scam,"I am Rohit, an army officer being transferred, selling my bike for ₹50,000. Pay ₹4,500 advance to get it delivered.",en,false,train,synthetic
+TX0606,scam,"Earn ₹50,000 every day just by rating products online. No investment needed. WhatsApp 9419774588 to join.",en,false,train,synthetic
+TX0607,safe,"submitted the slides, please check and let me know if anything is missing please",en,false,train,synthetic-chat
+TX0608,safe,Your train ticket is confirmed. PNR 793847. Departure Monday 9 am from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0609,scam,"Your Axis Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://goo.su/xT9aL",en,false,train,synthetic
+TX0610,scam,"This is the narcotics bureau. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹9,800 for verification.",en,false,train,synthetic
+TX0611,scam,Aapka ICICI Bank account band ho jayega. KYC abhi update karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0612,safe,"₹450 credited to your A/c XX2978 on 3-Nov-26 by NEFT from Nikhil. Avl Bal: Rs 87,517.00. —Kotak Bank",en,false,train,synthetic-service
+TX0613,suspicious,"Hi Rohit, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://t.ly/9fGh",en,false,train,synthetic
+TX0614,scam,"An FIR has been registered against you. Pay ₹1,999 immediately or you will be arrested within 2 hours.",en,false,train,synthetic
+TX0615,safe,"sorry i missed your call, was in a class. can we talk after work? haha",en,false,train,synthetic-chat
+TX0616,suspicious,You have been selected for a free survey. Complete it and get a ₹500 voucher: http://bit.ly/3xKd9,en,false,train,synthetic
+TX0617,safe,"I'm running late, stuck in traffic. will reach the station by noon see you",en,false,train,synthetic-chat
+TX0618,suspicious,Offer! ₹500 ka cashback paane ke liye click karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0619,safe,Your OTP for card ending 4477 transaction of ₹80 at Paytm is 169021. Do not share it. -Canara Bank,en,false,train,synthetic-service
+TX0620,suspicious,You have been selected for a free survey. Complete it and get a ₹500 voucher: http://t.ly/9fGh,en,false,train,synthetic
+TX0621,scam,"Dear customer, your ICICI Bank account will be blocked today as your KYC has expired. Update immediately: http://short.link/offer",en,false,train,synthetic
+TX0622,safe,Your train ticket is confirmed. PNR 154660. Departure Monday 10:30 from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0623,safe,"Submitted the photos from the trip, please check and let me know if anything is missing haha",en,false,train,synthetic-chat
+TX0624,suspicious,Your parcel could not be delivered. Reschedule here: http://t.ly/9fGh,en,false,train,synthetic
+TX0625,safe,did you watch the finale last night? totally worth it please,en,false,train,synthetic-chat
+TX0626,safe,"The meeting has been moved to 4 pm, same room as before!!",en,false,train,synthetic-chat
+TX0627,safe,hi are we still on for the match on Sunday? lol,en,false,train,synthetic-chat
+TX0628,scam,"Dear customer, your Kotak Bank account will be blocked today as your KYC has expired. Update immediately: http://short.link/offer",en,false,train,synthetic
+TX0629,scam,"Congratulations! You have won ₹1,00,000 in the KBC lucky draw. Pay a processing fee of ₹9,800 to claim your prize: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0630,safe,You owe me ₹80 for chai 😂 no rush!!,en,false,train,synthetic-chat
+TX0631,safe,"Sorry i missed your call, was in a class. can we talk tomorrow?!!",en,false,train,synthetic-chat
+TX0632,safe,Your cab Aman is arriving in 3 minutes. Vehicle number MH12AB3843. Share OTP 349867 with the driver only at pickup.,en,false,train,synthetic-service
+TX0633,scam,URGENT: Your Bank of Baroda KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0634,safe,"Use code 350268 to reset your Amazon password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX0635,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹1,999 GST to release it. http://short.link/offer",en,false,train,synthetic
+TX0636,safe,"thanks for helping with the invoice, really appreciate it Neha",en,false,train,synthetic-chat
+TX0637,safe,"submitted the report, please check and let me know if anything is missing please",en,false,train,synthetic-chat
+TX0638,safe,"OTP for your Kotak Bank net banking login is 636485. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0639,scam,"Earn ₹1,00,000 every day just by rating products online. No investment needed. WhatsApp 9720510520 to join.",en,false,train,synthetic
+TX0640,safe,Your monthly statement for A/c XX9340 is ready. Log in to the official app to view it. —HDFC Bank,en,false,train,synthetic-service
+TX0641,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9141314875 and share your card details.,en,false,train,synthetic
+TX0642,safe,"sorry i missed your call, was in a class. can we talk at 8 pm? thanks!",en,false,train,synthetic-chat
+TX0643,suspicious,"Hi Neha, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0644,safe,"i'm running late, stuck in traffic. will reach the bus stop by 7 pm 😂",en,false,train,synthetic-chat
+TX0645,safe,"sorry i missed your call, was in a class. can we talk tomorrow?",en,false,train,synthetic-chat
+TX0646,scam,Your child has met with an accident. Transfer ₹500 to this account immediately for treatment.,en,false,train,synthetic
+TX0647,safe,"Sneha says the exam is on the 15th, did you start preparing?",en,false,train,synthetic-chat
+TX0648,safe,Aapki bijli ka bill ₹80 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0649,safe,"Do not share your OTP, PIN or password with anyone. Bank of Baroda will never call to ask for them.",en,false,train,synthetic-service
+TX0650,scam,"Earn ₹25,000 every day just by rating products online. No investment needed. WhatsApp 9282496904 to join.",en,false,train,synthetic
+TX0651,safe,happy birthday yaar! party kab de raha hai?,hinglish,true,train,synthetic-chat
+TX0652,scam,"You have won a free iPhone! Pay only ₹1,999 shipping to claim: http://goo.su/xT9aL",en,false,train,synthetic
+TX0653,scam,"I am Isha, an army officer being transferred, selling my bike for ₹50,000. Pay ₹15,000 advance to get it delivered.",en,false,train,synthetic
+TX0654,safe,"Rs 640 debited from A/c XX4341 on 20-Nov-26 at Flipkart. Avl Bal: Rs 59,513.00. If not done by you, call the number on the back of your card. —HDFC Bank",en,false,train,synthetic-service
+TX0655,safe,"OTP for your SBI net banking login is 324425. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0656,suspicious,Get a free demo class today! Limited seats for the coaching batch. Reserve yours: http://goo.su/xT9aL,en,false,train,synthetic
+TX0657,scam,"Dear customer, your HDFC Bank account will be blocked today as your KYC has expired. Update immediately: http://short.link/offer",en,false,train,synthetic
+TX0658,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0659,scam,"Part-time job offer: earn ₹1,00,000 per day by liking videos. Join our Telegram channel now: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0660,safe,Dude are we still on for football after work?,en,false,train,synthetic-chat
+TX0661,suspicious,Your credit limit has been increased. See your new limit: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0662,safe,"Aapke account mein Rs 350 aaye. Baaki balance Rs 60,557.00. —SBI",hinglish,true,train,synthetic-service
+TX0663,safe,Your OTP for login is 977855. Do not share it with anyone.,en,false,train,synthetic-service
+TX0664,scam,"Your Meesho order of ₹50,000 has been placed. If this wasn't you, call 9396994809 now to cancel it.",en,false,train,synthetic
+TX0665,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹9,800 GST to release it. http://is.gd/k92Lz",en,false,train,synthetic
+TX0666,scam,"Customs has held a gift sent by Sam from abroad. Pay ₹9,800 duty to receive it: http://t.ly/9fGh",en,false,train,synthetic
+TX0667,scam,"Your Axis Bank credit card reward points worth ₹1,00,000 expire today. Download the app to redeem: http://rb.gy/p4kz1.apk",en,false,train,synthetic
+TX0668,safe,Can you send me the slides from the meeting?,en,false,train,synthetic-chat
+TX0669,safe,can you send me the report from yesterday? please,en,false,train,synthetic-chat
+TX0670,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9305928318 and share your card details.,en,false,train,synthetic
+TX0671,scam,"Your courier is held at customs. Pay ₹4,500 clearance charges immediately to release the parcel: http://short.link/offer",en,false,train,synthetic
+TX0672,safe,assignment ka deadline kab hai yaar,hinglish,true,train,synthetic-chat
+TX0673,safe,Use OTP 892763 to verify your mobile number on BookMyShow. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0674,scam,We detected a login to your Bank of Baroda account from another city. Share the OTP to block the unauthorised user.,en,false,train,synthetic
+TX0675,safe,"Dear user, 801262 is your one time password for Myntra. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0676,scam,"Earn ₹1,00,000 every day just by rating products online. No investment needed. WhatsApp 9878895123 to join.",en,false,train,synthetic
+TX0677,safe,225393 is your OTP for logging in to Paytm. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0678,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://goo.su/xT9aL,en,false,train,synthetic
+TX0679,safe,Bhaiya: come home early today :),en,false,train,synthetic-chat
+TX0680,safe,Library notice: the book you reserved is available for pickup until Saturday.,en,false,train,synthetic-service
+TX0681,safe,"sorry i missed your call, was in a class. can we talk at 8 pm? see you",en,false,train,synthetic-chat
+TX0682,scam,"Sir mujhse galti se ₹4,500 aapke account mein chale gaye, please wapas bhej dijiye jaldi.",hinglish,true,train,synthetic
+TX0683,scam,Your FASTag is blocked. Recharge now via http://short.link/offer to avoid a penalty.,en,false,train,synthetic
+TX0684,safe,"Neha says the exam is on the 15th, did you start preparing? please",en,false,train,synthetic-chat
+TX0685,safe,"thanks for helping with the invoice, really appreciate it Isha 🙂",en,false,train,synthetic-chat
+TX0686,safe,"happy birthday Priya! hope you have an amazing day, party at 8 pm? 😂",en,false,train,synthetic-chat
+TX0687,suspicious,"Hi, I'm Meera from a recruitment agency. We have a work-from-home opportunity, interested? Message me.",en,false,train,synthetic
+TX0688,safe,Reminder: your appointment with Dr. Priya is on 21 Nov at 10:30. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0689,safe,"Sorry i missed your call, was in a class. can we talk this weekend? haha",en,false,train,synthetic-chat
+TX0690,safe,"I'll pay you back for the bill, it was ₹250, sending it tonight haha",en,false,train,synthetic-chat
+TX0691,suspicious,Offer! ₹250 ka cashback paane ke liye click karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0692,safe,"let's split the cab fare, it came to ₹500 so ₹2,000 each",en,false,train,synthetic-chat
+TX0693,safe,Aapka OTP 618719 hai. Ise kisi ke saath share na karein. —ICICI Bank,hinglish,true,train,synthetic-service
+TX0694,scam,"Income tax refund of ₹5,00,000 is pending. Verify your bank details here to receive it: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0695,safe,"Your OTP for the transaction of ₹450 at PhonePe is 178734. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0696,safe,Aapka OTP 638699 hai. Ise kisi ke saath share na karein. —PNB,hinglish,true,train,synthetic-service
+TX0697,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹4,500 GST to release it. http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0698,scam,"Your Flipkart order of ₹25,000 has been placed. If this wasn't you, call 9304472090 now to cancel it.",en,false,train,synthetic
+TX0699,safe,"Ananya says the exam is on Thursday, did you start preparing?",en,false,train,synthetic-chat
+TX0700,safe,You owe me ₹500 for groceries 😂 no rush,en,false,train,synthetic-chat
+TX0701,scam,Aapka SIM 2 ghante mein band ho jayega. Aadhaar verify karein: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX0702,scam,"Congratulations! You have won ₹1,00,000 in the Amazon lucky draw. Pay a processing fee of ₹1,999 to claim your prize: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0703,scam,"An FIR has been registered against you. Pay ₹15,000 immediately or you will be arrested within 2 hours.",en,false,train,synthetic
+TX0704,scam,VIP stock tips group: 300% returns assured in 10 days. Deposit ₹250 to join. Telegram: http://is.gd/k92Lz,en,false,train,synthetic
+TX0705,safe,"Aapke account se Rs 350 kata. Baaki balance Rs 14,216.00. —SBI",hinglish,true,train,synthetic-service
+TX0706,scam,Pay the pending traffic challan of ₹250 now at http://goo.su/xT9aL to avoid court proceedings.,en,false,train,synthetic
+TX0707,safe,Library notice: the book you reserved is available for pickup until Friday.,en,false,train,synthetic-service
+TX0708,safe,Library notice: the book you reserved is available for pickup until 21 Nov.,en,false,train,synthetic-service
+TX0709,safe,Your package from Paytm was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0710,suspicious,"Hi Dev, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0711,safe,"Do not share your OTP, PIN or password with anyone. Kotak Bank will never call to ask for them.",en,false,train,synthetic-service
+TX0712,suspicious,Your credit limit has been increased. See your new limit: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0713,scam,"Win ₹25,000 cash daily playing online rummy! Download the app http://is.gd/k92Lz.apk and deposit ₹9,800 to start.",en,false,train,synthetic
+TX0714,safe,did you watch the new episode last night? so good 🙂,en,false,train,synthetic-chat
+TX0715,scam,"Congratulations, you are shortlisted for a ₹50,000/month job. Pay a ₹4,500 registration fee to confirm your interview.",en,false,train,synthetic
+TX0716,safe,Can you send me the project file from last week? haha,en,false,train,synthetic-chat
+TX0717,scam,"Customs has held a gift sent by Neha from abroad. Pay ₹9,800 duty to receive it: http://goo.su/xT9aL",en,false,train,synthetic
+TX0718,safe,Aapka recharge ₹250 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0719,safe,"sorry i missed your call, was in a class. can we talk after work?",en,false,train,synthetic-chat
+TX0720,safe,Did you watch the new episode last night? so good please,en,false,train,synthetic-chat
+TX0721,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://t.ly/9fGh,en,false,train,synthetic
+TX0722,safe,Aapka Amazon order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0723,safe,Your Ola order is out for delivery and will arrive by 10:30. Track it in the app.,en,false,train,synthetic-service
+TX0724,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9427118682,hinglish,true,train,synthetic
+TX0725,safe,Your OTP for login is 836028. Do not share it with anyone.,en,false,train,synthetic-service
+TX0726,scam,"Your loan of ₹50,000 is approved! Pay ₹4,500 processing fee first to receive the amount today: http://goo.su/xT9aL",en,false,train,synthetic
+TX0727,safe,571689 is your Myntra security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0728,safe,Reminder: kal aapki EMI Rs 900 auto-debit hogi. Balance rakhein. —SBI,hinglish,true,train,synthetic-service
+TX0729,safe,"let's split the cab fare, it came to ₹2,000 so ₹450 each thanks!",en,false,train,synthetic-chat
+TX0730,safe,"Sorry i missed your call, was in a class. can we talk tonight?!!",en,false,train,synthetic-chat
+TX0731,suspicious,"Hello! I found your profile online. We are hiring part-time assistants, flexible hours. Reply YES for details.",en,false,train,synthetic
+TX0732,scam,"Our records show you overpaid your gas bill. Click http://t.ly/9fGh to claim a refund of ₹25,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0733,scam,Aapka ICICI Bank account band ho jayega. KYC abhi update karein: http://t.ly/9fGh,hinglish,true,train,synthetic
+TX0734,safe,kya plan hai weekend ka?,hinglish,true,train,synthetic-chat
+TX0735,scam,"Part-time job offer: earn ₹5,00,000 per day by liking videos. Join our Telegram channel now: http://t.ly/9fGh",en,false,train,synthetic
+TX0736,scam,"Dear Axis Bank user, your net banking has been locked. Login here to unlock: http://is.gd/k92Lz",en,false,train,synthetic
+TX0737,safe,Hey guys are we still on for football later today? 🙂,en,false,train,synthetic-chat
+TX0738,scam,"Our records show you overpaid your water bill. Click http://t.ly/9fGh to claim a refund of ₹1,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0739,safe,"Neha says the exam is on Monday, did you start preparing? see you",en,false,train,synthetic-chat
+TX0740,safe,"₹250 debited from A/c XX5354 on 22-Nov-26 at Swiggy. Avl Bal: Rs 82,219.00. If not done by you, call the number on the back of your card. —SBI",en,false,train,synthetic-service
+TX0741,scam,"Invest ₹15,000 in our AI trading bot and earn 20% daily returns. Withdraw anytime. Join now: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0742,safe,"Divya says the exam is on Monday, did you start preparing?!!",en,false,train,synthetic-chat
+TX0743,safe,Your flight to Delhi is on time. Check-in opens 21 Nov 7 pm. Have a great trip! —PhonePe,en,false,train,synthetic-service
+TX0744,scam,"Government subsidy: ₹50,000 is waiting in your account. Pay ₹4,500 GST to release it. http://goo.su/xT9aL",en,false,train,synthetic
+TX0745,safe,"submitted the lab manual, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX0746,safe,"i'll pay you back for momos, it was ₹500, sending it after work please",en,false,train,synthetic-chat
+TX0747,scam,"Win ₹25,000 cash daily playing online rummy! Download the app http://goo.su/xT9aL.apk and deposit ₹9,800 to start.",en,false,train,synthetic
+TX0748,suspicious,Unusual activity noticed on your account. Please review here: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0749,safe,"happy birthday Dev! hope you have an amazing day, party at 6? :)",en,false,train,synthetic-chat
+TX0750,safe,Use OTP 410257 to verify your mobile number on Swiggy. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0751,safe,"Happy birthday karan! hope you have an amazing day, party on sunday? 😂",en,false,train,synthetic-chat
+TX0752,safe,Your monthly statement for A/c XX4933 is ready. Log in to the official app to view it. —Axis Bank,en,false,train,synthetic-service
+TX0753,safe,Payment of ₹450 received for your electricity bill. Thank you. Receipt no. 779744.,en,false,train,synthetic-service
+TX0754,scam,Customs has held a gift sent by Amit from abroad. Pay ₹500 duty to receive it: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0755,suspicious,"Earn extra income from home, no experience needed. Details: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0756,scam,"Your loan of ₹1,00,000 is approved! Pay ₹9,800 processing fee first to receive the amount today: http://short.link/offer",en,false,train,synthetic
+TX0757,safe,"Happy birthday ananya! hope you have an amazing day, party tonight? haha",en,false,train,synthetic-chat
+TX0758,safe,"bhai kya haal hai, aaj match dekhega?",hinglish,true,train,synthetic-chat
+TX0759,safe,"OTP for your Canara Bank net banking login is 179828. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0760,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9122478618 immediately.,en,false,train,synthetic
+TX0761,safe,chal dinner pe chalte hain aaj,hinglish,true,train,synthetic-chat
+TX0762,safe,Heyy are we still on for the study session tomorrow morning? :),en,false,train,synthetic-chat
+TX0763,safe,"Aapke account mein ₹2,000 aaye. Baaki balance Rs 54,740.00. —Axis Bank",hinglish,true,train,synthetic-service
+TX0764,scam,Your courier is held at customs. Pay ₹500 clearance charges immediately to release the parcel: http://short.link/offer,en,false,train,synthetic
+TX0765,safe,can you send me the slides from last week? :),en,false,train,synthetic-chat
+TX0766,safe,Kal subah 10 baje aapka appointment hai. Confirm karne ke liye C bhejein.,hinglish,true,train,synthetic-service
+TX0767,safe,"Your OTP for the transaction of ₹250 at BookMyShow is 346219. Never share this OTP with anyone, including bank staff. —Canara Bank",en,false,train,synthetic-service
+TX0768,scam,"Your Amazon order of ₹50,000 has been placed. If this wasn't you, call 9699494013 now to cancel it.",en,false,train,synthetic
+TX0769,safe,Your OTP for card ending 2516 transaction of ₹80 at Uber is 162267. Do not share it. -Bank of Baroda,en,false,train,synthetic-service
+TX0770,safe,did you watch the new episode last night? i cried lol 😂,en,false,train,synthetic-chat
+TX0771,scam,"Arjun has sent you a collect request of ₹1,999. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX0772,safe,"I'll pay you back for pizza, it was ₹2,000, sending it this weekend please",en,false,train,synthetic-chat
+TX0773,safe,"Aapke account mein ₹1,200 aaye. Baaki balance Rs 38,123.00. —Axis Bank",hinglish,true,train,synthetic-service
+TX0774,safe,"i'm running late, stuck in traffic. will reach home by noon please",en,false,train,synthetic-chat
+TX0775,safe,Hey are we still on for the concert tomorrow? 🙂,en,false,train,synthetic-chat
+TX0776,scam,Aapka Canara Bank account band ho jayega. KYC abhi update karein: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX0777,safe,"Rohit says the exam is on Tuesday, did you start preparing?",en,false,train,synthetic-chat
+TX0778,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0779,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9020943476 immediately.,en,false,train,synthetic
+TX0780,suspicious,Book your insurance renewal now and save big. Click: http://goo.su/xT9aL,en,false,train,synthetic
+TX0781,safe,Your flight to Delhi is on time. Check-in opens Thursday 6:30 pm. Have a great trip! —Flipkart,en,false,train,synthetic-service
+TX0782,scam,"Hi, I accidentally sent ₹1,999 to your account. Please send it back to this number urgently.",en,false,train,synthetic
+TX0783,scam,"Your insurance policy bonus of ₹50,000 is ready. Share your Aadhaar and OTP to claim it today.",en,false,train,synthetic
+TX0784,safe,"Happy birthday tanvi! hope you have an amazing day, party on sunday?",en,false,train,synthetic-chat
+TX0785,safe,Your package from Flipkart was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0786,scam,You have won a free iPhone! Pay only ₹500 shipping to claim: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0787,safe,Aapka OTP 228194 hai. Ise kisi ke saath share na karein. —PNB,hinglish,true,train,synthetic-service
+TX0788,scam,"Congratulations, you are shortlisted for a ₹2,500/month job. Pay a ₹500 registration fee to confirm your interview.",en,false,train,synthetic
+TX0789,safe,"Riya says the exam is on Monday, did you start preparing? 🙂",en,false,train,synthetic-chat
+TX0790,safe,"I'm running late, stuck in traffic. will reach your place by noon see you",en,false,train,synthetic-chat
+TX0791,safe,Library notice: the book you reserved is available for pickup until 12 Dec.,en,false,train,synthetic-service
+TX0792,safe,"Nikhil says the exam is on Thursday, did you start preparing?",en,false,train,synthetic-chat
+TX0793,safe,"i'll pay you back for chai, it was ₹500, sending it after class",en,false,train,synthetic-chat
+TX0794,safe,Aapka Zomato order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX0795,safe,"Submitted the project file, please check and let me know if anything is missing!!",en,false,train,synthetic-chat
+TX0796,safe,Reminder: kal aapki EMI ₹450 auto-debit hogi. Balance rakhein. —PNB,hinglish,true,train,synthetic-service
+TX0797,safe,Use OTP 865039 to verify your mobile number on Zomato. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0798,safe,"Rs 640 debited from A/c XX5799 on 12-Nov-26 at Flipkart. Avl Bal: Rs 51,707.00. If not done by you, call the number on the back of your card. —PNB",en,false,train,synthetic-service
+TX0799,suspicious,You have been selected for a free survey. Complete it and get a ₹500 voucher: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0800,safe,"Aapke account mein ₹80 aaye. Baaki balance Rs 9,451.00. —Kotak Bank",hinglish,true,train,synthetic-service
+TX0801,safe,"sorry i missed your call, was in a class. can we talk tomorrow morning? see you",en,false,train,synthetic-chat
+TX0802,safe,Didi: take your medicine please,en,false,train,synthetic-chat
+TX0803,safe,"OTP for your Axis Bank net banking login is 622160. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX0804,safe,"₹450 debited from A/c XX4069 on 27-Nov-26 at Amazon. Avl Bal: Rs 66,954.00. If not done by you, call the number on the back of your card. —SBI",en,false,train,synthetic-service
+TX0805,safe,Payment of ₹450 received for your electricity bill. Thank you. Receipt no. 156154.,en,false,train,synthetic-service
+TX0806,safe,hey there are we still on for the concert on Sunday? :),en,false,train,synthetic-chat
+TX0807,scam,"Congratulations, you are shortlisted for a ₹25,000/month job. Pay a ₹250 registration fee to confirm your interview.",en,false,train,synthetic
+TX0808,scam,Your courier is held at customs. Pay ₹500 clearance charges immediately to release the parcel: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0809,scam,"Your HDFC Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://is.gd/k92Lz",en,false,train,synthetic
+TX0810,safe,Your OTP for login is 282018. Do not share it with anyone.,en,false,train,synthetic-service
+TX0811,suspicious,New message from an unknown contact. View it here: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0812,safe,Mom: come home early today 🙂,en,false,train,synthetic-chat
+TX0813,safe,"i'll pay you back for pizza, it was ₹250, sending it this weekend thanks!",en,false,train,synthetic-chat
+TX0814,safe,668897 is your Ola security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0815,safe,"The meeting has been moved to 6:30 pm, same room as before please",en,false,train,synthetic-chat
+TX0816,scam,"You have won a free iPhone! Pay only ₹1,999 shipping to claim: http://t.ly/9fGh",en,false,train,synthetic
+TX0817,safe,tu aa raha hai na party mein?,hinglish,true,train,synthetic-chat
+TX0818,scam,Customs has held a gift sent by Rahul from abroad. Pay ₹250 duty to receive it: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0819,safe,Your mobile recharge of ₹250 was successful. Validity 28 days. Thanks for choosing us.,en,false,train,synthetic-service
+TX0820,scam,Aapka PNB account band ho jayega. KYC abhi update karein: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX0821,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://goo.su/xT9aL,hinglish,true,train,synthetic
+TX0822,safe,"Your verification code is 776092. Don't share this code with anyone. If you didn't request it, ignore this message.",en,false,train,synthetic-service
+TX0823,safe,Aapka recharge Rs 120 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX0824,scam,"Customs has held a gift sent by Isha from abroad. Pay ₹4,500 duty to receive it: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0825,suspicious,"Hi Dev, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://goo.su/xT9aL",en,false,train,synthetic
+TX0826,safe,Chacha: don't forget your umbrella,en,false,train,synthetic-chat
+TX0827,safe,"you owe me ₹2,000 for chai 😂 no rush!!",en,false,train,synthetic-chat
+TX0828,scam,Your PAN card is blocked. Update it within 24 hours to avoid penalty: http://t.ly/9fGh,en,false,train,synthetic
+TX0829,safe,"i'm running late, stuck in traffic. will reach the mall by noon!!",en,false,train,synthetic-chat
+TX0830,safe,"submitted the slides, please check and let me know if anything is missing!!",en,false,train,synthetic-chat
+TX0831,scam,"Win ₹5,00,000 cash daily playing online rummy! Download the app http://goo.su/xT9aL.apk and deposit ₹9,800 to start.",en,false,train,synthetic
+TX0832,scam,"Dear customer, your HDFC Bank account will be blocked today as your KYC has expired. Update immediately: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0833,suspicious,Exclusive invite: join our trading community and learn how members earn daily. http://bit.ly/3xKd9,en,false,train,synthetic
+TX0834,scam,"Congratulations, you are shortlisted for a ₹50,000/month job. Pay a ₹9,800 registration fee to confirm your interview.",en,false,train,synthetic
+TX0835,safe,Dad: pick up the parcel from the neighbour haha,en,false,train,synthetic-chat
+TX0836,suspicious,Exclusive invite: join our trading community and learn how members earn daily. http://short.link/offer,en,false,train,synthetic
+TX0837,scam,"Invest ₹15,000 in our AI trading bot and earn 45% daily returns. Withdraw anytime. Join now: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0838,safe,"Aapke account se ₹2,000 kata. Baaki balance Rs 42,646.00. —ICICI Bank",hinglish,true,train,synthetic-service
+TX0839,safe,666227 is your OTP for logging in to Ola. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0840,scam,Customs has held a gift sent by Dev from abroad. Pay ₹250 duty to receive it: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0841,scam,"Income tax refund of ₹50,000 is pending. Verify your bank details here to receive it: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0842,safe,"thanks for helping with the syllabus, really appreciate it Rahul please",en,false,train,synthetic-chat
+TX0843,safe,Papa: bring milk on your way home see you,en,false,train,synthetic-chat
+TX0844,safe,"sorry i missed your call, was in a class. can we talk later today? 🙂",en,false,train,synthetic-chat
+TX0845,safe,Use OTP 626526 to verify your mobile number on Swiggy. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0846,scam,"Task complete karo aur roz ₹5,00,000 kamao. Pehle ₹1,999 registration fee jama karein.",hinglish,true,train,synthetic
+TX0847,safe,"thanks for helping with the lecture recording, really appreciate it Meera",en,false,train,synthetic-chat
+TX0848,safe,"i'm running late, stuck in traffic. will reach the office by 11 am see you",en,false,train,synthetic-chat
+TX0849,scam,"To complete the refund, install AnyDesk and share the 9-digit code with our executive.",en,false,train,synthetic
+TX0850,scam,"Invest ₹15,000 in our AI trading bot and earn 30% daily returns. Withdraw anytime. Join now: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0851,safe,can you send me the notes from yesterday? please,en,false,train,synthetic-chat
+TX0852,scam,"Click http://rb.gy/p4kz1 to track your parcel and pay a ₹4,500 redelivery fee.",en,false,train,synthetic
+TX0853,safe,188083 is your OTP for logging in to BookMyShow. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0854,safe,"Let's split the cab fare, it came to rs 640 so ₹500 each 😂",en,false,train,synthetic-chat
+TX0855,scam,"Our records show you overpaid your gas bill. Click http://t.ly/9fGh to claim a refund of ₹5,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0856,scam,"Hi, I accidentally sent ₹4,500 to your account. Please send it back to this number urgently.",en,false,train,synthetic
+TX0857,safe,"Sam says the exam is on Monday, did you start preparing?",en,false,train,synthetic-chat
+TX0858,safe,"Sorry i missed your call, was in a class. can we talk this weekend? please",en,false,train,synthetic-chat
+TX0859,scam,Divya has sent you a collect request of ₹500. Enter your UPI PIN to receive the money.,en,false,train,synthetic
+TX0860,scam,"Your Kotak Bank account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://short.link/offer",en,false,train,synthetic
+TX0861,safe,"The meeting has been moved to 4 pm, same room as before :)",en,false,train,synthetic-chat
+TX0862,scam,"Your Axis Bank credit card reward points worth ₹2,500 expire today. Download the app to redeem: http://rb.gy/p4kz1.apk",en,false,train,synthetic
+TX0863,scam,"Click http://t.ly/9fGh to track your parcel and pay a ₹15,000 redelivery fee.",en,false,train,synthetic
+TX0864,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX0865,suspicious,Get a free demo class today! Limited seats for the coaching batch. Reserve yours: http://t.ly/9fGh,en,false,train,synthetic
+TX0866,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://short.link/offer,en,false,train,synthetic
+TX0867,safe,"i'm running late, stuck in traffic. will reach the office by 10:30",en,false,train,synthetic-chat
+TX0868,scam,"Your Canara Bank credit card reward points worth ₹1,00,000 expire today. Download the app to redeem: http://t.ly/9fGh.apk",en,false,train,synthetic
+TX0869,safe,"happy birthday Aman! hope you have an amazing day, party later today? 🙂",en,false,train,synthetic-chat
+TX0870,scam,"Our records show you overpaid your broadband bill. Click http://short.link/offer to claim a refund of ₹50,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0871,suspicious,New message from an unknown contact. View it here: http://short.link/offer,en,false,train,synthetic
+TX0872,safe,Your Flipkart order is out for delivery and will arrive by noon. Track it in the app.,en,false,train,synthetic-service
+TX0873,safe,"Aapke account se ₹250 kata. Baaki balance Rs 11,963.00. —Axis Bank",hinglish,true,train,synthetic-service
+TX0874,suspicious,"Flash sale! 50% off on everything, today only. Shop now: http://short.link/offer",en,false,train,synthetic
+TX0875,scam,Your FASTag is blocked. Recharge now via http://rb.gy/p4kz1 to avoid a penalty.,en,false,train,synthetic
+TX0876,scam,We detected a login to your ICICI Bank account from another city. Share the OTP to block the unauthorised user.,en,false,train,synthetic
+TX0877,safe,"Rs 350 debited from A/c XX8136 on 2-Nov-26 at Uber. Avl Bal: Rs 37,086.00. If not done by you, call the number on the back of your card. —Axis Bank",en,false,train,synthetic-service
+TX0878,scam,"Your loan of ₹5,00,000 is approved! Pay ₹250 processing fee first to receive the amount today: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0879,scam,"Loan waiver! Your pending EMI of ₹5,00,000 has been waived. Share the OTP to confirm the waiver.",en,false,train,synthetic
+TX0880,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹9,800 GST to release it. http://goo.su/xT9aL",en,false,train,synthetic
+TX0881,scam,"Aapne ₹5,00,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹1,999 bhejein.",hinglish,true,train,synthetic
+TX0882,safe,Reminder: kal aapki EMI ₹80 auto-debit hogi. Balance rakhein. —SBI,hinglish,true,train,synthetic-service
+TX0883,suspicious,Unusual activity noticed on your account. Please review here: http://goo.su/xT9aL,en,false,train,synthetic
+TX0884,scam,"Win ₹2,500 cash daily playing online rummy! Download the app http://tinyurl.com/a8Rt2.apk and deposit ₹250 to start.",en,false,train,synthetic
+TX0885,scam,URGENT: Your HDFC Bank KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0886,safe,"₹250 credited to your A/c XX5912 on 18-Nov-26 by NEFT from Riya. Avl Bal: Rs 41,449.00. —Canara Bank",en,false,train,synthetic-service
+TX0887,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://bit.ly/3xKd9,hinglish,true,train,synthetic
+TX0888,safe,"Aapke account mein ₹500 aaye. Baaki balance Rs 68,120.00. —SBI",hinglish,true,train,synthetic-service
+TX0889,safe,626133 is your OTP for logging in to BookMyShow. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0890,safe,"the meeting has been moved to 9 am, same room as before please",en,false,train,synthetic-chat
+TX0891,safe,Your cab Dev is arriving in 3 minutes. Vehicle number MH12AB6466. Share OTP 601068 with the driver only at pickup.,en,false,train,synthetic-service
+TX0892,scam,"Click http://rb.gy/p4kz1 to track your parcel and pay a ₹1,999 redelivery fee.",en,false,train,synthetic
+TX0893,safe,Your train ticket is confirmed. PNR 331970. Departure Saturday noon from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX0894,suspicious,Offer! ₹500 ka cashback paane ke liye click karein: http://is.gd/k92Lz,hinglish,true,train,synthetic
+TX0895,scam,Apna OTP share karein warna aapka HDFC Bank card block ho jayega.,hinglish,true,train,synthetic
+TX0896,safe,can you send me the presentation from the meeting? lol,en,false,train,synthetic-chat
+TX0897,suspicious,"Hi, I'm Rahul from a recruitment agency. We have a work-from-home opportunity, interested? Message me.",en,false,train,synthetic
+TX0898,safe,Your OTP for card ending 4056 transaction of Rs 120 at Uber is 191714. Do not share it. -Bank of Baroda,en,false,train,synthetic-service
+TX0899,safe,"Dear user, 836752 is your one time password for Flipkart. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX0900,safe,Aapka OTP 824163 hai. Ise kisi ke saath share na karein. —SBI,hinglish,true,train,synthetic-service
+TX0901,scam,This is Google support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX0902,scam,"VIP stock tips group: 300% returns assured in 10 days. Deposit ₹9,800 to join. Telegram: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0903,suspicious,New message from an unknown contact. View it here: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX0904,safe,"i'm running late, stuck in traffic. will reach the station by 7 pm see you",en,false,train,synthetic-chat
+TX0905,safe,"I'll pay you back for pizza, it was ₹450, sending it this weekend thanks!",en,false,train,synthetic-chat
+TX0906,safe,Your OTP for card ending 3494 transaction of Rs 640 at Zomato is 426505. Do not share it. -HDFC Bank,en,false,train,synthetic-service
+TX0907,safe,"Use code 166566 to reset your Paytm password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX0908,scam,"Your loan of ₹25,000 is approved! Pay ₹15,000 processing fee first to receive the amount today: http://is.gd/k92Lz",en,false,train,synthetic
+TX0909,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9465135639,hinglish,true,train,synthetic
+TX0910,safe,"Aapke account se ₹250 kata. Baaki balance Rs 81,394.00. —Canara Bank",hinglish,true,train,synthetic-service
+TX0911,scam,"You have won a free iPhone! Pay only ₹15,000 shipping to claim: http://goo.su/xT9aL",en,false,train,synthetic
+TX0912,scam,URGENT: Your Axis Bank KYC is pending. Share the OTP you receive to avoid account suspension.,en,false,train,synthetic
+TX0913,safe,729829 is your Zomato security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX0914,scam,Click http://cutt.ly/Qw3dE to track your parcel and pay a ₹250 redelivery fee.,en,false,train,synthetic
+TX0915,scam,"Your loan of ₹50,000 is approved! Pay ₹1,999 processing fee first to receive the amount today: http://goo.su/xT9aL",en,false,train,synthetic
+TX0916,scam,"Your insurance policy bonus of ₹5,00,000 is ready. Share your Aadhaar and OTP to claim it today.",en,false,train,synthetic
+TX0917,safe,"let's split the cab fare, it came to ₹500 so Rs 900 each",en,false,train,synthetic-chat
+TX0918,safe,"Aman says the exam is on Monday, did you start preparing? see you",en,false,train,synthetic-chat
+TX0919,safe,can you send me the presentation from last week? lol,en,false,train,synthetic-chat
+TX0920,safe,"Use code 673030 to reset your Swiggy password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX0921,safe,Your mobile recharge of ₹450 was successful. Validity 28 days. Thanks for choosing us.,en,false,train,synthetic-service
+TX0922,safe,Your OTP for login is 530354. Do not share it with anyone.,en,false,train,synthetic-service
+TX0923,safe,Did you watch the match last night? totally worth it,en,false,train,synthetic-chat
+TX0924,safe,Aapka OTP 422342 hai. Ise kisi ke saath share na karein. —PNB,hinglish,true,train,synthetic-service
+TX0925,safe,"I'll pay you back for dinner, it was ₹2,000, sending it after work :)",en,false,train,synthetic-chat
+TX0926,scam,"Our records show you overpaid your water bill. Click http://short.link/offer to claim a refund of ₹2,500. Enter your card number and CVV.",en,false,train,synthetic
+TX0927,safe,did you watch the match last night? i cried lol lol,en,false,train,synthetic-chat
+TX0928,scam,"Earn ₹1,00,000 every day just by rating products online. No investment needed. WhatsApp 9696882804 to join.",en,false,train,synthetic
+TX0929,safe,Your monthly statement for A/c XX5176 is ready. Log in to the official app to view it. —HDFC Bank,en,false,train,synthetic-service
+TX0930,scam,"Dear PNB user, your net banking has been locked. Login here to unlock: http://goo.su/xT9aL",en,false,train,synthetic
+TX0931,safe,"I'm running late, stuck in traffic. will reach the office by 6:30 pm haha",en,false,train,synthetic-chat
+TX0932,safe,"Aapke account mein Rs 120 aaye. Baaki balance Rs 11,226.00. —HDFC Bank",hinglish,true,train,synthetic-service
+TX0933,scam,"Your SBI account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX0934,safe,"happy birthday Arjun! hope you have an amazing day, party later today? please",en,false,train,synthetic-chat
+TX0935,safe,Your OTP for card ending 5307 transaction of ₹80 at Amazon is 899691. Do not share it. -Canara Bank,en,false,train,synthetic-service
+TX0936,scam,"Dear Canara Bank user, your net banking has been locked. Login here to unlock: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX0937,scam,I am from the CBI. Your Aadhaar is linked to a money laundering case. Do not disconnect the call and transfer funds to a safe account.,en,false,train,synthetic
+TX0938,safe,Reminder: your appointment with Dr. Neha is on Friday at noon. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX0939,safe,"happy birthday Neha! hope you have an amazing day, party after work? :)",en,false,train,synthetic-chat
+TX0940,scam,"Loan approve ho gaya hai! Processing fee ₹500 pehle bhejein, paisa 10 minute mein aa jayega.",hinglish,true,train,synthetic
+TX0941,safe,"the meeting has been moved to 11 am, same room as before lol",en,false,train,synthetic-chat
+TX0942,scam,"Income tax refund ₹5,00,000 ka aaya hai. Card details daal kar claim karein: http://bit.ly/3xKd9",hinglish,true,train,synthetic
+TX0943,safe,"let's split the cab fare, it came to ₹80 so Rs 120 each",en,false,train,synthetic-chat
+TX0944,safe,"ghar pahunch gaya, tension mat lo",hinglish,true,train,synthetic-chat
+TX0945,scam,You have won a free iPhone! Pay only ₹250 shipping to claim: http://goo.su/xT9aL,en,false,train,synthetic
+TX0946,scam,"Congratulations, you are shortlisted for a ₹2,500/month job. Pay a ₹1,999 registration fee to confirm your interview.",en,false,train,synthetic
+TX0947,safe,Can you send me the lab manual from last week?,en,false,train,synthetic-chat
+TX0948,safe,442622 is your OTP for logging in to Swiggy. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0949,safe,"you owe me ₹1,200 for snacks 😂 no rush 🙂",en,false,train,synthetic-chat
+TX0950,scam,"Hi, I accidentally sent ₹15,000 to your account. Please send it back to this number urgently.",en,false,train,synthetic
+TX0951,safe,Chacha: bring milk on your way home :),en,false,train,synthetic-chat
+TX0952,safe,"Aapke account mein Rs 640 aaye. Baaki balance Rs 47,624.00. —SBI",hinglish,true,train,synthetic-service
+TX0953,scam,"Your Google order of ₹2,500 has been placed. If this wasn't you, call 9484231135 now to cancel it.",en,false,train,synthetic
+TX0954,scam,Your child has met with an accident. Transfer ₹250 to this account immediately for treatment.,en,false,train,synthetic
+TX0955,safe,566692 is your OTP for logging in to BookMyShow. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX0956,scam,Aapka Kotak Bank account band ho jayega. KYC abhi update karein: http://goo.su/xT9aL,hinglish,true,train,synthetic
+TX0957,safe,"Aapke account se ₹500 kata. Baaki balance Rs 27,994.00. —Canara Bank",hinglish,true,train,synthetic-service
+TX0958,safe,"maine tera order le liya hai, aa ke le ja",hinglish,true,train,synthetic-chat
+TX0959,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://short.link/offer,en,false,train,synthetic
+TX0960,scam,Your WhatsApp will be banned today. Share the 6-digit code you received to verify your account.,en,false,train,synthetic
+TX0961,scam,"Hi, I accidentally sent ₹500 to your account. Please send it back to this number urgently.",en,false,train,synthetic
+TX0962,scam,"Earn ₹50,000 every day just by rating products online. No investment needed. WhatsApp 9338094792 to join.",en,false,train,synthetic
+TX0963,safe,Can you send me the draft from last week? lol,en,false,train,synthetic-chat
+TX0964,scam,"Customs has held a gift sent by Karan from abroad. Pay ₹9,800 duty to receive it: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0965,safe,"Your OTP for the transaction of ₹1,200 at PhonePe is 930369. Never share this OTP with anyone, including bank staff. —HDFC Bank",en,false,train,synthetic-service
+TX0966,scam,"Our records show you overpaid your gas bill. Click http://cutt.ly/Qw3dE to claim a refund of ₹1,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX0967,safe,Your package from Myntra was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX0968,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9489857361 and share your card details.,en,false,train,synthetic
+TX0969,scam,"Dear customer, your Kotak Bank account will be blocked today as your KYC has expired. Update immediately: http://t.ly/9fGh",en,false,train,synthetic
+TX0970,scam,"Your Meesho order of ₹2,500 has been placed. If this wasn't you, call 9181624682 now to cancel it.",en,false,train,synthetic
+TX0971,safe,"Let's split the cab fare, it came to rs 350 so ₹1,200 each :)",en,false,train,synthetic-chat
+TX0972,safe,"Use code 351007 to reset your Swiggy password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX0973,safe,"Your OTP for the transaction of ₹450 at Myntra is 543790. Never share this OTP with anyone, including bank staff. —ICICI Bank",en,false,train,synthetic-service
+TX0974,scam,"Your Bank of Baroda credit card reward points worth ₹2,500 expire today. Download the app to redeem: http://goo.su/xT9aL.apk",en,false,train,synthetic
+TX0975,suspicious,Unusual activity noticed on your account. Please review here: http://rb.gy/p4kz1,en,false,train,synthetic
+TX0976,scam,"Your SBI account has been temporarily limited. To restore access, confirm your PAN and net banking password at http://goo.su/xT9aL",en,false,train,synthetic
+TX0977,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹250 GST to release it. http://goo.su/xT9aL",en,false,train,synthetic
+TX0978,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://is.gd/k92Lz,en,false,train,synthetic
+TX0979,scam,"Aapne ₹25,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹500 bhejein.",hinglish,true,train,synthetic
+TX0980,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX0981,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX0982,safe,"Pooja says the exam is on Tuesday, did you start preparing?!!",en,false,train,synthetic-chat
+TX0983,scam,"Your courier is held at customs. Pay ₹1,999 clearance charges immediately to release the parcel: http://t.ly/9fGh",en,false,train,synthetic
+TX0984,scam,Pay the pending traffic challan of ₹500 now at http://rb.gy/p4kz1 to avoid court proceedings.,en,false,train,synthetic
+TX0985,safe,Use OTP 379015 to verify your mobile number on Uber. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX0986,safe,"I'm running late, stuck in traffic. will reach your place by 4 pm",en,false,train,synthetic-chat
+TX0987,scam,"Earn ₹1,00,000 every day just by rating products online. No investment needed. WhatsApp 9469178861 to join.",en,false,train,synthetic
+TX0988,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://t.ly/9fGh,hinglish,true,train,synthetic
+TX0989,safe,Did you watch the new episode last night? so good lol,en,false,train,synthetic-chat
+TX0990,safe,Your OTP for login is 943563. Do not share it with anyone.,en,false,train,synthetic-service
+TX0991,safe,Mummy: take your medicine lol,en,false,train,synthetic-chat
+TX0992,safe,"Aapke account se ₹450 kata. Baaki balance Rs 2,185.00. —SBI",hinglish,true,train,synthetic-service
+TX0993,scam,"Your courier is held at customs. Pay ₹1,999 clearance charges immediately to release the parcel: http://rb.gy/p4kz1",en,false,train,synthetic
+TX0994,safe,Your mobile recharge of Rs 900 was successful. Validity 28 days. Thanks for choosing us.,en,false,train,synthetic-service
+TX0995,scam,"Task complete karo aur roz ₹50,000 kamao. Pehle ₹250 registration fee jama karein.",hinglish,true,train,synthetic
+TX0996,safe,"let's split the cab fare, it came to ₹450 so ₹250 each",en,false,train,synthetic-chat
+TX0997,scam,Apna OTP share karein warna aapka SBI card block ho jayega.,hinglish,true,train,synthetic
+TX0998,scam,"Your loan of ₹1,00,000 is approved! Pay ₹9,800 processing fee first to receive the amount today: http://bit.ly/3xKd9",en,false,train,synthetic
+TX0999,scam,"Income tax refund ₹5,00,000 ka aaya hai. Card details daal kar claim karein: http://is.gd/k92Lz",hinglish,true,train,synthetic
+TX1000,scam,Your courier is held at customs. Pay ₹250 clearance charges immediately to release the parcel: http://goo.su/xT9aL,en,false,train,synthetic
+TX1001,scam,"Your loan of ₹5,00,000 is approved! Pay ₹15,000 processing fee first to receive the amount today: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1002,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9429816305 immediately.,en,false,train,synthetic
+TX1003,safe,Your train ticket is confirmed. PNR 457732. Departure Monday noon from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX1004,safe,"Happy birthday meera! hope you have an amazing day, party in the evening? please",en,false,train,synthetic-chat
+TX1005,safe,"Submitted the draft, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX1006,safe,"paise kal wapas kar dunga, abhi thoda tight hai",hinglish,true,train,synthetic-chat
+TX1007,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://goo.su/xT9aL,en,false,train,synthetic
+TX1008,safe,Can you send me the report from yesterday?,en,false,train,synthetic-chat
+TX1009,suspicious,Get a free demo class today! Limited seats for the coaching batch. Reserve yours: http://rb.gy/p4kz1,en,false,train,synthetic
+TX1010,scam,You have won a free iPhone! Pay only ₹500 shipping to claim: http://goo.su/xT9aL,en,false,train,synthetic
+TX1011,scam,"Hello, I'm Rohit from Meesho HR. You are selected for a work-from-home role paying ₹1,00,000 weekly. To begin, pay a refundable deposit of ₹4,500.",en,false,train,synthetic
+TX1012,safe,Reminder: your appointment with Dr. Tanvi is on Monday at 9 am. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX1013,scam,"Earn ₹25,000 every day just by rating products online. No investment needed. WhatsApp 9460646537 to join.",en,false,train,synthetic
+TX1014,scam,Your Canara Bank debit card has been deactivated. Call 9247777030 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX1015,scam,"Your loan of ₹25,000 is approved! Pay ₹4,500 processing fee first to receive the amount today: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1016,scam,"Congratulations! You have won ₹1,00,000 in the Jio lucky draw. Pay a processing fee of ₹15,000 to claim your prize: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1017,safe,Bhaiya: pick up the parcel from the neighbour lol,en,false,train,synthetic-chat
+TX1018,safe,can you send me the assignment from last week?,en,false,train,synthetic-chat
+TX1019,scam,"Dear customer, your Axis Bank account will be blocked today as your KYC has expired. Update immediately: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX1020,safe,notes bhej dena please,hinglish,true,train,synthetic-chat
+TX1021,safe,"Your verification code is 846755. Don't share this code with anyone. If you didn't request it, ignore this message.",en,false,train,synthetic-service
+TX1022,scam,"Click http://short.link/offer to track your parcel and pay a ₹1,999 redelivery fee.",en,false,train,synthetic
+TX1023,safe,"submitted the presentation, please check and let me know if anything is missing see you",en,false,train,synthetic-chat
+TX1024,safe,"Submitted the report, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX1025,scam,"Your Google order of ₹50,000 has been placed. If this wasn't you, call 9145588835 now to cancel it.",en,false,train,synthetic
+TX1026,suspicious,"Offer! ₹1,000 ka cashback paane ke liye click karein: http://goo.su/xT9aL",hinglish,true,train,synthetic
+TX1027,safe,"I'll pay you back for movie tickets, it was rs 640, sending it at 8 pm please",en,false,train,synthetic-chat
+TX1028,scam,Customs has held a gift sent by Pooja from abroad. Pay ₹250 duty to receive it: http://goo.su/xT9aL,en,false,train,synthetic
+TX1029,scam,"Congratulations, you are shortlisted for a ₹1,00,000/month job. Pay a ₹15,000 registration fee to confirm your interview.",en,false,train,synthetic
+TX1030,suspicious,Aapka parcel deliver nahi ho paya. Dobara schedule karein: http://bit.ly/3xKd9,hinglish,true,train,synthetic
+TX1031,safe,did you watch the new episode last night? it was insane,en,false,train,synthetic-chat
+TX1032,scam,"Earn ₹25,000 every day just by rating products online. No investment needed. WhatsApp 9438646520 to join.",en,false,train,synthetic
+TX1033,safe,"₹250 credited to your A/c XX5297 on 23-Nov-26 by NEFT from Ananya. Avl Bal: Rs 57,358.00. —SBI",en,false,train,synthetic-service
+TX1034,scam,This is Amazon support. Your device is infected with a virus. Install TeamViewer so we can fix it right away.,en,false,train,synthetic
+TX1035,safe,"Submitted the notes, please check and let me know if anything is missing thanks!",en,false,train,synthetic-chat
+TX1036,safe,"Use code 827360 to reset your Myntra password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX1037,safe,"Sneha says the exam is on the 15th, did you start preparing? thanks!",en,false,train,synthetic-chat
+TX1038,safe,Can you send me the presentation from yesterday? 🙂,en,false,train,synthetic-chat
+TX1039,scam,"Divya has sent you a collect request of ₹1,999. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX1040,safe,Your monthly statement for A/c XX5944 is ready. Log in to the official app to view it. —PNB,en,false,train,synthetic-service
+TX1041,safe,"Aapke account se ₹80 kata. Baaki balance Rs 64,036.00. —Kotak Bank",hinglish,true,train,synthetic-service
+TX1042,safe,"Your OTP for the transaction of ₹450 at Zomato is 484020. Never share this OTP with anyone, including bank staff. —Axis Bank",en,false,train,synthetic-service
+TX1043,safe,kal class hai ya chhutti?,hinglish,true,train,synthetic-chat
+TX1044,safe,Can you send me the notes from last week?,en,false,train,synthetic-chat
+TX1045,safe,you owe me Rs 350 for snacks 😂 no rush :),en,false,train,synthetic-chat
+TX1046,safe,"thanks for helping with the résumé, really appreciate it Rahul 🙂",en,false,train,synthetic-chat
+TX1047,scam,"Congratulations, you are shortlisted for a ₹1,00,000/month job. Pay a ₹1,999 registration fee to confirm your interview.",en,false,train,synthetic
+TX1048,scam,"Congratulations! You have won ₹1,00,000 in the Jio lucky draw. Pay a processing fee of ₹500 to claim your prize: http://goo.su/xT9aL",en,false,train,synthetic
+TX1049,scam,"Loan approve ho gaya hai! Processing fee ₹9,800 pehle bhejein, paisa 10 minute mein aa jayega.",hinglish,true,train,synthetic
+TX1050,safe,"Karan says the exam is on Thursday, did you start preparing? 😂",en,false,train,synthetic-chat
+TX1051,suspicious,"Hi, I'm Ananya from a recruitment agency. We have a work-from-home opportunity, interested? Message me.",en,false,train,synthetic
+TX1052,suspicious,Your parcel could not be delivered. Reschedule here: http://bit.ly/3xKd9,en,false,train,synthetic
+TX1053,safe,"i'm running late, stuck in traffic. will reach home by 7 pm!!",en,false,train,synthetic-chat
+TX1054,safe,Your monthly statement for A/c XX6992 is ready. Log in to the official app to view it. —ICICI Bank,en,false,train,synthetic-service
+TX1055,scam,"Pay the pending traffic challan of ₹9,800 now at http://t.ly/9fGh to avoid court proceedings.",en,false,train,synthetic
+TX1056,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX1057,suspicious,"Hi Meera, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX1058,safe,Aapka recharge Rs 350 ka safal raha. Validity 28 din. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX1059,safe,Library notice: the book you reserved is available for pickup until Tuesday.,en,false,train,synthetic-service
+TX1060,scam,"Part-time job offer: earn ₹50,000 per day by liking videos. Join our Telegram channel now: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1061,scam,Your Axis Bank debit card has been deactivated. Call 9287196432 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX1062,safe,"Happy birthday karan! hope you have an amazing day, party tomorrow? haha",en,false,train,synthetic-chat
+TX1063,safe,"Do not share your OTP, PIN or password with anyone. Axis Bank will never call to ask for them.",en,false,train,synthetic-service
+TX1064,safe,"Aapki bijli ka bill ₹1,200 jama ho gaya hai. Dhanyavaad.",hinglish,true,train,synthetic-service
+TX1065,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://short.link/offer,en,false,train,synthetic
+TX1066,safe,can you send me the presentation from the lecture? thanks!,en,false,train,synthetic-chat
+TX1067,scam,"Part-time job offer: earn ₹2,500 per day by liking videos. Join our Telegram channel now: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1068,safe,"OTP for your Kotak Bank net banking login is 194144. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1069,scam,"Congratulations, you are shortlisted for a ₹5,00,000/month job. Pay a ₹1,999 registration fee to confirm your interview.",en,false,train,synthetic
+TX1070,safe,"The meeting has been moved to 4 pm, same room as before see you",en,false,train,synthetic-chat
+TX1071,suspicious,Offer! ₹500 ka cashback paane ke liye click karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX1072,safe,"Thanks for helping with the invoice, really appreciate it amit 😂",en,false,train,synthetic-chat
+TX1073,safe,"thanks for helping with the invoice, really appreciate it Amit!!",en,false,train,synthetic-chat
+TX1074,safe,Chacha: call me when you reach 🙂,en,false,train,synthetic-chat
+TX1075,safe,"Aapke account se ₹1,200 kata. Baaki balance Rs 40,246.00. —ICICI Bank",hinglish,true,train,synthetic-service
+TX1076,scam,Aapka Axis Bank account band ho jayega. KYC abhi update karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX1077,scam,Your FASTag is blocked. Recharge now via http://is.gd/k92Lz to avoid a penalty.,en,false,train,synthetic
+TX1078,safe,Reminder: kal aapki EMI Rs 350 auto-debit hogi. Balance rakhein. —PNB,hinglish,true,train,synthetic-service
+TX1079,scam,Apna OTP share karein warna aapka Kotak Bank card block ho jayega.,hinglish,true,train,synthetic
+TX1080,scam,"Your HDFC Bank credit card reward points worth ₹25,000 expire today. Download the app to redeem: http://is.gd/k92Lz.apk",en,false,train,synthetic
+TX1081,scam,Your ICICI Bank debit card has been deactivated. Call 9156923298 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX1082,scam,VIP stock tips group: 300% returns assured in 10 days. Deposit ₹250 to join. Telegram: http://goo.su/xT9aL,en,false,train,synthetic
+TX1083,scam,"Your loan of ₹1,00,000 is approved! Pay ₹9,800 processing fee first to receive the amount today: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1084,safe,"the meeting has been moved to 9 am, same room as before!!",en,false,train,synthetic-chat
+TX1085,safe,"Your OTP for the transaction of ₹80 at Myntra is 862572. Never share this OTP with anyone, including bank staff. —Canara Bank",en,false,train,synthetic-service
+TX1086,scam,"Your insurance policy bonus of ₹1,00,000 is ready. Share your Aadhaar and OTP to claim it today.",en,false,train,synthetic
+TX1087,scam,"Congratulations! You have won ₹25,000 in the KBC lucky draw. Pay a processing fee of ₹250 to claim your prize: http://is.gd/k92Lz",en,false,train,synthetic
+TX1088,safe,"let's split the cab fare, it came to ₹2,000 so ₹80 each thanks!",en,false,train,synthetic-chat
+TX1089,scam,"Your child has met with an accident. Transfer ₹4,500 to this account immediately for treatment.",en,false,train,synthetic
+TX1090,safe,"happy birthday Aman! hope you have an amazing day, party this weekend? see you",en,false,train,synthetic-chat
+TX1091,scam,"Hi, I accidentally sent ₹9,800 to your account. Please send it back to this number urgently.",en,false,train,synthetic
+TX1092,safe,"₹80 credited to your A/c XX4299 on 26-Nov-26 by NEFT from Rahul. Avl Bal: Rs 82,727.00. —Axis Bank",en,false,train,synthetic-service
+TX1093,safe,Aapka OTP 889227 hai. Ise kisi ke saath share na karein. —Axis Bank,hinglish,true,train,synthetic-service
+TX1094,safe,"I'll pay you back for chai, it was ₹500, sending it at 6 :)",en,false,train,synthetic-chat
+TX1095,safe,"Rs 640 credited to your A/c XX9685 on 24-Nov-26 by NEFT from Neha. Avl Bal: Rs 12,590.00. —PNB",en,false,train,synthetic-service
+TX1096,safe,Aapki bijli ka bill ₹500 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX1097,scam,"Loan waiver! Your pending EMI of ₹25,000 has been waived. Share the OTP to confirm the waiver.",en,false,train,synthetic
+TX1098,scam,"This is Mumbai Police. A parcel in your name contains illegal items. You are under digital arrest. Stay on this video call and do not tell anyone. Transfer ₹9,800 for verification.",en,false,train,synthetic
+TX1099,safe,599376 is your OTP for logging in to PhonePe. It is valid for 10 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1100,safe,"i'm running late, stuck in traffic. will reach the cafe by noon",en,false,train,synthetic-chat
+TX1101,suspicious,Your credit limit has been increased. See your new limit: http://t.ly/9fGh,en,false,train,synthetic
+TX1102,safe,337304 is the OTP for your BookMyShow login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1103,safe,"happy birthday Karan! hope you have an amazing day, party after class? lol",en,false,train,synthetic-chat
+TX1104,scam,"Income tax refund of ₹50,000 is pending. Verify your bank details here to receive it: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1105,safe,"I'm running late, stuck in traffic. will reach the mall by 9 am!!",en,false,train,synthetic-chat
+TX1106,safe,"Aapke account se ₹450 kata. Baaki balance Rs 24,241.00. —ICICI Bank",hinglish,true,train,synthetic-service
+TX1107,safe,Reminder: kal aapki EMI ₹250 auto-debit hogi. Balance rakhein. —HDFC Bank,hinglish,true,train,synthetic-service
+TX1108,scam,"Invest ₹1,999 in our AI trading bot and earn 15% daily returns. Withdraw anytime. Join now: http://short.link/offer",en,false,train,synthetic
+TX1109,safe,Use OTP 607537 to verify your mobile number on BookMyShow. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX1110,suspicious,Aapke liye special loan offer! Turant apply karein: http://cutt.ly/Qw3dE,hinglish,true,train,synthetic
+TX1111,scam,"Loan waiver! Your pending EMI of ₹50,000 has been waived. Share the OTP to confirm the waiver.",en,false,train,synthetic
+TX1112,suspicious,Congrats! You qualify for a free gift card. Tap to see if you won: http://rb.gy/p4kz1,en,false,train,synthetic
+TX1113,suspicious,"Hi, I'm Tanvi from a recruitment agency. We have a work-from-home opportunity, interested? Message me.",en,false,train,synthetic
+TX1114,safe,Aapki bijli ka bill ₹250 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX1115,safe,Nani: call me when you reach see you,en,false,train,synthetic-chat
+TX1116,scam,"Your SBI credit card reward points worth ₹25,000 expire today. Download the app to redeem: http://rb.gy/p4kz1.apk",en,false,train,synthetic
+TX1117,safe,178227 is the OTP for your PhonePe login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1118,safe,Your train ticket is confirmed. PNR 515712. Departure Friday 9 am from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX1119,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://rb.gy/p4kz1,en,false,train,synthetic
+TX1120,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9654066558,hinglish,true,train,synthetic
+TX1121,scam,Aapka SIM 2 ghante mein band ho jayega. Aadhaar verify karein: http://goo.su/xT9aL,hinglish,true,train,synthetic
+TX1122,safe,Library notice: the book you reserved is available for pickup until Monday.,en,false,train,synthetic-service
+TX1123,scam,"Part time job: ghar baithe ₹25,000 roz kamayein. Telegram join karein: http://bit.ly/3xKd9",hinglish,true,train,synthetic
+TX1124,safe,Your flight to Delhi is on time. Check-in opens Saturday 4 pm. Have a great trip! —Ola,en,false,train,synthetic-service
+TX1125,safe,Your train ticket is confirmed. PNR 625080. Departure Thursday noon from platform 3. Carry a valid ID. —IRCTC,en,false,train,synthetic-service
+TX1126,scam,"Congratulations, you are shortlisted for a ₹1,00,000/month job. Pay a ₹9,800 registration fee to confirm your interview.",en,false,train,synthetic
+TX1127,scam,"Part-time job offer: earn ₹50,000 per day by liking videos. Join our Telegram channel now: http://short.link/offer",en,false,train,synthetic
+TX1128,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9482025903 and share your card details.,en,false,train,synthetic
+TX1129,suspicious,Aapke liye special loan offer! Turant apply karein: http://bit.ly/3xKd9,hinglish,true,train,synthetic
+TX1130,scam,"Dear customer, your Kotak Bank account will be blocked today as your KYC has expired. Update immediately: http://goo.su/xT9aL",en,false,train,synthetic
+TX1131,scam,Click http://tinyurl.com/a8Rt2 to track your parcel and pay a ₹500 redelivery fee.,en,false,train,synthetic
+TX1132,scam,"Your PNB credit card reward points worth ₹2,500 expire today. Download the app to redeem: http://t.ly/9fGh.apk",en,false,train,synthetic
+TX1133,scam,"Income tax refund of ₹5,00,000 is pending. Verify your bank details here to receive it: http://goo.su/xT9aL",en,false,train,synthetic
+TX1134,safe,"OTP for your Axis Bank net banking login is 311421. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1135,suspicious,Your credit limit has been increased. See your new limit: http://short.link/offer,en,false,train,synthetic
+TX1136,safe,Your Paytm order is out for delivery and will arrive by 7 pm. Track it in the app.,en,false,train,synthetic-service
+TX1137,safe,exam ki taiyari kaisi chal rahi hai,hinglish,true,train,synthetic-chat
+TX1138,scam,"Your Meesho order of ₹1,00,000 has been placed. If this wasn't you, call 9858105444 now to cancel it.",en,false,train,synthetic
+TX1139,safe,Your Ola order is out for delivery and will arrive by 3:15. Track it in the app.,en,false,train,synthetic-service
+TX1140,safe,You owe me rs 350 for pizza 😂 no rush lol,en,false,train,synthetic-chat
+TX1141,scam,"Income tax refund of ₹2,500 is pending. Verify your bank details here to receive it: http://is.gd/k92Lz",en,false,train,synthetic
+TX1142,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://tinyurl.com/a8Rt2,en,false,train,synthetic
+TX1143,safe,Your Zomato order is out for delivery and will arrive by 3:15. Track it in the app.,en,false,train,synthetic-service
+TX1144,scam,Your account will be closed in 24 hours for non-compliance. Contact our officer on 9609206569 and share your card details.,en,false,train,synthetic
+TX1145,safe,"I'll pay you back for groceries, it was ₹250, sending it this weekend 😂",en,false,train,synthetic-chat
+TX1146,safe,Your OTP for card ending 9927 transaction of ₹500 at Amazon is 840159. Do not share it. -Kotak Bank,en,false,train,synthetic-service
+TX1147,scam,"Your Flipkart order of ₹5,00,000 has been placed. If this wasn't you, call 9244668670 now to cancel it.",en,false,train,synthetic
+TX1148,scam,"Our records show you overpaid your mobile bill. Click http://tinyurl.com/a8Rt2 to claim a refund of ₹50,000. Enter your card number and CVV.",en,false,train,synthetic
+TX1149,safe,"sorry i missed your call, was in a class. can we talk next week? see you",en,false,train,synthetic-chat
+TX1150,scam,"Your courier is held at customs. Pay ₹15,000 clearance charges immediately to release the parcel: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1151,suspicious,Book your insurance renewal now and save big. Click: http://is.gd/k92Lz,en,false,train,synthetic
+TX1152,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://bit.ly/3xKd9,en,false,train,synthetic
+TX1153,scam,Your Canara Bank debit card has been deactivated. Call 9176644647 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX1154,safe,"I'm running late, stuck in traffic. will reach the airport by 5:45!!",en,false,train,synthetic-chat
+TX1155,safe,409858 is your Swiggy security code. Keep it confidential. Our team will never ask you for it.,en,false,train,synthetic-service
+TX1156,scam,"Task complete karo aur roz ₹25,000 kamao. Pehle ₹4,500 registration fee jama karein.",hinglish,true,train,synthetic
+TX1157,safe,Library notice: the book you reserved is available for pickup until 3 Jan.,en,false,train,synthetic-service
+TX1158,safe,"Do not share your OTP, PIN or password with anyone. PNB will never call to ask for them.",en,false,train,synthetic-service
+TX1159,scam,"Congratulations! You have won ₹1,00,000 in the Flipkart lucky draw. Pay a processing fee of ₹9,800 to claim your prize: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX1160,safe,"Tanvi says the exam is on the 15th, did you start preparing? lol",en,false,train,synthetic-chat
+TX1161,suspicious,"Flash sale! 60% off on everything, today only. Shop now: http://is.gd/k92Lz",en,false,train,synthetic
+TX1162,scam,Apna OTP share karein warna aapka ICICI Bank card block ho jayega.,hinglish,true,train,synthetic
+TX1163,scam,We detected a login to your HDFC Bank account from another city. Share the OTP to block the unauthorised user.,en,false,train,synthetic
+TX1164,safe,can you send me the notes from yesterday? thanks!,en,false,train,synthetic-chat
+TX1165,safe,Your BookMyShow order is out for delivery and will arrive by 4 pm. Track it in the app.,en,false,train,synthetic-service
+TX1166,scam,"Government subsidy: ₹5,00,000 is waiting in your account. Pay ₹4,500 GST to release it. http://goo.su/xT9aL",en,false,train,synthetic
+TX1167,safe,"The meeting has been moved to 7 pm, same room as before lol",en,false,train,synthetic-chat
+TX1168,scam,"Congratulations, you are shortlisted for a ₹25,000/month job. Pay a ₹15,000 registration fee to confirm your interview.",en,false,train,synthetic
+TX1169,safe,hii are we still on for the concert on Friday?,en,false,train,synthetic-chat
+TX1170,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9009371783 immediately.,en,false,train,synthetic
+TX1171,suspicious,"Hi Tanvi, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1172,suspicious,"Hi Neha, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1173,safe,Reminder: kal aapki EMI Rs 120 auto-debit hogi. Balance rakhein. —Kotak Bank,hinglish,true,train,synthetic-service
+TX1174,safe,you owe me Rs 120 for the bill 😂 no rush,en,false,train,synthetic-chat
+TX1175,safe,Use OTP 116195 to verify your mobile number on Ola. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX1176,safe,"sorry i missed your call, was in a class. can we talk next week? please",en,false,train,synthetic-chat
+TX1177,safe,"Divya says the exam is on Tuesday, did you start preparing? 🙂",en,false,train,synthetic-chat
+TX1178,scam,"Congratulations! You have won ₹2,500 in the Jio lucky draw. Pay a processing fee of ₹9,800 to claim your prize: http://short.link/offer",en,false,train,synthetic
+TX1179,safe,Your OTP for card ending 6613 transaction of ₹80 at Swiggy is 670396. Do not share it. -Axis Bank,en,false,train,synthetic-service
+TX1180,scam,"Ananya has sent you a collect request of ₹4,500. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX1181,scam,"Click http://bit.ly/3xKd9 to track your parcel and pay a ₹9,800 redelivery fee.",en,false,train,synthetic
+TX1182,scam,Aapka Bank of Baroda account band ho jayega. KYC abhi update karein: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX1183,suspicious,Pre-approved offer just for you! Get a personal loan in minutes. Apply: http://short.link/offer,en,false,train,synthetic
+TX1184,scam,"Task complete karo aur roz ₹50,000 kamao. Pehle ₹4,500 registration fee jama karein.",hinglish,true,train,synthetic
+TX1185,safe,"Happy birthday divya! hope you have an amazing day, party next week? see you",en,false,train,synthetic-chat
+TX1186,safe,Your OTP for login is 930041. Do not share it with anyone.,en,false,train,synthetic-service
+TX1187,safe,Use OTP 524351 to verify your mobile number on Zomato. Never share this OTP with anyone.,en,false,train,synthetic-service
+TX1188,safe,Aapki bijli ka bill Rs 900 jama ho gaya hai. Dhanyavaad.,hinglish,true,train,synthetic-service
+TX1189,safe,heyy are we still on for the concert after class? 🙂,en,false,train,synthetic-chat
+TX1190,suspicious,Exclusive invite: join our trading community and learn how members earn daily. http://rb.gy/p4kz1,en,false,train,synthetic
+TX1191,safe,"Do not share your OTP, PIN or password with anyone. SBI will never call to ask for them.",en,false,train,synthetic-service
+TX1192,scam,Your PNB debit card has been deactivated. Call 9022228670 now and give the OTP to our executive to reactivate it.,en,false,train,synthetic
+TX1193,safe,Your BookMyShow order is out for delivery and will arrive by 10:30. Track it in the app.,en,false,train,synthetic-service
+TX1194,safe,"Dear user, 620228 is your one time password for Flipkart. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX1195,safe,"the meeting has been moved to 10:30, same room as before haha",en,false,train,synthetic-chat
+TX1196,safe,Reminder: your appointment with Dr. Divya is on Wednesday at noon. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX1197,safe,"Dear user, 946268 is your one time password for Paytm. Valid for 10 minutes. Please do not share.",en,false,train,synthetic-service
+TX1198,scam,Aapka bijli connection aaj raat kat jayega. Turant is number par call karein: 9175123788,hinglish,true,train,synthetic
+TX1199,scam,"Your insurance policy bonus of ₹25,000 is ready. Share your Aadhaar and OTP to claim it today.",en,false,train,synthetic
+TX1200,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://tinyurl.com/a8Rt2,hinglish,true,train,synthetic
+TX1201,scam,"Dear Axis Bank user, your net banking has been locked. Login here to unlock: http://rb.gy/p4kz1",en,false,train,synthetic
+TX1202,safe,"Sorry i missed your call, was in a class. can we talk on friday?",en,false,train,synthetic-chat
+TX1203,safe,"sorry i missed your call, was in a class. can we talk later today? please",en,false,train,synthetic-chat
+TX1204,scam,"Government subsidy: ₹1,00,000 is waiting in your account. Pay ₹1,999 GST to release it. http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1205,scam,"Vikram has sent you a collect request of ₹1,999. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX1206,safe,"OTP for your SBI net banking login is 974800. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1207,safe,did you watch the finale last night? not as good as the first one!!,en,false,train,synthetic-chat
+TX1208,suspicious,Your free trial ends tomorrow. Continue for just ₹1 at http://goo.su/xT9aL,en,false,train,synthetic
+TX1209,scam,"Dear customer, your SIM KYC is incomplete. Reply with your Aadhaar number or the SIM will be blocked in 24 hours.",en,false,train,synthetic
+TX1210,safe,Your OTP for login is 441533. Do not share it with anyone.,en,false,train,synthetic-service
+TX1211,safe,"Chacha: eat something, you skipped lunch",en,false,train,synthetic-chat
+TX1212,suspicious,Last chance! Your subscription expires today. Renew now at http://bit.ly/3xKd9,en,false,train,synthetic
+TX1213,safe,188004 is the OTP for your Flipkart login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1214,safe,708290 is the OTP for your Myntra login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1215,safe,"Submitted the spreadsheet, please check and let me know if anything is missing",en,false,train,synthetic-chat
+TX1216,scam,"Our records show you overpaid your gas bill. Click http://cutt.ly/Qw3dE to claim a refund of ₹5,00,000. Enter your card number and CVV.",en,false,train,synthetic
+TX1217,suspicious,Book your insurance renewal now and save big. Click: http://rb.gy/p4kz1,en,false,train,synthetic
+TX1218,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9404735361 immediately.,en,false,train,synthetic
+TX1219,safe,Your OTP for card ending 7100 transaction of Rs 120 at Myntra is 504076. Do not share it. -Axis Bank,en,false,train,synthetic-service
+TX1220,safe,"i'm running late, stuck in traffic. will reach your place by 4 pm 😂",en,false,train,synthetic-chat
+TX1221,safe,"i'm running late, stuck in traffic. will reach the office by 4 pm :)",en,false,train,synthetic-chat
+TX1222,safe,"₹80 debited from A/c XX6489 on 23-Nov-26 at Ola. Avl Bal: Rs 57,592.00. If not done by you, call the number on the back of your card. —Axis Bank",en,false,train,synthetic-service
+TX1223,scam,"Your loan of ₹2,500 is approved! Pay ₹9,800 processing fee first to receive the amount today: http://goo.su/xT9aL",en,false,train,synthetic
+TX1224,suspicious,Offer! ₹250 ka cashback paane ke liye click karein: http://is.gd/k92Lz,hinglish,true,train,synthetic
+TX1225,safe,"Pooja says the exam is on Tuesday, did you start preparing? see you",en,false,train,synthetic-chat
+TX1226,safe,"thanks for helping with the draft, really appreciate it Meera",en,false,train,synthetic-chat
+TX1227,scam,Aapka ICICI Bank account band ho jayega. KYC abhi update karein: http://rb.gy/p4kz1,hinglish,true,train,synthetic
+TX1228,safe,Aapka Flipkart order deliver ho gaya hai. Dhanyavaad!,hinglish,true,train,synthetic-service
+TX1229,scam,"Win ₹50,000 cash daily playing online rummy! Download the app http://bit.ly/3xKd9.apk and deposit ₹250 to start.",en,false,train,synthetic
+TX1230,safe,"OTP for your PNB net banking login is 655673. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1231,safe,"Aapke account mein ₹1,200 aaye. Baaki balance Rs 51,324.00. —PNB",hinglish,true,train,synthetic-service
+TX1232,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX1233,scam,"Earn ₹25,000 every day just by rating products online. No investment needed. WhatsApp 9730182980 to join.",en,false,train,synthetic
+TX1234,safe,"Use code 219803 to reset your Amazon password. If you did not ask for this, you can safely ignore it.",en,false,train,synthetic-service
+TX1235,safe,"Your OTP for the transaction of ₹500 at Uber is 924827. Never share this OTP with anyone, including bank staff. —ICICI Bank",en,false,train,synthetic-service
+TX1236,safe,you owe me Rs 640 for snacks 😂 no rush see you,en,false,train,synthetic-chat
+TX1237,safe,"OTP for your Axis Bank net banking login is 115845. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1238,safe,"submitted the assignment, please check and let me know if anything is missing 😂",en,false,train,synthetic-chat
+TX1239,scam,"Pooja has sent you a collect request of ₹9,800. Enter your UPI PIN to receive the money.",en,false,train,synthetic
+TX1240,safe,"submitted the project file, please check and let me know if anything is missing thanks!",en,false,train,synthetic-chat
+TX1241,scam,"Your Canara Bank credit card reward points worth ₹25,000 expire today. Download the app to redeem: http://tinyurl.com/a8Rt2.apk",en,false,train,synthetic
+TX1242,scam,Customs has held a gift sent by Isha from abroad. Pay ₹250 duty to receive it: http://t.ly/9fGh,en,false,train,synthetic
+TX1243,safe,Your package from Amazon was delivered to the front desk. Thank you for shopping with us.,en,false,train,synthetic-service
+TX1244,scam,"Income tax refund of ₹1,00,000 is pending. Verify your bank details here to receive it: http://is.gd/k92Lz",en,false,train,synthetic
+TX1245,safe,"I'm running late, stuck in traffic. will reach the airport by 10:30 haha",en,false,train,synthetic-chat
+TX1246,scam,"Congratulations! You have won ₹5,00,000 in the Jio lucky draw. Pay a processing fee of ₹250 to claim your prize: http://bit.ly/3xKd9",en,false,train,synthetic
+TX1247,safe,Did you watch the finale last night? what a finish :),en,false,train,synthetic-chat
+TX1248,scam,Aapka PAN card block ho gaya hai. Abhi update karein warna jurmana lagega: http://short.link/offer,hinglish,true,train,synthetic
+TX1249,safe,"the meeting has been moved to 5:45, same room as before",en,false,train,synthetic-chat
+TX1250,safe,669661 is the OTP for your Paytm login. It expires in 5 minutes. Do not share it with anyone.,en,false,train,synthetic-service
+TX1251,safe,"Sorry i missed your call, was in a class. can we talk tomorrow? :)",en,false,train,synthetic-chat
+TX1252,safe,"I'll pay you back for biryani, it was ₹2,000, sending it at 6 thanks!",en,false,train,synthetic-chat
+TX1253,scam,"Sir mujhse galti se ₹250 aapke account mein chale gaye, please wapas bhej dijiye jaldi.",hinglish,true,train,synthetic
+TX1254,scam,"Income tax refund of ₹1,00,000 is pending. Verify your bank details here to receive it: http://goo.su/xT9aL",en,false,train,synthetic
+TX1255,safe,"sorry i missed your call, was in a class. can we talk after class?",en,false,train,synthetic-chat
+TX1256,scam,"Dear Canara Bank user, your net banking has been locked. Login here to unlock: http://cutt.ly/Qw3dE",en,false,train,synthetic
+TX1257,safe,"Priya says the exam is on the 15th, did you start preparing? 🙂",en,false,train,synthetic-chat
+TX1258,scam,"Aapne ₹5,00,000 ki lottery jeeti hai! Claim karne ke liye pehle ₹9,800 bhejein.",hinglish,true,train,synthetic
+TX1259,safe,Payment of Rs 640 received for your electricity bill. Thank you. Receipt no. 235216.,en,false,train,synthetic-service
+TX1260,scam,Your electricity connection will be disconnected tonight at 9:30 pm due to unpaid bill. Call 9854437946 immediately.,en,false,train,synthetic
+TX1261,scam,"Guaranteed 20% returns every month on crypto trading. Invest ₹500 today, limited slots: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1262,safe,Reminder: your appointment with Dr. Tanvi is on Monday at 4 pm. Reply C to confirm or call the clinic to reschedule.,en,false,train,synthetic-service
+TX1263,safe,"I'm running late, stuck in traffic. will reach the mall by 6:30 pm thanks!",en,false,train,synthetic-chat
+TX1264,scam,An FIR has been registered against you. Pay ₹250 immediately or you will be arrested within 2 hours.,en,false,train,synthetic
+TX1265,scam,"Income tax refund ₹25,000 ka aaya hai. Card details daal kar claim karein: http://cutt.ly/Qw3dE",hinglish,true,train,synthetic
+TX1266,safe,"thanks for helping with the project file, really appreciate it Sam haha",en,false,train,synthetic-chat
+TX1267,scam,Your SIM will be deactivated in 2 hours. Verify your Aadhaar now: http://is.gd/k92Lz,en,false,train,synthetic
+TX1268,suspicious,Win a chance to travel to Dubai! Enter the contest now: http://cutt.ly/Qw3dE,en,false,train,synthetic
+TX1269,safe,you owe me ₹450 for momos 😂 no rush 🙂,en,false,train,synthetic-chat
+TX1270,safe,Reminder: kal aapki EMI ₹80 auto-debit hogi. Balance rakhein. —ICICI Bank,hinglish,true,train,synthetic-service
+TX1271,safe,Did you watch the new episode last night? kinda boring honestly,en,false,train,synthetic-chat
+TX1272,scam,"Your courier is held at customs. Pay ₹1,999 clearance charges immediately to release the parcel: http://bit.ly/3xKd9",en,false,train,synthetic
+TX1273,safe,"OTP for your Bank of Baroda net banking login is 451288. Do not disclose it to anyone, including bank employees.",en,false,train,synthetic-service
+TX1274,safe,Your cab Karan is arriving in 3 minutes. Vehicle number MH12AB5402. Share OTP 740424 with the driver only at pickup.,en,false,train,synthetic-service
+TX1275,safe,"I'm running late, stuck in traffic. will reach the bus stop by 10:30 :)",en,false,train,synthetic-chat
+TX1276,safe,"Sorry i missed your call, was in a class. can we talk in the evening? see you",en,false,train,synthetic-chat
+TX1277,suspicious,"Hi Aman, we noticed you haven't logged in for a while. Come back and get ₹200 off: http://goo.su/xT9aL",en,false,train,synthetic
+TX1278,scam,"Your loan of ₹25,000 is approved! Pay ₹4,500 processing fee first to receive the amount today: http://tinyurl.com/a8Rt2",en,false,train,synthetic
+TX1279,suspicious,Last chance! Your subscription expires today. Renew now at http://goo.su/xT9aL,en,false,train,synthetic
+TX1280,safe,"the meeting has been moved to noon, same room as before!!",en,false,train,synthetic-chat

@@ -232,6 +232,18 @@ def render_budget_tab(adapter=None) -> None:
             st.markdown("### Weekly spending")
             st.bar_chart({w["week_start"]: w["spend"] for w in weeks}, height=220)
 
+        try:
+            from core.report import build_monthly_report_pdf
+            st.download_button(
+                "📄 Download my money report (PDF)",
+                build_monthly_report_pdf(summary, subs, weeks),
+                file_name="artha_kavach_money_report.pdf",
+                mime="application/pdf",
+                key="btn_report_pdf",
+            )
+        except Exception as exc:  # never let the report break the dashboard
+            st.caption(f"PDF report unavailable: {exc}")
+
         pace = summary.pace or {}
         if pace.get("current_month_spend"):
             with st.expander("📈 Month-end pace projection"):

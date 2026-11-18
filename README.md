@@ -284,3 +284,14 @@ Training data: `data/scam_eval.csv` (train split), generated messages (`data/bui
 ~2,000 real everyday texts from the UCI *SMS Spam Collection* ham messages
 (Almeida & Hidalgo, 2011, CC BY 4.0 — re-download with `data/fetch_sms_ham.py`; not committed).
 Hand-written held-out sets (`data/ordinary_text_eval.csv`, `data/scam_heldout.csv`) are never trained on.
+
+### Monthly money report (PDF)
+
+Smart Budget → Overview → **Download my money report (PDF)**. `core/report.py` is a small dependency-free
+PDF writer (built-in Helvetica fonts, amounts shown as "Rs"); every figure comes from the budget engine.
+
+### Optional extra training data
+
+`data/fetch_vinit_ham.py` can extract ordinary English texts from a third-party SMS dataset (no licence
+stated; its spam half is noisy and its ham half overlaps the UCI data, so test messages are removed).
+A/B tests showed no measurable gain, so it is **off by default**: `python -m scam.train_deep --vinit-n=1200`.

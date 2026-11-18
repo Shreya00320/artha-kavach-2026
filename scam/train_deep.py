@@ -66,6 +66,13 @@ def main() -> int:
         train += load_split(ext, "train")
     else:
         print("note: data/external/sms_ham_train.csv missing — run data/fetch_sms_ham.py for real ordinary text")
+    # Optional, OFF by default: extra ordinary text from a third-party dataset of unknown licence
+    # (see data/fetch_vinit_ham.py). A/B tests showed no measurable gain over the shipped model,
+    # so it is not used unless you ask:  python -m scam.train_deep --vinit-n=1200
+    vin = D / "external" / "vinit_ham_train.csv"
+    n_extra = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--vinit-n=")), 0)
+    if vin.exists() and n_extra > 0:
+        train += load_split(vin, "train")[:n_extra]
     print(f"training rows: {len(train)}")
 
     # --- baselines -------------------------------------------------------

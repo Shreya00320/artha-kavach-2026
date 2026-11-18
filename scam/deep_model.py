@@ -147,10 +147,15 @@ class DeepScamClassifier:
         except ImportError as exc:                      # pragma: no cover
             raise RuntimeError("Training needs PyTorch (pip install torch). Inference does not.") from exc
 
+        # Use the laptop GPU when PyTorch can see one (the model is tiny, so this mainly helps
+        # larger experiments); weights are exported back to NumPy either way.
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        if verbose:
+            print(f"  training on {device}" + (f" ({torch.cuda.get_device_name(0)})" if device.type == "cuda" else ""))
         label_to_i = {c: i for i, c in enumerate(CLASSES)}
         data = [(featurize(r["text"]), label_to_i[r["label"]]) for r in rows if r["label"] in label_to_i]
         counts = np.bincount([y for _, y in data], minlength=len(CLASSES)).astype(np.float32)
-        class_w = torch.tensor(counts.sum() / (len(CLASSES) * np.maximum(counts, 1)), dtype=torch.float32)
+        class_w = torch.tensor(counts.sum() / (len(CLASSES) * np.maximum(counts, 1)), dtype=torch.float32).to(device)
 
         class Net(nn.Module):
             def __init__(self) -> None:
@@ -176,8 +181,9 @@ class DeepScamClassifier:
                 offsets.append(len(flat))
                 flat.extend(keep)
                 ys.append(y)
-            return (torch.tensor(flat, dtype=torch.long), torch.tensor(offsets, dtype=torch.long),
-                    torch.tensor(ys, dtype=torch.long))
+            return (torch.tensor(flat, dtype=torch.long, device=device),
+                    torch.tensor(offsets, dtype=torch.long, device=device),
+                    torch.tensor(ys, dtype=torch.long, device=device))
 
         members = []
         for m in range(n_members):
@@ -191,7 +197,7 @@ class DeepScamClassifier:
             train_items = [data[i] for i in idx if i not in val_set]
             val_items = [data[i] for i in val_idx]
 
-            net = Net()
+            net = Net().to(device)
             opt = torch.optim.AdamW(net.parameters(), lr=3e-3, weight_decay=1e-2)
             loss_fn = nn.CrossEntropyLoss(weight=class_w, label_smoothing=0.05)
             pyrand = np.random.default_rng(s + 1000)
@@ -223,10 +229,10 @@ class DeepScamClassifier:
             if verbose:
                 print(f"  member {m}: stopped at epoch {ep + 1}, val loss {best:.3f}, val acc {best_acc:.2%}")
             members.append({
-                "emb": net.emb.weight.detach().numpy().copy(),
-                "w1": net.l1.weight.detach().numpy().copy(), "b1": net.l1.bias.detach().numpy().copy(),
-                "w2": net.l2.weight.detach().numpy().copy(), "b2": net.l2.bias.detach().numpy().copy(),
-                "w3": net.l3.weight.detach().numpy().copy(), "b3": net.l3.bias.detach().numpy().copy(),
+                "emb": net.emb.weight.detach().cpu().numpy().copy(),
+                "w1": net.l1.weight.detach().cpu().numpy().copy(), "b1": net.l1.bias.detach().cpu().numpy().copy(),
+                "w2": net.l2.weight.detach().cpu().numpy().copy(), "b2": net.l2.bias.detach().cpu().numpy().copy(),
+                "w3": net.l3.weight.detach().cpu().numpy().copy(), "b3": net.l3.bias.detach().cpu().numpy().copy(),
             })
         # Round-trip the embeddings through float16 so in-memory == saved model.
         for p in members:

@@ -1,0 +1,19 @@
+{
+  "id": "KB072",
+  "title": "Book: The Little Book of Common Sense Investing — John C. Bogle (2007)",
+  "publisher": "Artha Kavach original summary of a book's ideas (paraphrase, not a quotation; the author's opinion, not settled fact) — pending manual verification",
+  "url": "https://openlibrary.org/search?q=the+little+book+of+common+sense+investing",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "book",
+    "money-books",
+    "index-fund",
+    "costs",
+    "bogle"
+  ],
+  "text": "Vanguard founder John Bogle argues that most investors do best by owning the whole market through a low-cost index fund. His reasoning is 'the relentless rules of humble arithmetic': the market's return is shared between everyone, so before costs the average investor earns the market return and after fees and trading costs the average active investor earns less; over decades even small yearly costs eat a large share of the final corpus. His advice: buy a broad index fund, keep costs very low, hold for the long term and avoid frequent trading and performance chasing. He summed it up as buying the haystack instead of searching for the needle. Limits: the examples use US data and funds; in India, check the expense ratio, tracking error and whether a fund's category has an index option, and note that some Indian active funds have beaten indices in some periods.",
+  "summary_hinglish": "",
+  "summary_hi": "",
+  "aliases": "little book of common sense investing john bogle vanguard index fund costs matter own the market haystack needle low cost",
+  "verified": false
+}

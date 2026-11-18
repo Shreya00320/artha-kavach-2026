@@ -1,0 +1,51 @@
+id,message,expected_intent,acceptable_kb
+so001,just got my first paycheck 🥲 22k in hand. no idea what to do with it. help,knowledge,KB047
+so002,"bro my cousin says put everything in sip, is that even a real thing or just another fd",knowledge,KB022
+so003,"ngl i only pay the min due on my cc every month, whats the worst that can happen",knowledge,KB033
+so004,hr is saying ctc is 6 lpa but my account shows way less?? where is the rest of my money going,knowledge,KB048
+so005,is ppf worth it in 2026 or should i just do fd,knowledge,KB025|KB038
+so006,"my friend made 3x in options in a week, should i also try? asking for a friend",knowledge,KB044
+so007,"what even is nifty 50 index fund, why does everyone on twitter say buy it",knowledge,KB024
+so008,cibil score dropped after i closed my old card?? why does this happen,knowledge,KB032
+so009,do i have to file itr if i only earn from freelancing like 30k a month,knowledge,KB059|KB031
+so010,"whats the difference between old and new tax regime, my ca is on vacation lol",knowledge,KB029
+so011,"lost my job last month, how big should my emergency fund have been",knowledge,KB013|KB041
+so012,is sukanya samriddhi worth it for my baby girl,knowledge,KB065
+so013,"term insurance at 24 is it overkill, parents are not dependent on me",knowledge,KB036
+so014,"company gave me health insurance, do i still need my own?? reddit says yes",knowledge,KB037
+so015,bnpl is basically free money right? 0% interest for 3 months,knowledge,KB051
+so016,"can someone explain what elss is, my dad keeps asking me to buy it for tax",knowledge,KB028
+so017,"rent is eating 40% of my salary in bangalore, should i just buy a flat",knowledge,KB052|KB053
+so018,"i have 3 loans and a card balance, which do i clear first lol",knowledge,KB050
+so019,gold or sip? my mom wants me to buy gold coins on dhanteras,knowledge,KB042
+so020,"what does nominee even mean on the form, do i need one for my mutual fund",knowledge,KB056
+so021,how much home loan can i get on 80k salary,knowledge,KB053
+so022,should i prepay my education loan or put the money in mutual funds,knowledge,KB035|KB050
+so023,"what is vpf and should i do it, hr mailed some form",knowledge,KB026
+so024,ulip vs mf??? agent keeps pushing an insurance plan with returns,knowledge,KB061|KB060
+so025,"i spend like crazy on swiggy and amazon at night, how to stop",knowledge,KB063
+so026,what happens to my pf if i switch jobs,knowledge,KB026
+so027,"inflation is killing me, my savings account gives like 3% lol",knowledge,KB039|KB057
+so028,how long will it take to double 1 lakh at 12 percent,knowledge,KB040
+so029,is bitcoin legal in india or will govt ban it,knowledge,KB045
+so030,"first time investor, scared of losing money. where do i start",knowledge,KB022|KB023|KB054|KB043
+so031,"pls explain hra exemption, my landlord is my uncle lol",knowledge,KB030
+so032,"my bank balance hits zero by the 20th every month, how do i even make a budget",knowledge,KB011|KB047|KB049|KB063
+so033,what is rtgs and why did my 5 lakh transfer fail,knowledge,KB058
+so034,do banks pay interest on savings account and is it taxed,knowledge,KB057
+so035,is it smart to take a personal loan for a goa trip,knowledge,KB035|KB060
+so036,what's a good savings rate for a fresher,knowledge,KB011|KB047|KB012
+so037,how do i find out if a finfluencer is sebi registered,knowledge,KB046
+so038,do i need a demat account to buy mutual funds,knowledge,KB043|KB022|KB024
+so039,how do i calculate my net worth,knowledge,KB064
+so040,college student here with 5k pocket money how to manage,knowledge,KB049
+so041,side hustle income 15k monthly do i need to pay advance tax,knowledge,KB059
+so042,what is the 50/30/20 rule,knowledge,KB011
+so043,what is digital arrest,knowledge,KB018
+so044,what is a upi collect request scam,knowledge,KB007
+so045,how to report cyber fraud,knowledge,KB003
+so046,is it ok to keep emergency money in stocks,knowledge,KB041|KB013
+so047,what's the difference between equity and debt funds,knowledge,KB023
+so048,should i go direct or regular plan for mutual funds,knowledge,KB024
+so049,what's gratuity and do i get it if i leave in 2 years,knowledge,KB048
+so050,"how does compounding actually work, give me an example",knowledge,KB040

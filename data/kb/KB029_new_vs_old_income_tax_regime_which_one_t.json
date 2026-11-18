@@ -1,0 +1,19 @@
+{
+  "id": "KB029",
+  "title": "New vs old income-tax regime — which one to pick",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://incometaxindia.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "income-tax",
+    "new-regime",
+    "old-regime",
+    "rebate",
+    "slabs"
+  ],
+  "text": "India has two income-tax regimes. The new regime is the default: lower slab rates, a standard deduction of ₹75,000 for salaried people, and a Section 87A rebate that makes tax zero for taxable income up to ₹12 lakh (so up to about ₹12.75 lakh of salary), but it allows almost no deductions like 80C, 80D or HRA. The old regime has higher slab rates but lets you claim deductions: 80C (₹1.5 lakh), 80D health insurance, HRA, home-loan interest, NPS extra ₹50,000 and more. A simple rule: if your total deductions are small (typically below ₹3–4 lakh), the new regime usually wins; if you have a big home loan, rent with HRA and many investments, run both numbers. Salaried people can switch every year; use the Tax tab in Artha Kavach to compare both regimes on your salary.",
+  "summary_hinglish": "New regime default hai: slab rates kam, ₹75,000 standard deduction aur ₹12 lakh taxable income tak 87A rebate se zero tax, par 80C/80D/HRA jaise deductions nahi. Old regime mein rates zyada hain par deductions milte hain. Deductions kam hain to new regime aam taur par better; Tax tab mein dono compare kar lo.",
+  "summary_hi": "नया टैक्स रिजीम डिफ़ॉल्ट है: कम स्लैब दरें, ₹75,000 स्टैंडर्ड डिडक्शन और ₹12 लाख तक की टैक्सेबल आय पर 87A रिबेट से शून्य टैक्स, पर 80C/80D/HRA जैसी कटौतियां नहीं। पुराने रिजीम में दरें ज़्यादा हैं पर कटौतियां मिलती हैं। कटौतियां कम हों तो नया रिजीम आम तौर पर बेहतर है।",
+  "aliases": "new regime old regime income tax slab rebate 87a standard deduction which regime better tax kitna lagega tax on 10 lakh salary do i pay tax zero tax no tax salary tax income up to 12 lakh",
+  "verified": false
+}

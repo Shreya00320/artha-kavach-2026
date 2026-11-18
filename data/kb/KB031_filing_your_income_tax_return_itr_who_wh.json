@@ -1,0 +1,18 @@
+{
+  "id": "KB031",
+  "title": "Filing your income-tax return (ITR) — who, when and how",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.incometax.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "itr",
+    "tax-filing",
+    "form-16",
+    "deadline"
+  ],
+  "text": "You must file an ITR if your income is above the basic exemption limit for your regime, and in some other cases (for example foreign assets, large deposits or if you want a refund). For most salaried people the due date is 31 July after the financial year ends; filing late attracts a fee and loses some benefits. Collect Form 16 from your employer, check Form 26AS / the Annual Information Statement (AIS) on the income-tax portal to make sure TDS and income match, then file on incometax.gov.in (the portal pre-fills much of it). Salaried people with simple income typically use ITR-1. Even if no tax is due, filing is useful: it is proof of income for loans and visas, and it is the only way to claim a refund of excess TDS. Never share your portal password or OTP with agents you do not trust.",
+  "summary_hinglish": "Agar income exemption limit se zyada hai ya refund chahiye to ITR file karna hota hai. Salaried logon ki aam due date 31 July hoti hai. Employer se Form 16 lo, AIS/26AS match karo aur incometax.gov.in par file karo (ITR-1 simple salary ke liye). Tax zero ho tab bhi file karna faydemand hai.",
+  "summary_hi": "यदि आय छूट सीमा से ज़्यादा है या रिफंड चाहिए तो ITR भरना होता है। वेतनभोगियों की आम अंतिम तारीख 31 जुलाई होती है। नियोक्ता से फ़ॉर्म 16 लें, AIS/26AS मिलाएं और incometax.gov.in पर फ़ाइल करें। टैक्स शून्य हो तब भी फ़ाइल करना फायदेमंद है।",
+  "aliases": "itr income tax return file filing form 16 26as ais 31 july deadline refund tds",
+  "verified": false
+}

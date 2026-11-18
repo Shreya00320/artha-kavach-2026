@@ -1,0 +1,19 @@
+{
+  "id": "KB058",
+  "title": "UPI, NEFT, RTGS and IMPS — which transfer to use",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.npci.org.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "upi",
+    "neft",
+    "rtgs",
+    "imps",
+    "payments"
+  ],
+  "text": "UPI is instant, 24x7, free for most person-to-person and merchant payments, and ideal for everyday small to mid-size payments; it has per-transaction and daily limits set by banks and NPCI. IMPS is also instant and 24x7 using account number and IFSC. NEFT settles in batches and works around the clock; it suits routine transfers where a short delay is fine. RTGS is for large-value transfers (minimum ₹2 lakh) and settles in real time. Always verify the receiver's name shown before you confirm, because transfers are very hard to reverse. Never approve a UPI 'collect request' or enter your PIN to receive money — you never need a PIN to receive. If you are cheated, report on 1930 or cybercrime.gov.in immediately and inform your bank.",
+  "summary_hinglish": "UPI instant, 24x7, zyadatar payments free. IMPS bhi instant hai. NEFT batches mein hota hai, RTGS bade amounts ke liye (minimum ₹2 lakh) real time. Paisa bhejne se pehle receiver ka naam check karo. Paisa receive karne ke liye UPI PIN kabhi mat daalo, collect request approve mat karo.",
+  "summary_hi": "UPI तुरंत, 24x7, ज़्यादातर भुगतान मुफ़्त। IMPS भी तुरंत। NEFT बैच में होता है, RTGS बड़ी रकम (न्यूनतम ₹2 लाख) के लिए रियल टाइम। भेजने से पहले प्राप्तकर्ता का नाम जांचें। पैसा पाने के लिए UPI PIN कभी न डालें और कलेक्ट रिक्वेस्ट मंज़ूर न करें।",
+  "aliases": "upi neft rtgs imps transfer difference limit payments instant money transfer upi pin receive money need pin to receive money request",
+  "verified": false
+}

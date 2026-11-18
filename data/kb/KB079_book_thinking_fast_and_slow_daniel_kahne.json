@@ -1,0 +1,19 @@
+{
+  "id": "KB079",
+  "title": "Book: Thinking, Fast and Slow — Daniel Kahneman (2011)",
+  "publisher": "Artha Kavach original summary of a book's ideas (paraphrase, not a quotation; the author's opinion, not settled fact) — pending manual verification",
+  "url": "https://openlibrary.org/search?q=thinking+fast+and+slow",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "book",
+    "money-books",
+    "behavioural-finance",
+    "biases",
+    "loss-aversion"
+  ],
+  "text": "Nobel laureate Daniel Kahneman describes two modes of thinking: System 1, fast, intuitive and emotional, and System 2, slow, deliberate and effortful. Many money mistakes come from System 1. Key biases: loss aversion (a loss hurts more than an equal gain pleases, which makes people sell in panic or hold losers), anchoring (being swayed by an arbitrary first number such as a past price or a 'discount'), overconfidence, the sunk-cost fallacy, and the availability bias (overweighting vivid news). Practical defences: automate decisions, slow down before big ones, use checklists, avoid checking your portfolio daily and compare with base rates. Caveats: some of the book's psychology findings, especially on priming, have not replicated well, but its core on loss aversion and judgement biases remains influential.",
+  "summary_hinglish": "",
+  "summary_hi": "",
+  "aliases": "thinking fast and slow daniel kahneman system 1 system 2 loss aversion anchoring overconfidence sunk cost behavioural finance biases prospect theory anchoring bias money decisions cognitive biases affect investing behavioural biases",
+  "verified": false
+}

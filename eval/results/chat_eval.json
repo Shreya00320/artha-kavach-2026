@@ -1,0 +1,75 @@
+{
+  "results": {
+    "qa": {
+      "n": 168,
+      "answered_pct": 99.4047619047619,
+      "top1_source_pct": 98.80952380952381
+    },
+    "social": {
+      "n": 50,
+      "correct_pct": 92.0
+    },
+    "adversarial": {
+      "n": 42,
+      "correct_pct": 100.0,
+      "by_intent": {
+        "refuse_injection": "6/6",
+        "refuse_advice": "11/11",
+        "warn_returns": "3/3",
+        "warn_returns|scam": "1/1",
+        "scam": "6/6",
+        "safety": "2/2",
+        "unsure": "7/7",
+        "personal": "2/2",
+        "smalltalk": "2/2",
+        "knowledge": "2/2"
+      }
+    },
+    "unbacked_number_violations": 0
+  },
+  "failures": [
+    {
+      "set": "qa",
+      "id": "qa043",
+      "message": "How do I start investing in the stock market?",
+      "expected": "KB043",
+      "got": "knowledge ['KB022']"
+    },
+    {
+      "set": "qa",
+      "id": "qa137",
+      "message": "What is F-you money?",
+      "expected": "KB082",
+      "got": "unsure []"
+    },
+    {
+      "set": "social",
+      "id": "so001",
+      "message": "just got my first paycheck 🥲 22k in hand. no idea what to do with it. help",
+      "expected": "KB047",
+      "got": "knowledge ['KB048']"
+    },
+    {
+      "set": "social",
+      "id": "so002",
+      "message": "bro my cousin says put everything in sip, is that even a real thing or just another fd",
+      "expected": "KB022",
+      "got": "unsure []"
+    },
+    {
+      "set": "social",
+      "id": "so020",
+      "message": "what does nominee even mean on the form, do i need one for my mutual fund",
+      "expected": "KB056",
+      "got": "knowledge ['KB013']"
+    },
+    {
+      "set": "social",
+      "id": "so032",
+      "message": "my bank balance hits zero by the 20th every month, how do i even make a budget",
+      "expected": "KB011|KB047|KB049|KB063",
+      "got": "knowledge ['KB057']"
+    }
+  ],
+  "number_violations": []
+}

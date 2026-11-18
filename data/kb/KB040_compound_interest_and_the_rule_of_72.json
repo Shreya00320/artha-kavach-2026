@@ -1,0 +1,18 @@
+{
+  "id": "KB040",
+  "title": "Compound interest and the Rule of 72",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.sebi.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "compounding",
+    "rule-of-72",
+    "long-term",
+    "start-early"
+  ],
+  "text": "Compounding means earning returns on your earlier returns, so growth accelerates with time. At 12% a year, money doubles roughly every 6 years, and at 8% every 9 years — this is the Rule of 72: divide 72 by the annual return to estimate the doubling time in years. Starting early matters more than investing more: someone who invests ₹5,000 a month from age 22 can end up with far more at 60 than someone who invests ₹10,000 a month from age 35, at the same return. The same maths works against you on debt: card interest at 36–48% compounds quickly. These are illustrations, not promises; actual market returns vary and are never guaranteed.",
+  "summary_hinglish": "Compounding mein return par bhi return milta hai. Rule of 72: 72 ko saalana return se divide karo to paisa double hone ka time pata chalta hai (12% par ~6 saal). Jaldi shuru karna zyada invest karne se bhi zyada matter karta hai. Ye example hain, guarantee nahi.",
+  "summary_hi": "चक्रवृद्धि में रिटर्न पर भी रिटर्न मिलता है। रूल ऑफ 72: 72 को सालाना रिटर्न से भाग दें तो पैसा दोगुना होने का समय मिलता है (12% पर लगभग 6 साल)। जल्दी शुरू करना ज़्यादा निवेश करने से भी ज़्यादा मायने रखता है। ये उदाहरण हैं, गारंटी नहीं।",
+  "aliases": "compounding compound interest rule of 72 double money start early power of compounding start early starting early why invest early early investing time in the market how long to double money years to double double 1 lakh at 12 percent doubling time",
+  "verified": false
+}

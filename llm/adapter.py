@@ -341,6 +341,20 @@ class LLMAdapter:
         self._save_to_cache(cache_key, result)
         return result
 
+    def generate(
+        self,
+        prompt: str,
+        response_schema: Type[T],
+        temperature: Optional[float] = None,
+    ) -> T:
+        """Alias used by core/ and scam/ callers: generate(prompt, response_schema=...).
+
+        Delegates to generate_structured. (Without this alias every LLM path in the
+        app raised AttributeError, was swallowed by its try/except, and silently fell
+        back to rules-only.)
+        """
+        return self.generate_structured(prompt, response_schema, temperature)
+
     # -----------------------------------------------------------------------
     # Mock Provider
     # -----------------------------------------------------------------------

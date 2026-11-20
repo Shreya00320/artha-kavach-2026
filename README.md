@@ -188,7 +188,7 @@ PDF writer (built-in Helvetica fonts, amounts shown as "Rs"); every figure comes
 |----------|----------|---------|---------------|---------|
 | Rules baseline | 0.55 | 0.77 | 0.17 | 0.71 |
 | TF-IDF + LogReg (word + char n-grams) | 0.79 | 0.87 | 0.57 | 0.94 |
-| **Pipeline offline (rules + deep model)** | **0.78** | 0.85 | 0.60 | 0.88 |
+| **Pipeline offline (rules + deep model)** | **0.73** | 0.83 | 0.50 | 0.87 |
 
 On this small test split the deep model is about equal to TF-IDF. Its advantage is **fewer false alarms on ordinary text**
 and **catching newer scams**, which the 47-message split does not measure:
@@ -196,9 +196,17 @@ and **catching newer scams**, which the 47-message split does not measure:
 | Set (deep model, shipped weights) | Result |
 |-----------------------------------|--------|
 | Real everyday SMS (300 UCI ham messages, never trained on) | **2%** false alarms |
-| Hand-written ordinary text (76 messages) | 2.6% flagged through the full pipeline (8% by the model alone) |
-| New hand-written scams (38 messages, never trained on) | **97%** caught (not "safe"); 77% labelled exactly "scam" |
+| Hand-written ordinary text (76 messages) | 3.9% flagged through the full pipeline (5% by the model alone) |
+| **Genuine bank service notices** (25 hand-written: card delivered / Green PIN, e-statement, EMI reminders…) | 8% false alarms by the model alone, 12% through the pipeline (was 24% before bank-notice training data) |
+| Look-alike scams using the same words (11 hand-written) | **100%** caught |
+| New hand-written scams (38 messages, never trained on) | **97%** caught (not "safe"); 87% labelled exactly "scam" by the model alone |
 
+- A real SBI card-delivery SMS ("Generate Green PIN - Activate your card") was first flagged suspicious. We added genuine
+  bank notices **and look-alike scams with the same words** (`data/build_bank_genuine.py`) and retrained. The full message now
+  scores safe; a very short fragment with no context ("…Generate Green PIN - Activate your card") can still be flagged.
+  Wording alone can't prove a bank message is genuine — the link domain and sender header are what differ — so a flagged
+  genuine notice should be verified in the bank's app, which is what the app tells the user to do.
+  The macro-F1 on the original 47-message split dipped from 0.78 to 0.73 (small, noisy split).
 - Rules engine: **100% precision on scam** — no safe message is flagged by rules alone.
 - The `suspicious` class is the hardest; the LLM judge helps most here.
 - The pipeline's thresholds (`CLF_SCAM_MIN=0.50`, `CLF_FLAG_MIN=0.85` in `scam/llm_judge.py`) are tuned for the deep model.
@@ -285,6 +293,7 @@ artha-kavach-2026/
 ├── models/scam_dl.npz    ← Shipped deep-model weights
 ├── data/
 │   ├── scam_eval.csv, scam_heldout.csv, ordinary_text_eval.csv, scam_train_extra.csv  ← scam train/test data
+│   ├── bank_genuine_train.csv, bank_genuine_heldout.csv (+ build_bank_genuine.py)  ← genuine bank notices + look-alike scams
 │   ├── sample_sms.csv, sample_statement.csv       ← synthetic sample inputs
 │   ├── chat_eval_{qa,social,adversarial}.csv      ← chat evaluation sets
 │   ├── kb/               ← 92 knowledge-base docs: KB001–021 scam/safety advisories, KB022–066 finance education,

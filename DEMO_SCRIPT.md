@@ -84,7 +84,7 @@ its reply; any number not in the facts (±1% rounding) rejects the reply and we 
 Same for budget nudges.
 
 **Q: How accurate is it?**
-On our 47-message held-out test set (synthetic): offline macro F1 0.78; rules alone flag no safe messages.
+On our 47-message held-out test set (synthetic): offline macro F1 0.73; rules alone flag no safe messages.
 The deep model gives 2% false alarms on 300 real everyday SMS it never trained on, and catches 97% of 38 new hand-written
 scams (77% exactly labelled "scam"). Ask Artha: 99% right source on 168 finance questions, 100% on 42 adversarial ones, 0 unbacked numbers.
 The SMS parser reads all 91 transaction SMS in our sample. Caveat: synthetic data — [add your real-SMS result

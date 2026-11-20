@@ -49,18 +49,26 @@ def evaluate(name: str, predict) -> None:
     ordinary = _metrics(predict, _rows("ordinary_text_eval.csv"))
     held = _metrics(predict, _rows("scam_heldout.csv"))
     ext_test = D / "external" / "sms_ham_test.csv"
+    bank = _metrics(predict, _rows("bank_genuine_heldout.csv")) if (D / "bank_genuine_heldout.csv").exists() else None
     print(f"\n{name}")
     if ext_test.exists():
         sms = _metrics(predict, load_split(ext_test, "test"))
         print(f"  real SMS chat (n={sms['n']})        FALSE ALARMS {sms['flagged_pct']:.0%}  (UCI ham messages, never trained on)")
     print(f"  original test (n={orig['n']})        accuracy {orig['accuracy']:.0%}   scam recall {orig['scam_recall']:.0%}")
     print(f"  ordinary text (n={ordinary['n']})     FALSE ALARMS {ordinary['flagged_pct']:.0%}  (flagged as suspicious/scam; lower is better)")
+    if bank:
+        gen = [r for r in _rows("bank_genuine_heldout.csv") if r["label"] == "safe"]
+        bad = [r for r in _rows("bank_genuine_heldout.csv") if r["label"] != "safe"]
+        gm, bm = _metrics(predict, gen), _metrics(predict, bad)
+        print(f"  genuine bank notices (n={gm['n']})  FALSE ALARMS {gm['flagged_pct']:.0%}   look-alike scams (n={bm['n']}) caught {bm['flagged_pct']:.0%}")
     print(f"  new scams     (n={held['n']})        accuracy {held['accuracy']:.0%}   caught (not 'safe') {held['flagged_pct']:.0%}   scam recall {held['scam_recall']:.0%}")
     return ordinary, held
 
 
 def main() -> int:
     train = _rows("scam_eval.csv", "train") + _rows("scam_train_extra.csv", "train")
+    if (D / "bank_genuine_train.csv").exists():   # genuine bank service notices + look-alike scams
+        train += _rows("bank_genuine_train.csv", "train")
     ext = D / "external" / "sms_ham_train.csv"
     if ext.exists():
         train += load_split(ext, "train")

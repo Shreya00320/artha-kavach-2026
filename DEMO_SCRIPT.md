@@ -53,7 +53,7 @@
 
 ### 2:20–2:45 — Ask Artha
 **[💬 Ask Artha → type "Can I afford ₹9,000 for rent?"]**
-> "She can just ask — about her own month, or money basics: try "What is a SIP?" or "Which money books should a beginner read?" (answered from our 92-document knowledge base, with sources). Ask for a stock tip and it refuses. The AI phrases the answer, but if it writes any number our code didn't compute,
+> "She can just ask — about her own month, or money basics: try "What is a SIP?" or "Which money books should a beginner read?" (answered from our 93-document knowledge base, with sources). Ask for a stock tip and it refuses. The AI phrases the answer, but if it writes any number our code didn't compute,
 > the reply is thrown away and replaced. That's our rule everywhere: never say a number you can't prove."
 
 ### 2:45–3:00 — Close
@@ -84,7 +84,7 @@ its reply; any number not in the facts (±1% rounding) rejects the reply and we 
 Same for budget nudges.
 
 **Q: How accurate is it?**
-On our 47-message held-out test set (synthetic): offline macro F1 0.73; rules alone flag no safe messages.
+On our 47-message held-out test set (synthetic): offline macro F1 0.77; rules alone flag no safe messages.
 The deep model gives 2% false alarms on 300 real everyday SMS it never trained on, and catches 97% of 38 new hand-written
 scams (77% exactly labelled "scam"). Ask Artha: 99% right source on 168 finance questions, 100% on 42 adversarial ones, 0 unbacked numbers.
 The SMS parser reads all 91 transaction SMS in our sample. Caveat: synthetic data — [add your real-SMS result

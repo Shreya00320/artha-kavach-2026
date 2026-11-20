@@ -19,7 +19,7 @@ salary — now what?".
 | 💰 **Smart Budget** | Paste bank SMS, or upload a **bank-statement CSV** or SMS CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** · **📄 monthly money report (PDF)** |
 | 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · **🌱 first-salary guide** (what to do, in order) · **🏠 Home**: affordability + rent-vs-buy · tax regime comparison — pre-filled from your budget |
 | ↳ 🧾 **Tax** (inside Goals & Tax) | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
-| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **92-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
+| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **93-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
 | 🔍 **Trust Receipt** | Every AI output carries its evidence: sources, verified claims, code-computed numbers, and which detectors agreed |
 
 **Bilingual shell** — English / हिन्दी toggle for headings and tabs. **Behavioural nudges** — spending shown as hours of your work; pay-yourself-first on salary day.
@@ -105,8 +105,8 @@ EMBEDDING_MODEL=gemini-embedding-001
 
 **Notes**
 - With `groq` (or no key), Gemini embeddings are not used: Scam Shield retrieves its advisory passages with a local,
-  embedding-free retriever (`rag/local_retrieve.py`, offline TF-IDF over KB001–KB021), so the Trust Receipt still shows
-  cited sources and claim verification still runs. The chat advisor uses the same offline retriever over all 92 docs.
+  embedding-free retriever (`rag/local_retrieve.py`, offline TF-IDF over KB001–KB021 and KB093), so the Trust Receipt still shows
+  cited sources and claim verification still runs. The chat advisor uses the same offline retriever over all 93 docs.
 - Groq's free tier has a tokens-per-minute cap (8,000 TPM on `gpt-oss-120b` at the time of writing). The adapter
   honours the "try again in Ns" hint on HTTP 429 and caches responses, so reruns are cheap.
 - `gemini-2.0-flash` (shut down 1 Jun 2026) and `text-embedding-004` (shut down 14 Jan 2026) no longer work.
@@ -129,7 +129,7 @@ User input (SMS text / CSV / chat message)
 │  │ 2. Deep model │  │ 2. Categoriser │  │ 3. Your numbers │  │
 │  │    (NumPy)    │  │ 3. Budget      │  │    (engine)     │  │
 │  │ 3. LLM judge  │  │    engine      │  │ 4. Knowledge    │  │
-│  │    + RAG      │  │    (pure       │  │    base (92     │  │
+│  │    + RAG      │  │    (pure       │  │    base (93     │  │
 │  │ 4. Claim      │  │    Python)     │  │    docs) + LLM  │  │
 │  │    verifier   │  │ 4. Nudges, PDF │  │    phrasing     │  │
 │  └──────┬────────┘  └───────┬────────┘  └────────┬────────┘  │
@@ -188,25 +188,30 @@ PDF writer (built-in Helvetica fonts, amounts shown as "Rs"); every figure comes
 |----------|----------|---------|---------------|---------|
 | Rules baseline | 0.55 | 0.77 | 0.17 | 0.71 |
 | TF-IDF + LogReg (word + char n-grams) | 0.79 | 0.87 | 0.57 | 0.94 |
-| **Pipeline offline (rules + deep model)** | **0.73** | 0.83 | 0.50 | 0.87 |
+| **Pipeline offline (rules + deep model)** | **0.77** | 0.83 | 0.59 | 0.89 |
 
 On this small test split the deep model is about equal to TF-IDF. Its advantage is **fewer false alarms on ordinary text**
 and **catching newer scams**, which the 47-message split does not measure:
 
 | Set (deep model, shipped weights) | Result |
 |-----------------------------------|--------|
-| Real everyday SMS (300 UCI ham messages, never trained on) | **2%** false alarms |
+| Real everyday SMS (300 UCI ham messages, never trained on) | **1%** false alarms through the pipeline (2% by the model alone) |
 | Hand-written ordinary text (76 messages) | 3.9% flagged through the full pipeline (5% by the model alone) |
-| **Genuine bank service notices** (25 hand-written: card delivered / Green PIN, e-statement, EMI reminders…) | 8% false alarms by the model alone, 12% through the pipeline (was 24% before bank-notice training data) |
-| Look-alike scams using the same words (11 hand-written) | **100%** caught |
-| New hand-written scams (38 messages, never trained on) | **97%** caught (not "safe"); 87% labelled exactly "scam" by the model alone |
+| **Genuine bank service notices** (31 held-out: card delivered / Green PIN, blocked card, e-statement, EMI reminders; 4 are real SBI FAQ messages) | 13% flagged through the pipeline (4 of 31; was 10 of 31 before bank-notice training data) |
+| Look-alike scams using the same words (13 hand-written, incl. fake `.bank.in` look-alikes) | **100%** caught |
+| New hand-written scams (38 messages, never trained on) | **100%** caught (not "safe") through the pipeline; 87% labelled exactly "scam" |
 
-- A real SBI card-delivery SMS ("Generate Green PIN - Activate your card") was first flagged suspicious. We added genuine
-  bank notices **and look-alike scams with the same words** (`data/build_bank_genuine.py`) and retrained. The full message now
-  scores safe; a very short fragment with no context ("…Generate Green PIN - Activate your card") can still be flagged.
-  Wording alone can't prove a bank message is genuine — the link domain and sender header are what differ — so a flagged
-  genuine notice should be verified in the bank's app, which is what the app tells the user to do.
-  The macro-F1 on the original 47-message split dipped from 0.78 to 0.73 (small, noisy split).
+- **Genuine bank messages (a real false alarm, now reduced).** A real SBI card-delivery SMS ("Generate Green PIN - Activate
+  your card") was first flagged suspicious. We read SBI's own FAQ (it quotes real card-delivery / card-blocked SMS), SBI's
+  cyber-security guidance, the RBI `.bank.in` circular and TRAI's sender-header rules, then:
+  - added genuine bank notices **and look-alike scams that use the same words** (`data/build_bank_genuine.py`, 436 rows) and retrained;
+  - taught the link checker that any `<bank>.bank.in` address is a licensed bank (RBI circular of 22 Apr 2025, IDRBT sole
+    registrar) while look-alikes such as `sbi-bank.in`, `sbi.bank-in.com` and `sbi.bank.in.evil.com` are not;
+  - added a "check the sender header (TRAI portal / SMS 1909) and the link domain" step, and knowledge-base entry KB093.
+  Genuine bank notices flagged: **10 of 31 before → 4 of 31 now**; look-alike scams still **13 of 13** caught. The four real
+  SBI FAQ messages are in the held-out set (never trained on) and all pass as safe. A very short fragment with no context can
+  still be flagged. Wording alone can't prove a message is genuine — the link domain and sender header are what differ — so a
+  flagged genuine notice should be verified in the bank's app, which is what Scam Shield tells the user to do.
 - Rules engine: **100% precision on scam** — no safe message is flagged by rules alone.
 - The `suspicious` class is the hardest; the LLM judge helps most here.
 - The pipeline's thresholds (`CLF_SCAM_MIN=0.50`, `CLF_FLAG_MIN=0.85` in `scam/llm_judge.py`) are tuned for the deep model.
@@ -296,13 +301,13 @@ artha-kavach-2026/
 │   ├── bank_genuine_train.csv, bank_genuine_heldout.csv (+ build_bank_genuine.py)  ← genuine bank notices + look-alike scams
 │   ├── sample_sms.csv, sample_statement.csv       ← synthetic sample inputs
 │   ├── chat_eval_{qa,social,adversarial}.csv      ← chat evaluation sets
-│   ├── kb/               ← 92 knowledge-base docs: KB001–021 scam/safety advisories, KB022–066 finance education,
-│   │                       KB067–092 money-book summaries & reading guides
+│   ├── kb/               ← 93 knowledge-base docs: KB001–021 scam/safety advisories, KB022–066 finance education,
+│   │                       KB067–092 money-book summaries & reading guides, KB093 genuine-vs-fake bank SMS
 │   ├── finance_kb/, build_*.py, fetch_*.py        ← generators / dataset fetchers
 │   └── external/         ← downloaded datasets (git-ignored)
 │
 ├── eval/                 ← quick_eval, run_eval, real_eval, chat_eval; results/ holds JSON, CSV, PNG
-├── tests/                ← 219 tests incl. headless end-to-end UI tests
+├── tests/                ← 236 tests incl. headless end-to-end UI tests
 ├── smoke_test.py         ← Checks your LLM key/model end to end
 ├── .env.example, requirements.txt
 ├── ARCHITECTURE.md, DEMO_SCRIPT.md
@@ -312,7 +317,7 @@ artha-kavach-2026/
 ## 🧪 Running tests
 
 ```bash
-# Everything (219 tests: unit + headless Streamlit UI tests; no API key needed)
+# Everything (236 tests: unit + headless Streamlit UI tests; no API key needed)
 python -m pytest tests/ -v
 
 # Without the UI tests (they need pandas, which some locked-down Windows machines block)

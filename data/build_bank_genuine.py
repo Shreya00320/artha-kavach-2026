@@ -29,15 +29,15 @@ rng = random.Random(11)
 
 # (display name, official domain, helpline phrase)
 BANKS = [
-    ("SBI", "sbi.co.in", "the number on the back of your card"),
-    ("HDFC Bank", "hdfcbank.com", "the number printed on your card"),
-    ("ICICI Bank", "icicibank.com", "the customer care number on your card"),
+    ("SBI", "sbi.bank.in", "the number on the back of your card"),
+    ("HDFC Bank", "hdfc.bank.in", "the number printed on your card"),
+    ("ICICI Bank", "icici.bank.in", "the customer care number on your card"),
     ("Axis Bank", "axis.bank.in", "the number on your card"),
     ("Kotak Mahindra Bank", "kotak.bank.in", "the number on your card"),
     ("Canara Bank", "canarabank.com", "the helpline on your card"),
     ("Punjab National Bank", "pnb.bank.in", "the helpline on your passbook"),
-    ("Bank of Baroda", "bankofbaroda.in", "the helpline on your card"),
-    ("IDFC FIRST Bank", "idfcfirstbank.com", "the number on your card"),
+    ("Bank of Baroda", "bankofbaroda.bank.in", "the helpline on your card"),
+    ("IDFC FIRST Bank", "idfcfirst.bank.in", "the number on your card"),
     ("Union Bank of India", "unionbankofindia.co.in", "the helpline on your card"),
 ]
 NAMES = ["Asha", "Rahul", "Priya", "Amit", "Sneha", "Karan", "Neha", "Rohit", "Meera", "Vikram", "Divya", "Nikhil"]
@@ -52,7 +52,8 @@ BADTLD = [".xyz", ".top", ".in.net", "-secure.com", "-verify.in", ".co", "-suppo
 def bad_domain(bank: str) -> str:
     slug = bank.lower().replace(" bank", "").replace(" mahindra", "").replace(" of ", "").replace(" ", "")
     return rng.choice([f"{slug}-kyc{rng.choice(BADTLD)}", f"{slug}card-activate{rng.choice(BADTLD)}",
-                       f"{slug}-update{rng.choice(BADTLD)}", f"secure-{slug}{rng.choice(BADTLD)}"])
+                       f"{slug}-update{rng.choice(BADTLD)}", f"secure-{slug}{rng.choice(BADTLD)}",
+                       f"{slug}-bank.in", f"{slug}.bank-in.com", f"{slug}.bank.in.{rng.choice(['verify-now.com', 'kyc-help.xyz'])}"])
 
 
 def greet(bank: str) -> str:
@@ -89,6 +90,15 @@ def safe_msgs() -> list[str]:
             f"{g} Your OTP for {bank} net banking login is {rng.randint(100000, 999999)}. Do not share this OTP with anyone. {bank} never calls to ask for it.",
             f"{g} Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",
             f"{g} Your {bank} debit card ending {card} has been blocked as requested. Visit a branch or use the app to apply for a new card.",
+        ]
+        # terse service style seen in real bank SMS (abbreviations, reference numbers)
+        out += [
+            f"Pl note: your new {bank} chip debit card was handed over at your Regd. address. Existing card stops working from {rng.choice(DAYS)}. Generate Green PIN to start using it.",
+            f"{bank}: Debit Card {card} blocked on {rng.choice(DAYS)} after the replacement chip card {XX()} was activated. Ref No {rng.randint(10**13, 10**14 - 1)}.",
+            f"{bank}: Card {card} is now closed. To get a replacement apply at https://{dom} or visit your home branch.",
+            f"Pl follow the instructions in the welcome letter to activate your new {bank} card. Do not share PIN/OTP with anyone.",
+            f"{bank}: Ur A/c {card} debited by {AMT()} on {rng.choice(DAYS)}. Avl Bal {AMT()}. Not you? Call {help_}.",
+            f"{bank}: Cheque {rng.randint(100000, 999999)} for {AMT()} cleared in A/c {card} on {rng.choice(DAYS)}. Ref {rng.randint(10**9, 10**10 - 1)}.",
         ]
         # a few that reference the official domain only
         out += [

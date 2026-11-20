@@ -26,7 +26,7 @@ from urllib.parse import urlsplit
 OFFICIAL_DOMAINS: dict[str, str] = {
     # Banks
     "sbi.co.in": "State Bank of India", "onlinesbi.sbi": "State Bank of India",
-    "sbi.bank.in": "State Bank of India",
+    "sbi.bank.in": "State Bank of India", "onlinesbi.com": "State Bank of India",
     "hdfcbank.com": "HDFC Bank", "hdfc.bank.in": "HDFC Bank",
     "icicibank.com": "ICICI Bank", "icici.bank.in": "ICICI Bank",
     "axisbank.com": "Axis Bank", "axis.bank.in": "Axis Bank",
@@ -142,6 +142,11 @@ def _official_for(host: str) -> str | None:
     for dom, org in OFFICIAL_DOMAINS.items():
         if h == dom or h.endswith("." + dom):
             return org
+    # RBI (circular of 22 Apr 2025) told banks to move to the restricted ".bank.in" domain; IDRBT is the
+    # only registrar and only licensed banks qualify, so <name>.bank.in is a bank's own site.
+    # (host must END with ".bank.in" — "sbi.bank.in.evil.com" and "sbi-bank.in" do not match.)
+    if h.endswith(".bank.in") and h.count(".") >= 2:
+        return "a licensed bank (.bank.in domain)"
     return None
 
 

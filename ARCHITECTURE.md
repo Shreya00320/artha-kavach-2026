@@ -180,12 +180,12 @@ LLMAdapter.generate(prompt, response_schema, temperature)   (alias of generate_s
 
 ```
 Build (one-time, run rag/ingest.py):
-  data/kb/*.json (92 docs) →  KBDocument(id, title, publisher, url, text)
+  data/kb/*.json (93 docs) →  KBDocument(id, title, publisher, url, text)
                 →  Gemini gemini-embedding-001 →  3072-dim vector
                 →  FAISS IndexFlatL2          →  .cache/faiss.index
                 →  .cache/documents.pkl
 
-Offline (no key, used by Ask Artha): core/knowledge.py — TF-IDF over the same 92 docs,
+Offline (no key, used by Ask Artha): core/knowledge.py — TF-IDF over the same 93 docs,
   Hindi/Hinglish query expansion via core/lang.py (built; chat is English-only for now).
 
 Retrieve (per request):
@@ -255,7 +255,7 @@ Scam Shield
   scam/rules.py        +digital arrest, parcel, APK, QR-to-receive, task/investment,
                         "sent by mistake", Hinglish variants (R110–R163)
   scam/llm_judge.py    offline verdict = more severe of rules verdict and classifier argmax
-  scam/link_check.py   offline URL inspection: official-domain allowlist, brand-token and
+  scam/link_check.py   offline URL inspection: official-domain allowlist (any <bank>.bank.in counts, per RBI circular 22 Apr 2025), brand-token and
                         edit-distance lookalikes, shorteners, IPs, punycode, risky TLDs, .apk
   scam/emergency.py    action_plan() + complaint_draft()  (1930, cybercrime.gov.in, Chakshu, RBI CMS)
 
@@ -292,7 +292,8 @@ Ask Artha (core/advisor.py)
 
 Knowledge base
   data/kb: KB001–021 scam & safety advisories · KB022–066 finance education ·
-  KB067–092 money-book summaries and reading guides (flagged verified:false pending human check)
+  KB067–092 money-book summaries and reading guides · KB093 genuine-vs-fake bank SMS
+  (flagged verified:false pending human check)
 
 Scam deep model
   scam/deep_model.py + scam/train_deep.py; thresholds CLF_SCAM_MIN=0.50 / CLF_FLAG_MIN=0.85 in
@@ -322,7 +323,7 @@ flowchart LR
     UI --> SB[Smart Budget]
     UI --> GT[Goals & Tax]
     UI --> AA[Ask Artha]
-    KB[(92-doc KB)] --> AA
+    KB[(93-doc KB)] --> AA
 
     SS --> R[1 Rules<br/>noisy-OR] --> C[2 Deep model<br/>NumPy] --> J[3 LLM judge<br/>Gemini / Groq] --> V[4 Verifier<br/>cited claims only]
     V --> TR[(Trust Receipt)]

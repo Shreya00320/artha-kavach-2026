@@ -39,7 +39,7 @@ class LocalRetriever:
         self._min_score = min_score
         self._docs: dict[str, KBDocument] = {}
         for d in self._kb.docs:
-            if _kb_number(d.id) <= max_kb_number:
+            if _kb_number(d.id) <= max_kb_number or "genuine-vs-fake" in d.topics:
                 self._docs[d.id] = KBDocument(
                     id=d.id, title=d.title, publisher=d.publisher, url=d.url,
                     date_accessed="", topics=list(d.topics), text=d.text,

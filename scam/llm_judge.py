@@ -130,6 +130,7 @@ def _default_what_to_do(verdict: str) -> list[str]:
         return [
             "Treat with caution — do not act on the message immediately.",
             "Verify by calling the official number on your bank card or the company's official website.",
+            "Check the sender and link: real bank SMS come from a registered sender header (look it up on TRAI's Header Information Portal or SMS it to 1909) and link only to the bank's own domain.",
             "Do not share any OTP or PIN.",
             "Report at cybercrime.gov.in if you believe it is a scam.",
         ]

@@ -35,3 +35,11 @@ BH033,scam,"Kotak Bank: PAN not updated, your account will be closed today. Clic
 BH034,suspicious,"Your SBI card is ready for activation, tap to continue: bit.ly/3zQ8mWx",en,false,test,handwritten-heldout-lookalike
 BH035,suspicious,"HDFC Bank customer, finish your account verification here tinyurl.com/hd5k2p to keep your benefits.",en,false,test,handwritten-heldout-lookalike
 BH036,suspicious,"Dear customer, update your bank details today at cutt.ly/Xy7Lm2",en,false,test,handwritten-heldout-lookalike
+BH037,safe,"You will soon receive an EMV chip debit card in lieu of existing Magstripe card. Pl follow instructions in welcome letter to activate and start using the card.",en,false,test,official-sbi-faq
+BH038,safe,"Please start using the new SBI EMV Debit card delivered to your Regd. Address. Your SBI Magstripe Debit card will be blocked on 31DEC-18",en,false,test,official-sbi-faq
+BH039,safe,"Your SBI Debit Card ending 4821 has been blocked on 05DEC-18 at 14:32 after activation of replacement EMV card ending 7733. Tkt No 120181205003412",en,false,test,official-sbi-faq
+BH040,safe,"Your State Bank Debit Card ending with 4821 is blocked permanently. Please apply for a replacement Card at www.onlinesbi.com or visit your home branch",en,false,test,official-sbi-faq
+BH041,safe,"SBI: Aapka naya debit card aapke registered pate par pahunch gaya hai. Green PIN banakar card chalu karein. PIN ya OTP kisi se share na karein.",hinglish,true,test,handwritten-heldout
+BH042,safe,"Dear Customer, your PNB debit card has been blocked as requested. To apply for a new card visit https://pnb.bank.in or your home branch.",en,false,test,handwritten-heldout
+BH043,scam,"Your SBI debit card will be blocked today. Update KYC at http://sbi-bank.in/kyc and enter your PIN and OTP.",en,false,test,handwritten-heldout-lookalike
+BH044,scam,"SBI: card 4821 blocked. Re-activate now https://sbi.bank.in.verify-card-now.com/login and share the OTP sent to you within 30 minutes.",en,false,test,handwritten-heldout-lookalike

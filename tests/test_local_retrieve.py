@@ -7,8 +7,8 @@ from scam.pipeline import analyse
 def test_only_scam_advisories_are_indexed():
     r = LocalRetriever()
     ids = {d.id for d in r._index.documents}
-    assert r.n_documents == 21
-    assert "KB001" in ids and "KB022" not in ids and "KB067" not in ids   # no finance/book docs
+    assert r.n_documents == 22      # KB001-021 + KB093 (genuine-vs-fake bank SMS)
+    assert "KB001" in ids and "KB093" in ids and "KB022" not in ids and "KB067" not in ids   # no finance/book docs
 
 
 def test_retrieves_the_right_advisory():

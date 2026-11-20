@@ -309,6 +309,11 @@ def respond(message: str, history: list[dict] | None = None, summary=None, txns=
                      "'wants' to about 30% of take-home pay, sleep on any non-essential purchase for 24 "
                      "hours, and don't dip into your emergency fund for it.", "rules", "personal")
 
+    from core.calculator import answer_calculation
+    calc = answer_calculation(message)
+    if calc:
+        return Reply(calc, "rules", "calculator", [], 1.0)
+
     if _META.search(message) and not _OFF_TOPIC.search(message):
         d = get_kb().get("KB066")
         return Reply(d.text, "rules", "knowledge", [(d.id, d.title)], 1.0)

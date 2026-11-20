@@ -19,6 +19,8 @@ def _caption(reply) -> str:
         bits.append("🤖 AI-phrased from vetted sources, numbers verified")
     elif reply.intent in ("refuse_advice", "refuse_injection", "warn_returns", "scam", "safety"):
         bits.append("🛡️ safety guard")
+    elif reply.intent == "calculator":
+        bits.append("🧮 computed by Artha's calculator (assumptions stated)")
     elif reply.intent == "knowledge":
         bits.append("📚 from the Artha knowledge base")
     if reply.sources and reply.intent != "personal":

@@ -197,8 +197,8 @@ and **catching newer scams**, which the 47-message split does not measure:
 |-----------------------------------|--------|
 | Real everyday SMS (300 UCI ham messages, never trained on) | **1%** false alarms through the pipeline (2% by the model alone) |
 | Hand-written ordinary text (76 messages) | 3.9% flagged through the full pipeline (5% by the model alone) |
-| **Genuine bank service notices** (31 held-out: card delivered / Green PIN, blocked card, e-statement, EMI reminders; 4 are real SBI FAQ messages) | 13% flagged through the pipeline (4 of 31; was 10 of 31 before bank-notice training data) |
-| Look-alike scams using the same words (13 hand-written, incl. fake `.bank.in` look-alikes) | **100%** caught |
+| **Genuine bank service notices** (33 held-out: card delivered / Green PIN, blocked card, statements, EMI and KYC reminders; 4 are real SBI FAQ messages) | 15% flagged through the pipeline (5 of 33; was 11 of 33 before bank-notice training data) |
+| Look-alike and real fake bank SMS (17: same wording as genuine, fake `.bank.in` look-alikes, free-hosting/APK links, 2 quoted from a real HDFC-phishing report) | **100%** flagged (all but 3 labelled exactly "scam") |
 | New hand-written scams (38 messages, never trained on) | **100%** caught (not "safe") through the pipeline; 87% labelled exactly "scam" |
 
 - **Genuine bank messages (a real false alarm, now reduced).** A real SBI card-delivery SMS ("Generate Green PIN - Activate
@@ -207,9 +207,17 @@ and **catching newer scams**, which the 47-message split does not measure:
   - added genuine bank notices **and look-alike scams that use the same words** (`data/build_bank_genuine.py`, 436 rows) and retrained;
   - taught the link checker that any `<bank>.bank.in` address is a licensed bank (RBI circular of 22 Apr 2025, IDRBT sole
     registrar) while look-alikes such as `sbi-bank.in`, `sbi.bank-in.com` and `sbi.bank.in.evil.com` are not;
+  - found, from real phishing campaigns (Zscaler IOC lists, CERT-In, SBI's own warning page), that the link checker rated
+    `8ef628b4602c.ngrok.io/sbibank` **safe** and `updateyourcard.in` only "caution": it now flags free-hosting / tunnel domains
+    (`ngrok.io`, `web.app`, `pages.dev`, `herokuapp.com`, `netlify.app`, `github.io`, `blogspot.com`…) and domains stacking lure
+    words ("update", "card", "kyc"…) as dangerous;
+  - found that genuine HDFC links (`hdfcbk.io`, per HDFC's own statements reported in the press) were rated *danger* as a
+    "misspelling" of `hdfcbank.com`, and allow-listed it (sibling look-alikes such as `hdfcbk.co` stay dangerous);
   - added a "check the sender header (TRAI portal / SMS 1909) and the link domain" step, and knowledge-base entry KB093.
-  Genuine bank notices flagged: **10 of 31 before → 4 of 31 now**; look-alike scams still **13 of 13** caught. The four real
-  SBI FAQ messages are in the held-out set (never trained on) and all pass as safe. A very short fragment with no context can
+  Genuine bank notices flagged: **11 of 33 before → 5 of 33 now**; the 17 look-alike / real fake messages are all still flagged. The
+  four real SBI FAQ messages are in the held-out set (never trained on) and all pass as safe. Still wrongly flagged: very short
+  fragments and a genuine "periodic KYC update, visit your branch" reminder. A further retrain on extra free-hosting/APK scam
+  templates was tried and **rejected** — it cut exact-"scam" labelling of new scams from 28/30 to 25/30 for one fewer genuine false alarm. A very short fragment with no context can
   still be flagged. Wording alone can't prove a message is genuine — the link domain and sender header are what differ — so a
   flagged genuine notice should be verified in the bank's app, which is what Scam Shield tells the user to do.
 - Rules engine: **100% precision on scam** — no safe message is flagged by rules alone.
@@ -248,6 +256,11 @@ there is no multi-turn evaluation yet. LLM-mode results (`--llm`) have not been 
 - Hinglish subset is small (5 test examples) — treat as directional only.
 - Knowledge-base entries KB022–KB092 are our own plain-language summaries and are flagged `verified: false` until a human
   checks rates, tax limits and book attributions — see `data/kb/TODO_manual_verification.md`.
+
+**Public datasets checked and not used.** We profiled the Indian SMS datasets we could find. `junioralive/india-spam-sms-classification`
+(MIT) and its copy `carnageiron/scam-ham-india` (Apache-2.0) have a "ham" side that is WhatsApp-style chat and stock-market commentary
+(11–12 bank-related rows, none a bank notice) and a "spam" side of real promotional SMS; `CloveAI/india-spam-sms` (MIT, 20k rows) is
+clearly synthetic (random names, placeholder URLs). None contains real genuine bank notices, so they would not fix the gap above.
 
 ## 🗂️ Project structure
 

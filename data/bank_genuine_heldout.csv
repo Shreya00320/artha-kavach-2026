@@ -43,3 +43,9 @@ BH041,safe,"SBI: Aapka naya debit card aapke registered pate par pahunch gaya ha
 BH042,safe,"Dear Customer, your PNB debit card has been blocked as requested. To apply for a new card visit https://pnb.bank.in or your home branch.",en,false,test,handwritten-heldout
 BH043,scam,"Your SBI debit card will be blocked today. Update KYC at http://sbi-bank.in/kyc and enter your PIN and OTP.",en,false,test,handwritten-heldout-lookalike
 BH044,scam,"SBI: card 4821 blocked. Re-activate now https://sbi.bank.in.verify-card-now.com/login and share the OTP sent to you within 30 minutes.",en,false,test,handwritten-heldout-lookalike
+BH045,scam,"Dear HDFC Customer Your HDFC Account/Netbanking will be block today. Please update you pan card and complete your KYC now click here https://hdfc-kyc-verify.xyz HDFC TM",en,false,test,official-factcrescendo-quote
+BH046,scam,"Please update you pan card and complete your KYC now click here http://bit.ly/hd2KycNow HDFC TM",en,false,test,official-factcrescendo-quote
+BH047,scam,"Dear SBI user your YONO account will be deactivated today due to KYC expiry. Install SBI-KYC app https://sbi-user-kyc-app.web.app/SBI-KYC.apk",en,false,test,handwritten-zscaler-style
+BH048,scam,"Your HDFC credit card reward points will expire today. Redeem now: https://updateyourcard.in/HDFC_Credit_Card.apk",en,false,test,handwritten-zscaler-style
+BH049,safe,"HDFC Bank: Your credit card ending 9012 statement is ready. Total due Rs 3,420 by 18-Dec. Pay via the HDFC Bank MobileBanking app. Ignore if already paid.",en,false,test,handwritten-heldout
+BH050,safe,"Dear Customer, it is time for your periodic KYC update. Please visit your nearest branch with ID and address proof, or log in to the bank app. Do not share OTP or documents over SMS or call.",en,false,test,handwritten-heldout

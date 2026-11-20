@@ -385,6 +385,24 @@ Datasets (`scam_eval.csv`, `sample_sms.csv`, held-out sets) are **synthetic or h
 
 ---
 
+## 🙏 Credits, AI tools & data
+
+**AI models and APIs used (as required by the Arthaton rules)**
+
+| What | Used for |
+|------|----------|
+| [Groq](https://groq.com) API serving OpenAI's open-weight **gpt-oss-120b** (and gpt-oss-20b for testing) | Scam Shield "AI judge" and claim verifier, polished phrasing in Ask Artha, budget nudges |
+| Google **Gemini** API (optional alternative provider, `gemini-embedding-001` for semantic retrieval) | Same roles when `LLM_PROVIDER=gemini` |
+| Our own **scam-detection neural network** (`scam/deep_model.py`, trained with PyTorch, NumPy at run time) | Fast offline Scam Shield verdicts — not a third-party model |
+
+The app works without any API key: rules, the scam model, the budget engine, tax and goal calculators, the knowledge-base chat and the PDF report are all local.
+
+**AI coding assistance.** Parts of this code, tests and documentation were written with the help of an AI coding assistant (Claude Code by Anthropic) working under the team's direction. All financial arithmetic is plain, unit-tested Python, never AI-generated at run time.
+
+**Open-source libraries:** [Streamlit](https://streamlit.io), [scikit-learn](https://scikit-learn.org), [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org), [PyTorch](https://pytorch.org) (training only), [Pydantic](https://pydantic.dev), [python-dotenv](https://github.com/theskumar/python-dotenv), [FAISS](https://github.com/facebookresearch/faiss) (optional), [google-genai](https://github.com/googleapis/python-genai), [pytest](https://pytest.org).
+
+**Data.** Everything in `data/` is synthetic or hand-written, except about 2,000 ordinary text messages from the **UCI SMS Spam Collection** (Almeida & Hidalgo, 2011, CC BY 4.0), downloaded on demand and not committed. No real bank account details, card numbers, PAN numbers or passwords are in this repository. Knowledge-base entries are our own plain-language summaries of public guidance from RBI, NPCI, I4C/MHA, SEBI, DICGC, SBI, TRAI and the Income Tax Department, with sources recorded per entry. We also profiled public Indian SMS datasets (`junioralive/india-spam-sms-classification`, `carnageiron/scam-ham-india`, `CloveAI/india-spam-sms`) and chose **not** to use them.
+
 ## ⚠️ Limitations & what it does NOT do
 
 - ❌ No real money movement — educational tool only

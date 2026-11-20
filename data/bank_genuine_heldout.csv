@@ -1,6 +1,6 @@
 id,label,text,language,hinglish,split,notes
-BH001,safe,"Hi Asha K, Your SBI Debit card ending with XX36 has been delivered. Get started in minutes: Generate Green PIN - Activate your card. Note: Your card will be enabled for ATM and PoS transactions upon PIN generation. Enable E-commerce for making online transactions through Manage Debit Card after Green PIN generation.",en,false,test,handwritten-heldout-real-pattern
-BH002,safe,"Your SBI Debit card ending XX36 has been delivered. Generate Green PIN - Activate your card",en,false,test,handwritten-heldout-real-pattern
+BH001,safe,"Hi Asha K, Your SBI Debit card ending with XX48 has been delivered. Get started in minutes: Generate Green PIN - Activate your card. Note: Your card will be enabled for ATM and PoS transactions upon PIN generation. Enable E-commerce for making online transactions through Manage Debit Card after Green PIN generation.",en,false,test,handwritten-heldout-real-pattern
+BH002,safe,"Your SBI Debit card ending XX48 has been delivered. Generate Green PIN - Activate your card",en,false,test,handwritten-heldout-real-pattern
 BH003,safe,"Dear Customer, your new HDFC Bank Debit Card has been delivered by the courier. Please set your PIN using NetBanking, MobileBanking or any HDFC Bank ATM before first use.",en,false,test,handwritten-heldout
 BH004,safe,"ICICI Bank: Your credit card statement is ready. Total amount due Rs 4,310 by 18-Dec. Pay using iMobile or net banking. Ignore if paid.",en,false,test,handwritten-heldout
 BH005,safe,"Axis Bank: Your debit card ending 4821 has been dispatched via Speed Post. You will receive it in 3 to 5 working days. Track in the Axis Mobile app.",en,false,test,handwritten-heldout
@@ -20,11 +20,11 @@ BH018,safe,"Axis Bank: Your UPI PIN reset was successful. If you did not request
 BH019,safe,"Dear Customer, your home loan interest certificate for FY 2025-26 can be downloaded from your net banking profile.",en,false,test,handwritten-heldout
 BH020,safe,"ICICI Bank: Your request to increase the daily ATM limit to Rs 50,000 has been completed. If you did not request this, please call customer care.",en,false,test,handwritten-heldout
 BH021,safe,"HDFC Bank: Your credit card ending 9012 payment of Rs 6,220 has been received. Thank you.",en,false,test,handwritten-heldout
-BH022,safe,"SBI: Aapka debit card XX36 deliver ho gaya hai. Green PIN generate karke card activate karein. Apna PIN ya OTP kisi se share na karein.",hinglish,true,test,handwritten-heldout
+BH022,safe,"SBI: Aapka debit card XX48 deliver ho gaya hai. Green PIN generate karke card activate karein. Apna PIN ya OTP kisi se share na karein.",hinglish,true,test,handwritten-heldout
 BH023,safe,"Kotak: Aapke account ka statement email par bhej diya gaya hai. Bank kabhi OTP ya password nahi maangta.",hinglish,true,test,handwritten-heldout
 BH024,safe,"Your standing instruction for the electricity bill of Rs 1,840 has been registered. First payment on 12-Dec-2026.",en,false,test,handwritten-heldout
 BH025,safe,"Your account ending 5567 was credited with Rs 42,000 by NEFT from your employer. Available balance Rs 61,200.",en,false,test,handwritten-heldout
-BH026,scam,"SBI ALERT: Your debit card XX36 is blocked. Activate it now at http://sbi-card-activate.xyz and enter your PIN to avoid permanent closure.",en,false,test,handwritten-heldout-lookalike
+BH026,scam,"SBI ALERT: Your debit card XX48 is blocked. Activate it now at http://sbi-card-activate.xyz and enter your PIN to avoid permanent closure.",en,false,test,handwritten-heldout-lookalike
 BH027,scam,"Dear Customer your HDFC card has been delivered. Generate Green PIN: http://hdfc-greenpin-secure.in/login and enter card number with CVV and OTP within 1 hour.",en,false,test,handwritten-heldout-lookalike
 BH028,scam,"ICICI Bank: unusual activity detected. Your account will be suspended today. Verify your card details at https://icici-verify-support.top or share OTP to reactivate.",en,false,test,handwritten-heldout-lookalike
 BH029,scam,"Your Axis reward points Rs 9,870 expire today. Redeem now by installing our app: http://axis-rewards.co/claim.apk",en,false,test,handwritten-heldout-lookalike

@@ -39,6 +39,5 @@ def test_sbi_upi_narration_gives_the_merchant_not_DR():
 
 
 def test_non_statement_still_returns_empty():
-    assert statement_to_sms("raw_sms
-Rs 5 debited
-") == []
+    assert statement_to_sms("raw_sms\nRs 5 debited\n") == []
+

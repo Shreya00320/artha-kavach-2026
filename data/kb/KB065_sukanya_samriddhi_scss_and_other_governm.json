@@ -11,9 +11,19 @@
     "post-office",
     "government-scheme"
   ],
-  "text": "Post-office and government small-savings schemes are safe, government-backed options whose rates are reset every quarter, so always check the current rate. Sukanya Samriddhi Yojana is for the girl child (account opened before she turns 10), offers a higher rate than most small-savings schemes and tax-free interest in the old regime. The Senior Citizens' Savings Scheme (SCSS) is for people 60 and older with a 5-year term and quarterly interest. Post Office Monthly Income Scheme, National Savings Certificate (NSC) and Kisan Vikas Patra are fixed-return schemes with different lock-ins; some NSC deposits qualify for 80C. They suit conservative money and parents' savings, but returns are modest after tax and inflation.",
+  "text": "Post-office and government small-savings schemes are safe, government-backed options whose rates are reset every quarter, so always check the current rate. For October–December 2026 the government kept them unchanged: PPF 7.1%, Sukanya Samriddhi 8.2%, SCSS 8.2%, NSC 7.7%, Post Office Monthly Income Scheme 7.4% and a 5-year recurring deposit 6.7%. Sukanya Samriddhi Yojana is for the girl child (account opened before she turns 10), offers a higher rate than most small-savings schemes (8.2% for October–December 2026) and tax-free interest; the 80C deduction on deposits is available only in the old regime. The Senior Citizens' Savings Scheme (SCSS) is for people 60 and older with a 5-year term and quarterly interest. Post Office Monthly Income Scheme, National Savings Certificate (NSC) and Kisan Vikas Patra are fixed-return schemes with different lock-ins; some NSC deposits qualify for 80C. They suit conservative money and parents' savings, but returns are modest after tax and inflation.",
   "summary_hinglish": "Post office aur sarkari small-savings schemes safe hain par rates har quarter badalte hain, isliye current rate check karo. Sukanya Samriddhi beti ke liye (10 saal se pehle account), SCSS 60+ logon ke liye, NSC aur POMIS fixed-return schemes. Conservative paisa ke liye theek, par tax aur inflation ke baad returns modest.",
   "summary_hi": "पोस्ट ऑफिस और सरकारी लघु बचत योजनाएं सुरक्षित हैं पर दरें हर तिमाही बदलती हैं, इसलिए वर्तमान दर जांचें। सुकन्या समृद्धि बेटी के लिए (10 साल से पहले खाता), SCSS 60+ के लिए, NSC और POMIS निश्चित रिटर्न योजनाएं। रूढ़िवादी पैसे के लिए ठीक, पर टैक्स और महंगाई के बाद रिटर्न सीमित।",
   "aliases": "sukanya samriddhi ssy scss senior citizen savings post office nsc kisan vikas patra small savings scheme",
-  "verified": false
+  "verified": false,
+  "verified_claims": [
+    "rates for Oct-Dec 2026: PPF 7.1, SSY 8.2, SCSS 8.2, NSC 7.7, POMIS 7.4, 5-yr RD 6.7"
+  ],
+  "unverified_claims": [
+    "SSY account opened before age 10; SCSS 60+ and 5-year term; some NSC qualify for 80C (long-standing rules, not re-checked)"
+  ],
+  "sources": [
+    "DEA notification for Q3 FY2026-27 as reported by Business Today, Free Press Journal, Angel One and taxguru.in"
+  ],
+  "last_checked": "2026-11-20"
 }

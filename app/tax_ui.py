@@ -68,6 +68,11 @@ def render_tax_tab() -> None:
         st.caption(f"The old regime wins only if your deductions (beyond the ₹50,000 standard deduction) "
                    f"exceed about {_inr(be)}. You entered {_inr(d.total_allowed())} after caps.")
 
+    from core.tax_explain import capital_gains_tax, explain_tax, hra_exemption
+    exp = explain_tax(gross, d, other)
+    with st.expander("🗣️ Explain it to me in plain words", expanded=False):
+        st.markdown(exp.markdown())
+
     with st.expander("How was this calculated?"):
         for r in (new, old):
             st.markdown(f"**{r.regime.title()} regime** — taxable income {_inr(r.taxable_income)} "
@@ -82,3 +87,30 @@ def render_tax_tab() -> None:
             for n in r.notes:
                 st.caption(f"ℹ️ {n}")
         st.caption("Not covered: surcharge (> ₹50 L), capital gains, senior-citizen slabs, employer NPS 80CCD(2).")
+
+    st.divider()
+    h1, h2 = st.columns(2)
+    with h1, st.expander("🏠 HRA exemption calculator (old regime)"):
+        st.caption("Enter yearly amounts. The result can go into the HRA box above.")
+        basic = st.number_input("Basic + DA per year (₹)", min_value=0, step=10000, value=0, key="hra_basic")
+        hra_rec = st.number_input("HRA received per year (₹)", min_value=0, step=5000, value=0, key="hra_rec")
+        rent = st.number_input("Rent paid per year (₹)", min_value=0, step=5000, value=0, key="hra_rent")
+        metro = st.checkbox("Delhi, Mumbai, Kolkata, Chennai (50%). Tick also for Bengaluru, Hyderabad, Pune, Ahmedabad if "
+                            "your employer applies the 2026 eight-city rule", key="hra_metro")
+        if basic and hra_rec and rent:
+            r = hra_exemption(basic, hra_rec, rent, metro)
+            st.success(f"Exempt HRA: **{_inr(r['exempt'])}** (taxable HRA {_inr(r['taxable_hra'])}). "
+                       f"Limiting rule: {r['binding_rule']}.")
+            st.dataframe([{"Rule": n, "Amount": _inr(v)} for n, v in r["rules"]], hide_index=True, width="stretch")
+            for n in r["notes"]:
+                st.caption(f"ℹ️ {n}")
+    with h2, st.expander("📈 Tax on shares / equity funds"):
+        stg = st.number_input("Short-term gains (held ≤ 12 months) ₹", min_value=0, step=5000, value=0, key="cg_st")
+        ltg = st.number_input("Long-term gains (held > 12 months) ₹", min_value=0, step=5000, value=0, key="cg_lt")
+        if stg or ltg:
+            cg = capital_gains_tax(stg, ltg)
+            st.success(f"Estimated capital-gains tax: **{_inr(cg['total'])}** "
+                       f"(short-term {_inr(cg['short_term_tax'])}, long-term {_inr(cg['long_term_tax'])} after the "
+                       f"₹1.25 lakh exemption, cess {_inr(cg['cess'])}).")
+            for n in cg["notes"]:
+                st.caption(f"ℹ️ {n}")

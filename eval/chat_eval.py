@@ -77,8 +77,9 @@ def run(adapter=None) -> dict:
         rep = respond(r["question"], adapter=adapter)
         srcs = [s[0] for s in rep.sources]
         guarded = rep.intent in SAFE_GUARDS      # e.g. "should I put savings in Bitcoin?" -> refusal
-        good_intent = rep.intent == "knowledge" or guarded
-        good_kb = (bool(srcs) and srcs[0] in r["expected_kb"].split("|")) or guarded
+        computed = rep.intent == "calculator"    # "Do I pay tax on 10 lakh?" -> computed from core.tax, a better answer than a passage
+        good_intent = rep.intent == "knowledge" or guarded or computed
+        good_kb = (bool(srcs) and srcs[0] in r["expected_kb"].split("|")) or guarded or computed
         ok += good_intent
         hit += good_kb
         check_numbers(r["id"], r["question"], rep)

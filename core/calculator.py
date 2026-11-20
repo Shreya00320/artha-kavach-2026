@@ -68,10 +68,81 @@ def _extract(message: str):
     return _first_amount(rest), rate, months
 
 
+_TAX_CUE = re.compile(r"\b(income\s+tax|tax|regime|itr|tds)\b", re.I)
+_NOT_TAX_CALC = re.compile(r"\b(emi|loan|sip|invest|ltcg|stcg|capital\s+gain|gst|property\s+tax|crypto|fd|fixed\s+deposit|80c\s+(?:limit|deduction)\b)", re.I)
+_LAKH = re.compile(r"(\d+(?:\.\d+)?)\s*(?:lakhs?|lacs?|lpa|l\b)", re.I)
+
+
+def _tax_answer(message: str) -> Optional[str]:
+    """'how much tax on 15 lakh salary' -> step-by-step explanation computed by core.tax."""
+    if not _TAX_CUE.search(message) or _NOT_TAX_CALC.search(message):
+        return None
+    t = message.replace(",", "")
+    gross = None
+    m = _LAKH.search(t)
+    if m:
+        gross = float(m.group(1)) * 1e5
+    else:
+        n = re.search(r"(?:₹|rs\.?|inr)\s*(\d{6,9})\b|\b(\d{6,9})\b", t, re.I)
+        if n:
+            gross = float(n.group(1) or n.group(2))
+    if gross is None or not (100_000 <= gross <= 100_000_000):
+        return None
+    from core.tax import Deductions
+    from core.tax_explain import explain_tax
+    d = Deductions()
+    m80 = re.search(r"80c\D{0,12}(\d+(?:\.\d+)?)\s*(lakhs?|lacs?|k)?|(\d+(?:\.\d+)?)\s*(lakhs?|lacs?|k)?\s*(?:in|of|under)?\s*80c", t, re.I)
+    if m80:
+        num = float(m80.group(1) or m80.group(3))
+        unit = (m80.group(2) or m80.group(4) or "").lower()
+        d.sec_80c = num * (1e5 if unit.startswith("l") else 1e3 if unit == "k" else 1.0)
+    return explain_tax(gross, d).markdown(short=False)
+
+
+_CG = re.compile(r"(\d+(?:\.\d+)?)\s*(lakhs?|lacs?|k|crores?|cr)?\s*(?:rs\.?\s*)?(?:of\s+|in\s+|as\s+)?(?:a\s+)?(stcg|short[- ]term|ltcg|long[- ]term)"
+                 r"|(stcg|short[- ]term|ltcg|long[- ]term)\D{0,25}?(\d+(?:\.\d+)?)\s*(lakhs?|lacs?|k|crores?|cr)?", re.I)
+
+
+def _cg_answer(message: str) -> Optional[str]:
+    """'tax on 5 lakh ltcg' / 'stcg of 80000' -> capital-gains tax on listed equity, from core.tax_explain."""
+    t = message.replace(",", "")
+    short = long = 0.0
+    found = False
+    for m in _CG.finditer(t):
+        num = float(m.group(1) or m.group(5))
+        unit = (m.group(2) or m.group(6) or "").lower()
+        kind = (m.group(3) or m.group(4)).lower()
+        val = num * (1e7 if unit.startswith("c") else 1e5 if unit.startswith("l") else 1e3 if unit == "k" else 1.0)
+        if kind.startswith(("s")):
+            short += val
+        else:
+            long += val
+        found = True
+    if not found or not re.search(r"\b(tax|taxed|pay)\b", t, re.I):
+        return None
+    from core.tax_explain import capital_gains_tax
+    r = capital_gains_tax(short, long)
+    parts = []
+    if short:
+        parts.append(f"short-term gains of {fmt_inr(short)} are taxed at a flat 20% = {fmt_inr(r['short_term_tax'])}")
+    if long:
+        parts.append(f"long-term gains of {fmt_inr(long)}: the first ₹1,25,000 is exempt, the remaining {fmt_inr(r['long_term_taxable'])} "
+                     f"is taxed at 12.5% = {fmt_inr(r['long_term_tax'])}")
+    return ("On listed shares or equity mutual funds, " + "; ".join(parts) + f". Add 4% cess ({fmt_inr(r['cess'])}) → "
+            f"**total about {fmt_inr(r['total'])}**. Short-term means held 12 months or less. The 87A rebate does not reduce this tax; "
+            "debt funds, gold and property are taxed differently. Educational estimate, not tax advice.")
+
+
 def answer_calculation(message: str) -> Optional[str]:
     t = (message or "").strip()
     if not t or len(t) > 300:
         return None
+    cg = _cg_answer(t)
+    if cg:
+        return cg
+    tax = _tax_answer(t)
+    if tax:
+        return tax
     low = t.lower()
     amount, rate, months = _extract(t)
     if amount is None or rate is None or months is None:

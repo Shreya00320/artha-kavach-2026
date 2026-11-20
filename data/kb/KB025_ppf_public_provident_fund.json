@@ -10,9 +10,19 @@
     "government-scheme",
     "80c"
   ],
-  "text": "PPF is a government-backed long-term savings scheme with a 15-year lock-in (extendable in blocks of 5 years). You can deposit ₹500 to ₹1.5 lakh per financial year. The interest rate is set by the government and reviewed every quarter; it has stayed around 7–7.1% in recent years, so check the current rate. Deposits qualify for the Section 80C deduction under the old tax regime, and the interest and maturity amount are tax-free (EEE). Because it is government-backed the risk is very low, but the money is locked: partial withdrawal is allowed only from the 7th year, and loans are available against the balance in early years. It suits the 'safe' slice of long-term money, not goals under 15 years.",
+  "text": "PPF is a government-backed long-term savings scheme with a 15-year lock-in (extendable in blocks of 5 years). You can deposit ₹500 to ₹1.5 lakh per financial year. The interest rate is set by the government and reviewed every quarter; it is 7.1% for October–December 2026 and has been unchanged for many quarters, so check the current rate. Deposits qualify for the Section 80C deduction under the old tax regime, and the interest and maturity amount are tax-free (EEE). Because it is government-backed the risk is very low, but the money is locked: partial withdrawal is allowed only from the 7th year, and loans are available against the balance in early years. It suits the 'safe' slice of long-term money, not goals under 15 years.",
   "summary_hinglish": "PPF sarkari scheme hai, 15 saal ka lock-in, saal mein ₹500 se ₹1.5 lakh tak jama kar sakte ho. Byaj sarkar tay karti hai (abhi 7% ke aas-paas, check kar lo), aur interest aur maturity dono tax-free. Paisa locked rehta hai, 7th saal se partial withdrawal.",
   "summary_hi": "PPF सरकारी योजना है, 15 साल का लॉक-इन, साल में ₹500 से ₹1.5 लाख तक जमा कर सकते हैं। ब्याज दर सरकार तय करती है और ब्याज व मैच्योरिटी टैक्स-फ्री है। पैसा लॉक रहता है, 7वें साल से आंशिक निकासी।",
   "aliases": "ppf public provident fund 15 year lock in tax free safe government scheme ppf vs fd compare ppf or fd worth it",
-  "verified": false
+  "verified": false,
+  "verified_claims": [
+    "PPF 7.1% for Oct-Dec 2026 (rates unchanged from Q2 FY27)"
+  ],
+  "unverified_claims": [
+    "deposit limit Rs 500 - 1.5 lakh, 15-year lock-in, 7th-year partial withdrawal, EEE status (long-standing rules, not re-checked)"
+  ],
+  "sources": [
+    "Department of Economic Affairs small-savings notification for Q3 FY2026-27, as reported by Business Today (30 Sep 2026), Free Press Journal and Angel One; notification text copy on taxguru.in. The ministry's own page was not fetched."
+  ],
+  "last_checked": "2026-11-20"
 }

@@ -11,9 +11,19 @@
     "retirement",
     "salary"
   ],
-  "text": "If you work in a company covered by the EPF Act, 12% of your basic salary is deducted every month as the employee's contribution to the Employees' Provident Fund (EPF), and your employer adds a matching share (part of it goes to the pension scheme, EPS). EPF earns government-declared interest, around 8% in recent years, which is tax-free up to specified contribution limits. You can withdraw fully after you retire, or after two months of unemployment; partial withdrawals are allowed for specific needs like a home, medical emergency or marriage. VPF (Voluntary Provident Fund) lets you contribute more than 12% from your salary at the same EPF interest rate — a low-risk way to save more. Keep your UAN active and link your Aadhaar and bank account so you can track and move your PF when you change jobs.",
+  "text": "If you work in a company covered by the EPF Act, 12% of your basic salary is deducted every month as the employee's contribution to the Employees' Provident Fund (EPF), and your employer adds a matching share (part of it goes to the pension scheme, EPS). EPF earns government-declared interest — 8.25% for FY 2025-26 (recommended by the EPFO board in March 2026 and ratified by the government in June 2026) — which is tax-free up to specified contribution limits; interest on your own contributions above roughly ₹2.5 lakh a year is taxable. You can withdraw fully after you retire, or after two months of unemployment; partial withdrawals are allowed for specific needs like a home, medical emergency or marriage. VPF (Voluntary Provident Fund) lets you contribute more than 12% from your salary at the same EPF interest rate — a low-risk way to save more. Keep your UAN active and link your Aadhaar and bank account so you can track and move your PF when you change jobs.",
   "summary_hinglish": "Salary se basic ka 12% har mahine EPF mein katta hai aur company bhi barabar daalti hai. EPF ka byaj sarkar tay karti hai (8% ke aas-paas). VPF mein tum 12% se zyada daal sakte ho same byaj par. UAN active rakho aur job change par PF transfer karo.",
   "summary_hi": "सैलरी से बेसिक का 12% हर महीने EPF में कटता है और कंपनी भी बराबर योगदान देती है। EPF पर सरकार तय ब्याज देती है। VPF में आप 12% से ज़्यादा जमा कर सकते हैं। UAN चालू रखें और नौकरी बदलने पर PF ट्रांसफर करें।",
   "aliases": "epf vpf provident fund pf deduction uan salary employer contribution retirement",
-  "verified": false
+  "verified": false,
+  "verified_claims": [
+    "EPF 8.25% for FY 2025-26, ratified by the government"
+  ],
+  "unverified_claims": [
+    "12% employee contribution and EPS split; tax-free interest limit of about Rs 2.5 lakh a year (long-standing rule, not re-checked); withdrawal rules"
+  ],
+  "sources": [
+    "EPFO board decision of 2 Mar 2026 and government ratification (June 2026) as reported by The Statesman, ThePrint, Siasat, Free Press Journal. EPFO's own notice was not fetched."
+  ],
+  "last_checked": "2026-11-20"
 }

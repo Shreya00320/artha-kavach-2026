@@ -10,9 +10,20 @@
     "gold-etf",
     "digital-gold"
   ],
-  "text": "Gold is often used as a hedge against inflation and market falls, but its price can stay flat for years, so it is usually kept to a small slice (commonly 5–10%) of a portfolio, not the whole of it. Paper forms avoid making charges and purity worries: gold ETFs and gold mutual funds trade on exchanges or through fund houses and are SEBI-regulated. Sovereign Gold Bonds (SGBs) gave interest plus gold-price gains but the government has stopped issuing new ones, though existing bonds can still be bought and sold on the exchange. Digital gold sold by apps is not regulated by SEBI or RBI, so understand the risk and the spread between buy and sell price. Physical jewellery is a purchase with making charges and GST, not an investment.",
+  "text": "Gold is often used as a hedge against inflation and market falls, but its price can stay flat for years, so it is usually kept to a small slice (commonly 5–10%) of a portfolio, not the whole of it. Paper forms avoid making charges and purity worries: gold ETFs and gold mutual funds trade on exchanges or through fund houses and are SEBI-regulated. Sovereign Gold Bonds (SGBs) gave interest plus gold-price gains but no new tranche has been issued since February 2024 and the government has signalled it does not plan more; existing bonds continue to pay interest and can be bought and sold on the exchange. Digital gold sold by apps is not regulated by SEBI or RBI, so understand the risk and the spread between buy and sell price. Physical jewellery is a purchase with making charges and GST, not an investment.",
   "summary_hinglish": "Gold inflation aur market girne par support deta hai par kai saal flat bhi reh sakta hai, isliye portfolio ka 5-10% hi rakho. Gold ETF aur gold mutual fund SEBI-regulated hain. Digital gold apps SEBI/RBI regulated nahi hote. Jewellery investment nahi, kharid hai (making charges lagte hain).",
   "summary_hi": "सोना महंगाई और बाज़ार गिरने के खिलाफ सहारा देता है पर कई साल सपाट भी रह सकता है, इसलिए पोर्टफोलियो का 5-10% ही रखें। गोल्ड ETF और गोल्ड म्यूचुअल फंड SEBI-नियंत्रित हैं। डिजिटल गोल्ड ऐप SEBI/RBI से नियंत्रित नहीं होते। गहने निवेश नहीं, खरीद हैं।",
   "aliases": "gold sgb sovereign gold bond gold etf digital gold sona invest jewellery",
-  "verified": false
+  "verified": false,
+  "verified_claims": [
+    "no new SGB tranche since February 2024; no issuance calendar for FY26 or FY27 (several reports)"
+  ],
+  "unverified_claims": [
+    "gold allocation of 5-10% of a portfolio is a common rule of thumb, not a regulation",
+    "no primary Finance Ministry / RBI notice confirming a permanent end was found (reports differ between 'paused' and 'discontinued')"
+  ],
+  "sources": [
+    "Business Standard (Dec 2024), Business Today (Jul 2025, Nov 2025, Jan 2026), Outlook Business, PersonalFN"
+  ],
+  "last_checked": "2026-11-20"
 }

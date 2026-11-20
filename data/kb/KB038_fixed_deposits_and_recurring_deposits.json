@@ -11,9 +11,22 @@
     "tds",
     "safe-investing"
   ],
-  "text": "A fixed deposit (FD) locks a lump sum with a bank for a chosen period at a fixed interest rate; a recurring deposit (RD) does the same with a fixed monthly amount. Rates are typically higher than a savings account — somewhere around 6–7.5% a year depending on bank and tenor, and senior citizens get a bit more. In India, bank deposits are insured by DICGC up to ₹5 lakh per depositor per bank (principal plus interest combined). FD interest is fully taxable at your slab rate, and banks deduct TDS if interest crosses a yearly threshold (submit Form 15G/15H if your total income is below the taxable limit). Breaking an FD early usually costs 0.5–1% in penalty. FDs suit short-to-medium goals and the safe part of your portfolio, but after tax their return can barely beat inflation.",
+  "text": "A fixed deposit (FD) locks a lump sum with a bank for a chosen period at a fixed interest rate; a recurring deposit (RD) does the same with a fixed monthly amount. Rates are typically higher than a savings account — somewhere around 6–7.5% a year depending on bank and tenor, and senior citizens get a bit more. In India, bank deposits are insured by DICGC up to ₹5 lakh per depositor per bank (principal plus interest combined). FD interest is fully taxable at your slab rate, and a bank deducts TDS when your interest from that bank crosses ₹50,000 in a year (₹1 lakh for senior citizens; these thresholds rose from ₹40,000 and ₹50,000 on 1 April 2025). Submit Form 15G/15H if your total income is below the taxable limit. Breaking an FD early usually costs 0.5–1% in penalty. FDs suit short-to-medium goals and the safe part of your portfolio, but after tax their return can barely beat inflation.",
   "summary_hinglish": "FD mein ek saath paisa fixed byaj par bank mein lock hota hai, RD mein har mahine fixed amount. Byaj lagbhag 6-7.5%, aur DICGC har bank mein ₹5 lakh tak insure karta hai. FD ka interest tumhare slab ke hisaab se taxable hai, TDS kat sakta hai. Time se pehle todne par penalty lagti hai.",
   "summary_hi": "FD में एकमुश्त रकम तय ब्याज पर बैंक में लॉक होती है, RD में हर महीने तय रकम। ब्याज लगभग 6-7.5% होता है और DICGC हर बैंक में ₹5 लाख तक बीमा देता है। FD का ब्याज आपके स्लैब पर कर योग्य है। समय से पहले तोड़ने पर जुर्माना लगता है।",
   "aliases": "fd fixed deposit rd recurring deposit bank interest dicgc tds form 15g safe",
-  "verified": false
+  "verified": false,
+  "verified_claims": [
+    "DICGC cover Rs 5 lakh per depositor per bank (official DICGC FAQ and booklet)",
+    "TDS threshold on bank interest Rs 50,000 (Rs 1 lakh for seniors) from 1 April 2025 (Finance Bill 2025 extract and several reports)"
+  ],
+  "unverified_claims": [
+    "FD rate range of about 6-7.5% (varies by bank and date)",
+    "early-withdrawal penalty of 0.5-1% (bank dependent)"
+  ],
+  "sources": [
+    "DICGC FAQ https://dicgc.org.in/FAQs and information booklet; RBI press release raising cover to Rs 5 lakh (4 Feb 2020)",
+    "Finance Bill 2025 section 194A amendments as summarised by taxguru.in, Business Standard and Business Today (one report gave 1 Apr 2026 for the senior threshold; most sources and the Finance Bill point to 1 Apr 2025)"
+  ],
+  "last_checked": "2026-11-20"
 }

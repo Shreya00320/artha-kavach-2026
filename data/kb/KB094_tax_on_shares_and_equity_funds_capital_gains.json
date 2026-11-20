@@ -1,0 +1,32 @@
+{
+  "id": "KB094",
+  "title": "Tax on shares and equity mutual funds — capital gains (FY 2026-27)",
+  "publisher": "Summarised from Income Tax Department rules and Budget 2026-27 coverage",
+  "url": "https://www.incometax.gov.in",
+  "date_accessed": "2026-11-20",
+  "topics": [
+    "capital-gains",
+    "ltcg",
+    "stcg",
+    "shares",
+    "mutual-funds",
+    "tax"
+  ],
+  "text": "When you sell listed shares or equity mutual funds at a profit, the gain is taxed separately from your salary. If you held them for 12 months or less it is a short-term gain taxed at a flat 20%. If you held them for more than 12 months it is a long-term gain: the first ₹1.25 lakh of long-term gains in a financial year is exempt and the rest is taxed at a flat 12.5%. Budget 2026-27 left these rates unchanged. These special rates apply on top of your normal slab tax, and the Section 87A rebate that makes tax zero up to ₹12 lakh does not cancel tax on these gains. Losses can be set off against gains (short-term losses against both kinds, long-term losses only against long-term gains) and carried forward for eight years if you file your return on time. The Income-tax Act, 2025, effective 1 April 2026, renumbers the sections (111A, 112, 112A), so ITR forms may cite new section numbers. Dividends are taxed at your slab rate. This is an educational summary — check the rules for debt funds, gold and property, which differ.",
+  "summary_hinglish": "Shares/equity mutual fund ka munafa 12 mahine se kam rakhne par 20% short-term tax lagta hai, 12 mahine se zyada par ₹1.25 lakh tak chhoot aur uske upar 12.5% long-term tax.",
+  "summary_hi": "",
+  "aliases": "capital gains tax ltcg stcg share market tax mutual fund tax intraday",
+  "verified_claims": [
+    "STCG 20% and LTCG 12.5% above Rs 1.25 lakh on listed equity, 12-month holding period, unchanged in Budget 2026-27 (Business Standard, several explainers)",
+    "87A rebate does not apply to special-rate gains (several explainers)"
+  ],
+  "unverified_claims": [
+    "loss set-off and 8-year carry-forward rules (long-standing, not re-checked)",
+    "new section numbers under the Income-tax Act 2025 (sources conflict)"
+  ],
+  "sources": [
+    "Business Standard Budget 2026 LTCG report; Bajaj Finserv, ClearTax, Sahi and Business Today explainers; Income Tax Department site not fetched"
+  ],
+  "last_checked": "2026-11-20",
+  "verified": false
+}

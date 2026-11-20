@@ -235,6 +235,12 @@ HINGLISH_RULES: list[Rule] = [
          _p(r"\b(inaam|inam|lottery)\b.{0,40}\b(jeet|jeeta|jeeti|jeete|mila|laga)"), 0.5),
     Rule("R163", "Bank details maangna (Hinglish)", "otp_request",
          _p(r"\b(net\s*banking|card|cvv|pin|password|bank)\s*(details?|number)?\b.{0,20}\b(dijiye|bhejiye|batayein|share\s*karein|bhejo|batao)\b"), 0.85),
+    # Prompt injection aimed at an AI scam checker. No genuine bank / courier / friend SMS addresses an AI.
+    Rule("R170", "Tries to instruct an AI checker (prompt injection)", "impersonation",
+         _p(r"\b(ignore|disregard|forget)\b.{0,30}\b(previous|prior|above|earlier|all|your)\b.{0,30}\b(instructions?|rules?|prompt)\b"
+            r"|\bsystem\s+prompt\b|\byou\s+are\s+now\b.{0,40}\b(assistant|ai|model)\b"
+            r"|\b(mark|classify|label|rate|return|respond|reply|output)\b.{0,25}\b(this|it|message|verdict)\b.{0,25}\bas\s+(safe|legit|legitimate|genuine|not\s+a\s+scam)\b"
+            r"|\bverdict\s*[:=]\s*[\"']?safe\b"), 0.60),
 ]
 
 PROPERTY_SCAM_RULES: list[Rule] = [
@@ -284,6 +290,24 @@ def _aggregate_score(matches: list[RuleMatch]) -> float:
 # Public API
 # ---------------------------------------------------------------------------
 
+# Genuine bank / app OTP messages *warn* "Do not share this OTP". Those verbs must not trigger the
+# "share OTP/PIN" rules. The negation has to sit directly before the verb, so a scammer's
+# "do not hesitate to share your OTP" still matches.
+_NEGATABLE_RULES = {"R001", "R002"}
+_NEGATION_BEFORE = re.compile(r"(?:\bdo not|\bdon'?t|\bdont|\bnever|\bnot|\bmat|\bnahi|\bcannot|\bcan'?t)"
+                              r"\W+(?:ever\W+|be\W+)?$", re.I)
+
+
+def _search_unnegated(rule: "Rule", text: str):
+    """First match of `rule` that is not directly preceded by a negation (for negatable rules)."""
+    if rule.rule_id not in _NEGATABLE_RULES:
+        return rule.pattern.search(text)
+    for m in rule.pattern.finditer(text):
+        if not _NEGATION_BEFORE.search(text[max(0, m.start() - 20):m.start()]):
+            return m
+    return None
+
+
 def run_rules(text: str) -> RulesResult:
     """Run all scam detection rules against a message.
 
@@ -295,7 +319,7 @@ def run_rules(text: str) -> RulesResult:
     """
     matches: list[RuleMatch] = []
     for rule in ALL_RULES:
-        m = rule.pattern.search(text)
+        m = _search_unnegated(rule, text)
         if m:
             matches.append(RuleMatch(
                 rule_id=rule.rule_id,

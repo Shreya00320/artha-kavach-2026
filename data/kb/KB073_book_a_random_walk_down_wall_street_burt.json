@@ -1,0 +1,19 @@
+{
+  "id": "KB073",
+  "title": "Book: A Random Walk Down Wall Street — Burton Malkiel (1973)",
+  "publisher": "Artha Kavach original summary of a book's ideas (paraphrase, not a quotation; the author's opinion, not settled fact) — pending manual verification",
+  "url": "https://openlibrary.org/search?q=a+random+walk+down+wall+street",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "book",
+    "money-books",
+    "efficient-market",
+    "diversification",
+    "index-fund"
+  ],
+  "text": "Burton Malkiel's book popularised the argument that, because prices quickly absorb public information, short-term price moves are close to random and it is very hard to beat the market consistently after costs. He walks through famous bubbles (tulips, the South Sea Company, the dot-com boom) to show how crowds overpay for stories, and compares fundamental and technical analysis, finding neither reliably wins. His practical conclusion is to hold a diversified, low-cost portfolio — broad index funds — matched to your age, goals and tolerance for risk, and to rebalance occasionally. Criticisms: market efficiency is a debated theory, markets do show patterns and anomalies, and the examples are US-centric; still, the core advice on diversification and cost is widely accepted.",
+  "summary_hinglish": "",
+  "summary_hi": "",
+  "aliases": "random walk down wall street burton malkiel efficient market hypothesis bubbles diversification beat the market index beat the stock market consistently beat the market can i beat the market",
+  "verified": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "KB034",
+  "title": "EMI, interest rates — flat vs reducing balance",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://rbi.org.in/financialeducation",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "emi",
+    "loan",
+    "interest",
+    "flat-rate",
+    "reducing-balance"
+  ],
+  "text": "An EMI (equated monthly instalment) is a fixed payment that covers part principal and part interest. On a 'reducing balance' loan, interest is charged only on what you still owe, so the interest part of each EMI shrinks over time — banks and most regulated lenders quote this. On a 'flat rate' loan, interest is charged on the original amount for the whole tenure, so the real cost is much higher: a 10% flat rate is roughly equal to a 17–19% reducing rate. Always compare loans using the APR / effective annual rate and the total repayment, not the monthly EMI alone. A longer tenure lowers the EMI but raises total interest. Check for processing fees, prepayment or foreclosure charges, and read the Key Fact Statement the lender must give you. A safe guideline is to keep all EMIs together below about 40% of your monthly take-home income.",
+  "summary_hinglish": "EMI mein principal aur interest dono hote hain. Reducing balance mein byaj bachi hui raqam par lagta hai; flat rate mein poori original raqam par, isliye flat 10% lagbhag 17-19% reducing ke barabar hota hai. Loan compare karte waqt APR aur total repayment dekho, sirf EMI nahi. Saari EMIs milakar income ke 40% se kam rakho.",
+  "summary_hi": "EMI में मूलधन और ब्याज दोनों होते हैं। रिड्यूसिंग बैलेंस में ब्याज बकाया रकम पर लगता है, फ्लैट रेट में मूल रकम पर पूरे समय, इसलिए फ्लैट 10% लगभग 17-19% रिड्यूसिंग के बराबर होता है। लोन तुलना में APR और कुल भुगतान देखें, सारी EMI आय के 40% से कम रखें।",
+  "aliases": "emi equated monthly instalment flat rate reducing balance apr loan interest kitna total repayment emi limit share of income how much income should go to emis percent of salary emi burden",
+  "verified": false
+}

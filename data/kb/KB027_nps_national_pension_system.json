@@ -1,0 +1,18 @@
+{
+  "id": "KB027",
+  "title": "NPS — National Pension System",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.npscra.nsdl.co.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "nps",
+    "retirement",
+    "pension",
+    "tax-saving"
+  ],
+  "text": "NPS is a government-regulated retirement account where you invest in a mix of equity, corporate bonds and government securities until age 60. You choose the mix yourself (Active choice) or pick an auto-choice that shifts towards safer assets as you age. Costs are very low. Under the old tax regime you can claim an extra deduction of up to ₹50,000 under Section 80CCD(1B) over the ₹1.5 lakh 80C limit, and employer contributions can also be deductible even in the new regime within limits. At retirement, a portion must be used to buy an annuity for pension income, with the rest available as a lump sum under current rules. Withdrawals before 60 are restricted, so it is a very long-term, retirement-only product.",
+  "summary_hinglish": "NPS retirement ka sarkari account hai, 60 saal tak lock. Equity, bond aur G-sec ka mix choose kar sakte ho, kharcha bahut kam. Old regime mein 80CCD(1B) se extra ₹50,000 ki deduction milti hai. Retirement par ek hissa annuity mein jaata hai.",
+  "summary_hi": "NPS रिटायरमेंट का सरकारी खाता है, 60 साल तक लॉक। इक्विटी, बॉन्ड और सरकारी प्रतिभूतियों का मिश्रण चुन सकते हैं। पुराने टैक्स रिजीम में 80CCD(1B) के तहत ₹50,000 की अतिरिक्त कटौती मिलती है।",
+  "aliases": "nps national pension system retirement pension 80ccd annuity",
+  "verified": false
+}

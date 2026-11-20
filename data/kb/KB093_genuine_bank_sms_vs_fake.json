@@ -1,0 +1,18 @@
+{
+  "id": "KB093",
+  "title": "Genuine Bank SMS vs Fake — How to Tell the Difference",
+  "publisher": "Summarised from SBI cyber-security guidance, RBI (.bank.in circular, 22 Apr 2025) and TRAI (registered SMS headers)",
+  "url": "https://sbi.bank.in/web/personal-banking/cyber-security",
+  "date_accessed": "2026-11-20",
+  "topics": [
+    "genuine-vs-fake",
+    "sms",
+    "bank",
+    "sender-header",
+    "bank-in",
+    "green-pin",
+    "card-delivery"
+  ],
+  "verified": false,
+  "text": "Genuine banks do send service SMS: a debit card has been delivered, how to generate your Green PIN, a card has been blocked after a replacement was activated, a statement is ready, an EMI will be debited. State Bank of India's own FAQ quotes such messages — they are short and terse, may name your registered address or the last four digits of the card, and may point to the bank's own website. What they never do is ask you to share an OTP, ATM PIN, CVV, password or card number: SBI states the bank never asks for these, and that you should not share an OTP, ATM PIN or CVV over the phone. Fake messages copy the same words but add tells: a link on an unrelated or look-alike domain, a shortened link, an urgent threat to block your account or card today, or a request to type your PIN, CVV or OTP on a page or tell it to a caller. Check the link: the RBI told banks (circular of 22 April 2025, deadline 31 October 2025) to move to the restricted .bank.in domain, for which IDRBT is the registrar and only licensed banks qualify, so sbi.bank.in or pnb.bank.in are genuine while sbi-bank.in or sbi.bank-in.com are not. Real phishing campaigns against Indian bank customers (documented by Zscaler and CERT-In) host fake KYC and card-points pages on free services such as web.app, firebaseapp.com, pages.dev, herokuapp.com or ngrok.io, often with an .apk file named after the bank, and on look-alike domains such as updateyourcard.in; a bank never uses these. HDFC Bank has said it only sends SMS from the headers HDFCBK or HDFCBN and that its SMS links are under hdfcbk.io, and has warned customers not to click links asking for PAN or KYC updates. Check the sender: TRAI requires banks to send commercial SMS from registered headers of up to 11 characters (an example is VD-KOTAKB), and the header can be looked up on TRAI's Header Information Portal or by sending it by SMS to 1909; scammers can use a header that differs by one character. Wording alone cannot prove a message is real, so the safest step is to open your bank's own app or call the number on the back of your card instead of using anything inside the message. Report fraud on 1930 or cybercrime.gov.in; SBI also takes phishing reports at report.phishing@sbi.co.in."
+}

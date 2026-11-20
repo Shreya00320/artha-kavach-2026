@@ -1,0 +1,30 @@
+{
+  "id": "KB030",
+  "title": "Health insurance deduction (80D), HRA and home-loan interest — old regime deductions",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://incometaxindia.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "80d",
+    "hra",
+    "home-loan-interest",
+    "deductions",
+    "old-regime"
+  ],
+  "text": "If you choose the old tax regime, three common deductions beyond 80C are: Section 80D — premiums paid for health insurance for yourself, spouse and children (up to about ₹25,000, higher for senior-citizen parents, and an additional amount for parents); HRA — if you pay rent and your salary has an HRA component, part of it is exempt, calculated as the least of actual HRA received, rent paid minus 10% of basic, and 50% (or 40%) of basic plus DA depending on the city — from FY 2026-27 the 50% rate is reported to cover eight cities (Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Pune and Ahmedabad), but check the notified rule; and Section 24(b) — up to ₹2 lakh of interest on a self-occupied home loan. Keep rent receipts, the landlord's PAN if rent is above ₹1 lakh a year, and premium receipts. These are not available in the new regime, so compare both before deciding.",
+  "summary_hinglish": "Old regime mein 80C ke alawa 80D (health insurance premium, ~₹25,000 tak, parents ke liye alag), HRA (rent par chhoot, rent receipts rakho) aur home loan interest 24(b) (₹2 lakh tak) milte hain. New regime mein ye nahi milte, isliye dono compare karo.",
+  "summary_hi": "पुराने रिजीम में 80C के अलावा 80D (हेल्थ इंश्योरेंस प्रीमियम), HRA (किराये पर छूट) और 24(b) (होम लोन ब्याज, ₹2 लाख तक) की कटौती मिलती है। नए रिजीम में ये नहीं मिलतीं, इसलिए दोनों की तुलना करें।",
+  "aliases": "80d hra house rent allowance home loan interest 24b deductions health insurance premium",
+  "verified": false,
+  "verified_claims": [
+    "HRA exemption is the least of three amounts and is available only in the old regime (long-standing rule)"
+  ],
+  "unverified_claims": [
+    "eight-city 50% list from 1 April 2026: reported by several tax sites citing the Income-tax Rules 2026, but sources disagree on whether the rules were final",
+    "80D limits and the landlord-PAN-above-Rs-1-lakh rule not re-checked"
+  ],
+  "sources": [
+    "taxupdate.in, taxtip.in, thesalaryinvestor.com, mstock explainer (secondary); CBDT notification not seen"
+  ],
+  "last_checked": "2026-11-20"
+}

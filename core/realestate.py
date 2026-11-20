@@ -44,6 +44,7 @@ def rent_vs_buy(price: float, down_payment_pct: float, loan_rate_pct: float, yea
     Buy:  property value - loan balance (down payment + one-off costs spent up front).
     Rent: the same up-front cash invested, plus every month's (buy outflow - rent) invested.
     """
+    years = max(int(years), 1)
     months = years * 12
     down = price * down_payment_pct / 100
     loan = price - down

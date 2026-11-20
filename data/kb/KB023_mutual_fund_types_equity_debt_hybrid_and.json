@@ -1,0 +1,19 @@
+{
+  "id": "KB023",
+  "title": "Mutual fund types — equity, debt, hybrid and liquid funds",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.sebi.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "mutual-fund",
+    "equity",
+    "debt",
+    "hybrid",
+    "liquid-fund"
+  ],
+  "text": "A mutual fund pools money from many investors and a fund manager invests it. Equity funds invest in company shares: higher long-term growth potential but big ups and downs, suited to goals 5+ years away. Debt funds invest in bonds and lend to governments or companies: usually steadier but not risk-free (interest-rate and credit risk). Hybrid funds mix equity and debt to smooth the ride. Liquid funds hold very short-term debt and are used to park emergency money or short-term cash; they are low-risk but not guaranteed like a bank deposit. SEBI requires every fund to carry a 'riskometer' label from Low to Very High — check it before investing. Match the fund type to when you need the money: under 1 year → liquid or savings account, 3 years → debt/hybrid, 5+ years → equity.",
+  "summary_hinglish": "Mutual fund mein equity (shares, high risk-high growth, 5+ saal), debt (bonds, steady), hybrid (dono ka mix) aur liquid (short-term, emergency paisa) types hote hain. Fund choose karne se pehle riskometer dekho aur paisa kab chahiye woh socho.",
+  "summary_hi": "म्यूचुअल फंड में इक्विटी (शेयर, ज़्यादा जोखिम-ज़्यादा ग्रोथ), डेट (बॉन्ड, स्थिर), हाइब्रिड (दोनों का मिश्रण) और लिक्विड (कम अवधि) फंड होते हैं। निवेश से पहले रिस्कोमीटर देखें और सोचें कि पैसा कब चाहिए।",
+  "aliases": "mutual fund types equity debt hybrid liquid fund riskometer which fund kaun sa fund",
+  "verified": false
+}

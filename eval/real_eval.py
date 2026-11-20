@@ -27,6 +27,15 @@ sys.path.insert(0, str(ROOT))
 from eval.quick_eval import _f1_report, rules_verdict, SCAM_CSV  # noqa: E402
 
 
+def _deep_or(clf):
+    """The app's pipeline uses the shipped deep model when present; evaluate the same thing."""
+    try:
+        from scam.deep_model import load_default
+        return load_default() or clf
+    except Exception:
+        return clf
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("csv_path")
@@ -53,7 +62,7 @@ def main() -> None:
     out = []
     for r in rows:
         text = r["text"].strip()
-        res = analyse(text, adapter=adapter, classifier=clf)
+        res = analyse(text, adapter=adapter, classifier=_deep_or(clf))
         out.append({
             "text": text,
             "label": (r.get("label") or "").strip().lower(),

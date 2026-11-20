@@ -99,7 +99,7 @@ def _render_detector_strip(result) -> None:
     votes = [("📏 Rules", rules_v, f"{score * 100:.0f}% score")]
     if result.classifier_proba:
         clf_v = max(result.classifier_proba, key=result.classifier_proba.get)
-        votes.append(("🤖 ML model", clf_v, f"{result.classifier_proba[clf_v] * 100:.0f}% sure"))
+        votes.append(("🧠 Deep model", clf_v, f"{result.classifier_proba[clf_v] * 100:.0f}% sure"))
     final_label = "🧠 AI judge (final)" if result.llm_used else "⚖️ Combined (final)"
     votes.append((final_label, result.verdict, f"{result.confidence * 100:.0f}% confidence"))
     for col, (name, v, detail) in zip(st.columns(len(votes)), votes):
@@ -109,7 +109,7 @@ def _render_detector_strip(result) -> None:
                 f"but reading the whole message the AI judged it *{result.verdict}*. "
                 "Its reasons are quoted below and checked in the Trust Receipt.")
     elif not result.llm_used and rules_v == "safe" and result.verdict != "safe":
-        st.info("🤖 No rule fired, but the ML model recognised the pattern from training examples.")
+        st.info("🤖 No rule fired, but the deep model recognised the pattern from training examples.")
 
 
 # ---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ def _render_check_message(adapter, retriever, classifier) -> None:
             st.caption(f"Composite score: **{result.rule_result.score:.3f}**")
 
         if result.classifier_proba:
-            with st.expander("🤖 ML Classifier probabilities"):
+            with st.expander("🧠 Deep model probabilities"):
                 for label, prob in sorted(result.classifier_proba.items(), key=lambda x: -x[1]):
                     st.progress(min(max(prob, 0.0), 1.0), text=f"{label}: {prob * 100:.1f}%")
 

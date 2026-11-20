@@ -1,0 +1,17 @@
+{
+  "id": "KB039",
+  "title": "Inflation — why money in a savings account loses value",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://rbi.org.in/financialeducation",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "inflation",
+    "real-returns",
+    "purchasing-power"
+  ],
+  "text": "Inflation is the general rise in prices over time. If prices rise 5% a year and your money earns 3% in a savings account, your purchasing power falls by about 2% a year — you have more rupees but can buy less. That is why money you will not need for several years should not sit idle: ₹1,00,000 today buys what might cost ₹1,60,000 in ten years at 5% inflation. 'Real return' is your return minus inflation, and it is the number that matters. Keep emergency money and money needed within a year in safe, accessible places, and put long-term money in assets that have historically beaten inflation (like diversified equity), accepting their volatility. Do not chase high returns beyond what your risk capacity allows.",
+  "summary_hinglish": "Inflation matlab cheezon ke daam badhna. Savings account 3% deta hai aur inflation 5% hai to paisa ki value saal mein ~2% ghat jaati hai. Real return = return minus inflation. Emergency paisa safe jagah, lambe time ka paisa aisi cheezon mein jo inflation ko beat karti hain.",
+  "summary_hi": "महंगाई यानी कीमतों का बढ़ना। बचत खाते पर 3% मिले और महंगाई 5% हो तो पैसे की क्रय शक्ति लगभग 2% सालाना घटती है। असली रिटर्न = रिटर्न - महंगाई। आपातकालीन पैसा सुरक्षित जगह रखें और लंबे समय का पैसा महंगाई को मात देने वाली संपत्तियों में लगाएं।",
+  "aliases": "inflation mehngai real return purchasing power savings account loses value",
+  "verified": false
+}

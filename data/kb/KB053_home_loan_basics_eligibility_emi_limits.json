@@ -1,0 +1,19 @@
+{
+  "id": "KB053",
+  "title": "Home loan basics — eligibility, EMI limits and costs",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://rbi.org.in/financialeducation",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "home-loan",
+    "ltv",
+    "emi",
+    "stamp-duty",
+    "prepayment"
+  ],
+  "text": "A home loan funds a large part of a property, usually up to 75–90% of its value (the rest is your down payment). Lenders look at income, existing EMIs, age, job stability and credit score; a score of 750+ gets better rates. Keep total EMIs within roughly 40% of take-home pay and factor in extra costs: stamp duty and registration, processing fee, insurance, maintenance and furnishing. Rates are floating and linked to an external benchmark such as the repo rate, so your EMI or tenure can change when rates change. Prepaying principal early in the loan saves a large amount of interest; for floating-rate loans RBI rules bar prepayment penalties for individual borrowers. In the old regime, principal up to ₹1.5 lakh falls under 80C and interest up to ₹2 lakh on a self-occupied home under 24(b). Compare banks on total cost, not just the headline rate.",
+  "summary_hinglish": "Home loan property ki value ka 75-90% tak milta hai, baaki down payment. Total EMI take-home ke ~40% tak rakho aur stamp duty, processing fee, maintenance jod kar socho. Floating rate hota hai, to EMI/tenure badal sakta hai. Shuru mein prepayment karne par bahut interest bachta hai. Old regime mein 80C aur 24(b) ki chhoot.",
+  "summary_hi": "होम लोन प्रॉपर्टी की कीमत का 75-90% तक मिलता है, बाकी डाउन पेमेंट। कुल EMI टेक-होम के लगभग 40% तक रखें और स्टाम्प ड्यूटी, प्रोसेसिंग फीस, रखरखाव भी जोड़ें। दर फ्लोटिंग होती है, इसलिए EMI या अवधि बदल सकती है। शुरू में प्रीपेमेंट से बहुत ब्याज बचता है।",
+  "aliases": "home loan housing loan emi eligibility ltv prepayment floating rate repo stamp duty registration",
+  "verified": false
+}

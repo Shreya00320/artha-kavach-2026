@@ -1,0 +1,19 @@
+{
+  "id": "KB048",
+  "title": "CTC vs in-hand salary, gratuity and payslip terms",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.epfindia.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "ctc",
+    "in-hand-salary",
+    "gratuity",
+    "payslip",
+    "salary"
+  ],
+  "text": "CTC (cost to company) is the total your employer spends on you in a year; your take-home is lower. Take-home = gross pay minus employee PF (12% of basic), professional tax, income-tax TDS and any insurance or other deductions. Components to read on your payslip: Basic (the base for PF, HRA and gratuity), HRA (house rent allowance), special allowance, bonus or variable pay (not guaranteed), and reimbursements. Gratuity is a benefit paid by the employer after five years of continuous service, calculated roughly as 15 days of last drawn basic salary for each year of service. Ask HR which parts of CTC are fixed and which are variable, and whether employer PF is inside or outside your CTC, before comparing two offers.",
+  "summary_hinglish": "CTC company ka total kharcha hota hai, in-hand isse kam. In-hand = gross minus PF (basic ka 12%), professional tax, TDS aur insurance. Gratuity 5 saal ki continuous service ke baad milti hai (har saal ka ~15 din ka basic). Offers compare karne se pehle fixed vs variable aur PF CTC ke andar hai ya bahar, pooch lo.",
+  "summary_hi": "CTC कंपनी का आप पर कुल खर्च है, इन-हैंड इससे कम होता है। इन-हैंड = ग्रॉस माइनस PF (बेसिक का 12%), प्रोफेशनल टैक्स, TDS और बीमा। ग्रेच्युटी 5 साल की निरंतर सेवा के बाद मिलती है। दो ऑफर की तुलना से पहले फिक्स्ड और वेरिएबल हिस्सा पूछ लें।",
+  "aliases": "ctc in hand salary take home payslip gratuity basic hra special allowance variable pay offer compare",
+  "verified": false
+}

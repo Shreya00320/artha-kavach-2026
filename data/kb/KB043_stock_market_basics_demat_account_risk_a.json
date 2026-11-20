@@ -1,0 +1,19 @@
+{
+  "id": "KB043",
+  "title": "Stock market basics — demat account, risk and how not to lose money",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.sebi.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "stocks",
+    "demat",
+    "equity",
+    "risk",
+    "sebi"
+  ],
+  "text": "Buying a share makes you a part-owner of a company. To buy and sell listed shares you need a demat account and a trading account with a SEBI-registered broker, plus KYC. Share prices move daily and can fall 30–50% in a bad year, so only money you will not need for 5+ years should be in stocks. Most beginners do better with diversified index or flexi-cap funds than picking single stocks; if you do pick stocks, limit it to a small share of your portfolio and never invest borrowed money. Be wary of 'tips' from social media, Telegram or WhatsApp groups promising quick profits — these are the most common route for investment scams. Check that a broker or adviser is registered on sebi.gov.in before giving them any money, and never share your demat or trading login or OTP.",
+  "summary_hinglish": "Share kharidne ke liye SEBI-registered broker ke saath demat aur trading account chahiye. Shares ek saal mein 30-50% gir sakte hain, isliye sirf wahi paisa lagao jo 5+ saal nahi chahiye. Beginners ke liye index/diversified funds aksar behtar hain. Telegram/WhatsApp ke tips se bacho, broker ka SEBI registration check karo.",
+  "summary_hi": "शेयर खरीदने के लिए SEBI-पंजीकृत ब्रोकर के साथ डीमैट और ट्रेडिंग खाता चाहिए। शेयर एक साल में 30-50% गिर सकते हैं, इसलिए सिर्फ वही पैसा लगाएं जो 5+ साल नहीं चाहिए। शुरुआती लोगों के लिए इंडेक्स/डाइवर्सिफाइड फंड अक्सर बेहतर हैं। टेलीग्राम/व्हाट्सऐप टिप्स से बचें।",
+  "aliases": "stock market shares demat account trading share market kaise shuru sebi registered broker",
+  "verified": false
+}

@@ -1,0 +1,51 @@
+id,label,text,language,hinglish,split,notes
+BH001,safe,"Hi Asha K, Your SBI Debit card ending with XX48 has been delivered. Get started in minutes: Generate Green PIN - Activate your card. Note: Your card will be enabled for ATM and PoS transactions upon PIN generation. Enable E-commerce for making online transactions through Manage Debit Card after Green PIN generation.",en,false,test,handwritten-heldout-real-pattern
+BH002,safe,"Your SBI Debit card ending XX48 has been delivered. Generate Green PIN - Activate your card",en,false,test,handwritten-heldout-real-pattern
+BH003,safe,"Dear Customer, your new HDFC Bank Debit Card has been delivered by the courier. Please set your PIN using NetBanking, MobileBanking or any HDFC Bank ATM before first use.",en,false,test,handwritten-heldout
+BH004,safe,"ICICI Bank: Your credit card statement is ready. Total amount due Rs 4,310 by 18-Dec. Pay using iMobile or net banking. Ignore if paid.",en,false,test,handwritten-heldout
+BH005,safe,"Axis Bank: Your debit card ending 4821 has been dispatched via Speed Post. You will receive it in 3 to 5 working days. Track in the Axis Mobile app.",en,false,test,handwritten-heldout
+BH006,safe,"Dear Customer, your savings account statement for the period 01-Oct-2026 to 31-Oct-2026 has been emailed to your registered email ID. Never share your password or OTP.",en,false,test,handwritten-heldout
+BH007,safe,"Your SBI account XX1234 will be debited Rs 1,500 on 05-Dec-2026 for your mutual fund SIP. Keep sufficient balance.",en,false,test,handwritten-heldout
+BH008,safe,"Kotak Bank: Your Fixed Deposit ending 7788 is due for maturity on 10-Jan-2027. Visit the Kotak app to choose renewal or payout.",en,false,test,handwritten-heldout
+BH009,safe,"Canara Bank: We noticed a login to your net banking from a new device. If this was you, no action is needed. If not, please call the helpline on your passbook.",en,false,test,handwritten-heldout
+BH010,safe,"PNB: Your cheque book request has been processed. The chequebook will be delivered to your registered address in about a week.",en,false,test,handwritten-heldout
+BH011,safe,"Bank of Baroda: Your debit card international transactions have been disabled as per your request. You can enable it anytime from the bob World app.",en,false,test,handwritten-heldout
+BH012,safe,"Hello, as per RBI norms your account needs a periodic KYC refresh. Please visit your home branch with your ID proof. We do not collect documents or OTP by phone or SMS.",en,false,test,handwritten-heldout
+BH013,safe,"Dear Customer, your loan EMI of Rs 8,450 is due on 03-Dec-2026. It will be auto-debited from your account. Maintain the required balance.",en,false,test,handwritten-heldout
+BH014,safe,"Your OTP to log in to HDFC Bank NetBanking is 482913. Valid for 10 minutes. Do not share it with anyone, even if they claim to be from the bank.",en,false,test,handwritten-heldout
+BH015,safe,"IDFC FIRST Bank: Interest of Rs 312.40 has been credited to your savings account ending 0921. Happy banking!",en,false,test,handwritten-heldout
+BH016,safe,"Your Green PIN request is received. Use the OTP sent to your registered mobile to finish. Do not share this OTP with anyone.",en,false,test,handwritten-heldout
+BH017,safe,"Union Bank: Your new EMV chip debit card has been delivered. The old magstripe card will stop working from 31-Jan-2027. Set your PIN via the app or at an ATM.",en,false,test,handwritten-heldout
+BH018,safe,"Axis Bank: Your UPI PIN reset was successful. If you did not request this, call the number on the back of your card immediately.",en,false,test,handwritten-heldout
+BH019,safe,"Dear Customer, your home loan interest certificate for FY 2025-26 can be downloaded from your net banking profile.",en,false,test,handwritten-heldout
+BH020,safe,"ICICI Bank: Your request to increase the daily ATM limit to Rs 50,000 has been completed. If you did not request this, please call customer care.",en,false,test,handwritten-heldout
+BH021,safe,"HDFC Bank: Your credit card ending 9012 payment of Rs 6,220 has been received. Thank you.",en,false,test,handwritten-heldout
+BH022,safe,"SBI: Aapka debit card XX48 deliver ho gaya hai. Green PIN generate karke card activate karein. Apna PIN ya OTP kisi se share na karein.",hinglish,true,test,handwritten-heldout
+BH023,safe,"Kotak: Aapke account ka statement email par bhej diya gaya hai. Bank kabhi OTP ya password nahi maangta.",hinglish,true,test,handwritten-heldout
+BH024,safe,"Your standing instruction for the electricity bill of Rs 1,840 has been registered. First payment on 12-Dec-2026.",en,false,test,handwritten-heldout
+BH025,safe,"Your account ending 5567 was credited with Rs 42,000 by NEFT from your employer. Available balance Rs 61,200.",en,false,test,handwritten-heldout
+BH026,scam,"SBI ALERT: Your debit card XX48 is blocked. Activate it now at http://sbi-card-activate.xyz and enter your PIN to avoid permanent closure.",en,false,test,handwritten-heldout-lookalike
+BH027,scam,"Dear Customer your HDFC card has been delivered. Generate Green PIN: http://hdfc-greenpin-secure.in/login and enter card number with CVV and OTP within 1 hour.",en,false,test,handwritten-heldout-lookalike
+BH028,scam,"ICICI Bank: unusual activity detected. Your account will be suspended today. Verify your card details at https://icici-verify-support.top or share OTP to reactivate.",en,false,test,handwritten-heldout-lookalike
+BH029,scam,"Your Axis reward points Rs 9,870 expire today. Redeem now by installing our app: http://axis-rewards.co/claim.apk",en,false,test,handwritten-heldout-lookalike
+BH030,scam,"Canara Bank: KYC expired. Update immediately or your account will be frozen. Call 9876501234 and tell us the OTP you receive.",en,false,test,handwritten-heldout-lookalike
+BH031,scam,"PNB: your new card is on hold, pay Rs 49 delivery fee at http://pnb-delivery-fee.site and enter your ATM PIN to release it.",en,false,test,handwritten-heldout-lookalike
+BH032,scam,"Dear SBI user your YONO account is locked. Unlock within 30 minutes at sbi-yono-unlock.in and type your net banking password.",en,false,test,handwritten-heldout-lookalike
+BH033,scam,"Kotak Bank: PAN not updated, your account will be closed today. Click https://kotak-pan-update.xyz now and enter debit card PIN.",en,false,test,handwritten-heldout-lookalike
+BH034,suspicious,"Your SBI card is ready for activation, tap to continue: bit.ly/3zQ8mWx",en,false,test,handwritten-heldout-lookalike
+BH035,suspicious,"HDFC Bank customer, finish your account verification here tinyurl.com/hd5k2p to keep your benefits.",en,false,test,handwritten-heldout-lookalike
+BH036,suspicious,"Dear customer, update your bank details today at cutt.ly/Xy7Lm2",en,false,test,handwritten-heldout-lookalike
+BH037,safe,"You will soon receive an EMV chip debit card in lieu of existing Magstripe card. Pl follow instructions in welcome letter to activate and start using the card.",en,false,test,official-sbi-faq
+BH038,safe,"Please start using the new SBI EMV Debit card delivered to your Regd. Address. Your SBI Magstripe Debit card will be blocked on 31DEC-18",en,false,test,official-sbi-faq
+BH039,safe,"Your SBI Debit Card ending 4821 has been blocked on 05DEC-18 at 14:32 after activation of replacement EMV card ending 7733. Tkt No 120181205003412",en,false,test,official-sbi-faq
+BH040,safe,"Your State Bank Debit Card ending with 4821 is blocked permanently. Please apply for a replacement Card at www.onlinesbi.com or visit your home branch",en,false,test,official-sbi-faq
+BH041,safe,"SBI: Aapka naya debit card aapke registered pate par pahunch gaya hai. Green PIN banakar card chalu karein. PIN ya OTP kisi se share na karein.",hinglish,true,test,handwritten-heldout
+BH042,safe,"Dear Customer, your PNB debit card has been blocked as requested. To apply for a new card visit https://pnb.bank.in or your home branch.",en,false,test,handwritten-heldout
+BH043,scam,"Your SBI debit card will be blocked today. Update KYC at http://sbi-bank.in/kyc and enter your PIN and OTP.",en,false,test,handwritten-heldout-lookalike
+BH044,scam,"SBI: card 4821 blocked. Re-activate now https://sbi.bank.in.verify-card-now.com/login and share the OTP sent to you within 30 minutes.",en,false,test,handwritten-heldout-lookalike
+BH045,scam,"Dear HDFC Customer Your HDFC Account/Netbanking will be block today. Please update you pan card and complete your KYC now click here https://hdfc-kyc-verify.xyz HDFC TM",en,false,test,official-factcrescendo-quote
+BH046,scam,"Please update you pan card and complete your KYC now click here http://bit.ly/hd2KycNow HDFC TM",en,false,test,official-factcrescendo-quote
+BH047,scam,"Dear SBI user your YONO account will be deactivated today due to KYC expiry. Install SBI-KYC app https://sbi-user-kyc-app.web.app/SBI-KYC.apk",en,false,test,handwritten-zscaler-style
+BH048,scam,"Your HDFC credit card reward points will expire today. Redeem now: https://updateyourcard.in/HDFC_Credit_Card.apk",en,false,test,handwritten-zscaler-style
+BH049,safe,"HDFC Bank: Your credit card ending 9012 statement is ready. Total due Rs 3,420 by 18-Dec. Pay via the HDFC Bank MobileBanking app. Ignore if already paid.",en,false,test,handwritten-heldout
+BH050,safe,"Dear Customer, it is time for your periodic KYC update. Please visit your nearest branch with ID and address proof, or log in to the bank app. Do not share OTP or documents over SMS or call.",en,false,test,handwritten-heldout

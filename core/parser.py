@@ -61,6 +61,9 @@ def _normalise_date(raw: str) -> Optional[str]:
         "sep": "09", "oct": "10", "nov": "11", "dec": "12",
     }
     raw = raw.strip()
+    iso = re.match(r"(\d{4})-(\d{2})-(\d{2})$", raw)
+    if iso and 1 <= int(iso.group(2)) <= 12 and 1 <= int(iso.group(3)) <= 31:
+        return raw
     m = re.match(r"(\d{1,2})[-\s]?([A-Za-z]{3})[A-Za-z]*[-\s,]*(\d{2,4})$", raw)
     if m:
         day, mon, yr = m.group(1), m.group(2).lower(), m.group(3)
@@ -222,6 +225,20 @@ PATTERNS += [
 _COMPILED_PATTERNS = [(re.compile(pat, re.IGNORECASE), meta) for pat, meta in PATTERNS]
 
 
+_CHANNEL_PREFIX = re.compile(r"^(?:(?:NACH|ECS|ACH|SI|UPI|POS|IMPS|NEFT|RTGS|ATM)\s*[/\-]\s*|(?:RTGS|NEFT|IMPS)\s+to\s+|(?:to|at|from)\s+)", re.I)
+
+
+def _tidy_merchant(m: Optional[str]) -> Optional[str]:
+    """'NACH/NETFLIX' -> 'NETFLIX'; 'RTGS to LANDLORD PROPERTIES' -> 'LANDLORD PROPERTIES'."""
+    if not m:
+        return m
+    prev = None
+    while prev != m:
+        prev = m
+        m = _CHANNEL_PREFIX.sub("", m).strip()
+    return m or None
+
+
 def _detect_bank_from_sender(text: str) -> Optional[str]:
     """Infer bank from common sender markers in the SMS text."""
     t = text.lower()
@@ -300,6 +317,7 @@ def _try_regex(text: str, txn_id: str) -> Optional[ParsedTransaction]:
                 # Strip trailing punctuation / bank suffixes
                 merchant = re.sub(r"\s*—\w+\s*$", "", raw).strip()
                 merchant = re.sub(r"\s*\.\s*$", "", merchant).strip() or None
+                merchant = _tidy_merchant(merchant)
             elif field_name == "vpa_or_merchant":
                 if _is_vpa(raw):
                     vpa = raw
@@ -384,6 +402,162 @@ def _failed(text: str, txn_id: str) -> ParsedTransaction:
 
 
 # ---------------------------------------------------------------------------
+# Field-based fallback parser
+#
+# The per-bank templates above only match exact shapes. Real SMS vary by bank, product and year, so this
+# fallback finds each field independently: amount, debit/credit verb, date, balance, VPA, merchant, bank.
+# It also REJECTS messages that are not completed transactions (OTPs, "will be debited" reminders,
+# failed/declined payments, balance enquiries, collect requests, promotions, personal chat).
+# ---------------------------------------------------------------------------
+
+_CUR_AMT = re.compile(r"(?:Rs\.?|INR|₹)\s*([\d,]*\d(?:\.\d+)?)", re.I)
+_BY_AMT = re.compile(r"\b(?:debited|credited)\s+by\s+([\d,]*\d(?:\.\d+)?)", re.I)
+_BAL_BEFORE = re.compile(r"(?:avl\.?|available|closing|ledger|total)?\s*(bal(?:ance)?|lmt|limit|cr limit)\W{0,6}(?:is\W{0,3})?$", re.I)
+_DUE_BEFORE = re.compile(r"\b(?:min(?:imum)?(?:\s+amt\.?|\s+amount)?\s+due|total\s+(?:amt\.?\s+)?due|amount\s+due|due)\W{0,6}$", re.I)
+
+# Words naming the *product*, not the movement of money: mask before looking for debit/credit verbs
+_PRODUCT_MASK = re.compile(r"\b(?:credit|debit)\s+cards?\b|\bcr(?:edit)?\s+limit\b|\bcredit\s+(?:score|line)\b|\bavl\s+cr\b", re.I)
+
+_DEBIT_STRONG = re.compile(r"\b(?:debited|spent|paid|withdrawn|sent|deducted|purchased|transferred)\b|\bpurchase\s+of\b|\bDr\.", re.I)
+_CHEQUE = re.compile(r"\bche?que\b|\bchq\b", re.I)
+_CREDIT_STRONG = re.compile(r"\b(?:credited|received|deposited|refunded)\b|\bCr\.", re.I)
+
+_FUTURE = re.compile(r"\bwill\s+be\b|\bto\s+be\s+(?:auto-?\s*)?debited\b|\bis\s+due\b|\bdue\s+(?:on|by|date)\b|\bmin(?:imum)?\s+(?:amt\.?\s+|amount\s+)?due\b|\bupcoming\b|\breminder\b|\bscheduled\b", re.I)
+_FAILED = re.compile(r"\b(?:failed|declined|unsuccessful|insufficient|not\s+debited|not\s+successful|could\s+not\s+be)\b", re.I)
+_PROMO = re.compile(r"\b(?:offer|cashback|hurry|limited\s+period|t&c|tnc|congratulations|eligible|apply\s+now|click|win|free)\b|https?://|bit\.ly", re.I)
+_ACCT = re.compile(r"\b(?:a/c|acct?|account|card|ac)\b(?:\s+(?:no|num|number)\.?)?\W{0,4}[A-Za-z ]{0,12}?[X*x]*\d{3,}", re.I)
+# A real bank/UPI alert always names a masked account/card, a UPI/transfer channel, or a payment app
+_CONTEXT = re.compile(
+    r"\b(?:a/c|acct?|account|card|ac)\b(?:\s+(?:no|num|number)\.?)?\W{0,4}[A-Za-z ]{0,12}?[X*x]*\d{3,}|\bupi\b|\bneft\b|\bimps\b|\brtgs\b|\bvpa\b|@\w+|"
+    r"\bref(?:erence)?\.?\s*(?:no\.?|id)?\W{0,3}\d{5,}|\brefno\b|\bpaytm\b|\bphonepe\b|\bgpay\b|\bgoogle\s+pay\b|\bwallet\b", re.I)
+
+_DATE_FIND = re.compile(
+    r"\b(\d{4}-\d{2}-\d{2})\b|\b(\d{4}):(\d{2}):(\d{2})\b|\b(\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4})\b|\b(\d{1,2}[-\s]?[A-Za-z]{3}[A-Za-z]*[-\s,]*\d{2,4})\b")
+
+_BANKS = [
+    (r"\bSBI\b|State\s+Bank", "SBI"), (r"\bHDFC\b", "HDFC"), (r"\bICICI\b", "ICICI"), (r"\bAxis\b", "Axis"),
+    (r"\bKotak\b", "Kotak"), (r"\bPNB\b|Punjab\s+National", "PNB"), (r"\bBOB\b|Bank\s+of\s+Baroda", "BoB"),
+    (r"\bCanara\b", "Canara"), (r"Union\s+Bank", "Union Bank"), (r"\bIDFC\b", "IDFC FIRST"),
+    (r"\bYes\s+Bank\b", "Yes Bank"), (r"\bIndusInd\b", "IndusInd"), (r"\bPaytm\b", "Paytm"),
+    (r"\bPhonePe\b", "PhonePe"), (r"\bG\s?Pay\b|Google\s+Pay", "GPay"),
+]
+
+_NOISE_MERCHANT = re.compile(r"^(?:your|a/c|ac|acct|account|card|bank|upi|vpa|the|you|rs|inr|neft|imps|rtgs|ref|date|info)\b", re.I)
+_NAME = r"[A-Za-z][A-Za-z0-9 &.'\-]{1,30}?"
+_END = r"(?=\s+(?:on|via|using|Ref|Refno|UPI|Avl|Bal|Not|If|SMS|Call|Dt|credited|debited|for|from|towards|-)\b|[.;,(/]|\s*$)"
+_MERCHANT_PATTERNS = [
+    re.compile(r"\bEMI\b", re.I),                                           # handled specially
+    re.compile(r"\b(?:trf|transfer(?:red)?)\s+(?:to|from)\s+(?P<m>" + _NAME + r")" + _END, re.I),
+    re.compile(r"UPI[/-](?:P2[MA][/-])?(?:\d{6,}[/-])?(?P<m>[A-Za-z]" + _NAME[len("[A-Za-z]"):] + r")" + _END),
+    re.compile(r";\s*(?P<m>[A-Z][A-Za-z0-9 &']{1,25}?)\s+(?:credited|debited)\b"),
+    re.compile(r"\b(?:NACH|ECS|ACH|AUTOPAY|SI)[/-]\s*(?P<m>[A-Za-z][A-Za-z0-9 &.']{1,25})"),
+    re.compile(r"\b(?:NEFT|IMPS|RTGS)[-*/ ]+(?P<m>[A-Za-z][^.;]{2,40}?)(?=\.|;|\s+Avl\b|\s+Ref\b|\s*$)", re.I),
+    re.compile(r"\b(?:by|via)\s+(?:NEFT|IMPS|RTGS)\s+from\s+(?P<m>" + _NAME + r")" + _END, re.I),
+    re.compile(r"\bto\s+(?P<m>" + _NAME + r")\s+(?:via|using)\b", re.I),
+    re.compile(r"\b(?:paid|sent|spent|debited|purchase\w*)\b[^.;]*?\b(?:to|at)\s+(?P<m>" + _NAME + r")" + _END, re.I),
+    re.compile(r"\b(?:Received|credited)\b[^.;]*?\bfrom\s+(?P<m>" + _NAME + r")" + _END, re.I),
+    re.compile(r"\bfor\s+(?:your\s+)?(?P<m>" + _NAME + r")(?=\s+(?:subscription|order|purchase|payment|on|via)\b|[.;,]|\s*$)", re.I),
+    re.compile(r"\b(?:at|to)\s+(?P<m>" + _NAME + r")" + _END, re.I),
+]
+
+
+def _first_valid_date(text: str) -> Optional[str]:
+    for m in _DATE_FIND.finditer(text):
+        groups = [g for g in m.groups() if g]
+        raw = "-".join(groups) if len(groups) == 3 else groups[0]      # yyyy:mm:dd arrives as three groups
+        iso = _normalise_date(raw)
+        if iso:
+            return iso
+    return None
+
+
+def _field_amounts(text: str) -> tuple[Optional[float], Optional[float]]:
+    """(transaction amount, balance). Skips balance / limit / due figures when choosing the amount."""
+    amount = balance = None
+    for m in _CUR_AMT.finditer(text):
+        before = text[max(0, m.start() - 28):m.start()]
+        try:
+            val = _clean_amount(m.group(1))
+        except ValueError:
+            continue
+        if _DUE_BEFORE.search(before):
+            continue
+        bal = _BAL_BEFORE.search(before)
+        if bal:
+            if "bal" in bal.group(1).lower() and balance is None:
+                balance = val
+            continue
+        if amount is None:
+            amount = val
+    if amount is None:
+        m = _BY_AMT.search(text)
+        if m:
+            try:
+                amount = _clean_amount(m.group(1))
+            except ValueError:
+                pass
+    return amount, balance
+
+
+def _field_merchant(text: str, vpa: Optional[str], txn_type: str) -> Optional[str]:
+    if vpa:
+        return vpa.split("@")[0]
+    if re.search(r"\bEMI\b", text, re.I):
+        return "EMI"
+    for pat in _MERCHANT_PATTERNS[1:]:
+        for m in pat.finditer(text):
+            cand = re.sub(r"^(?:from|to|at)\s+", "", re.sub(r"\s+", " ", m.group("m")), flags=re.I).strip(" .-;,")
+            cand = re.sub(r"\s+(?:Ref|Refno|UPI|Avl|Bal|SMS|Call|Not|If)\b.*$", "", cand, flags=re.I).strip()
+            if 2 <= len(cand) <= 40 and not _NOISE_MERCHANT.match(cand) and not re.fullmatch(r"[\d\s]+", cand):
+                return cand
+    if txn_type == "credit" and re.search(r"\bsalary\b", text, re.I):
+        return "Salary"
+    return None
+
+
+def _try_fields(text: str, txn_id: str) -> Optional[ParsedTransaction]:
+    """Generic, template-free parse. Returns None for anything that is not a completed transaction."""
+    if not text or len(text) > 600:
+        return None
+    masked = _PRODUCT_MASK.sub(" ", text)
+    deb, cre = _DEBIT_STRONG.search(masked), _CREDIT_STRONG.search(masked)
+    if not (deb or cre):
+        return None                                   # OTPs, balance enquiries, collect requests, chat, offers…
+    if _FUTURE.search(text) or _FAILED.search(text):
+        return None
+    if _CHEQUE.search(text) and not re.search(r"\b(?:debited|credited)\b", text, re.I):
+        return None                                   # "cheque received for clearing" is not a completed movement
+    if not _CONTEXT.search(text):
+        return None                                   # no account / card / UPI context → not a bank alert
+    if _PROMO.search(text) and not _ACCT.search(text):
+        return None
+    amount, balance = _field_amounts(text)
+    if amount is None or amount <= 0:
+        return None
+
+    # the movement verb that appears first decides debit vs credit
+    if deb and cre:
+        txn_type = "debit" if deb.start() < cre.start() else "credit"
+    else:
+        txn_type = "debit" if deb else "credit"
+
+    vm = re.search(r"([A-Za-z0-9][\w.\-]{1,}@[A-Za-z]{2,})", text)
+    vpa = vm.group(1) if vm else None
+    if vpa:
+        vpa = re.sub(r"^(?:UPI|IMPS|NEFT)[-/](?:[A-Za-z0-9]+[-/])*", "", vpa, flags=re.I) or vpa
+    bank = None
+    for pat, name in _BANKS:
+        if re.search(pat, text, re.I):
+            bank = name
+            break
+    return ParsedTransaction(
+        id=txn_id, raw_message=text, amount=amount, transaction_type=txn_type,
+        merchant=_field_merchant(text, vpa, txn_type), vpa=vpa, date=_first_valid_date(text),
+        balance=balance, bank=bank, parse_method="regex", confidence=0.7,
+    )
+
+
+# ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
@@ -402,9 +576,33 @@ def parse_message(text: str, adapter=None, txn_id: Optional[str] = None) -> Pars
     result = _try_regex(text, tid)
     if result is not None:
         return result
+    result = _try_fields(text, tid)
+    if result is not None:
+        return result
     if adapter is not None:
         return _try_llm(text, tid, adapter)
     return _failed(text, tid)
+
+
+def dedupe_messages(texts: list[str]) -> tuple[list[str], int]:
+    """Drop repeated copies of the same SMS (overlapping pastes / exports). Returns (unique, n_removed).
+
+    Only messages that carry a reference number (6+ digits) or a balance figure are de-duplicated: those are
+    effectively unique per transaction. Short alerts without either (two identical Rs 20 chai payments the
+    same day) are kept, because they can be genuinely separate transactions.
+    """
+    seen: set[str] = set()
+    out: list[str] = []
+    removed = 0
+    for t in texts:
+        key = re.sub(r"\s+", " ", t).strip().lower()
+        identifiable = bool(re.search(r"\d{6,}", key) or re.search(r"\b(?:avl\.?\s*)?bal(?:ance)?\b|avlbal", key))
+        if identifiable and key in seen:
+            removed += 1
+            continue
+        seen.add(key)
+        out.append(t)
+    return out, removed
 
 
 def parse_messages(texts: list[str], adapter=None) -> list[ParsedTransaction]:

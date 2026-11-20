@@ -26,8 +26,10 @@ from urllib.parse import urlsplit
 OFFICIAL_DOMAINS: dict[str, str] = {
     # Banks
     "sbi.co.in": "State Bank of India", "onlinesbi.sbi": "State Bank of India",
-    "sbi.bank.in": "State Bank of India",
+    "sbi.bank.in": "State Bank of India", "onlinesbi.com": "State Bank of India",
     "hdfcbank.com": "HDFC Bank", "hdfc.bank.in": "HDFC Bank",
+    # HDFC states its SMS links are always under hdfcbk.io (looks like a typo of hdfcbank.com, so it must be allow-listed)
+    "hdfcbk.io": "HDFC Bank (SMS link domain)",
     "icicibank.com": "ICICI Bank", "icici.bank.in": "ICICI Bank",
     "axisbank.com": "Axis Bank", "axis.bank.in": "Axis Bank",
     "kotak.com": "Kotak Mahindra Bank", "kotak.bank.in": "Kotak Mahindra Bank",
@@ -48,6 +50,18 @@ OFFICIAL_DOMAINS: dict[str, str] = {
     "sebi.gov.in": "SEBI", "gst.gov.in": "GST Portal", "parivahan.gov.in": "Parivahan",
     "digilocker.gov.in": "DigiLocker", "npscra.nsdl.co.in": "NPS (NSDL)",
 }
+
+# Free hosting / tunnelling services. Real Indian bank-SMS phishing campaigns (Zscaler, CERT-In, SBI's own
+# warning page) are served from these (e.g. sbi-kyc-update-immediately.web.app, x.ngrok.io/sbibank,
+# applicationkyc.pages.dev). A bank never hosts customer pages on them.
+FREE_HOSTING = (
+    "ngrok.io", "ngrok-free.app", "ngrok.app", "trycloudflare.com", "glitch.me", "repl.co",
+    "web.app", "firebaseapp.com", "pages.dev", "workers.dev", "herokuapp.com", "netlify.app",
+    "vercel.app", "onrender.com", "github.io", "gitlab.io", "blogspot.com", "weebly.com",
+    "wixsite.com", "000webhostapp.com",
+)
+_TUNNELS = ("ngrok", "trycloudflare", "glitch", "repl.co")
+_LURE_WORDS = re.compile(r"(?i)(kyc|verify|update|secure|login|reward|refund|claim|bonus|helpdesk|support|card|points|activate|unlock|aadhaar|pan)")
 
 # Brand tokens scammers put into fake domains
 BRAND_TOKENS = {
@@ -142,6 +156,11 @@ def _official_for(host: str) -> str | None:
     for dom, org in OFFICIAL_DOMAINS.items():
         if h == dom or h.endswith("." + dom):
             return org
+    # RBI (circular of 22 Apr 2025) told banks to move to the restricted ".bank.in" domain; IDRBT is the
+    # only registrar and only licensed banks qualify, so <name>.bank.in is a bank's own site.
+    # (host must END with ".bank.in" — "sbi.bank.in.evil.com" and "sbi-bank.in" do not match.)
+    if h.endswith(".bank.in") and h.count(".") >= 2:
+        return "a licensed bank (.bank.in domain)"
     return None
 
 
@@ -182,6 +201,14 @@ def check_url(url: str) -> LinkReport:
         bump("danger" if reg != "wa.me" else "caution",
              "Link shortener hides the real destination. Banks and government never send shortened links.")
 
+    free = next((d for d in FREE_HOSTING if host == d or host.endswith("." + d)), None)
+    if free:
+        ctx = (host + parsed.path).lower()
+        risky = (free.startswith(_TUNNELS) or bool(_LURE_WORDS.search(ctx))
+                 or any(tok in ctx.replace("-", "") for tok in BRAND_TOKENS if len(tok) >= 3))
+        bump("danger" if risky else "caution",
+             f"Hosted on a free/temporary web service ({free}). Banks and government never use these for customer pages.")
+
     labels = re.split(r"[.\-_]", host)
     host_compact = host.replace("-", "").replace(".", "")
     for token, real in BRAND_TOKENS.items():
@@ -202,7 +229,10 @@ def check_url(url: str) -> LinkReport:
         bump("caution", f"'.{tld}' domains are cheap and frequently used in scam campaigns.")
     if parsed.path.lower().endswith(".apk") or ".apk?" in raw.lower():
         bump("danger", "Downloads an Android app (.apk) from outside the Play Store — a common way to steal OTPs.")
-    if re.search(r"(?i)(kyc|verify|update|secure|login|reward|refund|claim|bonus|helpdesk|support)", host):
+    lures = {m.lower() for m in _LURE_WORDS.findall(host)}
+    if len(lures) >= 2:
+        bump("danger", "Domain stacks words like 'update', 'card', 'kyc' or 'verify' to look official.")
+    elif lures:
         bump("caution", "Domain uses words like 'kyc', 'verify', 'reward' or 'refund' to look official.")
     if host.count("-") >= 2 or host.count(".") >= 4:
         bump("caution", "Unusually long or hyphenated domain.")

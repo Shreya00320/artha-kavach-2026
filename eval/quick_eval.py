@@ -28,6 +28,15 @@ from scam.pipeline import analyse  # noqa: E402
 from scam.rules import run_rules  # noqa: E402
 
 LABELS = ["scam", "suspicious", "safe"]
+
+
+def _deep_or(clf):
+    """The app's pipeline uses the shipped deep model when present; evaluate the same thing."""
+    try:
+        from scam.deep_model import load_default
+        return load_default() or clf
+    except Exception:
+        return clf
 SCAM_CSV = ROOT / "data" / "scam_eval.csv"
 SMS_CSV = ROOT / "data" / "sample_sms.csv"
 
@@ -65,7 +74,7 @@ def eval_scam() -> dict:
         clf.train(SCAM_CSV)
         preds[f"clf_{feats}"] = [clf.predict(r["text"]) for r in test]
         if feats == "word+char":
-            preds["pipeline_offline"] = [analyse(r["text"], classifier=clf).verdict for r in test]
+            preds["pipeline_offline"] = [analyse(r["text"], classifier=_deep_or(clf)).verdict for r in test]
 
     for name, p in preds.items():
         results[name] = _f1_report(y, p)

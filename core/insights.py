@@ -110,8 +110,8 @@ def detect_subscriptions(txns: list[CategorisedTransaction]) -> list[Subscriptio
             # needs 2+ months and a stable amount (within 10% of the median)
             if len(months) < 2 or any(abs(a - med) > 0.10 * med for a in amounts):
                 continue
-            if items[0].category in ("Rent", "EMI_Loan", "Savings_Investment"):
-                continue  # these are fixed obligations, shown elsewhere
+            if items[0].category in ("Rent", "EMI_Loan", "Savings_Investment", "Utilities"):
+                continue  # fixed obligations and bills (amount varies) are shown elsewhere
         latest = max((t.date for t in items if t.date), default=None)
         display = items[-1].merchant or key
         subs.append(Subscription(
@@ -180,7 +180,31 @@ def detect_anomalies(
                 category=t.category, amount=t.amount,
                 reason="; ".join(reasons), severity=severity,
             ))
+    out += _large_transfer_alerts(txns)
     return sorted(out, key=lambda a: (a.severity != "high", -a.amount))
+
+
+LARGE_TRANSFER_MIN = 10_000.0     # a one-off transfer at or above this to a payee seen only once is worth a look
+LARGE_TRANSFER_HIGH = 25_000.0
+
+
+def _large_transfer_alerts(txns: list[CategorisedTransaction]) -> list["Anomaly"]:
+    """Money sent to a person / unknown UPI ID is kept out of 'spending', but a big one-off transfer to a payee
+    seen only once is exactly what a fraud or mistaken-payment check should surface."""
+    sent = [t for t in txns if t.transaction_type == "debit" and t.category == "Transfer"
+            and t.amount and t.parse_method != "failed"]
+    seen: dict[str, int] = defaultdict(int)
+    for t in sent:
+        seen[(t.merchant or "").strip().lower()] += 1
+    out = []
+    for t in sent:
+        key = (t.merchant or "").strip().lower()
+        if t.amount >= LARGE_TRANSFER_MIN and seen[key] == 1:
+            out.append(Anomaly(
+                txn_id=t.id, date=t.date, merchant=t.merchant or "Unknown", category="Transfer", amount=t.amount,
+                reason="large one-off transfer to a payee you haven't paid before — check you made it",
+                severity="high" if t.amount >= LARGE_TRANSFER_HIGH else "medium"))
+    return out
 
 
 # ---------------------------------------------------------------------------

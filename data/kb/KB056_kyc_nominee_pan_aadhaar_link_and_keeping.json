@@ -1,0 +1,19 @@
+{
+  "id": "KB056",
+  "title": "KYC, nominee, PAN-Aadhaar link and keeping your accounts in order",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.incometax.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "kyc",
+    "nominee",
+    "pan",
+    "aadhaar",
+    "documents"
+  ],
+  "text": "KYC (Know Your Customer) is a one-time identity check required by banks, mutual funds, brokers and insurers; it needs your PAN, Aadhaar or another valid ID and an address proof. Link your PAN with Aadhaar as required by the Income Tax Department, otherwise the PAN can become inoperative. Add a nominee to every bank account, mutual fund folio, demat account, EPF, insurance policy and NPS account — without one, your family faces long paperwork to claim your money. Keep a simple list of your accounts and policies where a trusted person can find it. Never share your OTP, PIN, CVV, full card number or login password with anyone, including callers who say they are from your bank; banks do not ask for them.",
+  "summary_hinglish": "KYC ek baar ki identity verification hai (PAN, Aadhaar, address proof). PAN-Aadhaar link karo warna PAN inoperative ho sakta hai. Har bank account, mutual fund, demat, EPF aur insurance mein nominee zaroor jodo. OTP, PIN, CVV kisi ko mat batao, bank kabhi nahi maangta.",
+  "summary_hi": "KYC एक बार का पहचान सत्यापन है (PAN, आधार, पता प्रमाण)। PAN-आधार लिंक करें वरना PAN निष्क्रिय हो सकता है। हर बैंक खाते, म्यूचुअल फंड, डीमैट, EPF और बीमा में नॉमिनी ज़रूर जोड़ें। OTP, PIN, CVV किसी को न बताएं, बैंक कभी नहीं मांगता।",
+  "aliases": "kyc nominee pan aadhaar link documents account in order otp pin cvv share kyc what is kyc why needed know your customer nominee meaning form mutual fund nominee",
+  "verified": false
+}

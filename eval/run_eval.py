@@ -51,6 +51,15 @@ SAMPLE_SMS_CSV = ROOT / "data" / "sample_sms.csv"
 # Helpers
 # ---------------------------------------------------------------------------
 
+def _deep_or(clf):
+    """The app's pipeline uses the shipped deep model when present; evaluate the same thing."""
+    try:
+        from scam.deep_model import load_default
+        return load_default() or clf
+    except Exception:
+        return clf
+
+
 def _header(title: str) -> None:
     bar = "=" * 68
     print(f"\n{bar}")
@@ -178,7 +187,7 @@ def eval_scam(use_llm: bool = False) -> dict:
     from scam.pipeline import analyse
 
     def _pipeline_verdict(text: str) -> str:
-        result = analyse(text, adapter=adapter, classifier=clf)
+        result = analyse(text, adapter=adapter, classifier=_deep_or(clf))
         return result.verdict
 
     print("  Running pipeline on test set (this may take a moment)…")
@@ -544,7 +553,7 @@ def eval_failure_cases() -> None:
     test_df["pred_rules"] = test_df["text"].apply(_rules_verdict)
     test_df["pred_clf"]   = test_df["text"].apply(clf.predict)
     test_df["pred_pipeline"] = test_df["text"].apply(
-        lambda t: analyse(t, classifier=clf).verdict
+        lambda t: analyse(t, classifier=_deep_or(clf)).verdict
     )
 
     # Find rows where both rules AND classifier are wrong

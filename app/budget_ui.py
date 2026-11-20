@@ -156,6 +156,9 @@ def render_budget_tab(adapter=None) -> None:
                 st.error("Sample data file not found at data/sample_sms.csv.")
 
     if raw_messages is not None:
+        from core.parser import dedupe_messages
+        raw_messages, n_dups = dedupe_messages(raw_messages)
+        st.session_state["budget_dups"] = n_dups
         with st.spinner(f"Processing {len(raw_messages)} messages…"):
             try:
                 st.session_state["budget_txns_all"] = _parse_and_categorise(raw_messages, adapter)
@@ -186,6 +189,8 @@ def render_budget_tab(adapter=None) -> None:
     st.session_state.update(budget_summary=summary, budget_txns_view=view, budget_subs=subs)
 
     # ---- Parse banner ----
+    if st.session_state.get("budget_dups"):
+        st.info(f"Skipped {st.session_state['budget_dups']} duplicate message(s) so nothing is counted twice.")
     n_ok, n_fail = summary.n_parsed, summary.n_failed
     total = n_ok + n_fail
     if n_fail > 0:
@@ -231,6 +236,18 @@ def render_budget_tab(adapter=None) -> None:
         if len(weeks) >= 2:
             st.markdown("### Weekly spending")
             st.bar_chart({w["week_start"]: w["spend"] for w in weeks}, height=220)
+
+        try:
+            from core.report import build_monthly_report_pdf
+            st.download_button(
+                "📄 Download my money report (PDF)",
+                build_monthly_report_pdf(summary, subs, weeks),
+                file_name="artha_kavach_money_report.pdf",
+                mime="application/pdf",
+                key="btn_report_pdf",
+            )
+        except Exception as exc:  # never let the report break the dashboard
+            st.caption(f"PDF report unavailable: {exc}")
 
         pace = summary.pace or {}
         if pace.get("current_month_spend"):

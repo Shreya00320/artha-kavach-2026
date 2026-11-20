@@ -1,0 +1,437 @@
+id,label,text,language,hinglish,split,notes
+BG0001,safe,"Hello Rohit, Interest of Rs 2,100 has been credited to your ICICI Bank savings account XX60. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0002,safe,"Your cheque no. 906578 for ₹7,899 has been presented for clearing in account XX15.",en,false,train,synthetic-genuine-bank
+BG0003,safe,"Hello Rohit, Cheque book request received for account XX60. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0004,safe,"Dear Vikram, Your account XX85 will be debited ₹25,000 on 28-Feb-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0005,safe,"Hi Neha, Your Axis Bank home loan interest certificate for FY 2025-26 is available in net banking at axis.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0006,safe,Pl note: your new IDFC FIRST Bank chip debit card was handed over at your Regd. address. Existing card stops working from 12-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0007,safe,"Dear Rohit, Your new card is ready. Generate your PIN securely at https://idfcfirst.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0008,safe,Kotak Mahindra Bank: Debit Card XX85 blocked on 28-Feb-2027 after the replacement chip card XX16 was activated. Ref No 25346364136650.,en,false,train,synthetic-genuine-bank
+BG0009,safe,"Hi Neha, Standing instruction of ₹25,000 to your SIP has been registered on your Axis Bank account XX60. First debit on 05-Jan-2027. If you did not set this up, visit your branch or call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0010,safe,HDFC Bank: Debit Card XX39 blocked on 12-Dec-2026 after the replacement chip card XX18 was activated. Ref No 66350434466094.,en,false,train,synthetic-genuine-bank
+BG0011,safe,"Hi Neha, Your account XX60 will be debited ₹12,000 on 05-Jan-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0012,safe,"Hi Meera, Your mobile number has been updated in Canara Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0013,safe,"Dear Vikram, Your mobile number has been updated in Kotak Mahindra Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0014,safe,"Punjab National Bank: Cheque 700632 for ₹1,250 cleared in A/c XX12 on 15-Dec-2026. Ref 8139374894.",en,false,train,synthetic-genuine-bank
+BG0015,safe,Kotak Mahindra Bank: Card XX85 is now closed. To get a replacement apply at https://kotak.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0016,safe,"Bank of Baroda: Ur A/c XX19 debited by Rs 899 on 20-Nov-2026. Avl Bal ₹1,250. Not you? Call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0017,safe,"Hello Rohit, Your ICICI Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0018,safe,HDFC Bank: Aapka debit card XX54 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0019,safe,"Your Union Bank of India debit card ending XX15 was delivered today. Set your PIN at any Union Bank of India ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0020,safe,"Dear Rohit, Reminder: EMI of ₹7,899 for your IDFC FIRST Bank loan will be auto-debited on 05-Jan-2027. Please keep sufficient balance in account XX51.",en,false,train,synthetic-genuine-bank
+BG0021,safe,Your e-statement for account XX15 has been sent to your registered email. For help call the helpline on your card.,en,false,train,synthetic-genuine-bank
+BG0022,safe,"Hi Karan, Your Punjab National Bank debit card ending XX12 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0023,safe,Pl note: your new HDFC Bank chip debit card was handed over at your Regd. address. Existing card stops working from 20-Nov-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0024,safe,"Reminder: EMI of Rs 2,100 for your Union Bank of India loan will be auto-debited on 20-Nov-2026. Please keep sufficient balance in account XX15.",en,false,train,synthetic-genuine-bank
+BG0025,safe,"Hi Neha, Your Axis Bank debit card ending XX60 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0026,safe,"Hello Rohit, Your ICICI Bank UPI PIN was changed successfully. If you did not do this, call the customer care number on your card right away.",en,false,train,synthetic-genuine-bank
+BG0027,safe,"Your Bank of Baroda Debit card ending with XX19 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0028,safe,"Hi Neha, Your Axis Bank debit card ending XX60 was delivered today. Set your PIN at any Axis Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0029,safe,"Hello Rohit, Manage your debit card limits, PIN and online usage at icici.bank.in or in the official ICICI Bank app.",en,false,train,synthetic-genuine-bank
+BG0030,safe,"Hello Rohit, Manage your debit card limits, PIN and online usage at sbi.bank.in or in the official SBI app.",en,false,train,synthetic-genuine-bank
+BG0031,safe,SBI: Aapka debit card XX32 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0032,safe,"Hi Karan, Your Punjab National Bank Debit card ending with XX12 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0033,safe,"Hello Rohit, Reminder: EMI of Rs 540 for your ICICI Bank loan will be auto-debited on 03-Mar-2027. Please keep sufficient balance in account XX60.",en,false,train,synthetic-genuine-bank
+BG0034,safe,"Hello Rohit, Your SBI Debit card ending with XX75 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0035,safe,ICICI Bank: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0036,safe,"Hello Rohit, Standing instruction of ₹25,000 to your SIP has been registered on your ICICI Bank account XX60. First debit on 12-Dec-2026. If you did not set this up, visit your branch or call the customer care number on your card.",en,false,train,synthetic-genuine-bank
+BG0037,safe,Your Bank of Baroda account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.,en,false,train,synthetic-genuine-bank
+BG0038,safe,Your OTP for HDFC Bank net banking login is 637798. Do not share this OTP with anyone. HDFC Bank never calls to ask for it.,en,false,train,synthetic-genuine-bank
+BG0039,safe,"Hello Rohit, Your ICICI Bank debit card ending XX60 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0040,safe,"SBI: Ur A/c XX75 debited by Rs 3,480 on 12-Dec-2026. Avl Bal ₹1,250. Not you? Call the number on the back of your card.",en,false,train,synthetic-genuine-bank
+BG0041,safe,"Hello Rohit, Your ATM withdrawal limit has been changed to ₹25,000 per day as requested. Not you? Call the number on the back of your card.",en,false,train,synthetic-genuine-bank
+BG0042,safe,"Dear Vikram, Standing instruction of Rs 899 to your SIP has been registered on your Kotak Mahindra Bank account XX85. First debit on 15-Dec-2026. If you did not set this up, visit your branch or call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0043,safe,"Hi Meera, Your Canara Bank UPI PIN was changed successfully. If you did not do this, call the helpline on your card right away.",en,false,train,synthetic-genuine-bank
+BG0044,safe,"Standing instruction of Rs 3,480 to your SIP has been registered on your Bank of Baroda account XX19. First debit on 12-Dec-2026. If you did not set this up, visit your branch or call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0045,safe,Your Union Bank of India debit card ending XX15 has been blocked as requested. Visit a branch or use the app to apply for a new card.,en,false,train,synthetic-genuine-bank
+BG0046,safe,"Hi Neha, Your Axis Bank Debit card ending with XX60 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0047,safe,ICICI Bank: Aapke account ka EMI Rs 540 12-Dec-2026 ko katega. Kripya balance rakhein.,hinglish,true,train,synthetic-genuine-bank
+BG0048,safe,"Hi Neha, Manage your debit card limits, PIN and online usage at axis.bank.in or in the official Axis Bank app.",en,false,train,synthetic-genuine-bank
+BG0049,safe,"Your cheque no. 585094 for Rs 3,480 has been presented for clearing in account XX19.",en,false,train,synthetic-genuine-bank
+BG0050,safe,"Hi Karan, Your Punjab National Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0051,safe,"Hi Meera, Cheque book request received for account XX26. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0052,safe,"Hi Neha, Your Axis Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0053,safe,"Hi Karan, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0054,safe,SBI: Aapke account ka EMI Rs 540 20-Nov-2026 ko katega. Kripya balance rakhein.,hinglish,true,train,synthetic-genuine-bank
+BG0055,safe,"Canara Bank: Cheque 447041 for ₹12,000 cleared in A/c XX26 on 15-Dec-2026. Ref 5371822290.",en,false,train,synthetic-genuine-bank
+BG0056,safe,IDFC FIRST Bank: Card XX51 is now closed. To get a replacement apply at https://idfcfirst.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0057,safe,"Hi Karan, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Punjab National Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0058,safe,"Hello Rohit, Your SBI UPI PIN was changed successfully. If you did not do this, call the number on the back of your card right away.",en,false,train,synthetic-genuine-bank
+BG0059,safe,Your e-statement for account XX39 has been sent to your registered email. For help call the number printed on your card.,en,false,train,synthetic-genuine-bank
+BG0060,safe,"Hi Neha, Your mobile number has been updated in Axis Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0061,safe,"Hi Neha, Your OTP for Axis Bank net banking login is 562990. Do not share this OTP with anyone. Axis Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0062,safe,"Hello Rohit, Your cheque no. 664861 for ₹1,250 has been presented for clearing in account XX75.",en,false,train,synthetic-genuine-bank
+BG0063,safe,"Dear Rohit, Your IDFC FIRST Bank home loan interest certificate for FY 2025-26 is available in net banking at idfcfirst.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0064,safe,"As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Union Bank of India branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0065,safe,"Dear Vikram, Your ATM withdrawal limit has been changed to Rs 540 per day as requested. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0066,safe,"Hi Meera, Manage your debit card limits, PIN and online usage at canarabank.com or in the official Canara Bank app.",en,false,train,synthetic-genuine-bank
+BG0067,safe,"Dear Vikram, Your Kotak Mahindra Bank home loan interest certificate for FY 2025-26 is available in net banking at kotak.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0068,safe,Pl follow the instructions in the welcome letter to activate your new Axis Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0069,safe,"Hi Meera, Your Canara Bank net banking was accessed from a new device on 20-Nov-2026. If this was you, no action is needed. If not, call the helpline on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0070,safe,"Hi Neha, Reminder: EMI of ₹1,250 for your Axis Bank loan will be auto-debited on 20-Nov-2026. Please keep sufficient balance in account XX60.",en,false,train,synthetic-genuine-bank
+BG0071,safe,"HDFC Bank: Ur A/c XX39 debited by Rs 3,480 on 20-Nov-2026. Avl Bal ₹25,000. Not you? Call the number printed on your card.",en,false,train,synthetic-genuine-bank
+BG0072,safe,"Reminder: EMI of ₹1,250 for your HDFC Bank loan will be auto-debited on 03-Mar-2027. Please keep sufficient balance in account XX39.",en,false,train,synthetic-genuine-bank
+BG0073,safe,"Hi Karan, Thank you for visiting our branch. Your service request has been completed. For feedback, visit pnb.bank.in.",en,false,train,synthetic-genuine-bank
+BG0074,safe,Interest of Rs 899 has been credited to your Bank of Baroda savings account XX19. Thank you for banking with us.,en,false,train,synthetic-genuine-bank
+BG0075,safe,"Hi Karan, Your Punjab National Bank UPI PIN was changed successfully. If you did not do this, call the helpline on your passbook right away.",en,false,train,synthetic-genuine-bank
+BG0076,safe,Axis Bank: Debit Card XX60 blocked on 12-Dec-2026 after the replacement chip card XX88 was activated. Ref No 64349788868752.,en,false,train,synthetic-genuine-bank
+BG0077,safe,Punjab National Bank: Debit Card XX12 blocked on 03-Mar-2027 after the replacement chip card XX70 was activated. Ref No 20934560829243.,en,false,train,synthetic-genuine-bank
+BG0078,safe,Kotak Mahindra Bank: Aapka debit card XX67 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0079,safe,"Your account XX19 will be debited ₹7,899 on 15-Dec-2026 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0080,safe,IDFC FIRST Bank: Debit Card XX51 blocked on 03-Mar-2027 after the replacement chip card XX18 was activated. Ref No 25879220496473.,en,false,train,synthetic-genuine-bank
+BG0081,safe,"Hello Rohit, Your e-statement for account XX60 has been sent to your registered email. For help call the customer care number on your card.",en,false,train,synthetic-genuine-bank
+BG0082,safe,Union Bank of India: Cheque 309024 for Rs 899 cleared in A/c XX15 on 20-Nov-2026. Ref 4067340921.,en,false,train,synthetic-genuine-bank
+BG0083,safe,Your ATM withdrawal limit has been changed to Rs 540 per day as requested. Not you? Call the helpline on your card.,en,false,train,synthetic-genuine-bank
+BG0084,safe,"Hi Meera, Your Canara Bank credit card ending XX26 statement is generated. Total due Rs 540, minimum due Rs 540, due date 03-Mar-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0085,safe,"Hello Rohit, Your account XX75 will be debited Rs 899 on 03-Mar-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0086,safe,"Dear Rohit, Manage your debit card limits, PIN and online usage at idfcfirst.bank.in or in the official IDFC FIRST Bank app.",en,false,train,synthetic-genuine-bank
+BG0087,safe,Your HDFC Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.,en,false,train,synthetic-genuine-bank
+BG0088,safe,"Hi Meera, Your cheque no. 531412 for Rs 899 has been presented for clearing in account XX26.",en,false,train,synthetic-genuine-bank
+BG0089,safe,"Your HDFC Bank UPI PIN was changed successfully. If you did not do this, call the number printed on your card right away.",en,false,train,synthetic-genuine-bank
+BG0090,safe,"Hello Rohit, Your ICICI Bank net banking was accessed from a new device on 12-Dec-2026. If this was you, no action is needed. If not, call the customer care number on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0091,safe,Cheque book request received for account XX15. It will be delivered to your registered address within 7 working days.,en,false,train,synthetic-genuine-bank
+BG0092,safe,"Axis Bank: Aapke account ka EMI ₹25,000 05-Jan-2027 ko katega. Kripya balance rakhein.",hinglish,true,train,synthetic-genuine-bank
+BG0093,safe,Pl note: your new Axis Bank chip debit card was handed over at your Regd. address. Existing card stops working from 20-Nov-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0094,safe,Your Bank of Baroda home loan interest certificate for FY 2025-26 is available in net banking at bankofbaroda.bank.in. Download it anytime.,en,false,train,synthetic-genuine-bank
+BG0095,safe,"Hi Karan, Your Punjab National Bank net banking was accessed from a new device on 28-Feb-2027. If this was you, no action is needed. If not, call the helpline on your passbook immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0096,safe,"Hi Karan, Your ATM withdrawal limit has been changed to ₹1,250 per day as requested. Not you? Call the helpline on your passbook.",en,false,train,synthetic-genuine-bank
+BG0097,safe,"Hi Karan, Manage your debit card limits, PIN and online usage at pnb.bank.in or in the official Punjab National Bank app.",en,false,train,synthetic-genuine-bank
+BG0098,safe,"Hello Rohit, Your SBI net banking was accessed from a new device on 12-Dec-2026. If this was you, no action is needed. If not, call the number on the back of your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0099,safe,"Interest of ₹25,000 has been credited to your HDFC Bank savings account XX39. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0100,safe,"Hi Neha, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0101,safe,"Dear Vikram, Your Kotak Mahindra Bank debit card ending XX85 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0102,safe,"Hello Rohit, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest SBI branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0103,safe,"Hello Rohit, Your OTP for SBI net banking login is 874809. Do not share this OTP with anyone. SBI never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0104,safe,"Hello Rohit, Your cheque no. 529969 for Rs 3,480 has been presented for clearing in account XX60.",en,false,train,synthetic-genuine-bank
+BG0105,safe,Pl note: your new Kotak Mahindra Bank chip debit card was handed over at your Regd. address. Existing card stops working from 12-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0106,safe,"Your mobile number has been updated in Union Bank of India records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0107,safe,"Hi Karan, Your OTP for Punjab National Bank net banking login is 468924. Do not share this OTP with anyone. Punjab National Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0108,safe,"Hello Rohit, Your new card is ready. Generate your PIN securely at https://icici.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0109,safe,"Hi Meera, Your Canara Bank debit card ending XX26 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0110,safe,Your e-statement for account XX19 has been sent to your registered email. For help call the helpline on your card.,en,false,train,synthetic-genuine-bank
+BG0111,safe,"Hi Karan, Reminder: EMI of Rs 3,480 for your Punjab National Bank loan will be auto-debited on 03-Mar-2027. Please keep sufficient balance in account XX12.",en,false,train,synthetic-genuine-bank
+BG0112,safe,"Hello Rohit, Your SBI debit card ending XX75 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0113,safe,SBI: Debit Card XX75 blocked on 03-Mar-2027 after the replacement chip card XX30 was activated. Ref No 12111505258662.,en,false,train,synthetic-genuine-bank
+BG0114,safe,"Hi Neha, Your cheque no. 773013 for Rs 3,480 has been presented for clearing in account XX60.",en,false,train,synthetic-genuine-bank
+BG0115,safe,"Hi Karan, Your cheque no. 672622 for Rs 2,100 has been presented for clearing in account XX12.",en,false,train,synthetic-genuine-bank
+BG0116,safe,ICICI Bank: Card XX60 is now closed. To get a replacement apply at https://icici.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0117,safe,"Thank you for visiting our branch. Your service request has been completed. For feedback, visit bankofbaroda.bank.in.",en,false,train,synthetic-genuine-bank
+BG0118,safe,"Hello Rohit, Your new SBI chip-based debit card ending XX75 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0119,safe,"Hi Meera, Reminder: EMI of Rs 3,480 for your Canara Bank loan will be auto-debited on 20-Nov-2026. Please keep sufficient balance in account XX26.",en,false,train,synthetic-genuine-bank
+BG0120,safe,"Your Union Bank of India net banking was accessed from a new device on 12-Dec-2026. If this was you, no action is needed. If not, call the helpline on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0121,safe,Punjab National Bank: Card XX12 is now closed. To get a replacement apply at https://pnb.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0122,safe,"Hi Meera, Thank you for visiting our branch. Your service request has been completed. For feedback, visit canarabank.com.",en,false,train,synthetic-genuine-bank
+BG0123,safe,"Your cheque no. 981029 for Rs 3,480 has been presented for clearing in account XX39.",en,false,train,synthetic-genuine-bank
+BG0124,safe,"Hello Rohit, Your new ICICI Bank chip-based debit card ending XX60 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0125,safe,Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0126,safe,"Hi Karan, Your new card is ready. Generate your PIN securely at https://pnb.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0127,safe,Bank of Baroda: Debit Card XX19 blocked on 12-Dec-2026 after the replacement chip card XX39 was activated. Ref No 79978386990845.,en,false,train,synthetic-genuine-bank
+BG0128,safe,"Hello Rohit, Your ICICI Bank home loan interest certificate for FY 2025-26 is available in net banking at icici.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0129,safe,"Dear Vikram, Reminder: EMI of ₹12,000 for your Kotak Mahindra Bank loan will be auto-debited on 28-Feb-2027. Please keep sufficient balance in account XX85.",en,false,train,synthetic-genuine-bank
+BG0130,safe,"Union Bank of India: Ur A/c XX15 debited by Rs 2,100 on 12-Dec-2026. Avl Bal Rs 540. Not you? Call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0131,safe,"Hi Neha, Your Axis Bank debit card ending XX60 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0132,safe,"Hi Meera, Your Canara Bank debit card ending XX26 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0133,safe,"Hello Rohit, Your SBI debit card ending XX75 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0134,safe,"Dear Rohit, Your ATM withdrawal limit has been changed to ₹12,000 per day as requested. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0135,safe,Your Union Bank of India account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.,en,false,train,synthetic-genuine-bank
+BG0136,safe,"Hi Karan, Your Punjab National Bank credit card ending XX12 statement is generated. Total due ₹7,899, minimum due Rs 2,100, due date 05-Jan-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0137,safe,Canara Bank: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0138,safe,"Hi Karan, Standing instruction of Rs 3,480 to your SIP has been registered on your Punjab National Bank account XX12. First debit on 28-Feb-2027. If you did not set this up, visit your branch or call the helpline on your passbook.",en,false,train,synthetic-genuine-bank
+BG0139,safe,"Hi Meera, Your OTP for Canara Bank net banking login is 284815. Do not share this OTP with anyone. Canara Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0140,safe,"Dear Rohit, Your IDFC FIRST Bank credit card ending XX51 statement is generated. Total due ₹25,000, minimum due Rs 540, due date 05-Jan-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0141,safe,Pl note: your new Union Bank of India chip debit card was handed over at your Regd. address. Existing card stops working from 12-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0142,safe,"Standing instruction of ₹7,899 to your SIP has been registered on your HDFC Bank account XX39. First debit on 28-Feb-2027. If you did not set this up, visit your branch or call the number printed on your card.",en,false,train,synthetic-genuine-bank
+BG0143,safe,Your new Union Bank of India chip-based debit card ending XX15 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.,en,false,train,synthetic-genuine-bank
+BG0144,safe,"IDFC FIRST Bank: Ur A/c XX51 debited by Rs 899 on 28-Feb-2027. Avl Bal ₹7,899. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0145,safe,"Dear Vikram, Cheque book request received for account XX85. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0146,safe,Your Bank of Baroda debit card ending XX19 has been blocked as requested. Visit a branch or use the app to apply for a new card.,en,false,train,synthetic-genuine-bank
+BG0147,safe,"Hello Rohit, Reminder: EMI of Rs 899 for your SBI loan will be auto-debited on 03-Mar-2027. Please keep sufficient balance in account XX75.",en,false,train,synthetic-genuine-bank
+BG0148,safe,"Your Union Bank of India UPI PIN was changed successfully. If you did not do this, call the helpline on your card right away.",en,false,train,synthetic-genuine-bank
+BG0149,safe,"Axis Bank: Ur A/c XX60 debited by Rs 3,480 on 12-Dec-2026. Avl Bal Rs 3,480. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0150,safe,"Hello Rohit, Thank you for visiting our branch. Your service request has been completed. For feedback, visit sbi.bank.in.",en,false,train,synthetic-genuine-bank
+BG0151,safe,"Your ATM withdrawal limit has been changed to ₹7,899 per day as requested. Not you? Call the number printed on your card.",en,false,train,synthetic-genuine-bank
+BG0152,safe,"Dear Vikram, Your new Kotak Mahindra Bank chip-based debit card ending XX85 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0153,safe,Pl note: your new ICICI Bank chip debit card was handed over at your Regd. address. Existing card stops working from 12-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0154,safe,"Dear Vikram, Your Kotak Mahindra Bank debit card ending XX85 was delivered today. Set your PIN at any Kotak Mahindra Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0155,safe,SBI: Cheque 299447 for Rs 540 cleared in A/c XX75 on 15-Dec-2026. Ref 7287550638.,en,false,train,synthetic-genuine-bank
+BG0156,safe,ICICI Bank: Cheque 569158 for Rs 540 cleared in A/c XX60 on 03-Mar-2027. Ref 4305071838.,en,false,train,synthetic-genuine-bank
+BG0157,safe,"ICICI Bank: Ur A/c XX60 debited by ₹12,000 on 03-Mar-2027. Avl Bal Rs 540. Not you? Call the customer care number on your card.",en,false,train,synthetic-genuine-bank
+BG0158,safe,"Dear Vikram, Thank you for visiting our branch. Your service request has been completed. For feedback, visit kotak.bank.in.",en,false,train,synthetic-genuine-bank
+BG0159,safe,"Dear Rohit, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0160,safe,"Hi Meera, Interest of Rs 3,480 has been credited to your Canara Bank savings account XX26. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0161,safe,"Hello Rohit, Your e-statement for account XX75 has been sent to your registered email. For help call the number on the back of your card.",en,false,train,synthetic-genuine-bank
+BG0162,safe,Canara Bank: Debit Card XX26 blocked on 20-Nov-2026 after the replacement chip card XX77 was activated. Ref No 22971366359370.,en,false,train,synthetic-genuine-bank
+BG0163,safe,"Hi Neha, Your fixed deposit XX60 matures on 05-Jan-2027. Visit your branch or the Axis Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0164,safe,Your HDFC Bank home loan interest certificate for FY 2025-26 is available in net banking at hdfc.bank.in. Download it anytime.,en,false,train,synthetic-genuine-bank
+BG0165,safe,"Dear Rohit, Your fixed deposit XX51 matures on 28-Feb-2027. Visit your branch or the IDFC FIRST Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0166,safe,"Dear Rohit, Your OTP for IDFC FIRST Bank net banking login is 467782. Do not share this OTP with anyone. IDFC FIRST Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0167,safe,Your Bank of Baroda debit card ending XX19 international usage has been switched off as requested. You can turn it on anytime from the app.,en,false,train,synthetic-genuine-bank
+BG0168,safe,Your fixed deposit XX15 matures on 28-Feb-2027. Visit your branch or the Union Bank of India app to renew or withdraw. Maturity amount will be credited to your account.,en,false,train,synthetic-genuine-bank
+BG0169,safe,"Your Union Bank of India credit card ending XX15 statement is generated. Total due ₹1,250, minimum due ₹12,000, due date 28-Feb-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0170,safe,"Hi Neha, Your e-statement for account XX60 has been sent to your registered email. For help call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0171,safe,Your OTP for Bank of Baroda net banking login is 191993. Do not share this OTP with anyone. Bank of Baroda never calls to ask for it.,en,false,train,synthetic-genuine-bank
+BG0172,safe,"Dear Rohit, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest IDFC FIRST Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0173,safe,"Manage your debit card limits, PIN and online usage at unionbankofindia.co.in or in the official Union Bank of India app.",en,false,train,synthetic-genuine-bank
+BG0174,safe,"HDFC Bank: Cheque 170072 for ₹1,250 cleared in A/c XX39 on 03-Mar-2027. Ref 1002340482.",en,false,train,synthetic-genuine-bank
+BG0175,safe,Pl follow the instructions in the welcome letter to activate your new Canara Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0176,safe,Pl note: your new SBI chip debit card was handed over at your Regd. address. Existing card stops working from 15-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0177,safe,Your new card is ready. Generate your PIN securely at https://unionbankofindia.co.in/green-pin or from any ATM.,en,false,train,synthetic-genuine-bank
+BG0178,safe,"Hi Meera, Your new card is ready. Generate your PIN securely at https://canarabank.com/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0179,safe,"Reminder: EMI of Rs 3,480 for your Bank of Baroda loan will be auto-debited on 20-Nov-2026. Please keep sufficient balance in account XX19.",en,false,train,synthetic-genuine-bank
+BG0180,safe,"Hi Meera, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0181,safe,Pl follow the instructions in the welcome letter to activate your new Kotak Mahindra Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0182,safe,"Hello Rohit, Your ATM withdrawal limit has been changed to ₹12,000 per day as requested. Not you? Call the customer care number on your card.",en,false,train,synthetic-genuine-bank
+BG0183,safe,Cheque book request received for account XX39. It will be delivered to your registered address within 7 working days.,en,false,train,synthetic-genuine-bank
+BG0184,safe,Your Union Bank of India debit card ending XX15 international usage has been switched off as requested. You can turn it on anytime from the app.,en,false,train,synthetic-genuine-bank
+BG0185,safe,"Hi Meera, Your new Canara Bank chip-based debit card ending XX26 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0186,safe,Pl follow the instructions in the welcome letter to activate your new HDFC Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0187,safe,"Your HDFC Bank debit card ending XX39 was delivered today. Set your PIN at any HDFC Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0188,safe,"Dear Vikram, Your Kotak Mahindra Bank debit card ending XX85 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0189,safe,"Kotak Mahindra Bank: Cheque 349988 for ₹25,000 cleared in A/c XX85 on 20-Nov-2026. Ref 7403794123.",en,false,train,synthetic-genuine-bank
+BG0190,safe,"Dear Vikram, Your Kotak Mahindra Bank UPI PIN was changed successfully. If you did not do this, call the number on your card right away.",en,false,train,synthetic-genuine-bank
+BG0191,safe,"Hi Karan, Your new Punjab National Bank chip-based debit card ending XX12 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0192,safe,"Hi Karan, Interest of Rs 3,480 has been credited to your Punjab National Bank savings account XX12. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0193,safe,Your HDFC Bank debit card ending XX39 has been blocked as requested. Visit a branch or use the app to apply for a new card.,en,false,train,synthetic-genuine-bank
+BG0194,safe,"Hi Meera, Your e-statement for account XX26 has been sent to your registered email. For help call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0195,safe,"Dear Vikram, Interest of Rs 540 has been credited to your Kotak Mahindra Bank savings account XX85. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0196,safe,"Hi Meera, Your Canara Bank debit card ending XX26 was delivered today. Set your PIN at any Canara Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0197,safe,"Your account XX39 will be debited Rs 2,100 on 05-Jan-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0198,safe,"Dear Rohit, Your new IDFC FIRST Bank chip-based debit card ending XX51 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0199,safe,Your fixed deposit XX39 matures on 20-Nov-2026. Visit your branch or the HDFC Bank app to renew or withdraw. Maturity amount will be credited to your account.,en,false,train,synthetic-genuine-bank
+BG0200,safe,"Dear Vikram, Manage your debit card limits, PIN and online usage at kotak.bank.in or in the official Kotak Mahindra Bank app.",en,false,train,synthetic-genuine-bank
+BG0201,safe,"Dear Rohit, Your IDFC FIRST Bank debit card ending XX51 was delivered today. Set your PIN at any IDFC FIRST Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0202,safe,"Hi Neha, Your Axis Bank net banking was accessed from a new device on 15-Dec-2026. If this was you, no action is needed. If not, call the number on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0203,safe,"Hi Meera, Your Canara Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0204,safe,"Hi Neha, Your new Axis Bank chip-based debit card ending XX60 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.",en,false,train,synthetic-genuine-bank
+BG0205,safe,Your fixed deposit XX19 matures on 03-Mar-2027. Visit your branch or the Bank of Baroda app to renew or withdraw. Maturity amount will be credited to your account.,en,false,train,synthetic-genuine-bank
+BG0206,safe,Your OTP for Union Bank of India net banking login is 759743. Do not share this OTP with anyone. Union Bank of India never calls to ask for it.,en,false,train,synthetic-genuine-bank
+BG0207,safe,"Dear Vikram, Your fixed deposit XX85 matures on 05-Jan-2027. Visit your branch or the Kotak Mahindra Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0208,safe,"Your Bank of Baroda net banking was accessed from a new device on 28-Feb-2027. If this was you, no action is needed. If not, call the helpline on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0209,safe,Axis Bank: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0210,safe,Pl note: your new Canara Bank chip debit card was handed over at your Regd. address. Existing card stops working from 20-Nov-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0211,safe,"Hello Rohit, Your ICICI Bank Debit card ending with XX60 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0212,safe,Union Bank of India: Debit Card XX15 blocked on 28-Feb-2027 after the replacement chip card XX23 was activated. Ref No 85349316949525.,en,false,train,synthetic-genuine-bank
+BG0213,safe,"Dear Vikram, Your Kotak Mahindra Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0214,safe,"Hello Rohit, Your new card is ready. Generate your PIN securely at https://sbi.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0215,safe,"Dear Vikram, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0216,safe,"Canara Bank: Ur A/c XX26 debited by Rs 2,100 on 05-Jan-2027. Avl Bal Rs 899. Not you? Call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0217,safe,Pl follow the instructions in the welcome letter to activate your new Punjab National Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0218,safe,SBI: Card XX75 is now closed. To get a replacement apply at https://sbi.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0219,safe,"Dear Vikram, Your Kotak Mahindra Bank Debit card ending with XX85 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0220,safe,Kotak Mahindra Bank: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0221,safe,"IDFC FIRST Bank: Cheque 324479 for ₹25,000 cleared in A/c XX51 on 28-Feb-2027. Ref 7238342684.",en,false,train,synthetic-genuine-bank
+BG0222,safe,Pl follow the instructions in the welcome letter to activate your new ICICI Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0223,safe,Canara Bank: Card XX26 is now closed. To get a replacement apply at https://canarabank.com or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0224,safe,"Hello Rohit, Thank you for visiting our branch. Your service request has been completed. For feedback, visit icici.bank.in.",en,false,train,synthetic-genuine-bank
+BG0225,safe,"Dear Rohit, Your IDFC FIRST Bank debit card ending XX51 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0226,safe,Union Bank of India: Card XX15 is now closed. To get a replacement apply at https://unionbankofindia.co.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0227,safe,"Hello Rohit, Your SBI account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0228,safe,"Dear Rohit, Your mobile number has been updated in IDFC FIRST Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0229,safe,"Your HDFC Bank credit card ending XX39 statement is generated. Total due Rs 3,480, minimum due Rs 899, due date 03-Mar-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0230,safe,Pl note: your new Bank of Baroda chip debit card was handed over at your Regd. address. Existing card stops working from 28-Feb-2027. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0231,safe,"Hello Rohit, Interest of ₹12,000 has been credited to your SBI savings account XX75. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0232,safe,"Hello Rohit, Standing instruction of Rs 540 to your SIP has been registered on your SBI account XX75. First debit on 05-Jan-2027. If you did not set this up, visit your branch or call the number on the back of your card.",en,false,train,synthetic-genuine-bank
+BG0233,safe,ICICI Bank: Aapka debit card XX99 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0234,safe,"Hi Meera, Your account XX26 will be debited ₹1,250 on 12-Dec-2026 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0235,safe,"Dear Rohit, Standing instruction of ₹25,000 to your SIP has been registered on your IDFC FIRST Bank account XX51. First debit on 03-Mar-2027. If you did not set this up, visit your branch or call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0236,safe,"Hello Rohit, Your ICICI Bank debit card ending XX60 was delivered today. Set your PIN at any ICICI Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0237,safe,"Hello Rohit, Your SBI credit card ending XX75 statement is generated. Total due ₹12,000, minimum due Rs 3,480, due date 28-Feb-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0238,safe,HDFC Bank: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0239,safe,"Hi Neha, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Axis Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0240,safe,"Your mobile number has been updated in HDFC Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0241,safe,Pl follow the instructions in the welcome letter to activate your new SBI card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0242,safe,"Hello Rohit, Your mobile number has been updated in ICICI Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0243,safe,SBI: Aapka e-statement taiyaar hai. Official app me login karke dekhein. Hum kabhi password ya OTP nahi maangte.,hinglish,true,train,synthetic-genuine-bank
+BG0244,safe,Your new card is ready. Generate your PIN securely at https://bankofbaroda.bank.in/green-pin or from any ATM.,en,false,train,synthetic-genuine-bank
+BG0245,safe,"As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Bank of Baroda branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0246,safe,Bank of Baroda: Card XX19 is now closed. To get a replacement apply at https://bankofbaroda.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0247,safe,"Your ATM withdrawal limit has been changed to ₹1,250 per day as requested. Not you? Call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0248,safe,"Hi Karan, Your mobile number has been updated in Punjab National Bank records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0249,safe,"Your Bank of Baroda credit card ending XX19 statement is generated. Total due ₹25,000, minimum due Rs 2,100, due date 28-Feb-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0250,safe,Your Union Bank of India home loan interest certificate for FY 2025-26 is available in net banking at unionbankofindia.co.in. Download it anytime.,en,false,train,synthetic-genuine-bank
+BG0251,safe,"Hello Rohit, Your ICICI Bank debit card ending XX60 has been blocked as requested. Visit a branch or use the app to apply for a new card.",en,false,train,synthetic-genuine-bank
+BG0252,safe,"Thank you for visiting our branch. Your service request has been completed. For feedback, visit unionbankofindia.co.in.",en,false,train,synthetic-genuine-bank
+BG0253,safe,"Hi Neha, Your new card is ready. Generate your PIN securely at https://axis.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0254,safe,Axis Bank: Card XX60 is now closed. To get a replacement apply at https://axis.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0255,safe,Axis Bank: Aapka debit card XX62 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0256,safe,"Dear Vikram, Your Kotak Mahindra Bank net banking was accessed from a new device on 03-Mar-2027. If this was you, no action is needed. If not, call the number on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0257,safe,"Hi Karan, Your Punjab National Bank debit card ending XX12 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0258,safe,"Hi Karan, Your account XX12 will be debited ₹12,000 on 20-Nov-2026 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0259,safe,"Your Bank of Baroda UPI PIN was changed successfully. If you did not do this, call the helpline on your card right away.",en,false,train,synthetic-genuine-bank
+BG0260,safe,Your new HDFC Bank chip-based debit card ending XX39 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.,en,false,train,synthetic-genuine-bank
+BG0261,safe,"Hello Rohit, Your OTP for ICICI Bank net banking login is 205954. Do not share this OTP with anyone. ICICI Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0262,safe,Your HDFC Bank debit card ending XX39 international usage has been switched off as requested. You can turn it on anytime from the app.,en,false,train,synthetic-genuine-bank
+BG0263,safe,"Bank of Baroda: Cheque 485824 for ₹7,899 cleared in A/c XX19 on 05-Jan-2027. Ref 9185011949.",en,false,train,synthetic-genuine-bank
+BG0264,safe,"Manage your debit card limits, PIN and online usage at hdfc.bank.in or in the official HDFC Bank app.",en,false,train,synthetic-genuine-bank
+BG0265,safe,"Hi Karan, Cheque book request received for account XX12. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0266,safe,Interest of Rs 540 has been credited to your Union Bank of India savings account XX15. Thank you for banking with us.,en,false,train,synthetic-genuine-bank
+BG0267,safe,"Hello Rohit, Your Green PIN request has been received. Complete it using the OTP sent to your registered mobile. Do not share the OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0268,safe,"Your account XX15 will be debited ₹12,000 on 12-Dec-2026 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0269,safe,"Hi Karan, Your Punjab National Bank debit card ending XX12 was delivered today. Set your PIN at any Punjab National Bank ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0270,safe,"Hello Rohit, Your SBI debit card ending XX75 was delivered today. Set your PIN at any SBI ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0271,safe,Canara Bank: Aapka debit card XX90 deliver ho gaya hai. PIN banane ke liye app ya ATM ka use karein. PIN ya OTP kisi ke saath share na karein.,hinglish,true,train,synthetic-genuine-bank
+BG0272,safe,HDFC Bank: Card XX39 is now closed. To get a replacement apply at https://hdfc.bank.in or visit your home branch.,en,false,train,synthetic-genuine-bank
+BG0273,safe,"Hi Karan, Your Punjab National Bank home loan interest certificate for FY 2025-26 is available in net banking at pnb.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0274,safe,"Hi Neha, Your Axis Bank credit card ending XX60 statement is generated. Total due ₹7,899, minimum due ₹1,250, due date 05-Jan-2027. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0275,safe,"Dear Rohit, Your IDFC FIRST Bank Debit card ending with XX51 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0276,safe,"Dear Vikram, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Kotak Mahindra Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0277,safe,"Dear Rohit, Cheque book request received for account XX51. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0278,safe,"Hello Rohit, Your fixed deposit XX60 matures on 20-Nov-2026. Visit your branch or the ICICI Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0279,safe,"Kotak Mahindra Bank: Ur A/c XX85 debited by ₹1,250 on 15-Dec-2026. Avl Bal ₹7,899. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0280,safe,"Hi Neha, Your Axis Bank UPI PIN was changed successfully. If you did not do this, call the number on your card right away.",en,false,train,synthetic-genuine-bank
+BG0281,safe,"Hi Karan, Your e-statement for account XX12 has been sent to your registered email. For help call the helpline on your passbook.",en,false,train,synthetic-genuine-bank
+BG0282,safe,"Hi Meera, Your Canara Bank Debit card ending with XX26 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0283,safe,"Dear Vikram, Your e-statement for account XX85 has been sent to your registered email. For help call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0284,safe,"Dear Rohit, Interest of Rs 540 has been credited to your IDFC FIRST Bank savings account XX51. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0285,safe,"Dear Rohit, Your cheque no. 431860 for Rs 540 has been presented for clearing in account XX51.",en,false,train,synthetic-genuine-bank
+BG0286,safe,"Hello Rohit, Your account XX60 will be debited Rs 540 on 03-Mar-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0287,safe,"Dear Vikram, Your OTP for Kotak Mahindra Bank net banking login is 732851. Do not share this OTP with anyone. Kotak Mahindra Bank never calls to ask for it.",en,false,train,synthetic-genuine-bank
+BG0288,safe,"Your Union Bank of India Debit card ending with XX15 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0289,safe,"Dear Rohit, Your IDFC FIRST Bank debit card ending XX51 international usage has been switched off as requested. You can turn it on anytime from the app.",en,false,train,synthetic-genuine-bank
+BG0290,safe,Your new Bank of Baroda chip-based debit card ending XX19 has been dispatched and will reach your registered address in 3-5 working days. Your old card will continue to work until you activate the new one.,en,false,train,synthetic-genuine-bank
+BG0291,safe,"Hi Neha, Thank you for visiting our branch. Your service request has been completed. For feedback, visit axis.bank.in.",en,false,train,synthetic-genuine-bank
+BG0292,safe,"HDFC Bank: Aapke account ka EMI ₹12,000 28-Feb-2027 ko katega. Kripya balance rakhein.",hinglish,true,train,synthetic-genuine-bank
+BG0293,safe,"Manage your debit card limits, PIN and online usage at bankofbaroda.bank.in or in the official Bank of Baroda app.",en,false,train,synthetic-genuine-bank
+BG0294,safe,Pl follow the instructions in the welcome letter to activate your new Union Bank of India card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0295,safe,"Dear Rohit, Your IDFC FIRST Bank UPI PIN was changed successfully. If you did not do this, call the number on your card right away.",en,false,train,synthetic-genuine-bank
+BG0296,safe,"Dear Rohit, Your IDFC FIRST Bank net banking was accessed from a new device on 15-Dec-2026. If this was you, no action is needed. If not, call the number on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0297,safe,"Hello Rohit, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest ICICI Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0298,safe,"Your mobile number has been updated in Bank of Baroda records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0299,safe,"Hello Rohit, Your ICICI Bank credit card ending XX60 statement is generated. Total due ₹7,899, minimum due Rs 2,100, due date 12-Dec-2026. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0300,safe,"Hi Meera, As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest Canara Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0301,safe,"Dear Rohit, Thank you for visiting our branch. Your service request has been completed. For feedback, visit idfcfirst.bank.in.",en,false,train,synthetic-genuine-bank
+BG0302,safe,ICICI Bank: Debit Card XX60 blocked on 12-Dec-2026 after the replacement chip card XX69 was activated. Ref No 78516741487134.,en,false,train,synthetic-genuine-bank
+BG0303,safe,"Hello Rohit, Your mobile number has been updated in SBI records. If you did not request this, please contact your branch.",en,false,train,synthetic-genuine-bank
+BG0304,safe,"Punjab National Bank: Ur A/c XX12 debited by ₹25,000 on 12-Dec-2026. Avl Bal Rs 899. Not you? Call the helpline on your passbook.",en,false,train,synthetic-genuine-bank
+BG0305,safe,"Your HDFC Bank Debit card ending with XX39 has been delivered. You can generate your Green PIN through our app, ATM or IVR. Card will be enabled for ATM and PoS use after PIN generation.",en,false,train,synthetic-genuine-bank
+BG0306,safe,"Hi Neha, Your ATM withdrawal limit has been changed to ₹1,250 per day as requested. Not you? Call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0307,safe,"Hello Rohit, Cheque book request received for account XX75. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0308,safe,Pl follow the instructions in the welcome letter to activate your new Bank of Baroda card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0309,safe,"Dear Vikram, Your cheque no. 299020 for ₹12,000 has been presented for clearing in account XX85.",en,false,train,synthetic-genuine-bank
+BG0310,safe,Pl note: your new Punjab National Bank chip debit card was handed over at your Regd. address. Existing card stops working from 12-Dec-2026. Generate Green PIN to start using it.,en,false,train,synthetic-genuine-bank
+BG0311,safe,"Canara Bank: Aapke account ka EMI ₹1,250 28-Feb-2027 ko katega. Kripya balance rakhein.",hinglish,true,train,synthetic-genuine-bank
+BG0312,safe,Kotak Mahindra Bank: Aapke account ka EMI Rs 899 05-Jan-2027 ko katega. Kripya balance rakhein.,hinglish,true,train,synthetic-genuine-bank
+BG0313,safe,"Your Bank of Baroda debit card ending XX19 was delivered today. Set your PIN at any Bank of Baroda ATM or via the official app. Never share your PIN or OTP with anyone, including bank staff.",en,false,train,synthetic-genuine-bank
+BG0314,safe,"Hello Rohit, Your SBI home loan interest certificate for FY 2025-26 is available in net banking at sbi.bank.in. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0315,safe,"Your HDFC Bank net banking was accessed from a new device on 15-Dec-2026. If this was you, no action is needed. If not, call the number printed on your card immediately. Do not share your OTP with anyone.",en,false,train,synthetic-genuine-bank
+BG0316,safe,"Dear Rohit, Your e-statement for account XX51 has been sent to your registered email. For help call the number on your card.",en,false,train,synthetic-genuine-bank
+BG0317,safe,"Hi Meera, Your Canara Bank home loan interest certificate for FY 2025-26 is available in net banking at canarabank.com. Download it anytime.",en,false,train,synthetic-genuine-bank
+BG0318,safe,"Hello Rohit, Your fixed deposit XX75 matures on 20-Nov-2026. Visit your branch or the SBI app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0319,safe,"Dear Vikram, Your Kotak Mahindra Bank credit card ending XX85 statement is generated. Total due ₹12,000, minimum due ₹12,000, due date 20-Nov-2026. Pay via the official app. Ignore if already paid.",en,false,train,synthetic-genuine-bank
+BG0320,safe,"Hi Meera, Standing instruction of Rs 540 to your SIP has been registered on your Canara Bank account XX26. First debit on 28-Feb-2027. If you did not set this up, visit your branch or call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0321,safe,"Dear Rohit, Your account XX51 will be debited ₹12,000 on 28-Feb-2027 towards insurance premium. This is an auto-pay reminder.",en,false,train,synthetic-genuine-bank
+BG0322,safe,"Dear Vikram, Your new card is ready. Generate your PIN securely at https://kotak.bank.in/green-pin or from any ATM.",en,false,train,synthetic-genuine-bank
+BG0323,safe,"As per RBI guidelines, periodic KYC update is due for your account. Please visit your nearest HDFC Bank branch with your ID and address proof. No documents are needed by SMS or call.",en,false,train,synthetic-genuine-bank
+BG0324,safe,"Hi Karan, Your fixed deposit XX12 matures on 12-Dec-2026. Visit your branch or the Punjab National Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0325,safe,Axis Bank: Cheque 318872 for Rs 540 cleared in A/c XX60 on 12-Dec-2026. Ref 7877461735.,en,false,train,synthetic-genuine-bank
+BG0326,safe,"Hi Neha, Cheque book request received for account XX60. It will be delivered to your registered address within 7 working days.",en,false,train,synthetic-genuine-bank
+BG0327,safe,Your new card is ready. Generate your PIN securely at https://hdfc.bank.in/green-pin or from any ATM.,en,false,train,synthetic-genuine-bank
+BG0328,safe,"Thank you for visiting our branch. Your service request has been completed. For feedback, visit hdfc.bank.in.",en,false,train,synthetic-genuine-bank
+BG0329,safe,"Hi Neha, Interest of ₹25,000 has been credited to your Axis Bank savings account XX60. Thank you for banking with us.",en,false,train,synthetic-genuine-bank
+BG0330,safe,"Hi Meera, Your fixed deposit XX26 matures on 12-Dec-2026. Visit your branch or the Canara Bank app to renew or withdraw. Maturity amount will be credited to your account.",en,false,train,synthetic-genuine-bank
+BG0331,safe,Cheque book request received for account XX19. It will be delivered to your registered address within 7 working days.,en,false,train,synthetic-genuine-bank
+BG0332,safe,"Hi Meera, Your ATM withdrawal limit has been changed to Rs 540 per day as requested. Not you? Call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0333,safe,"Dear Rohit, Your IDFC FIRST Bank account statement for Oct 2026 is ready. Log in to the official app or net banking to view it. We never ask for your password or OTP over SMS or call.",en,false,train,synthetic-genuine-bank
+BG0334,safe,"Standing instruction of ₹7,899 to your SIP has been registered on your Union Bank of India account XX15. First debit on 15-Dec-2026. If you did not set this up, visit your branch or call the helpline on your card.",en,false,train,synthetic-genuine-bank
+BG0335,safe,Pl follow the instructions in the welcome letter to activate your new IDFC FIRST Bank card. Do not share PIN/OTP with anyone.,en,false,train,synthetic-genuine-bank
+BG0336,scam,Canara Bank: Your debit card ending XX43 will be BLOCKED today. Activate now at http://canara-bank.in and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0337,scam,"HDFC Bank Dear user, your card XX97 is deactivated. Call 9817085548 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0338,scam,Kotak Mahindra Bank: Your debit card ending XX77 will be BLOCKED today. Activate now at http://kotak-update.top and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0339,scam,"Your HDFC Bank reward points worth ₹25,000 will expire today. Redeem now http://hdfc.bank.in.kyc-help.xyz/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0340,scam,SBI ALERT: unusual activity on card XX46. Verify your card details now: http://sbi-bank.in . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0341,scam,URGENT Union Bank of India: your KYC expired. Update immediately at https://unionindia.bank.in.verify-now.com or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0342,scam,HDFC Bank: Your debit card ending XX97 will be BLOCKED today. Activate now at http://hdfc.bank.in.kyc-help.xyz and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0343,scam,ICICI Bank: Your debit card ending XX38 will be BLOCKED today. Activate now at http://icici.bank.in.verify-now.com and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0344,scam,Punjab National Bank PAN update required today! Click http://punjabnational-kyc.in.net and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0345,scam,URGENT Canara Bank: your KYC expired. Update immediately at https://canara-bank.in or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0346,scam,"Dear Customer, your IDFC FIRST Bank card has been delivered. Generate Green PIN here http://idfcfirst-update.xyz and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0347,scam,Canara Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://canara-bank.in and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0348,scam,Kotak Mahindra Bank PAN update required today! Click http://kotak-update.top and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0349,scam,"Dear Customer, your SBI card has been delivered. Generate Green PIN here http://sbi-bank.in and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0350,scam,HDFC Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://hdfc.bank.in.kyc-help.xyz and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0351,scam,IDFC FIRST Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://idfcfirst-update.xyz and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0352,scam,"Your Axis Bank reward points worth Rs 3,480 will expire today. Redeem now http://axiscard-activate-secure.com/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0353,scam,"Dear Customer, your Punjab National Bank card has been delivered. Generate Green PIN here http://punjabnational-kyc.in.net and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0354,scam,SBI PAN update required today! Click http://sbi-bank.in and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0355,scam,"Your Punjab National Bank reward points worth ₹7,899 will expire today. Redeem now http://punjabnational-kyc.in.net/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0356,scam,Bank of Baroda: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://bankbaroda.bank.in.kyc-help.xyz and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0357,scam,URGENT HDFC Bank: your KYC expired. Update immediately at https://hdfc.bank.in.kyc-help.xyz or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0358,scam,"Dear Customer, your Axis Bank card has been delivered. Generate Green PIN here http://axiscard-activate-secure.com and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0359,scam,"Your IDFC FIRST Bank reward points worth ₹1,250 will expire today. Redeem now http://idfcfirst-update.xyz/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0360,scam,Union Bank of India PAN update required today! Click http://unionindia.bank.in.verify-now.com and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0361,scam,ICICI Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://icici.bank.in.verify-now.com and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0362,scam,URGENT SBI: your KYC expired. Update immediately at https://sbi-bank.in or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0363,scam,IDFC FIRST Bank PAN update required today! Click http://idfcfirst-update.xyz and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0364,scam,"ICICI Bank Dear user, your card XX38 is deactivated. Call 9874103520 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0365,scam,"Your Canara Bank reward points worth ₹25,000 will expire today. Redeem now http://canara-bank.in/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0366,scam,URGENT Bank of Baroda: your KYC expired. Update immediately at https://bankbaroda.bank.in.kyc-help.xyz or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0367,scam,"Your SBI reward points worth ₹7,899 will expire today. Redeem now http://sbi-bank.in/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0368,scam,SBI: Your debit card ending XX46 will be BLOCKED today. Activate now at http://sbi-bank.in and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0369,scam,ICICI Bank ALERT: unusual activity on card XX38. Verify your card details now: http://icici.bank.in.verify-now.com . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0370,scam,Union Bank of India: Your debit card ending XX21 will be BLOCKED today. Activate now at http://unionindia.bank.in.verify-now.com and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0371,scam,Axis Bank PAN update required today! Click http://axiscard-activate-secure.com and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0372,scam,Union Bank of India ALERT: unusual activity on card XX21. Verify your card details now: http://unionindia.bank.in.verify-now.com . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0373,scam,"Your Kotak Mahindra Bank reward points worth ₹12,000 will expire today. Redeem now http://kotak-update.top/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0374,scam,"Your Union Bank of India reward points worth ₹12,000 will expire today. Redeem now http://unionindia.bank.in.verify-now.com/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0375,scam,URGENT Punjab National Bank: your KYC expired. Update immediately at https://punjabnational-kyc.in.net or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0376,scam,URGENT Kotak Mahindra Bank: your KYC expired. Update immediately at https://kotak-update.top or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0377,scam,"SBI Dear user, your card XX46 is deactivated. Call 9813605264 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0378,scam,IDFC FIRST Bank: Your debit card ending XX64 will be BLOCKED today. Activate now at http://idfcfirst-update.xyz and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0379,scam,"Axis Bank Dear user, your card XX41 is deactivated. Call 9816764539 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0380,scam,SBI: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://sbi-bank.in and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0381,scam,"Kotak Mahindra Bank Dear user, your card XX77 is deactivated. Call 9826686740 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0382,scam,Bank of Baroda ALERT: unusual activity on card XX40. Verify your card details now: http://bankbaroda.bank.in.kyc-help.xyz . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0383,scam,IDFC FIRST Bank ALERT: unusual activity on card XX64. Verify your card details now: http://idfcfirst-update.xyz . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0384,scam,URGENT IDFC FIRST Bank: your KYC expired. Update immediately at https://idfcfirst-update.xyz or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0385,scam,HDFC Bank ALERT: unusual activity on card XX97. Verify your card details now: http://hdfc.bank.in.kyc-help.xyz . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0386,scam,Union Bank of India: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://unionindia.bank.in.verify-now.com and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0387,scam,Punjab National Bank: Your debit card ending XX74 will be BLOCKED today. Activate now at http://punjabnational-kyc.in.net and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0388,scam,Kotak Mahindra Bank ALERT: unusual activity on card XX77. Verify your card details now: http://kotak-update.top . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0389,scam,URGENT ICICI Bank: your KYC expired. Update immediately at https://icici.bank.in.verify-now.com or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0390,scam,"Your ICICI Bank reward points worth ₹25,000 will expire today. Redeem now http://icici.bank.in.verify-now.com/redeem and enter your net banking password.",en,false,train,synthetic-lookalike-scam
+BG0391,scam,Kotak Mahindra Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://kotak-update.top and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0392,scam,"Punjab National Bank Dear user, your card XX74 is deactivated. Call 9878095632 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0393,scam,"Dear Customer, your Canara Bank card has been delivered. Generate Green PIN here http://canara-bank.in and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0394,scam,Your Bank of Baroda reward points worth Rs 540 will expire today. Redeem now http://bankbaroda.bank.in.kyc-help.xyz/redeem and enter your net banking password.,en,false,train,synthetic-lookalike-scam
+BG0395,scam,ICICI Bank PAN update required today! Click http://icici.bank.in.verify-now.com and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0396,scam,"IDFC FIRST Bank Dear user, your card XX64 is deactivated. Call 9893664508 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0397,scam,Punjab National Bank ALERT: unusual activity on card XX74. Verify your card details now: http://punjabnational-kyc.in.net . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0398,scam,Axis Bank: Your debit card ending XX41 will be BLOCKED today. Activate now at http://axiscard-activate-secure.com and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0399,scam,"Dear Customer, your Kotak Mahindra Bank card has been delivered. Generate Green PIN here http://kotak-update.top and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0400,scam,Punjab National Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://punjabnational-kyc.in.net and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0401,scam,Bank of Baroda: Your debit card ending XX40 will be BLOCKED today. Activate now at http://bankbaroda.bank.in.kyc-help.xyz and enter your PIN to avoid suspension.,en,false,train,synthetic-lookalike-scam
+BG0402,scam,Axis Bank ALERT: unusual activity on card XX41. Verify your card details now: http://axiscard-activate-secure.com . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0403,scam,"Dear Customer, your Bank of Baroda card has been delivered. Generate Green PIN here http://bankbaroda.bank.in.kyc-help.xyz and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0404,scam,HDFC Bank PAN update required today! Click http://hdfc.bank.in.kyc-help.xyz and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0405,scam,"Dear Customer, your HDFC Bank card has been delivered. Generate Green PIN here http://hdfc.bank.in.kyc-help.xyz and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0406,scam,"Dear Customer, your ICICI Bank card has been delivered. Generate Green PIN here http://icici.bank.in.verify-now.com and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0407,scam,Bank of Baroda PAN update required today! Click http://bankbaroda.bank.in.kyc-help.xyz and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0408,scam,"Dear Customer, your Union Bank of India card has been delivered. Generate Green PIN here http://unionindia.bank.in.verify-now.com and enter card number, CVV and OTP to activate within 1 hour.",en,false,train,synthetic-lookalike-scam
+BG0409,scam,Canara Bank ALERT: unusual activity on card XX43. Verify your card details now: http://canara-bank.in . Failing to do so will block your account today.,en,false,train,synthetic-lookalike-scam
+BG0410,scam,URGENT Axis Bank: your KYC expired. Update immediately at https://axiscard-activate-secure.com or your account will be frozen. Share OTP received to complete.,en,false,train,synthetic-lookalike-scam
+BG0411,scam,"Canara Bank Dear user, your card XX43 is deactivated. Call 9858857925 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0412,scam,"Union Bank of India Dear user, your card XX21 is deactivated. Call 9883904121 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0413,scam,"Bank of Baroda Dear user, your card XX40 is deactivated. Call 9843414984 and share the OTP to reactivate within 30 minutes.",en,false,train,synthetic-lookalike-scam
+BG0414,scam,Canara Bank PAN update required today! Click http://canara-bank.in and enter your PIN and OTP or your account will be suspended.,en,false,train,synthetic-lookalike-scam
+BG0415,scam,Axis Bank: Your new debit card is on hold. Pay a delivery fee of Rs 49 at http://axiscard-activate-secure.com and enter your card PIN to release it.,en,false,train,synthetic-lookalike-scam
+BG0416,suspicious,Your HDFC Bank card is ready for activation. Tap to continue: cutt.ly/Qa7fRt,en,false,train,synthetic-lookalike-suspicious
+BG0417,suspicious,"Dear customer, update your Punjab National Bank details at bit.ly/3xK9aLp",en,false,train,synthetic-lookalike-suspicious
+BG0418,suspicious,"Dear customer, update your HDFC Bank details at bit.ly/3xK9aLp",en,false,train,synthetic-lookalike-suspicious
+BG0419,suspicious,Kotak Mahindra Bank: complete your account verification here t.co/7sKq2LmP to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0420,suspicious,Axis Bank: complete your account verification here tinyurl.com/yk4m2pzs to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0421,suspicious,"Dear customer, update your Canara Bank details at goo.su/xT9aL",en,false,train,synthetic-lookalike-suspicious
+BG0422,suspicious,Your Kotak Mahindra Bank card is ready for activation. Tap to continue: cutt.ly/Qa7fRt,en,false,train,synthetic-lookalike-suspicious
+BG0423,suspicious,"Dear customer, update your Axis Bank details at goo.su/xT9aL",en,false,train,synthetic-lookalike-suspicious
+BG0424,suspicious,Your Canara Bank card is ready for activation. Tap to continue: tinyurl.com/yk4m2pzs,en,false,train,synthetic-lookalike-suspicious
+BG0425,suspicious,Your ICICI Bank card is ready for activation. Tap to continue: cutt.ly/Qa7fRt,en,false,train,synthetic-lookalike-suspicious
+BG0426,suspicious,Your Punjab National Bank card is ready for activation. Tap to continue: tinyurl.com/yk4m2pzs,en,false,train,synthetic-lookalike-suspicious
+BG0427,suspicious,HDFC Bank: complete your account verification here cutt.ly/Qa7fRt to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0428,suspicious,Punjab National Bank: complete your account verification here tinyurl.com/yk4m2pzs to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0429,suspicious,"Dear customer, update your SBI details at bit.ly/3xK9aLp",en,false,train,synthetic-lookalike-suspicious
+BG0430,suspicious,"Dear customer, update your ICICI Bank details at goo.su/xT9aL",en,false,train,synthetic-lookalike-suspicious
+BG0431,suspicious,SBI: complete your account verification here tinyurl.com/yk4m2pzs to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0432,suspicious,Canara Bank: complete your account verification here goo.su/xT9aL to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0433,suspicious,ICICI Bank: complete your account verification here t.co/7sKq2LmP to keep enjoying benefits.,en,false,train,synthetic-lookalike-suspicious
+BG0434,suspicious,Your SBI card is ready for activation. Tap to continue: goo.su/xT9aL,en,false,train,synthetic-lookalike-suspicious
+BG0435,suspicious,Your Axis Bank card is ready for activation. Tap to continue: t.co/7sKq2LmP,en,false,train,synthetic-lookalike-suspicious
+BG0436,suspicious,"Dear customer, update your Kotak Mahindra Bank details at goo.su/xT9aL",en,false,train,synthetic-lookalike-suspicious

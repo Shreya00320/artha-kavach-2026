@@ -42,8 +42,9 @@ st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
 def _get_adapter():
     """Return a live LLMAdapter, or None if no API key is set."""
     provider = os.getenv("LLM_PROVIDER", "gemini")
-    api_key  = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
-    if not api_key and provider == "gemini":
+    api_key  = (os.getenv("GROQ_API_KEY", "") if provider == "groq" else os.getenv("GEMINI_API_KEY", "")) \
+        or os.getenv("LLM_API_KEY", "")
+    if not api_key and provider in ("gemini", "groq"):
         return None
     try:
         from llm.adapter import LLMAdapter
@@ -59,11 +60,23 @@ def _get_retriever():
 
     If the index has not been built yet (e.g. fresh Streamlit Cloud deploy),
     build it automatically from data/kb/ before returning.
-    Returns None if no API key is set or if FAISS is unavailable.
+    Falls back to a local, embedding-free retriever (offline TF-IDF over the scam advisories)
+    when there is no Gemini key (e.g. LLM_PROVIDER=groq) or the embedding index can't be built.
     """
+    def _local():
+        try:
+            from rag.local_retrieve import LocalRetriever
+            return LocalRetriever()
+        except Exception as exc:
+            logging.warning("Local retriever init failed: %s", exc)
+            return None
+
+    # Gemini embeddings only make sense with the Gemini provider and a key.
+    if os.getenv("LLM_PROVIDER", "gemini") != "gemini":
+        return _local()
     api_key = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key:
-        return None
+        return _local()
     try:
         from google import genai
         from rag.ingest import build_index, load_index
@@ -94,13 +107,20 @@ def _get_retriever():
 
         return Retriever(index, client)
     except Exception as exc:
-        logging.warning("Retriever init failed: %s", exc)
-        return None
+        logging.warning("Retriever init failed (%s) — using local retriever.", exc)
+        return _local()
 
 
-@st.cache_resource(show_spinner="Training classifier…")
+@st.cache_resource(show_spinner="Loading scam model…")
 def _get_classifier():
-    """Return a trained ScamClassifier, or None."""
+    """Return the deep scam model (shipped weights, numpy inference); fall back to TF-IDF + LR."""
+    try:
+        from scam.deep_model import load_default
+        clf = load_default()
+        if clf is not None:
+            return clf
+    except Exception as exc:
+        logging.warning("Deep model init failed: %s", exc)
     try:
         from scam.classifier import ScamClassifier
         clf = ScamClassifier()
@@ -147,20 +167,20 @@ with st.sidebar:
 
     st.markdown(
         f"{'✅' if adapter    else '⚠️'} **LLM** — "
-        f"{'Live (Gemini)' if adapter else 'Offline (rules fallback)'}"
+        f"{'Live (' + adapter.provider.title() + ' · ' + adapter.model + ')' if adapter else 'Offline (rules fallback)'}"
     )
     st.markdown(
         f"{'✅' if retriever  else '⚠️'} **Knowledge base** — "
-        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not loaded (building on first run…)'}"
+        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not available'}"
     )
     st.markdown(
-        f"{'✅' if classifier else '⚠️'} **ML Classifier** — "
+        f"{'✅' if classifier else '⚠️'} **Deep scam model** — "
         f"{'Trained' if classifier else 'Not available'}"
     )
 
     if not adapter:
         st.info(
-            "Set `LLM_API_KEY` (or `GEMINI_API_KEY`) in `.env` or Streamlit Secrets to enable the LLM judge.  \n"
+            "Set `LLM_PROVIDER=groq` + `GROQ_API_KEY` (free) or `GEMINI_API_KEY` in `.env` or Streamlit Secrets to enable the LLM judge.  \n"
             "The app works offline using rules + ML only."
         )
 

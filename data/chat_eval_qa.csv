@@ -1,0 +1,169 @@
+id,lang,question,expected_kb
+qa001,en,What is a SIP and how does it work?,KB022
+qa002,en,Can I start a SIP with just 500 rupees a month?,KB022
+qa003,en,What is the difference between equity and debt mutual funds?,KB023
+qa004,en,What is a liquid fund?,KB023
+qa005,en,What is an index fund?,KB024
+qa006,en,Should I choose a direct or regular mutual fund plan?,KB024
+qa007,en,What is PPF and is it a good option?,KB025
+qa008,en,How much can I invest in PPF per year?,KB025
+qa009,en,What is EPF and why is it deducted from my salary?,KB026
+qa010,en,What is VPF?,KB026
+qa011,en,What is NPS and who should invest in it?,KB027
+qa012,en,How does NPS save tax?,KB027
+qa013,en,What is Section 80C?,KB028
+qa014,en,What is ELSS and what is its lock-in?,KB028
+qa015,en,"Which tax regime should I choose, old or new?",KB029
+qa016,en,Do I pay tax if my salary is 10 lakh?,KB029
+qa017,en,How does HRA exemption work?,KB030
+qa018,en,What is the 80D deduction?,KB030
+qa019,en,Do I need to file an ITR?,KB031
+qa020,en,What is Form 16?,KB031
+qa021,en,What is a good credit score and how do I improve it?,KB032
+qa022,en,Does checking my CIBIL score reduce it?,KB032
+qa023,en,Is it okay to pay only the minimum due on my credit card?,KB033
+qa024,en,How much interest does a credit card charge?,KB033
+qa025,en,What is the difference between flat rate and reducing balance interest?,KB034
+qa026,en,How much of my income should go to EMIs?,KB034
+qa027,en,Should I take an education loan or a personal loan?,KB035
+qa028,en,What should I check before taking a personal loan?,KB035
+qa029,en,Do I need term insurance as a fresher?,KB036
+qa030,en,How much life insurance cover should I take?,KB036
+qa031,en,Do I need health insurance if my company gives me one?,KB037
+qa032,en,What is a waiting period in health insurance?,KB037
+qa033,en,Is a fixed deposit safe and how much interest does it give?,KB038
+qa034,en,What is the difference between FD and RD?,KB038
+qa035,en,What is inflation and how does it affect my savings?,KB039
+qa036,en,Why shouldn't I keep all my money in a savings account?,KB039
+qa037,en,What is the rule of 72?,KB040
+qa038,en,Why is starting to invest early so important?,KB040
+qa039,en,Where should I keep my emergency fund?,KB041
+qa040,en,Can I invest my emergency fund in stocks?,KB041
+qa041,en,Is gold a good investment?,KB042
+qa042,en,Is digital gold safe?,KB042
+qa043,en,How do I start investing in the stock market?,KB043
+qa044,en,What is a demat account?,KB043
+qa045,en,Can I make quick money from F&O trading?,KB044
+qa046,en,Is options trading safe for beginners?,KB044
+qa047,en,Is crypto legal in India and how is it taxed?,KB045
+qa048,en,Should I put my savings in Bitcoin?,KB045
+qa049,en,"A Telegram group is promising 30% monthly returns, is it safe?",KB046
+qa050,en,How can I check if a financial adviser is genuine?,KB046
+qa051,en,"I just got my first job, what should I do with my salary?",KB047
+qa052,en,How should a fresher plan their money?,KB047
+qa053,en,What is the difference between CTC and in-hand salary?,KB048
+qa054,en,What is gratuity and when do I get it?,KB048
+qa055,en,How can a college student manage pocket money?,KB049
+qa056,en,How do I save money on a small stipend?,KB049
+qa057,en,Which debt should I pay off first?,KB050
+qa058,en,What is the debt avalanche method?,KB050
+qa059,en,Is Buy Now Pay Later a good idea?,KB051
+qa060,en,Do pay later apps affect my credit score?,KB051
+qa061,en,Should I rent or buy a house?,KB052
+qa062,en,How much down payment do I need for a home?,KB052
+qa063,en,How does a home loan work and how much EMI can I afford?,KB053
+qa064,en,Is it good to prepay my home loan?,KB053
+qa065,en,How much of my money should go into equity?,KB054
+qa066,en,What does diversification mean?,KB054
+qa067,en,What should I do if the stock market crashes?,KB055
+qa068,en,Is lump sum better than SIP?,KB055
+qa069,en,Why should I add a nominee to my accounts?,KB056
+qa070,en,What is KYC and why is it needed?,KB056
+qa071,en,How much interest does a savings account give?,KB057
+qa072,en,What is a zero balance account?,KB057
+qa073,en,"What is the difference between NEFT, RTGS and IMPS?",KB058
+qa074,en,Do I need my UPI PIN to receive money?,KB058
+qa075,en,How is freelance income taxed?,KB059
+qa076,en,What is advance tax?,KB059
+qa077,en,What are the common money mistakes young people make?,KB060
+qa078,en,What is lifestyle inflation?,KB060
+qa079,en,Is a ULIP better than a mutual fund?,KB061
+qa080,en,Should I buy an endowment policy from an agent?,KB061
+qa081,en,How do I know if a loan app is safe?,KB062
+qa082,en,"A loan app is harassing me and calling my contacts, what do I do?",KB062
+qa083,en,How do I stop impulse spending?,KB063
+qa084,en,How can I control my online shopping?,KB063
+qa085,en,What is net worth and how do I calculate it?,KB064
+qa086,en,How do I track my financial progress?,KB064
+qa087,en,What is Sukanya Samriddhi Yojana?,KB065
+qa088,en,What post office savings schemes are safe for my parents?,KB065
+qa089,en,What can you help me with?,KB066
+qa090,en,Are you a SEBI registered adviser?,KB066
+qa091,en,What is The Psychology of Money about?,KB067
+qa092,en,Who wrote The Psychology of Money and what is its main idea?,KB067
+qa093,en,What does Morgan Housel mean by enough?,KB067
+qa094,en,What is Mr. Market in The Intelligent Investor?,KB068
+qa095,en,What does margin of safety mean in investing?,KB068
+qa096,en,What is the difference between investing and speculation according to Graham?,KB068
+qa097,en,What is the main idea of Rich Dad Poor Dad?,KB069
+qa098,en,What is the difference between an asset and a liability according to Kiyosaki?,KB069
+qa099,en,Is Rich Dad Poor Dad good financial advice?,KB069
+qa100,en,What does pay yourself first mean?,KB070
+qa101,en,What are the main lessons of The Richest Man in Babylon?,KB070
+qa102,en,How much of my income should I save according to The Richest Man in Babylon?,KB070
+qa103,en,What is a conscious spending plan?,KB071
+qa104,en,What is the main idea of I Will Teach You To Be Rich?,KB071
+qa105,en,How can I automate my savings and investing?,KB071
+qa106,en,What is the main message of The Little Book of Common Sense Investing?,KB072
+qa107,en,Why does Bogle recommend index funds?,KB072
+qa108,en,Why do investment costs matter so much?,KB072
+qa109,en,What is the efficient market hypothesis?,KB073
+qa110,en,What does A Random Walk Down Wall Street say about beating the market?,KB073
+qa111,en,Can I beat the stock market consistently?,KB073
+qa112,en,What does life energy mean in Your Money or Your Life?,KB074
+qa113,en,What is the crossover point in financial independence?,KB074
+qa114,en,How do I calculate my real hourly wage?,KB074
+qa115,en,What are Dave Ramsey's baby steps?,KB075
+qa116,en,What is the debt snowball method?,KB075|KB050
+qa117,en,Is the debt snowball better than the avalanche method?,KB075|KB050
+qa118,en,What is the main idea of The Millionaire Next Door?,KB076
+qa119,en,What is a prodigious accumulator of wealth?,KB076
+qa120,en,Does a high income make you rich?,KB076
+qa121,en,What is Think and Grow Rich about?,KB077
+qa122,en,Can thinking positively make me rich?,KB077
+qa123,en,What are the criticisms of Think and Grow Rich?,KB077
+qa124,en,What does Let's Talk Money say about insurance and investing?,KB078
+qa125,en,Which Indian book explains personal finance mis-selling?,KB078
+qa126,en,Why should I keep insurance and investment separate?,KB078|KB061|KB036
+qa127,en,What is loss aversion?,KB079
+qa128,en,What is anchoring bias in money decisions?,KB079
+qa129,en,How do cognitive biases affect my investing?,KB079
+qa130,en,What does Peter Lynch mean by invest in what you know?,KB080
+qa131,en,Is stock picking a good idea for beginners?,KB080
+qa132,en,What is a ten bagger?,KB080
+qa133,en,What is a black swan event?,KB081
+qa134,en,Why should I protect myself against rare events?,KB081
+qa135,en,What is risk of ruin?,KB081
+qa136,en,What is the simple path to wealth?,KB082
+qa137,en,What is F-you money?,KB082
+qa138,en,Is a simple index fund plan enough to build wealth?,KB082|KB024|KB072
+qa139,en,What is the jars system for money?,KB083
+qa140,en,What is a money blueprint?,KB083
+qa141,en,How do beliefs about money affect my finances?,KB083
+qa142,en,Do stocks beat inflation in the long run?,KB084
+qa143,en,Are stocks safe over the long term?,KB084
+qa144,en,What does historical data say about equity returns?,KB084
+qa145,en,What is circle of competence?,KB085|KB086
+qa146,en,What does Warren Buffett say about long-term investing?,KB085
+qa147,en,What does be fearful when others are greedy mean?,KB085
+qa148,en,Which Indian author wrote about compounding and value investing?,KB086
+qa149,en,What does The Joys of Compounding teach?,KB086
+qa150,en,How do I develop patience as an investor?,KB086
+qa151,en,Which Indian book explains behavioural finance?,KB087
+qa152,en,What does Stocks to Riches say about fear and greed?,KB087
+qa153,en,Why do investors follow the herd?,KB087
+qa154,en,What is dhandho investing?,KB088
+qa155,en,What does heads I win tails I don't lose much mean?,KB088
+qa156,en,Should I put all my money in a few investments?,KB088
+qa157,en,What is the scuttlebutt method?,KB089
+qa158,en,What does Philip Fisher look for in a company?,KB089
+qa159,en,How do I judge the quality of a company?,KB089
+qa160,en,Which finance books should a beginner read first?,KB090
+qa161,en,What are the best personal finance books for Indians?,KB090
+qa162,en,Can you recommend books to learn about investing?,KB090
+qa163,en,Do personal finance books agree with each other?,KB091
+qa164,en,Why do Ramsey and Sethi disagree about credit cards?,KB091|KB033
+qa165,en,What do all the good money books have in common?,KB091
+qa166,en,Can I trust advice from personal finance books?,KB092
+qa167,en,What is survivorship bias in investing advice?,KB092
+qa168,en,How do I know if a money book is giving good advice?,KB092

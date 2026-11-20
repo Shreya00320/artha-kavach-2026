@@ -15,8 +15,8 @@ User input (SMS / CSV)
 │  │             │   │                    │ │
 │  │ 1. Rules    │   │ 1. Parser (regex   │ │
 │  │    engine   │   │    + LLM fallback) │ │
-│  │ 2. ML (TF-  │   │ 2. Categoriser     │ │
-│  │    IDF+LR)  │   │    (lookup + LLM)  │ │
+│  │ 2. Deep ML  │   │ 2. Categoriser     │ │
+│  │    model    │   │    (lookup + LLM)  │ │
 │  │ 3. LLM judge│   │ 3. Budget engine   │ │
 │  │ 4. Claim    │   │    (pure Python)   │ │
 │  │    verifier │   │ 4. Nudge writer    │ │
@@ -102,9 +102,10 @@ Target users: **students and first-job earners in India** using UPI, bank SMS, a
          "threats, APK installs, QR-to-receive, task/trading-group scams and Hinglish variants. "
          "Fast and fully offline."),
         ("2. ML Classifier",
-         "TF-IDF (word 1-2 grams + character 2-5 grams, which handle Hinglish spellings) + Logistic "
-         "Regression trained on ~108 labelled messages. Returns scam / suspicious / safe probabilities. "
-         "Offline, the more severe of the rules and classifier verdicts wins."),
+         "A small neural network (hashed word + character n-gram embeddings, two hidden layers; character "
+         "n-grams handle Hinglish spellings) trained on ~2,000 scam/ordinary messages. Returns scam / "
+         "suspicious / safe probabilities and runs on NumPy only. A TF-IDF + logistic-regression model is "
+         "the fallback. Offline, the more severe of the rules and model verdicts wins."),
         ("3. LLM Judge",
          "Receives the message, rule hits, classifier probability, and top-3 KB advisory passages. "
          "Returns strict JSON: verdict, confidence, red flags with exact quoted text, and verifiable claims."),

@@ -1,0 +1,18 @@
+{
+  "id": "KB054",
+  "title": "Asset allocation and risk profile — how much in equity vs safe assets",
+  "publisher": "Artha Kavach summary of public guidance (RBI / SEBI / IRDAI / Income Tax Dept) — pending manual verification",
+  "url": "https://www.sebi.gov.in",
+  "date_accessed": "2026-11-18",
+  "topics": [
+    "asset-allocation",
+    "risk-profile",
+    "diversification",
+    "rebalancing"
+  ],
+  "text": "Asset allocation means splitting your money between growth assets (equity), safer assets (debt, FDs, PPF) and sometimes gold, based on your goal timeline and how much loss you can stomach. A rough starting rule is '100 minus your age' in equity, but it is only a rule of thumb, not advice: a stable young earner with a long horizon might hold more in equity, while someone needing money in 2–3 years should hold little or none. Match each goal to a timeline: under 1 year — savings/liquid; 1–3 years — debt/FDs; 3–5 years — hybrid; 5+ years — mostly equity. Diversify across funds and asset types, rebalance once a year if the mix drifts far from your plan, and avoid putting everything in one stock, sector or scheme.",
+  "summary_hinglish": "Asset allocation matlab paisa ko equity (growth), debt/FD/PPF (safe) aur gold mein baantna, goal ke time aur risk ke hisaab se. '100 minus age' equity ka rough rule hai, advice nahi. 1 saal se kam: savings/liquid, 1-3 saal: debt, 5+ saal: zyada equity. Sab ek hi jagah mat lagao, saal mein ek baar rebalance karo.",
+  "summary_hi": "एसेट एलोकेशन का मतलब पैसे को इक्विटी (ग्रोथ), डेट/FD/PPF (सुरक्षित) और सोने में लक्ष्य की अवधि और जोखिम क्षमता के हिसाब से बांटना है। '100 माइनस उम्र' इक्विटी का मोटा नियम है, सलाह नहीं। 1 साल से कम: बचत/लिक्विड, 1-3 साल: डेट, 5+ साल: ज़्यादा इक्विटी। सब कुछ एक जगह न लगाएं।",
+  "aliases": "asset allocation risk profile diversification 100 minus age rebalancing portfolio equity percentage how much of my money in equity percentage split portfolio equity share allocation",
+  "verified": false
+}

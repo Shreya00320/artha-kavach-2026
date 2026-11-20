@@ -342,7 +342,7 @@ artha-kavach-2026/
 │   └── external/         ← downloaded datasets (git-ignored)
 │
 ├── eval/                 ← quick_eval, run_eval, real_eval, chat_eval; results/ holds JSON, CSV, PNG
-├── tests/                ← 373 tests incl. headless end-to-end UI tests
+├── tests/                ← 377 tests incl. headless end-to-end UI tests
 ├── smoke_test.py         ← Checks your LLM key/model end to end
 ├── .env.example, requirements.txt
 ├── ARCHITECTURE.md, DEMO_SCRIPT.md
@@ -352,7 +352,7 @@ artha-kavach-2026/
 ## 🧪 Running tests
 
 ```bash
-# Everything (373 tests: unit + headless Streamlit UI tests; no API key needed)
+# Everything (377 tests: unit + headless Streamlit UI tests; no API key needed)
 python -m pytest tests/ -v
 
 # Without the UI tests (they need pandas, which some locked-down Windows machines block)

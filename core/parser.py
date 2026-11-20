@@ -225,6 +225,20 @@ PATTERNS += [
 _COMPILED_PATTERNS = [(re.compile(pat, re.IGNORECASE), meta) for pat, meta in PATTERNS]
 
 
+_CHANNEL_PREFIX = re.compile(r"^(?:(?:NACH|ECS|ACH|SI|UPI|POS|IMPS|NEFT|RTGS|ATM)\s*[/\-]\s*|(?:RTGS|NEFT|IMPS)\s+to\s+|(?:to|at|from)\s+)", re.I)
+
+
+def _tidy_merchant(m: Optional[str]) -> Optional[str]:
+    """'NACH/NETFLIX' -> 'NETFLIX'; 'RTGS to LANDLORD PROPERTIES' -> 'LANDLORD PROPERTIES'."""
+    if not m:
+        return m
+    prev = None
+    while prev != m:
+        prev = m
+        m = _CHANNEL_PREFIX.sub("", m).strip()
+    return m or None
+
+
 def _detect_bank_from_sender(text: str) -> Optional[str]:
     """Infer bank from common sender markers in the SMS text."""
     t = text.lower()
@@ -303,6 +317,7 @@ def _try_regex(text: str, txn_id: str) -> Optional[ParsedTransaction]:
                 # Strip trailing punctuation / bank suffixes
                 merchant = re.sub(r"\s*—\w+\s*$", "", raw).strip()
                 merchant = re.sub(r"\s*\.\s*$", "", merchant).strip() or None
+                merchant = _tidy_merchant(merchant)
             elif field_name == "vpa_or_merchant":
                 if _is_vpa(raw):
                     vpa = raw

@@ -146,6 +146,7 @@ MERCHANT_LOOKUP: dict[str, str] = {
     "college fees": "Education",
     # Rent
     "rent-landlord": "Rent",
+    "landlord": "Rent",
     "rent": "Rent",
     "house rent": "Rent",
     "pg rent": "Rent",
@@ -318,7 +319,7 @@ def looks_like_person(merchant: Optional[str], vpa: Optional[str]) -> bool:
 _REFUND_RE = re.compile(r"\b(refund(ed)?|reversal|reversed|failed\s+txn|chargeback)\b", re.I)
 
 
-_SALARY_RE = re.compile(r"\b(salary|sal\s*cr|payroll|stipend)\b", re.I)
+_SALARY_RE = re.compile(r"\b(salary|sal\s*cr|payroll|stipend|sal)\b", re.I)     # "NEFT-INFOSYS LTD-SAL OCT26"
 
 
 def is_refund(txn: ParsedTransaction) -> bool:

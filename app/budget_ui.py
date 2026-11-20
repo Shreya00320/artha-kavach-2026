@@ -156,6 +156,9 @@ def render_budget_tab(adapter=None) -> None:
                 st.error("Sample data file not found at data/sample_sms.csv.")
 
     if raw_messages is not None:
+        from core.parser import dedupe_messages
+        raw_messages, n_dups = dedupe_messages(raw_messages)
+        st.session_state["budget_dups"] = n_dups
         with st.spinner(f"Processing {len(raw_messages)} messages…"):
             try:
                 st.session_state["budget_txns_all"] = _parse_and_categorise(raw_messages, adapter)
@@ -186,6 +189,8 @@ def render_budget_tab(adapter=None) -> None:
     st.session_state.update(budget_summary=summary, budget_txns_view=view, budget_subs=subs)
 
     # ---- Parse banner ----
+    if st.session_state.get("budget_dups"):
+        st.info(f"Skipped {st.session_state['budget_dups']} duplicate message(s) so nothing is counted twice.")
     n_ok, n_fail = summary.n_parsed, summary.n_failed
     total = n_ok + n_fail
     if n_fail > 0:

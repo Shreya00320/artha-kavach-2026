@@ -32,22 +32,43 @@ def render_verdict_badge(verdict: str, confidence: float) -> None:
     )
 
 
+def highlight_red_flags_html(message: str, quotes: list[str]) -> str:
+    """Escape `message` and wrap each quoted red flag in <mark>.
+
+    Positions are found on the RAW text and the pieces are escaped one by one, so pasted markup is always shown
+    as text and a quote such as "class" or "mark" can never land inside a tag we inserted.
+    Each quote highlights its first occurrence; overlapping or repeated quotes are skipped.
+    """
+    spans: list[tuple[int, int]] = []
+    for q in quotes:
+        q = (q or "").strip()
+        if not q:
+            continue
+        i = message.find(q)
+        if i < 0:
+            i = message.lower().find(q.lower())
+        if i < 0:
+            continue
+        j = i + len(q)
+        if all(j <= a or i >= b for a, b in spans):
+            spans.append((i, j))
+    spans.sort()
+    out, pos = [], 0
+    for a, b in spans:
+        out.append(html.escape(message[pos:a]))
+        out.append(f'<mark class="rf">{html.escape(message[a:b])}</mark>')
+        pos = b
+    out.append(html.escape(message[pos:]))
+    return "".join(out)
+
+
 def render_red_flags(message: str, red_flags: list) -> None:
     """Show the original message with quoted red-flag text highlighted."""
     if not red_flags:
         st.info("No specific red flags were extracted from this message.")
         return
 
-    # Build highlighted version of original message.
-    # Escape user/LLM text before wrapping it in HTML so pasted markup
-    # (e.g. <img onerror=...>) is shown as text, not rendered.
-    highlighted = html.escape(message)
-    for rf in red_flags:
-        q = html.escape(rf.quote_from_message or "")
-        if q and q in highlighted:
-            highlighted = highlighted.replace(
-                q, f'<mark class="rf">{q}</mark>', 1
-            )
+    highlighted = highlight_red_flags_html(message, [rf.quote_from_message or "" for rf in red_flags])
 
     st.markdown("**Original message (red flags highlighted):**")
     st.markdown(
@@ -252,9 +273,9 @@ def render_nudges(nudges: list[dict]) -> None:
     for n in nudges:
         ntype = n.get("type", "suggestion")
         icon  = NUDGE_ICON.get(ntype, "💡")
-        css   = f"nudge-{ntype}"
+        css   = "nudge-" + (ntype if ntype in NUDGE_ICON else "suggestion")     # class name comes from a fixed set
         st.markdown(
-            f'<div class="{css}">{icon} {n["text"]}</div>',
+            f'<div class="{css}">{icon} {html.escape(str(n["text"]))}</div>',
             unsafe_allow_html=True,
         )
 

@@ -121,7 +121,9 @@ def render_goals_tab() -> None:
             a, b = st.columns(2)
             a.metric("Value after period", _inr(fv))
             b.metric("Of which you invested", _inr(monthly * years * 12))
-        st.caption(f"At {rate}% a year money roughly doubles every {rule_of_72(rate)} years (rule of 72). "
+        doubling = (f"roughly doubles every {rule_of_72(rate)} years (rule of 72)" if rate > 0
+                    else "does not grow at all")
+        st.caption(f"At {rate}% a year money {doubling}. "
                    "Equity returns are not guaranteed and can be negative in some years.")
 
     with t_emi:

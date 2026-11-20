@@ -17,6 +17,10 @@ FY 2025-26 (Finance Act 2025):
                       taxable ≤ ₹12 L     taxable ≤ ₹5 L
                       (with marginal relief just above ₹12 L)
   Health & education cess: 4% on tax.
+  Income and tax are rounded to the nearest ₹10, as in the Act.
+
+Section numbers (87A, 80C, 80D, 24(b)…) are those of the Income-tax Act, 1961. The Income-tax Act, 2025
+takes effect from 1 April 2026 and renumbers sections; the rates and limits modelled here are unchanged.
 
 Deliberately NOT modelled (the result says so): surcharge (income > ₹50 L),
 capital gains / special-rate income, senior-citizen slabs, HRA computation
@@ -33,8 +37,23 @@ Public API:
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from typing import Optional
+
+
+def _finite(x: float) -> float:
+    """Non-numeric / NaN / infinite input is treated as 0 rather than crashing the page."""
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return 0.0
+    return x if math.isfinite(x) else 0.0
+
+
+def _round10(x: float) -> float:
+    """Round to the nearest ₹10, with exactly ₹5 rounding up (Income-tax rounding rules, old s.288A/288B)."""
+    return float(int((x + 5) // 10 * 10))
 
 TAX_YEAR = "FY 2026-27 (AY 2027-28)"
 CESS_RATE = 0.04
@@ -145,6 +164,7 @@ def compute_tax(
     """
     if regime not in ("new", "old"):
         raise ValueError("regime must be 'new' or 'old'")
+    gross_salary, other_income = _finite(gross_salary), _finite(other_income)
     gross = max(gross_salary, 0.0) + max(other_income, 0.0)
     notes: list[str] = []
 
@@ -160,7 +180,7 @@ def compute_tax(
         slabs, rebate_limit, rebate_max = OLD_SLABS, OLD_REBATE_LIMIT, OLD_REBATE_MAX
 
     taxable = max(gross - std - other_ded, 0.0)
-    taxable = float(int(taxable / 10) * 10)   # income is rounded down to the nearest ₹10
+    taxable = _round10(taxable)               # total income is rounded to the nearest ₹10 (s.288A)
     tax = slab_tax(taxable, slabs)
 
     rebate = min(tax, rebate_max) if taxable <= rebate_limit else 0.0
@@ -172,7 +192,7 @@ def compute_tax(
             relief = round(tax - excess, 2)
     tax_after = round(max(tax - rebate - relief, 0.0), 2)
     cess = round(tax_after * CESS_RATE, 2)
-    total = round(tax_after + cess)
+    total = _round10(tax_after + cess)        # tax payable is rounded to the nearest ₹10 (s.288B)
 
     if gross > SURCHARGE_THRESHOLD:
         notes.append("Income above ₹50 L attracts surcharge, which this calculator does not add.")

@@ -17,9 +17,9 @@ salary — now what?".
 |-----|-----------------|
 | 🛡️ **Scam Shield** | **Check a message** (SMS / WhatsApp / UPI collect request, English · Hindi · Hinglish) → Scam / Suspicious / Safe with highlighted red flags and a cited Trust Receipt · **Check a link** offline (lookalike bank domains, shorteners, APKs — the link is never opened) · **Scan many messages** at once · **🧠 names the manipulation tactic** (fake authority, urgency, greed, trust hijack) · **🆘 I've been scammed**: golden-hour action plan (1930, bank block, RBI zero-liability window) + a ready-to-paste cybercrime.gov.in complaint |
 | 💰 **Smart Budget** | Paste bank SMS, or upload a **bank-statement CSV** or SMS CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** · **📄 monthly money report (PDF)** · statement CSVs from HDFC / SBI / ICICI / Axis / Kotak-style layouts (signed, Dr/Cr, separate columns; comma, semicolon or tab) · duplicate SMS from overlapping pastes are skipped |
-| 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · **🌱 first-salary guide** (what to do, in order) · **🏠 Home**: affordability + rent-vs-buy · tax regime comparison — pre-filled from your budget |
+| 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · **🌱 first-salary guide** (what to do, in order) · **🏠 Home**: affordability + rent-vs-buy · tax regime comparison — pre-filled from your budget · **🗣️ plain-words tax explainer** (slab by slab, why a regime wins, exactly how much each unused deduction would save, and whether it is worth chasing) · **HRA exemption** and **share capital-gains** calculators |
 | ↳ 🧾 **Tax** (inside Goals & Tax) | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
-| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **93-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **calculations** ("₹5,000 a month at 12% for 10 years?", "EMI on a 10 lakh loan at 8.5% for 20 years?", "SIP needed to reach 1 crore?" — computed by code, assumptions stated), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
+| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **94-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **tax and money calculations** ("how much tax on 15 lakh?", "tax on 5 lakh LTCG?", "₹5,000 a month at 12% for 10 years?", "EMI on a 10 lakh loan at 8.5% for 20 years?", "SIP needed to reach 1 crore?" — computed by code, assumptions stated), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
 | 🔍 **Trust Receipt** | Every AI output carries its evidence: sources, verified claims, code-computed numbers, and which detectors agreed |
 
 **Bilingual shell** — English / हिन्दी toggle for headings and tabs. **Behavioural nudges** — spending shown as hours of your work; pay-yourself-first on salary day.
@@ -106,7 +106,7 @@ EMBEDDING_MODEL=gemini-embedding-001
 **Notes**
 - With `groq` (or no key), Gemini embeddings are not used: Scam Shield retrieves its advisory passages with a local,
   embedding-free retriever (`rag/local_retrieve.py`, offline TF-IDF over KB001–KB021 and KB093), so the Trust Receipt still shows
-  cited sources and claim verification still runs. The chat advisor uses the same offline retriever over all 93 docs.
+  cited sources and claim verification still runs. The chat advisor uses the same offline retriever over all 94 docs.
 - Groq's free tier has a tokens-per-minute cap (8,000 TPM on `gpt-oss-120b` at the time of writing). The adapter
   honours the "try again in Ns" hint on HTTP 429 and caches responses, so reruns are cheap.
 - `gemini-2.0-flash` (shut down 1 Jun 2026) and `text-embedding-004` (shut down 14 Jan 2026) no longer work.
@@ -129,7 +129,7 @@ User input (SMS text / CSV / chat message)
 │  │ 2. Deep model │  │ 2. Categoriser │  │ 3. Your numbers │  │
 │  │    (NumPy)    │  │ 3. Budget      │  │    (engine)     │  │
 │  │ 3. LLM judge  │  │    engine      │  │ 4. Knowledge    │  │
-│  │    + RAG      │  │    (pure       │  │    base (93     │  │
+│  │    + RAG      │  │    (pure       │  │    base (94     │  │
 │  │ 4. Claim      │  │    Python)     │  │    docs) + LLM  │  │
 │  │    verifier   │  │ 4. Nudges, PDF │  │    phrasing     │  │
 │  └──────┬────────┘  └───────┬────────┘  └────────┬────────┘  │
@@ -275,9 +275,11 @@ secondary sources only — confirm against the Finance Act / incometax.gov.in be
   texts + 96 SMS), and the training templates were written by the same people — real-world performance may be lower.
   Fresh, real, held-out messages are still needed.
 - Hinglish subset is small (5 test examples) — treat as directional only.
-- Knowledge-base entries KB022–KB092 are our own plain-language summaries and are flagged `verified: false` until a human
-  checks rates, tax limits and book attributions — see `data/kb/TODO_manual_verification.md`.
-
+- Knowledge-base entries are our own plain-language summaries. On 2026-11-20 the figures most likely to go stale were checked against
+  sources (PPF/SSY/SCSS/NSC rates for Oct–Dec 2026, EPF 8.25%, bank-interest TDS ₹50,000/₹1 lakh, DICGC ₹5 lakh, SEBI's 91% F&O finding,
+  capital-gains rates, SGB status, crypto tax, HRA metro list). Each checked entry lists `verified_claims`, `unverified_claims` and `sources`;
+  only entries with nothing left unverified carry `verified: true`. Most sources were news reports of official notices rather than the
+  notices themselves — see `data/kb/TODO_manual_verification.md`. Rates change quarterly; the book summaries are still unchecked.
 **Public datasets checked and not used.** We profiled the Indian SMS datasets we could find. `junioralive/india-spam-sms-classification`
 (MIT) and its copy `carnageiron/scam-ham-india` (Apache-2.0) have a "ham" side that is WhatsApp-style chat and stock-market commentary
 (11–12 bank-related rows, none a bank notice) and a "spam" side of real promotional SMS; `CloveAI/india-spam-sms` (MIT, 20k rows) is
@@ -337,12 +339,12 @@ artha-kavach-2026/
 │   ├── sample_sms.csv, sample_statement.csv       ← synthetic sample inputs
 │   ├── chat_eval_{qa,social,adversarial}.csv      ← chat evaluation sets
 │   ├── kb/               ← 93 knowledge-base docs: KB001–021 scam/safety advisories, KB022–066 finance education,
-│   │                       KB067–092 money-book summaries & reading guides, KB093 genuine-vs-fake bank SMS
+│   │                       KB067–092 money-book summaries & reading guides, KB093 genuine-vs-fake bank SMS, KB094 capital-gains tax
 │   ├── finance_kb/, build_*.py, fetch_*.py        ← generators / dataset fetchers
 │   └── external/         ← downloaded datasets (git-ignored)
 │
 ├── eval/                 ← quick_eval, run_eval, real_eval, chat_eval; results/ holds JSON, CSV, PNG
-├── tests/                ← 377 tests incl. headless end-to-end UI tests
+├── tests/                ← 402 tests incl. headless end-to-end UI tests
 ├── smoke_test.py         ← Checks your LLM key/model end to end
 ├── .env.example, requirements.txt
 ├── ARCHITECTURE.md, DEMO_SCRIPT.md

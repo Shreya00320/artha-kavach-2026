@@ -71,3 +71,28 @@ Verify before launch: author names and publication years, the claims attributed 
 (especially KB078 Let's Talk Money, KB086 The Joys of Compounding, KB087 Stocks to Riches, and the
 percentages in KB071 and KB083), and the criticisms listed (KB069, KB075, KB077). The `url` fields
 are Open Library search links, not publisher pages.
+
+
+---
+
+## Verification log — 2026-11-20 (done by Claude with web searches; primary documents mostly NOT fetched)
+
+Each KB JSON now has `verified_claims`, `unverified_claims`, `sources`, `last_checked`. `verified: true` only if `unverified_claims` is empty.
+
+| Entry | Checked | Result | How strong |
+|---|---|---|---|
+| KB025 PPF | rate for Oct–Dec 2026 | 7.1%, unchanged | DEA notification via Business Today, FPJ, Angel One, taxguru copy (ministry page not fetched) |
+| KB026 EPF | FY 2025-26 rate | 8.25%, ratified June 2026 | several news reports; EPFO notice not fetched |
+| KB038 FD / DICGC / TDS | DICGC cover; TDS on bank interest | ₹5 lakh (official DICGC FAQ); ₹50,000 / ₹1 lakh seniors from 1 Apr 2025 | DICGC official; TDS from Finance Bill extract + reports (one report said 1 Apr 2026 for seniors — outlier) |
+| KB042 Gold / SGB | issuance status | no new tranche since Feb 2024; reports differ on "paused" vs "discontinued" | secondary only |
+| KB044 F&O | SEBI study | 91% of individual F&O traders lost money in FY25, ₹1.05 lakh crore | news reports of SEBI's 7 Jul 2025 study; a newer FY26 study exists, unchecked |
+| KB045 Crypto | Budget 2026 | 30% tax and 1% TDS unchanged | several reports; exact TDS thresholds conflict, text avoids them |
+| KB065 Small savings | Oct–Dec 2026 rates | PPF 7.1, SSY 8.2, SCSS 8.2, NSC 7.7, POMIS 7.4, 5-yr RD 6.7 | as KB025 |
+| KB029 Regime choice | slabs, rebate | unchanged for FY 2026-27 (secondary); **old rule of thumb was WRONG** and was replaced with computed break-evens | calculator + hand algebra |
+| KB030 HRA | metro list | eight cities at 50% from FY 2026-27 per Income-tax Rules 2026 — sources disagree whether final | secondary only; **confirm with CBDT notification** |
+| KB094 Capital gains (new) | STCG 20%, LTCG 12.5% over ₹1.25 lakh, 12-month rule, unchanged Budget 2026-27 | several explainers + Business Standard | secondary |
+
+Still to do by a human: fetch the primary notices (DEA small-savings, EPFO, CBDT HRA rule, Finance Act 2025/2026 text), check the 80D/80TTA limits,
+the EPF ₹2.5 lakh taxable-interest threshold, gratuity (15/26 × basic × years, ₹20 lakh limit), RTGS/IMPS limits, and the 25 book summaries (KB067–KB089).
+UPI per-transaction limits were checked (P2P ₹1 lakh/day unchanged; ₹5 lakh per transaction for capital-markets/insurance merchants from 15 Sep 2025) but
+KB058 only says limits exist, so nothing was changed.

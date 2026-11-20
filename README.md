@@ -16,10 +16,10 @@ salary — now what?".
 | Tab | What you can do |
 |-----|-----------------|
 | 🛡️ **Scam Shield** | **Check a message** (SMS / WhatsApp / UPI collect request, English · Hindi · Hinglish) → Scam / Suspicious / Safe with highlighted red flags and a cited Trust Receipt · **Check a link** offline (lookalike bank domains, shorteners, APKs — the link is never opened) · **Scan many messages** at once · **🧠 names the manipulation tactic** (fake authority, urgency, greed, trust hijack) · **🆘 I've been scammed**: golden-hour action plan (1930, bank block, RBI zero-liability window) + a ready-to-paste cybercrime.gov.in complaint |
-| 💰 **Smart Budget** | Paste bank SMS, or upload a **bank-statement CSV** or SMS CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** · **📄 monthly money report (PDF)** |
+| 💰 **Smart Budget** | Paste bank SMS, or upload a **bank-statement CSV** or SMS CSV → categorised spending, 50/30/20, nudges · **transfers to people kept out of spending** · **refunds netted off** · **salary-cycle months** (e.g. 27th → 26th) · **subscription tracker** with yearly cost · **unusual-payment alerts only** (no alert fatigue) · small-spend (chai/auto) bucket · weekly trend · **fix any category** and everything recomputes · **CSV export** · **📄 monthly money report (PDF)** · statement CSVs from HDFC / SBI / ICICI / Axis / Kotak-style layouts (signed, Dr/Cr, separate columns; comma, semicolon or tab) · duplicate SMS from overlapping pastes are skipped |
 | 🎯 **Goals & Tax** | Emergency fund tracker · multi-goal plan funded by priority · SIP calculator · EMI + prepayment savings · step-up "Save More Tomorrow" plan · **🌱 first-salary guide** (what to do, in order) · **🏠 Home**: affordability + rent-vs-buy · tax regime comparison — pre-filled from your budget |
 | ↳ 🧾 **Tax** (inside Goals & Tax) | Old vs new regime for **FY 2026-27** with 87A rebate, marginal relief, deduction caps, and the break-even deduction amount; 80C/80D/NPS pre-filled from payments found in your SMS |
-| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **93-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
+| 💬 **Ask Artha** | A conversational money coach. Ask **general finance questions** ("What is a SIP?", "ELSS vs PPF?", "Is a credit card a good idea?", "Which money books should a beginner read?") answered from a **93-document knowledge base** (scam advisories + finance education + 25 summaries of well-known money books), or **calculations** ("₹5,000 a month at 12% for 10 years?", "EMI on a 10 lakh loan at 8.5% for 20 years?", "SIP needed to reach 1 crore?" — computed by code, assumptions stated), or **questions about your own data** ("Can I afford a ₹15,000 phone?", "Where can I cut?"). Every figure comes from the budget engine or the cited passage; an AI reply containing any other number is rejected. It refuses to pick stocks/funds/crypto, predict markets, or follow prompt-injection, and warns about "guaranteed return" bait |
 | 🔍 **Trust Receipt** | Every AI output carries its evidence: sources, verified claims, code-computed numbers, and which detectors agreed |
 
 **Bilingual shell** — English / हिन्दी toggle for headings and tabs. **Behavioural nudges** — spending shown as hours of your work; pay-yourself-first on salary day.
@@ -236,15 +236,36 @@ and **catching newer scams**, which the 47-message split does not measure:
 Known gaps: very informal inputs ("bro my cousin says put everything in sip…") sometimes get "I'm not sure";
 there is no multi-turn evaluation yet. LLM-mode results (`--llm`) have not been recorded yet.
 
-### SMS parser — 96-message sample (91 transactions + 5 non-transactions)
+### SMS parser
 
-| Mode | Transactions read | Amount accuracy | Non-transactions wrongly read |
-|------|-------------------|-----------------|-------------------------------|
-| Regex-only (before) | 65.6% | 100% | 0 |
-| **Regex-only (now)** | **100%** | **100%** | **0** |
+The original per-bank templates scored 100% on the project's own 96-message sample, but that sample was written by the same
+people as the templates. A realistic-format audit found they read only **13 of 41** messages from SBI, HDFC, ICICI, Axis,
+Kotak, PNB, BoB, Canara, Union, IDFC and the payment apps. We added a **field-based fallback** (finds amount, debit/credit verb,
+date, balance, UPI ID, merchant and bank independently; rejects OTPs, "will be debited" reminders, failed/declined payments,
+balance enquiries, collect requests, cheque-clearing notices, promotions and chat) and re-tested:
 
-*The generic templates were written while looking at this sample, so treat 100% as optimistic;
-`tests/test_features.py` adds formats that are not in the sample (SBI UPI "debited by", "INR", dd/mm/yyyy, "Paid Rs … to").*
+| Test | Result |
+|------|--------|
+| Batch A: 41 realistic messages (used to design the fallback) | 41 / 41 (was 13 / 41) |
+| Batch B: 35 fresh messages written afterwards, never tuned on | **32 / 35 on the first run**, 35 / 35 after fixing the three misses |
+| Original 96-message sample | 100% read, 0 non-transactions wrongly read |
+
+Formats are representative of public bank SMS styles, not verbatim real messages — real-world coverage will still be below this.
+All 76 messages are frozen in `tests/test_parser_formats.py`.
+
+### Bank-statement import
+
+The importer used to match exact column names. Of 11 realistic layouts only 2 worked, ICICI / Axis / Kotak / semicolon / tab files
+imported nothing, and signed or "Dr/Cr" amounts turned a salary credit into an expense. It now handles all 11
+(`tests/test_statement_layouts.py`): tolerant header matching, delimiter detection, signed amounts, Dr/Cr suffixes and
+balance-based direction inference, and it never invents a balance.
+
+### Tax calculator
+
+Hand-computed cases match, tax never falls as income rises, and there is no cliff at the ₹12 L rebate edge (at most ₹11–20 more
+tax per extra ₹10). Income and tax are now rounded to the nearest ₹10 as in the Act. Section numbers (87A, 80C…) are those of the
+Income-tax Act, 1961; the Income-tax Act, 2025 (from 1 April 2026) renumbers them. Slabs and limits were cross-checked against
+secondary sources only — confirm against the Finance Act / incometax.gov.in before relying on them.
 
 ### Budget engine invariant checks
 **16 / 16 checks pass** — all arithmetic is verified, including transfers and refunds.
@@ -278,13 +299,14 @@ artha-kavach-2026/
 │   ├── i18n.py, demo.py, components.py, styles.py
 │
 ├── core/                 ← Money logic (pure Python, no AI in arithmetic)
-│   ├── parser.py         ← Hybrid SMS parser (bank templates + generic templates + LLM fallback)
+│   ├── parser.py         ← Hybrid SMS parser (bank templates → field-based fallback → LLM) + duplicate removal
 │   ├── statement.py      ← Bank-statement CSV → SMS-style rows
 │   ├── categoriser.py    ← Merchant lookup, UPI-handle names, P2P & refund detection, LLM fallback
 │   ├── budget_engine.py  ← 50/30/20, transfers/refunds, pace, recurring
 │   ├── insights.py       ← Subscriptions, anomalies, small spends, weekly trend, salary cycle, tax tags, export
 │   ├── goals.py, savings.py, realestate.py ← SIP/EMI/prepayment/step-up/affordability/rent-vs-buy
 │   ├── tax.py            ← FY 2026-27 old vs new regime calculator
+│   ├── calculator.py     ← Chat calculator: SIP / EMI / goal figures from core.goals, assumptions stated
 │   ├── advisor.py        ← Ask Artha: guards → scam routing → small talk → your numbers → KB answer (+ LLM phrasing)
 │   ├── knowledge.py      ← Offline TF-IDF retriever over data/kb (no key needed)
 │   ├── lang.py           ← Hindi/Hinglish query expansion (built, not yet wired — chat is English-only for now)
@@ -320,7 +342,7 @@ artha-kavach-2026/
 │   └── external/         ← downloaded datasets (git-ignored)
 │
 ├── eval/                 ← quick_eval, run_eval, real_eval, chat_eval; results/ holds JSON, CSV, PNG
-├── tests/                ← 236 tests incl. headless end-to-end UI tests
+├── tests/                ← 373 tests incl. headless end-to-end UI tests
 ├── smoke_test.py         ← Checks your LLM key/model end to end
 ├── .env.example, requirements.txt
 ├── ARCHITECTURE.md, DEMO_SCRIPT.md
@@ -330,7 +352,7 @@ artha-kavach-2026/
 ## 🧪 Running tests
 
 ```bash
-# Everything (236 tests: unit + headless Streamlit UI tests; no API key needed)
+# Everything (373 tests: unit + headless Streamlit UI tests; no API key needed)
 python -m pytest tests/ -v
 
 # Without the UI tests (they need pandas, which some locked-down Windows machines block)
@@ -370,7 +392,8 @@ Datasets (`scam_eval.csv`, `sample_sms.csv`, held-out sets) are **synthetic or h
 - ❌ Tax calculator skips surcharge (> ₹50 L), capital gains and senior-citizen slabs
 - ❌ Link checker inspects the address only; it cannot see what a page contains
 - ❌ Scam model trained mostly on synthetic and hand-written data — real-world accuracy may differ
-- ❌ Unusual or bank-specific SMS formats may not parse correctly
+- ❌ Unusual or bank-specific SMS formats may not parse correctly (tested on representative formats, not a large corpus of real messages); an SMS with no date is kept but undated
+- ❌ The AI scam judge can be addressed by a hostile message; its verdict is therefore limited to one level below the rules + model (a scam can't be turned into "safe") and the message is fenced as untrusted data
 - ❌ LLM calls add latency (~2–5 s) and free tiers are rate-limited — the app degrades gracefully without them
 - ❌ Not a substitute for professional financial or legal advice
 

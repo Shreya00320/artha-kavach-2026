@@ -29,7 +29,7 @@ salary — now what?".
 
 ## 🚀 Live demo
 
-> [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://artha-kavach-2026-for-arthathon.streamlit.app)
+> [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://artha-kavach-2026.streamlit.app/)
 
 One-click sample data is built in — no account needed to explore.
 *(If the link asks you to sign in, the Streamlit app's sharing is set to private — make it public in the Streamlit Cloud settings.)*

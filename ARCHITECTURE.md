@@ -20,8 +20,9 @@
 │  ① rules.py     │  │  parser.py     → ParsedTransaction          │
 │     RulesResult │  │  categoriser.py→ CategorisedTransaction     │
 │                 │  │  budget_engine → BudgetSummary              │
-│  ② classifier  │  │  nudges.py     → list[NudgeDict]            │
-│     TF-IDF+LR   │  │  savings.py    → SavingsPlan                │
+│  ② deep model  │  │  nudges.py     → list[NudgeDict]            │
+│   (TF-IDF+LR    │
+│    fallback)    │  │  savings.py    → SavingsPlan                │
 │                 │  └──────────────────────────────────────────────┘
 │  ③ llm_judge   │
 │     ScamVerdict │
@@ -33,7 +34,7 @@
 └─────────────────┘
 
 Both pipelines call:
-  llm/adapter.py    ← Gemini API (retry, cache, structured JSON output)
+  llm/adapter.py    ← Gemini or Groq API (retry, cache, structured JSON output)
   llm/prompts.py    ← Versioned prompt constants
   llm/schemas.py    ← Pydantic output validation
 
@@ -54,10 +55,10 @@ Input SMS
    │      Noisy-OR score: s = 1 - ∏(1 - wᵢ) over matched rules      │
    │      → RulesResult(score, matches[])                             │
    │                                                                  │
-   ├─► 2. classifier.py ──────────────────────────────────────────────┤
-   │      TF-IDF: word 1-2 grams + char_wb 2-5 grams (FeatureUnion)   │
-   │      Logistic Regression C=1, max_iter=1000                      │
-   │      Trained on 108 messages (70% of scam_eval.csv, seed=42)     │
+   ├─► 2. deep_model.py (fallback: classifier.py TF-IDF + LogReg) ────┤
+   │      hashed word 1-2 + char 3-5 gram embeddings → 2 hidden layers │
+   │      ensemble of 3, trained with PyTorch, NumPy-only inference    │
+   │      ~2,000 training texts incl. real UCI ordinary SMS           │
    │      → {scam: p₁, suspicious: p₂, safe: p₃}                     │
    │                                                                  │
    ├─► 3. rag/retrieve.py (if retriever available) ──────────────────┤
@@ -85,7 +86,7 @@ Input SMS
 ```
 API key?  retriever?  classifier?  →  Pipeline mode
   ✓          ✓           ✓         →  FULL (rules+ML+LLM+RAG+verify)
-  ✓          ✗           ✓         →  rules+ML+LLM (no KB citations)
+  ✓          ✗           ✓         →  rules+ML+LLM (no KB citations; e.g. Groq has no embeddings)
   ✗          ✗           ✓         →  OFFLINE (rules+ML, no LLM)
   ✗          ✗           ✗         →  RULES ONLY (always works)
 ```
@@ -144,11 +145,18 @@ Raw SMS messages / CSV
 ## LLM Adapter
 
 ```
-LLMAdapter.generate(prompt, response_schema, temperature)
+LLMAdapter.generate(prompt, response_schema, temperature)   (alias of generate_structured)
    │
    ├─► Cache hit?  → return cached result (file-based, keyed by prompt hash)
    │
    ├─► Provider = "mock" → _generate_mock_instance(schema)  (tests only)
+   │
+   ├─► Provider = "groq"   (LLM_MODEL default openai/gpt-oss-120b)
+   │      POST https://api.groq.com/openai/v1/chat/completions   (stdlib urllib, no SDK)
+   │        response_format=json_object, JSON Schema in the system prompt
+   │      → same _clean_json_text → Pydantic validation → cache
+   │      → retry with backoff; honours Groq's "try again in Ns" on HTTP 429;
+   │        400/401/403/404 fail fast (bad key or model id)
    │
    └─► Provider = "gemini"
           google.genai.Client.models.generate_content(
@@ -172,10 +180,13 @@ LLMAdapter.generate(prompt, response_schema, temperature)
 
 ```
 Build (one-time, run rag/ingest.py):
-  data/kb/*.md  →  KBDocument(id, title, publisher, url, text)
+  data/kb/*.json (92 docs) →  KBDocument(id, title, publisher, url, text)
                 →  Gemini gemini-embedding-001 →  3072-dim vector
                 →  FAISS IndexFlatL2          →  .cache/faiss.index
                 →  .cache/documents.pkl
+
+Offline (no key, used by Ask Artha): core/knowledge.py — TF-IDF over the same 92 docs,
+  Hindi/Hinglish query expansion via core/lang.py (built; chat is English-only for now).
 
 Retrieve (per request):
   query string  →  Gemini gemini-embedding-001 →  3072-dim query vector
@@ -208,7 +219,7 @@ TrustReceipt
 | Decision | Rationale |
 |----------|-----------|
 | Streamlit (not FastAPI + React) | Faster to build, easier to deploy on Streamlit Cloud; sufficient for hackathon demo |
-| TF-IDF + LogReg (not fine-tuned LLM) | Trains in <1 s on 100 examples, runs offline, interpretable, deterministic |
+| Small NumPy-inference neural net + TF-IDF fallback (not a fine-tuned LLM) | Trains in seconds, ~5 MB, runs offline with no torch at serve time, handles Hinglish spelling via char n-grams |
 | Noisy-OR rule scoring | Models independent partial evidence correctly; each rule contributes independently |
 | Two-step LLM (judge + verifier) | Separation of concerns; prevents the judge from hallucinating unchecked facts |
 | File-based LLM cache | Idempotent reruns; avoids API cost during development and demo |
@@ -268,6 +279,32 @@ Ask Artha
                                                               └─ LLM phrases from facts
                         verify_numbers(): any number not in facts/question → fall back to rules
 
+Ask Artha (core/advisor.py)
+  respond(message) ─► 1 safety guards (prompt injection · stock/fund/crypto picks · market
+                        predictions · "guaranteed return" bait)
+                    ─► 2 scam routing (text looks like a scam → Scam Shield rules)
+                    ─► 3 small talk
+                    ─► 4 personal numbers (core/assistant.py, only if bank data loaded)
+                    ─► 5 knowledge answer: core/knowledge.py retrieval → optional LLM phrasing;
+                        any number not in passages/question/history → fall back to the offline
+                        answer; low retrieval confidence → honest "I'm not sure"
+  eval/chat_eval.py: 168 QA · 50 social · 42 adversarial (offline: 99% / 92% / 100%, 0 unbacked numbers)
+
+Knowledge base
+  data/kb: KB001–021 scam & safety advisories · KB022–066 finance education ·
+  KB067–092 money-book summaries and reading guides (flagged verified:false pending human check)
+
+Scam deep model
+  scam/deep_model.py + scam/train_deep.py; thresholds CLF_SCAM_MIN=0.50 / CLF_FLAG_MIN=0.85 in
+  scam/llm_judge.py. Shipped weights: models/scam_dl.npz. All eval scripts (quick_eval, run_eval,
+  real_eval) score the same pipeline the app runs.
+
+Money report
+  core/report.py — dependency-free PDF writer; figures come from the budget engine only.
+
+Real estate
+  core/realestate.py — affordability() and rent_vs_buy(); user-set assumptions, plain arithmetic.
+
 RAG robustness
   rag/ingest.py        new_flat_index(): faiss.IndexFlatL2, or NumpyFlatL2 (exact search) when
                         FAISS can't load; index rebuilt if EMBEDDING_MODEL changes
@@ -285,8 +322,9 @@ flowchart LR
     UI --> SB[Smart Budget]
     UI --> GT[Goals & Tax]
     UI --> AA[Ask Artha]
+    KB[(92-doc KB)] --> AA
 
-    SS --> R[1 Rules<br/>noisy-OR] --> C[2 ML classifier<br/>TF-IDF + LR] --> J[3 LLM judge<br/>Gemini] --> V[4 Verifier<br/>cited claims only]
+    SS --> R[1 Rules<br/>noisy-OR] --> C[2 Deep model<br/>NumPy] --> J[3 LLM judge<br/>Gemini / Groq] --> V[4 Verifier<br/>cited claims only]
     V --> TR[(Trust Receipt)]
 
     SB --> IN{{Input}}

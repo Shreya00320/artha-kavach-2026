@@ -10,6 +10,7 @@ import pytest
 
 from llm.adapter import (
     LLMAdapter,
+    LLMAdapterError,
     LLMConfigurationError,
     LLMRateLimitError,
     LLMSchemaValidationError,
@@ -227,3 +228,45 @@ def test_invalid_json_raises_schema_validation_error(temp_cache_dir):
 
     with pytest.raises(LLMSchemaValidationError):
         adapter.generate_structured("Invalid JSON test", SmokeTestResult)
+
+
+# ---------------------------------------------------------------------------
+# Groq provider
+# ---------------------------------------------------------------------------
+
+def test_groq_default_model_and_key(temp_cache_dir, monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "gsk_test")
+    monkeypatch.delenv("LLM_API_KEY", raising=False)
+    a = LLMAdapter(provider="groq", model="gemini-x", cache_dir=temp_cache_dir)
+    assert a.model == "openai/gpt-oss-120b"      # a Gemini id is not valid on Groq
+    assert a.api_key == "gsk_test"
+
+
+def test_groq_generates_validated_output(temp_cache_dir):
+    a = LLMAdapter(provider="groq", api_key="k", cache_dir=temp_cache_dir, max_retries=0)
+    a._groq_request = lambda prompt, model, temp: '```json\n{"status":"ok","message":"hi","timestamp":"t"}\n```'
+    out = a.generate("ping", SmokeTestResult)
+    assert out.status == "ok"
+
+
+def test_groq_rate_limit_maps_to_rate_limit_error(temp_cache_dir):
+    a = LLMAdapter(provider="groq", api_key="k", cache_dir=temp_cache_dir, max_retries=0)
+
+    def boom(prompt, model, temp):
+        raise RuntimeError("HTTP 429: rate limit reached")
+    a._groq_request = boom
+    with pytest.raises(LLMRateLimitError):
+        a.generate("ping", SmokeTestResult)
+
+
+def test_groq_bad_key_fails_fast_without_retry(temp_cache_dir):
+    calls = []
+    a = LLMAdapter(provider="groq", api_key="k", cache_dir=temp_cache_dir, max_retries=3)
+
+    def boom(prompt, model, temp):
+        calls.append(1)
+        raise RuntimeError("HTTP 401: invalid api key")
+    a._groq_request = boom
+    with pytest.raises(LLMAdapterError):
+        a.generate("ping", SmokeTestResult)
+    assert len(calls) == 1

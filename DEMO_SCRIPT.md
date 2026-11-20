@@ -6,8 +6,9 @@
 ## Pre-demo checklist (10 min before)
 
 - [ ] Live app opens **without sign-in** (Streamlit Cloud → Settings → Sharing → public)
-- [ ] Sidebar shows ✅ LLM — Live (Gemini) · ✅ Knowledge base — Loaded · ✅ ML Classifier — Trained
-- [ ] Secrets use `LLM_MODEL=gemini-3.8-flash` and `EMBEDDING_MODEL=gemini-embedding-001`
+- [ ] Sidebar shows ✅ LLM — Live (Groq · openai/gpt-oss-120b, or Gemini) · ✅ Deep scam model — Trained (the knowledge-base line shows ⚠️ "built-in keyword search" on Groq — that is expected)
+- [ ] Secrets: Groq → `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `LLM_MODEL=openai/gpt-oss-120b`; Gemini → `LLM_MODEL=gemini-3.8-flash`, `EMBEDDING_MODEL=gemini-embedding-001`
+- [ ] `python smoke_test.py` passes (the free Groq tier is rate-limited: avoid rapid-fire clicking; cached repeats are instant)
 - [ ] Ran the 🧠 "papa on a new number" sample once today (warms the LLM cache, confirms the key works)
 - [ ] Browser zoom ~125%; close other tabs; phone on silent
 - [ ] Backup: `streamlit run app/main.py` on a laptop — the app works **without internet** (rules + ML)
@@ -52,7 +53,7 @@
 
 ### 2:20–2:45 — Ask Artha
 **[💬 Ask Artha → type "Can I afford ₹9,000 for rent?"]**
-> "She can just ask. The AI phrases the answer, but if it writes any number our code didn't compute,
+> "She can just ask — about her own month, or money basics: try "What is a SIP?" or "Which money books should a beginner read?" (answered from our 92-document knowledge base, with sources). Ask for a stock tip and it refuses. The AI phrases the answer, but if it writes any number our code didn't compute,
 > the reply is thrown away and replaced. That's our rule everywhere: never say a number you can't prove."
 
 ### 2:45–3:00 — Close
@@ -66,9 +67,9 @@
 ## Judge Q&A — every team member should be able to answer
 
 **Q: Where is the AI? Isn't this mostly rules?**
-Three layers on purpose: rules (fast, explainable, offline), an ML classifier (TF-IDF word + character
-n-grams + logistic regression — catches patterns rules miss, handles Hinglish spelling), and an LLM judge
-with retrieval over 21 official advisories for messages that need understanding (the "papa" example).
+Three layers on purpose: rules (fast, explainable, offline), a small neural network (hashed word + character
+n-gram embeddings, ~5 MB, NumPy-only inference — catches patterns rules miss, handles Hinglish spelling), and an LLM judge
+with retrieval over our official advisories for messages that need understanding (the "papa" example).
 A second LLM call verifies each claim. We use the LLM only where language understanding is needed.
 
 **Q: How do you combine the detectors?**
@@ -83,9 +84,19 @@ its reply; any number not in the facts (±1% rounding) rejects the reply and we 
 Same for budget nudges.
 
 **Q: How accurate is it?**
-On our 47-message held-out test set (synthetic): offline macro F1 0.82; rules alone flag no safe messages.
+On our 47-message held-out test set (synthetic): offline macro F1 0.78; rules alone flag no safe messages.
+The deep model gives 2% false alarms on 300 real everyday SMS it never trained on, and catches 97% of 38 new hand-written
+scams (77% exactly labelled "scam"). Ask Artha: 99% right source on 168 finance questions, 100% on 42 adversarial ones, 0 unbacked numbers.
 The SMS parser reads all 91 transaction SMS in our sample. Caveat: synthetic data — [add your real-SMS result
 here: `python -m eval.real_eval data/private/real_sms.csv`].
+
+**Q: Which LLM do you use, and is the app dependent on it?**
+Gemini or Groq (free, `openai/gpt-oss-120b`), switchable with one env var. The scam model, budget, tax, goals, PDF report and the
+chat's knowledge base all run locally — the LLM is only for judging subtle messages, verifying claims and phrasing.
+
+**Q: Can Ask Artha tell me which stock or fund to buy?**
+No — by design. It refuses stock/fund/crypto picks and market predictions, explains concepts from the knowledge base, warns about
+"guaranteed return" pitches, and says "I'm not sure" when retrieval is weak.
 
 **Q: Would anyone really paste SMS?**
 Today: paste or CSV, so no bank credentials and no SMS permission. Roadmap: Android on-device SMS reading

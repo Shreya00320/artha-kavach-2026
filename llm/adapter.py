@@ -1,7 +1,7 @@
 """LLM Adapter module for Artha Kavach.
 
 Provides a unified, resilient interface to LLMs with:
-- Configurable provider selection via environment variables ('gemini' or 'mock').
+- Configurable provider selection via environment variables ('gemini', 'groq' or 'mock').
 - Strict structured JSON output with Pydantic validation.
 - Exponential backoff retries with jitter.
 - Configurable request timeouts.
@@ -149,12 +149,15 @@ class LLMAdapter:
         client: Optional[Any] = None,
     ) -> None:
         self.provider = (provider or os.getenv("LLM_PROVIDER", "gemini")).strip().lower()
-        if self.provider not in ("gemini", "mock"):
+        if self.provider not in ("gemini", "groq", "mock"):
             raise LLMConfigurationError(
-                f"Unsupported LLM_PROVIDER '{self.provider}'. Supported providers are: 'gemini', 'mock'."
+                f"Unsupported LLM_PROVIDER '{self.provider}'. Supported providers are: 'gemini', 'groq', 'mock'."
             )
 
-        self.api_key = api_key or os.getenv("LLM_API_KEY") or os.getenv("GEMINI_API_KEY")
+        if self.provider == "groq":
+            self.api_key = api_key or os.getenv("GROQ_API_KEY") or os.getenv("LLM_API_KEY")
+        else:
+            self.api_key = api_key or os.getenv("LLM_API_KEY") or os.getenv("GEMINI_API_KEY")
 
         # LLM_MODEL must come from environment/args and never be hardcoded.
         # model=None means "not provided by caller, check env".
@@ -170,6 +173,11 @@ class LLMAdapter:
                     "Please specify a current Gemini Flash model from Google AI Studio in your .env file."
                 )
             self.model = raw_model.strip()
+        elif self.provider == "groq":
+            # Groq model ids differ from Gemini ids, so fall back to a sensible default
+            # rather than failing when LLM_MODEL is unset or still a Gemini name.
+            m = raw_model.strip()
+            self.model = m if m and not m.lower().startswith("gemini") else "openai/gpt-oss-120b"
         else:
             self.model = raw_model.strip() if raw_model else "mock-model"
 
@@ -334,6 +342,8 @@ class LLMAdapter:
             result = self._call_mock(response_model)
         elif self.provider == "gemini":
             result = self._call_gemini_with_retries(prompt, response_model, temp)
+        elif self.provider == "groq":
+            result = self._call_groq_with_retries(prompt, response_model, temp)
         else:
             raise LLMConfigurationError(f"Unsupported provider: {self.provider}")
 
@@ -451,4 +461,89 @@ class LLMAdapter:
                 )
                 time.sleep(backoff)
 
+        raise LLMAdapterError(f"Request failed: {last_exception}") from last_exception
+
+    # -----------------------------------------------------------------------
+    # Groq Provider (OpenAI-compatible REST API, stdlib only)
+    # -----------------------------------------------------------------------
+
+    GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+    def _groq_request(self, prompt: str, response_model: Type[T], temperature: float) -> str:
+        """POST one chat-completion request to Groq and return the message text."""
+        import urllib.error
+        import urllib.request
+
+        if not self.api_key:
+            raise LLMConfigurationError(
+                "GROQ_API_KEY (or LLM_API_KEY) is required when using the 'groq' provider."
+            )
+        schema = json.dumps(response_model.model_json_schema())
+        body = {
+            "model": self.model,
+            "temperature": temperature,
+            "response_format": {"type": "json_object"},
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Reply with a single valid JSON object only, matching this JSON Schema:\n" + schema,
+                },
+                {"role": "user", "content": prompt},
+            ],
+        }
+        req = urllib.request.Request(
+            self.GROQ_URL,
+            data=json.dumps(body).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json",
+                "User-Agent": "artha-kavach/1.0",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout_seconds) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")[:300]
+            raise RuntimeError(f"HTTP {e.code}: {detail}") from e
+        return payload["choices"][0]["message"]["content"] or ""
+
+    def _call_groq_with_retries(self, prompt: str, response_model: Type[T], temperature: float) -> T:
+        """Call Groq with backoff retries; mirrors the Gemini error mapping."""
+        last_exception: Optional[Exception] = None
+        for attempt in range(self.max_retries + 1):
+            try:
+                text = self._groq_request(prompt, response_model, temperature)
+                if not text.strip():
+                    raise LLMSchemaValidationError("Groq returned an empty response.")
+                try:
+                    return response_model.model_validate(json.loads(_clean_json_text(text)))
+                except (json.JSONDecodeError, ValidationError) as parse_err:
+                    raise LLMSchemaValidationError(
+                        f"Failed to validate response against schema {response_model.__name__}: "
+                        f"{parse_err}. Raw text: {text[:200]}"
+                    ) from parse_err
+            except (LLMSchemaValidationError, LLMConfigurationError):
+                raise
+            except Exception as e:
+                last_exception = e
+                err_msg = str(e).lower()
+                is_timeout = "timeout" in err_msg or "timed out" in err_msg
+                is_rate_limit = "429" in err_msg or "rate limit" in err_msg
+                # 4xx other than 429 (bad key, bad model) will not succeed on retry
+                fatal = any(f"http {c}" in err_msg for c in (400, 401, 403, 404))
+                if fatal or attempt >= self.max_retries:
+                    if is_timeout:
+                        raise LLMTimeoutError(f"Groq call timed out: {e}") from e
+                    if is_rate_limit:
+                        raise LLMRateLimitError(f"Rate limit exceeded after {attempt} retries: {e}") from e
+                    raise LLMAdapterError(f"Groq request failed: {e}") from e
+                backoff = (2 ** attempt) * 1.0 + random.uniform(0.1, 0.5)
+                hint = re.search(r"try again in ([\d.]+)\s*(ms|s)", err_msg)
+                if is_rate_limit and hint:  # free tier: wait as long as Groq says
+                    wait = float(hint.group(1)) / (1000 if hint.group(2) == "ms" else 1)
+                    backoff = max(backoff, wait + 0.5)
+                logger.warning("Groq attempt %d failed (%s). Retrying in %.2fs...", attempt + 1, e, backoff)
+                time.sleep(backoff)
         raise LLMAdapterError(f"Request failed: {last_exception}") from last_exception

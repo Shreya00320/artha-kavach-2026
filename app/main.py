@@ -42,8 +42,9 @@ st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
 def _get_adapter():
     """Return a live LLMAdapter, or None if no API key is set."""
     provider = os.getenv("LLM_PROVIDER", "gemini")
-    api_key  = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
-    if not api_key and provider == "gemini":
+    api_key  = (os.getenv("GROQ_API_KEY", "") if provider == "groq" else os.getenv("GEMINI_API_KEY", "")) \
+        or os.getenv("LLM_API_KEY", "")
+    if not api_key and provider in ("gemini", "groq"):
         return None
     try:
         from llm.adapter import LLMAdapter
@@ -61,6 +62,9 @@ def _get_retriever():
     build it automatically from data/kb/ before returning.
     Returns None if no API key is set or if FAISS is unavailable.
     """
+    # Embeddings use Gemini; with another LLM provider the chat uses its keyword fallback.
+    if os.getenv("LLM_PROVIDER", "gemini") != "gemini":
+        return None
     api_key = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key:
         return None
@@ -154,11 +158,11 @@ with st.sidebar:
 
     st.markdown(
         f"{'✅' if adapter    else '⚠️'} **LLM** — "
-        f"{'Live (Gemini)' if adapter else 'Offline (rules fallback)'}"
+        f"{'Live (' + adapter.provider.title() + ' · ' + adapter.model + ')' if adapter else 'Offline (rules fallback)'}"
     )
     st.markdown(
         f"{'✅' if retriever  else '⚠️'} **Knowledge base** — "
-        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not loaded (building on first run…)'}"
+        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Built-in keyword search (no embeddings)'}"
     )
     st.markdown(
         f"{'✅' if classifier else '⚠️'} **Deep scam model** — "
@@ -167,7 +171,7 @@ with st.sidebar:
 
     if not adapter:
         st.info(
-            "Set `LLM_API_KEY` (or `GEMINI_API_KEY`) in `.env` or Streamlit Secrets to enable the LLM judge.  \n"
+            "Set `LLM_PROVIDER=groq` + `GROQ_API_KEY` (free) or `GEMINI_API_KEY` in `.env` or Streamlit Secrets to enable the LLM judge.  \n"
             "The app works offline using rules + ML only."
         )
 

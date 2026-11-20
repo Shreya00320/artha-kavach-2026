@@ -26,9 +26,9 @@ def run_smoke_test() -> int:
     except LLMConfigurationError as e:
         print(f"\n[CONFIGURATION ERROR] {e}")
         print("\nPlease check that your .env file defines:")
-        print("  LLM_PROVIDER=gemini")
-        print("  LLM_API_KEY=<your-gemini-api-key>")
-        print("  LLM_MODEL=<current-gemini-flash-model-id>")
+        print("  LLM_PROVIDER=groq            (or gemini)")
+        print("  GROQ_API_KEY=<your-groq-key>  (or GEMINI_API_KEY for gemini)")
+        print("  LLM_MODEL=openai/gpt-oss-120b (or a current Gemini Flash id)")
         return 1
 
     print(f"Provider : {adapter.provider}")

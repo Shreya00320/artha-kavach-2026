@@ -104,8 +104,9 @@ EMBEDDING_MODEL=gemini-embedding-001
 | `LLM_CACHE_ENABLED`, `LLM_CACHE_DIR` | Optional | `true` / `.cache/llm` — caches LLM responses to disk |
 
 **Notes**
-- With `groq`, Gemini embeddings are not used: the Scam Shield RAG index is skipped and the chat advisor uses its
-  built-in offline TF-IDF retriever over the same knowledge base.
+- With `groq` (or no key), Gemini embeddings are not used: Scam Shield retrieves its advisory passages with a local,
+  embedding-free retriever (`rag/local_retrieve.py`, offline TF-IDF over KB001–KB021), so the Trust Receipt still shows
+  cited sources and claim verification still runs. The chat advisor uses the same offline retriever over all 92 docs.
 - Groq's free tier has a tokens-per-minute cap (8,000 TPM on `gpt-oss-120b` at the time of writing). The adapter
   honours the "try again in Ns" hint on HTTP 429 and caches responses, so reruns are cheap.
 - `gemini-2.0-flash` (shut down 1 Jun 2026) and `text-embedding-004` (shut down 14 Jan 2026) no longer work.
@@ -278,7 +279,7 @@ artha-kavach-2026/
 │   ├── emergency.py      ← "I've been scammed" action plan + complaint draft
 │   └── pipeline.py       ← Full orchestration: rules→model→LLM→verify→receipt
 │
-├── rag/                  ← Retrieval-augmented generation (Gemini embeddings; FAISS, or numpy if FAISS can't load)
+├── rag/                  ← Retrieval: Gemini embeddings + FAISS (or numpy), or local_retrieve.py (offline TF-IDF, no key needed)
 ├── llm/                  ← LLM abstraction layer: adapter (Gemini · Groq · mock), versioned prompts, Pydantic schemas
 │
 ├── models/scam_dl.npz    ← Shipped deep-model weights

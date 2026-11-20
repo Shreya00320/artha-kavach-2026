@@ -6,7 +6,7 @@
 ## Pre-demo checklist (10 min before)
 
 - [ ] Live app opens **without sign-in** (Streamlit Cloud → Settings → Sharing → public)
-- [ ] Sidebar shows ✅ LLM — Live (Groq · openai/gpt-oss-120b, or Gemini) · ✅ Deep scam model — Trained (the knowledge-base line shows ⚠️ "built-in keyword search" on Groq — that is expected)
+- [ ] Sidebar shows ✅ LLM — Live (Groq · openai/gpt-oss-120b, or Gemini) · ✅ Knowledge base — Loaded (21 docs, local retriever on Groq) · ✅ Deep scam model — Trained
 - [ ] Secrets: Groq → `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `LLM_MODEL=openai/gpt-oss-120b`; Gemini → `LLM_MODEL=gemini-3.8-flash`, `EMBEDDING_MODEL=gemini-embedding-001`
 - [ ] `python smoke_test.py` passes (the free Groq tier is rate-limited: avoid rapid-fire clicking; cached repeats are instant)
 - [ ] Ran the 🧠 "papa on a new number" sample once today (warms the LLM cache, confirms the key works)

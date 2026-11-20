@@ -60,14 +60,23 @@ def _get_retriever():
 
     If the index has not been built yet (e.g. fresh Streamlit Cloud deploy),
     build it automatically from data/kb/ before returning.
-    Returns None if no API key is set or if FAISS is unavailable.
+    Falls back to a local, embedding-free retriever (offline TF-IDF over the scam advisories)
+    when there is no Gemini key (e.g. LLM_PROVIDER=groq) or the embedding index can't be built.
     """
-    # Embeddings use Gemini; with another LLM provider the chat uses its keyword fallback.
+    def _local():
+        try:
+            from rag.local_retrieve import LocalRetriever
+            return LocalRetriever()
+        except Exception as exc:
+            logging.warning("Local retriever init failed: %s", exc)
+            return None
+
+    # Gemini embeddings only make sense with the Gemini provider and a key.
     if os.getenv("LLM_PROVIDER", "gemini") != "gemini":
-        return None
+        return _local()
     api_key = os.getenv("GEMINI_API_KEY", "") or os.getenv("LLM_API_KEY", "")
     if not api_key:
-        return None
+        return _local()
     try:
         from google import genai
         from rag.ingest import build_index, load_index
@@ -98,8 +107,8 @@ def _get_retriever():
 
         return Retriever(index, client)
     except Exception as exc:
-        logging.warning("Retriever init failed: %s", exc)
-        return None
+        logging.warning("Retriever init failed (%s) — using local retriever.", exc)
+        return _local()
 
 
 @st.cache_resource(show_spinner="Loading scam model…")
@@ -162,7 +171,7 @@ with st.sidebar:
     )
     st.markdown(
         f"{'✅' if retriever  else '⚠️'} **Knowledge base** — "
-        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Built-in keyword search (no embeddings)'}"
+        f"{'Loaded ({} docs)'.format(retriever.n_documents) if retriever else 'Not available'}"
     )
     st.markdown(
         f"{'✅' if classifier else '⚠️'} **Deep scam model** — "

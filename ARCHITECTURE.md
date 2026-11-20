@@ -86,7 +86,7 @@ Input SMS
 ```
 API key?  retriever?  classifier?  →  Pipeline mode
   ✓          ✓           ✓         →  FULL (rules+ML+LLM+RAG+verify)
-  ✓          ✗           ✓         →  rules+ML+LLM (no KB citations; e.g. Groq has no embeddings)
+  ✓          ✗           ✓         →  rules+ML+LLM + local TF-IDF retriever (no Gemini embeddings; citations and verification still work)
   ✗          ✗           ✓         →  OFFLINE (rules+ML, no LLM)
   ✗          ✗           ✗         →  RULES ONLY (always works)
 ```

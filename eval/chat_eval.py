@@ -12,6 +12,7 @@ Usage:
     python -m eval.chat_eval              # offline (rules) mode, prints a report
     python -m eval.chat_eval --json       # also writes eval/results/chat_eval.json
     python -m eval.chat_eval --llm        # use the live LLM adapter (needs a working API key)
+    python -m eval.chat_eval --llm --limit 15   # evenly sample 15 rows per set (free API tiers are rate-limited)
 """
 
 from __future__ import annotations
@@ -34,9 +35,16 @@ SAFE_GUARDS = {"refuse_advice", "warn_returns", "scam", "safety"}
 CONSTANTS = {1930.0, 5.0, 30.0, 24.0, 50.0, 20.0}
 
 
+LIMIT: int | None = None   # set by --limit N: evenly sample N rows from each set
+
+
 def _read(name: str) -> list[dict]:
     with open(ROOT / "data" / name, encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        rows = list(csv.DictReader(f))
+    if LIMIT and LIMIT < len(rows):
+        step = len(rows) / LIMIT
+        rows = [rows[int(i * step)] for i in range(LIMIT)]
+    return rows
 
 
 def _unbacked_numbers(reply, question: str) -> set[float]:
@@ -57,7 +65,7 @@ def run(adapter=None) -> dict:
     number_violations: list[dict] = []
 
     def check_numbers(rid: str, msg: str, reply) -> None:
-        if reply.intent == "knowledge" and reply.method == "rules":
+        if reply.intent == "knowledge":
             bad = _unbacked_numbers(reply, msg)
             if bad:
                 number_violations.append({"id": rid, "message": msg, "numbers": sorted(bad)})
@@ -114,6 +122,12 @@ def run(adapter=None) -> dict:
 
 
 def main() -> int:
+    global LIMIT
+    for i, a in enumerate(sys.argv):
+        if a == "--limit" and i + 1 < len(sys.argv):
+            LIMIT = int(sys.argv[i + 1])
+        elif a.startswith("--limit="):
+            LIMIT = int(a.split("=")[1])
     adapter = None
     if "--llm" in sys.argv:
         from dotenv import load_dotenv
@@ -123,7 +137,8 @@ def main() -> int:
     report = run(adapter)
     res = report["results"]
     print("=" * 64)
-    print(f"Artha chat eval ({'LLM' if adapter else 'offline rules'} mode)")
+    print(f"Artha chat eval ({'LLM ' + adapter.provider + ' ' + adapter.model if adapter else 'offline rules'} mode"
+          f"{', sample of ' + str(LIMIT) + ' per set' if LIMIT else ''})")
     print("=" * 64)
     q, s, a = res["qa"], res["social"], res["adversarial"]
     print(f"QA          n={q['n']:<4} answered {q['answered_pct']:.0f}%   right source {q['top1_source_pct']:.0f}%")
@@ -135,6 +150,9 @@ def main() -> int:
         for f in report["failures"]:
             print(f"  [{f['set']}:{f['id']}] {f['message'][:70]!r}\n      expected {f['expected']} | got {f['got']}")
     if "--json" in sys.argv:
+        if adapter or LIMIT:
+            print("(--json only saves full offline runs; skipped)")
+            return 0
         out = ROOT / "eval" / "results" / "chat_eval.json"
         out.parent.mkdir(exist_ok=True)
         out.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")

@@ -1,70 +1,9 @@
-# 🎬 Artha Kavach — 3-Minute Demo Script + Judge Q&A
+# 🎬 Artha Kavach — Q&A
 ## Arthaton 2026 · AI for Finance
 
 ---
 
-## Pre-demo checklist (10 min before)
-
-- [ ] Live app opens **without sign-in** (Streamlit Cloud → Settings → Sharing → public)
-- [ ] Sidebar shows ✅ LLM — Live (Groq · openai/gpt-oss-120b, or Gemini) · ✅ Knowledge base — Loaded (21 docs, local retriever on Groq) · ✅ Deep scam model — Trained
-- [ ] Secrets: Groq → `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `LLM_MODEL=openai/gpt-oss-120b`; Gemini → `LLM_MODEL=gemini-3.8-flash`, `EMBEDDING_MODEL=gemini-embedding-001`
-- [ ] `python smoke_test.py` passes (the free Groq tier is rate-limited: avoid rapid-fire clicking; cached repeats are instant)
-- [ ] Ran the 🧠 "papa on a new number" sample once today (warms the LLM cache, confirms the key works)
-- [ ] Browser zoom ~125%; close other tabs; phone on silent
-- [ ] Backup: `streamlit run app/main.py` on a laptop — the app works **without internet** (rules + ML)
-
-> ⚠️ Only quote statistics you can source on a slide (e.g. NPCI monthly UPI volumes, I4C/MHA fraud
-> figures). An unsourced number undermines a product whose pitch is "never says what it can't prove".
-
----
-
-## The story (3:00)
-
-### 0:00–0:25 — Hook
-> "Meet Priya, 22, first job. Yesterday a 'Mumbai Cyber Crime inspector' video-called her: a parcel in
-> her name had drugs, she was under 'digital arrest', and she had to transfer ₹25,000 to 'verify her funds'.
-> She paid. Today she wants to know: was it a scam, what now, and can she still pay rent?
-> Artha Kavach answers all three — and never says a number it can't prove."
-
-**[Sidebar → 🎬 Load demo story]**
-
-### 0:25–1:10 — Scam Shield
-**[🛡️ Scam Shield → 🔍 Analyse message]**
-> "Red verdict in under a second. Look at the strip: rules, ML model and the AI judge each voted —
-> you see who said what. Red flags are quoted word-for-word from the message, and the UPI ID and links are
-> checked without ever opening them."
-
-**[Open 🔍 Trust Receipt]**
-> "Every claim the AI makes cites an official source — I4C, RBI — and a second AI call verifies the
-> claim against that source. Unverified claims are dropped. The AI can't bluff."
-
-### 1:10–1:40 — 🆘 I've been scammed
-**[Click 🆘 I've been scammed]**
-> "Priya already paid. Step one: call 1930 — inside the golden hour the money can still be frozen.
-> Then her bank — under RBI's 2017 rules, reporting within 3 working days matters.
-> She fills five fields and gets a complaint ready to paste into cybercrime.gov.in.
-> (If asked: Scam Shield also names the tactic used, like 'fake authority', so users learn to spot it.)"
-
-### 1:40–2:20 — Smart Budget
-**[💰 Smart Budget → 🔔 Alerts]**
-> "Her month, built from bank SMS — no bank login, nothing stored. The ₹25,000 to an unknown UPI ID is flagged.
-> Money to friends isn't counted as spending, refunds are netted, subscriptions add up to a yearly figure.
-> Every number here is plain Python — the AI never does arithmetic. It even shows her biggest 'want' as hours of work."
-
-### 2:20–2:45 — Ask Artha
-**[💬 Ask Artha → type "Can I afford ₹9,000 for rent?"]**
-> "She can just ask — about her own month, or money basics: try "What is a SIP?" or "Which money books should a beginner read?" (answered from our 93-document knowledge base, with sources). Ask for a stock tip and it refuses. The AI phrases the answer, but if it writes any number our code didn't compute,
-> the reply is thrown away and replaced. That's our rule everywhere: never say a number you can't prove."
-
-### 2:45–3:00 — Close
-> "Scam check, a plan when it's too late, and a budget that tells the truth — in English, Hindi and Hinglish,
-> working even offline. Artha Kavach."
-
-**If time allows:** 🛡️ → 🧠 "papa on a new number" sample — rules say *safe*, the AI judge catches it.
-
----
-
-## Judge Q&A — every team member should be able to answer
+ Q&A —
 
 **Q: Where is the AI? Isn't this mostly rules?**
 Three layers on purpose: rules (fast, explainable, offline), a small neural network (hashed word + character

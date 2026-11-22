@@ -116,6 +116,23 @@ def _render_detector_strip(result) -> None:
 # Sub-tab: check one message
 # ---------------------------------------------------------------------------
 
+def _clear_scam_check() -> None:
+    """on_click callback: wipe the textarea and cached result BEFORE next render.
+
+    Using a callback avoids StreamlitWidgetAlreadyInstantiatedError that occurs
+    when session_state is written to a widget key *after* that widget has
+    already been rendered in the same script run.
+    """
+    st.session_state["scam_textarea"] = ""
+    st.session_state.pop("scam_result", None)
+
+
+def _load_sample_scam(label: str) -> None:
+    """on_click callback: load a sample message BEFORE next render."""
+    st.session_state["scam_textarea"] = SAMPLE_MESSAGES[label]
+    st.session_state.pop("scam_result", None)
+
+
 def _render_check_message(adapter, retriever, classifier) -> None:
     st.markdown(
         "Paste any suspicious SMS, WhatsApp message, or UPI collect-request "
@@ -126,9 +143,13 @@ def _render_check_message(adapter, retriever, classifier) -> None:
         chosen_label = st.selectbox(
             "Pick a sample", list(SAMPLE_MESSAGES.keys()), label_visibility="collapsed"
         )
-        if st.button("Load sample", key="load_sample_scam"):
-            st.session_state["scam_textarea"] = SAMPLE_MESSAGES[chosen_label]
-            st.session_state.pop("scam_result", None)
+        # Use on_click so the state write happens before text_area is rendered
+        st.button(
+            "Load sample",
+            key="load_sample_scam",
+            on_click=_load_sample_scam,
+            args=(chosen_label,),
+        )
 
     message = st.text_area(
         "Message to analyse",
@@ -141,10 +162,8 @@ def _render_check_message(adapter, retriever, classifier) -> None:
     with col_btn:
         analyse_clicked = st.button("🔍 Analyse message", type="primary", width="stretch")
     with col_clear:
-        if st.button("Clear", width="stretch"):
-            st.session_state["scam_textarea"] = ""
-            st.session_state.pop("scam_result", None)
-            st.rerun()
+        # on_click runs BEFORE rerender — no WidgetAlreadyInstantiatedError
+        st.button("Clear", on_click=_clear_scam_check, width="stretch")
 
     if analyse_clicked and message.strip():
         with st.spinner("Analysing…"):

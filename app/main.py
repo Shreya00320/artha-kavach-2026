@@ -189,9 +189,14 @@ with st.sidebar:
     st.caption("One click loads a 'digital arrest' scam message and a month of bank SMS "
                "that includes the ₹25,000 the victim already paid.")
     if st.button("Load demo story", width="stretch", key="btn_demo_story"):
-        from app.demo import load_demo_story
-        load_demo_story()
-        st.success("Loaded — start in 🛡️ Scam Shield, then 💰 Smart Budget, then 💬 Ask Artha.")
+        with st.spinner("Loading demo story…"):
+            try:
+                from app.demo import load_demo_story
+                load_demo_story()
+                st.session_state["demo_loaded"] = True
+            except Exception as exc:
+                st.error(f"Demo failed to load: {exc}")
+        st.rerun()
 
     st.divider()
     st.markdown(f"### {t('privacy', LANG)}")

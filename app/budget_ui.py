@@ -94,6 +94,13 @@ def render_budget_tab(adapter=None) -> None:
         "spending, refunds are netted off, and you can correct any category."
     )
 
+    # Banner: demo story already loaded — tell user to scroll down, don't re-analyse
+    if st.session_state.get("demo_loaded") and st.session_state.get("budget_txns_all"):
+        st.success(
+            "✅ **Demo data loaded!** Scroll down to see your budget — "
+            "no need to paste or click Analyse."
+        )
+
     src_tab_paste, src_tab_csv, src_tab_sample = st.tabs(["📋 Paste SMS", "📂 Upload CSV", "🎲 Sample data"])
     raw_messages: list[str] | None = None
 
